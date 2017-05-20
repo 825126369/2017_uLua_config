@@ -1,0 +1,72 @@
+import "client2world_msg_type.proto";
+import "msg_type_def.proto";
+import "msg_info_def.proto";
+
+package client2world_protocols;
+
+// 请求绑定手机
+message packetc2w_req_bind_phone
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_req_bind_phone]; 
+
+	// 手机号
+	optional string phone = 2;
+}
+
+// 请求绑定手机结果
+message packetw2c_req_bind_phone_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_req_bind_phone_result]; 
+
+	optional int32 result = 2;
+}
+ 
+// 请求验证
+message packetc2w_req_verify_code
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_req_verify_code]; 
+
+	// 验证码
+	optional string code = 2;
+}
+
+// 请求验证结果
+message packetw2c_req_verify_code_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_req_verify_code_result]; 
+
+	optional int32 result = 2;
+}
+
+
+
+// 请求解除手机
+message packetc2w_req_relieve_phone
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_req_relieve_phone]; 
+
+		// 验证码
+	optional string code = 2;
+}
+
+// 请求解除手机结果
+message packetw2c_req_relieve_phone_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_req_relieve_phone_result]; 
+
+	optional int32 result = 2;
+}
+ 
+// 请求解除验证码
+message packetc2w_req_relieve_verify
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_req_relieve_verify]; 
+}
+
+// 请求解除验证结果
+message packetw2c_req_relieve_verify_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_req_relieve_verify_result]; 
+
+	optional int32 result = 2;
+}

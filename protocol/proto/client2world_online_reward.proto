@@ -1,0 +1,55 @@
+import "client2world_msg_type.proto";
+import "msg_type_def.proto";
+import "msg_info_def.proto";
+
+package client2world_protocols;
+
+// 领取在线奖励
+message packetc2w_receive_online_reward
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_receive_online_reward]; 
+}
+ 
+// 领取在线奖励结果
+message packetw2c_receive_online_reward_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_receive_online_reward_result]; 
+
+	optional int32 result = 2;
+
+	// 剩余领取时间，领取失败时，这个值有效
+	optional int32 remainTime = 3;
+
+	// 领取的奖励ID
+	optional int32 rewardId = 4;
+}
+
+// 领取充值奖励
+message packetc2w_receive_recharge_reward
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_receive_recharge_reward]; 
+}
+ 
+// 领取充值奖励结果
+message packetw2c_receive_recharge_reward_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_receive_recharge_reward_result]; 
+
+	optional int32 result = 2;
+}
+
+// 请求在线奖励的领取信息
+message packetc2w_req_online_reward_info
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_req_online_reward_info]; 
+}
+  
+// 请求在线奖励的领取信息结果
+message packetw2c_req_online_reward_info_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_req_online_reward_info_result]; 
+
+	// 已领取过的id列表
+	repeated int32 recvIdList = 2;
+}
+

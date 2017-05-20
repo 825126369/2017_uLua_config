@@ -1,0 +1,166 @@
+import "client2world_msg_type.proto";
+import "msg_type_def.proto";
+import "msg_info_def.proto";
+
+package client2world_protocols;
+
+message FriendInfo
+{
+	// 好友ID
+	optional int32 friendId = 1;
+
+	// 性别
+	optional int32 sex = 2;
+
+	// 是否在线
+	optional bool online = 3;
+
+	// VIP等级
+	optional int32 vipLevel = 4;
+
+	// 好友昵称
+	optional string nickName = 5;
+
+	// 头像ID
+	optional string iconCustom = 6;
+
+	// 相框ID
+	optional int32 photoFrameId = 7; 
+
+	// 个性签名
+	optional string selfSignature = 8; 
+
+	// 收到的礼物
+	repeated msg_info_def.msg_gift giftList = 9;   
+	
+	// 今日赠送的金币数量
+	optional int64 giftCoinCount = 10;
+
+	// 金币
+	optional int64 gold = 11; 
+
+	// 经典捕鱼等级
+	optional int32 fishLevel = 12;
+}
+
+// 添加好友
+message packetc2w_add_friend
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_add_friend]; 
+
+	// 好友ID
+	optional int32 friendId = 2;
+}
+
+// 添加好友结果
+message packetw2c_add_friend_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_add_friend_result]; 
+
+	// 结果
+	optional int32 result = 2;
+
+	optional FriendInfo info = 3;
+}
+
+// 移除好友
+message packetc2w_remove_friend
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_remove_friend]; 
+
+	// 好友ID
+	optional int32 friendId = 2;
+}
+
+// 移除好友结果
+message packetw2c_remove_friend_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_remove_friend_result]; 
+
+	// 好友ID
+	optional int32 friendId = 2;
+
+	// 结果
+	optional int32 result = 3;
+}
+
+// 请求好友列表
+message packetc2w_req_friend_list
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_req_friend_list]; 
+}
+
+// 请求好友列表结果
+message packetw2c_req_friend_list_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_req_friend_list_result]; 
+
+	// 好友列表
+	repeated FriendInfo friendList = 2;
+}
+
+// 搜索好友
+message packetc2w_search_friend
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_search_friend]; 
+
+	// 玩家ID
+	optional int32 playerId = 2;
+}
+
+// 搜索好友结果
+message packetw2c_search_friend_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_search_friend_result]; 
+
+	optional FriendInfo info = 2;
+
+	// 结果
+	optional int32 result = 3;
+}
+
+// 进入好友房间
+message packetc2w_enter_friend_room
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_enter_friend_room]; 
+
+	// 好友ID
+	optional int32 friendId = 2;
+}
+
+// 进入好友房间结果
+message packetw2c_enter_friend_room_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_enter_friend_room_result]; 
+
+	// 结果
+	optional int32 result = 2;
+
+	// 游戏ID
+	optional int32 gameId = 3;
+}
+
+
+// 获取好友所在游戏id
+message packetc2w_get_friend_gameid
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_get_friend_gameid]; 
+
+	// 好友ID
+	optional int32 friendId = 2;
+}
+
+// 获取好友所在游戏id
+message packetw2c_get_friend_gameid_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_get_friend_gameid_result]; 
+
+	// 结果
+	optional int32 result = 2;
+
+	// 游戏ID
+	optional int32 gameId = 3;
+
+	optional int32 friendId = 4;
+}
+

@@ -1,0 +1,100 @@
+import "client2world_msg_type.proto";
+import "msg_type_def.proto";
+import "msg_info_def.proto";
+
+package client2world_protocols;
+
+message RankInfo
+{
+	// 玩家ID
+	optional int32 playerId = 1;
+
+	// 昵称
+	optional string nickName = 2;
+
+	// 金币
+	optional int64 gold = 3;
+
+	// VIP
+	optional int32 vipLevel = 4;
+};
+
+// 请求金币排行
+message packetc2w_req_coin_rank
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_req_coin_rank]; 
+}
+
+// 请求金币排行结果
+message packetw2c_req_coin_rank_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_req_coin_rank_result]; 
+
+	// 排行列表
+	repeated RankInfo rankList = 2;
+
+	// 自身的排名, 从0开始计数
+	optional int32 selfRank = 3;
+}
+
+message RechargeInfo
+{
+	// 玩家ID
+	optional int32 playerId = 1;
+
+	// 昵称
+	optional string nickName = 2;
+
+	// 充值金额
+	optional int32 rmb = 3;
+	
+	// VIP
+	optional int32 vipLevel = 4;
+};
+
+// 请求金币排行
+message packetc2w_req_recharge_rank
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_req_recharge_rank]; 
+
+	optional bool is_yesterday = 2 [default=false];
+}
+
+// 请求充值排行结果
+message packetw2c_req_recharge_rank_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_req_recharge_rank_result]; 
+
+	// 排行列表
+	repeated RechargeInfo rankList = 2;
+
+	// 自身的排名, 从0开始计数
+	optional int32 selfRank = 3;
+	optional int32 selfrmb = 4;
+
+	optional bool is_yesterday = 5 [default=false];
+}
+
+// 请求金币增长排行
+message packetc2w_req_coin_growth
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_req_coin_growth]; 
+}
+
+// 请求金币增长排行结果
+message packetw2c_req_coin_growth_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_req_coin_growth_result]; 
+
+	// 排行列表
+	repeated RankInfo rankList = 2;
+
+	// 自身的排名, 从0开始计数
+	optional int32 selfRank = 3;
+
+	// 自身的金币
+	optional int64 selfGold = 4;
+}
+
+
+

@@ -1,0 +1,120 @@
+import "client2world_msg_type.proto";
+import "msg_type_def.proto";
+import "msg_info_def.proto";
+
+package client2world_protocols;
+
+// 发送聊天
+message packetc2w_chat
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_chat]; 
+
+	optional string content = 2;
+
+	//录音时长
+	optional int32 audio_time = 3 [default = 0];
+}   
+ 
+// 聊天结果
+message packetw2c_chat_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_chat_result]; 
+
+	optional string content = 2;
+
+	// 说话者昵称
+	optional string talkerNickName = 3;
+
+	// 说话者ID
+	optional int32 talkerId = 4;
+	
+	//结果
+	optional int32 result = 5;
+
+	//录音时长
+	optional int32 audio_time = 6 [default = 0];
+
+	//录音长度
+	optional int32 audio_len = 7 [default = 0];
+
+	// 说话者的VIP等级
+	optional int32 talkerVIPLevel = 8;
+
+	// 说话者是否还有月卡
+	optional bool hasMonthCard = 9;
+
+	// 聊天类型，默认值为0  1表示某VIP玩家进入了游戏
+	optional int32 chatType = 10 [default = 0]; 
+}
+
+// 通告消息
+message packetw2c_notify
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_notify]; 
+
+	optional string content = 2;
+
+	optional int32 notifyType = 3;
+
+	// 通告者昵称
+	optional string talkerNickName = 4;
+
+	// 玩家ID，0是系统发送的
+	optional int32 playerId = 5;
+
+	// 说话者的VIP等级
+	optional int32 talkerVIPLevel = 6;
+
+	// 若由玩家发出，表示该玩家是否还有月卡。系统的忽略此字段
+	optional bool hasMonthCard = 7;
+
+	// 重复次数，本条消息从左到右共滚动次数
+	optional int32 repCount = 8[default = 1];
+	// 重复间隔，条条消息2次滚动之间间隔
+	optional int32 interval = 9[default = 0];
+}
+
+// 玩家发起的通告消息
+message packetc2w_player_notify
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_player_notify]; 
+
+	optional string content = 2;
+}
+
+// 玩家发起的通告消息结果
+message packetw2c_player_notify_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_player_notify_result]; 
+
+	optional int32 result = 2;
+}
+
+// 玩家连续发小喇叭
+message packetc2w_player_continuous_send_speaker
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_player_continuous_send_speaker]; 
+
+	optional string content = 2;
+
+	// 连续发送次数
+	optional int32 count = 3;
+}
+
+// 玩家连续发小喇叭结果
+message packetw2c_player_continuous_send_speaker_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_player_continuous_send_speaker_result]; 
+
+	optional int32 result = 2;
+
+	// 连续发送次数
+	optional int32 count = 3;
+
+	// 当返回结果是 上次未发完时，这里是剩余次数，
+	optional int32 remainCount = 4;
+}
+
+
+
+

@@ -1,0 +1,193 @@
+import "client2world_msg_type.proto";
+import "msg_type_def.proto";
+import "msg_info_def.proto";
+
+package client2world_protocols;
+
+// 获取玩家邮件列表请求
+message packetc2w_get_mails
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_get_mails];
+	
+	// 最后一封邮件的时间(初始请求时传0)
+	optional int32 lastTime = 2;
+}
+
+message mail_info
+{
+	// 邮件ID
+	optional string mailId = 1;
+	// 发送时间
+	optional int32 time = 2;
+	// 标题
+	optional string title = 3;
+	// 发送者
+	optional string sender = 4;
+	// 内容
+	optional string content = 5;
+	// 是否已领取道具(同样表示是否已读)
+	optional bool isRecvive = 6;
+	// 道具列表
+	repeated msg_info_def.msg_gift gifts = 7;
+
+	// 发送者ID
+	optional int32 senderId = 8;
+};
+
+// 获取玩家邮件列表回应
+message packetw2c_get_mails_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_get_mails_result];
+	
+	// 返回最后一封邮件的时间
+	optional int32 lastTime = 2;
+	
+	repeated mail_info mails = 3;
+}
+
+// 领取邮件中的礼物请求
+message packetc2w_recv_mail_gifts
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_recv_mail_gifts];
+
+	// 邮件ID
+	optional string mailId = 2;
+}
+
+// 领取邮件中的礼物回应
+message packetw2c_recv_mail_gifts_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_recv_mail_gifts_result];
+	
+	// 邮件ID
+	optional string mailId = 2;
+	
+	// 领取结果
+	optional int32 result = 3;
+}
+
+// 发送邮件
+message packetc2w_send_mail
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_send_mail];
+
+	// 邮件标题
+	optional string title = 2;
+
+	// 内容
+	optional string content = 3;
+
+	// 发送给谁
+	optional int32 toPlayerId = 4;
+
+	// 礼物列表,列表空表示发送的是纯文本，不空表示要发送礼物
+	repeated msg_info_def.msg_gift gifts = 5;
+}
+
+// 发送邮件结果
+message packetw2c_send_mail_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_send_mail_result];
+
+	// 结果
+	optional int32 result = 2;
+
+	// 礼物列表,列表空表示发送的是纯文本，不空表示要发送礼物
+	//repeated msg_info_def.msg_gift gifts = 3;
+
+	// 邮件类型 0不带礼物, 1带礼物
+	optional int32 mailType = 4;
+
+	// 结果成功的情况下，本邮件ID
+	optional string mailId = 5;
+}
+
+// 删除某个邮件
+message packetc2w_remove_mail
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_remove_mail];
+	
+	// 邮件ID
+	optional string mailId = 2;
+}
+
+// 删除某个邮件结果
+message packetw2c_remove_mail_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_remove_mail_result];
+	
+	// 邮件ID
+	optional string mailId = 2;
+
+	// 结果
+	optional int32 result = 3;
+}
+
+// 收到礼物通知
+message packetw2c_accept_gift_notify
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_accept_gift_notify];
+}
+
+// 请求发送邮件日志
+message packetc2w_req_send_mail_log
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_req_send_mail_log];
+
+	// 上次请求时间，初始为0
+	optional int32 lastTime = 2;
+}
+
+message SendMailLogInfo
+{
+	// 赠送时间
+	optional int32 sendTime = 1;
+
+	// 好友的ID
+	optional int32 firendId = 2;
+
+	// 内容
+	optional string content = 3;
+
+	// 邮件ID
+	optional string mailId = 4;
+
+	// 邮件标题
+	optional string title = 5;
+
+	// 对方昵称
+	optional string friendNickName = 6;
+}
+
+// 请求发送邮件日志结果
+message packetw2c_req_send_mail_log_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_req_send_mail_log_result];
+
+	// 日志列表
+	repeated SendMailLogInfo logList = 2;	
+
+	// 新的时间
+	optional int32 lastTime = 3;
+}
+
+// 删除某个邮件日志
+message packetc2w_remove_mail_log
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_remove_mail_log];
+	
+	// 邮件ID
+	optional string mailId = 2;
+}
+
+// 删除某个邮件日志结果
+message packetw2c_remove_mail_log_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_remove_mail_log_result];
+	
+	// 邮件ID
+	optional string mailId = 2;
+
+	// 结果
+	optional int32 result = 3;
+}

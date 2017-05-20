@@ -1,0 +1,45 @@
+import "client2world_msg_type.proto";
+import "msg_type_def.proto";
+import "msg_info_def.proto";
+
+package client2world_protocols;
+
+// 请求转盘抽奖
+message packetc2w_star_lottery_info
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_star_lottery_info]; 
+}
+
+// 请求转盘抽奖结果
+message packetw2c_star_lottery_info_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_star_lottery_info_result]; 
+
+	// 星星
+	optional int32 star = 2;
+
+	// 奖池
+	optional int32 award = 3;
+}
+
+
+//请求抽奖
+message packetc2w_req_star_lottery
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_req_star_lottery]; 
+}
+
+//抽奖结果
+message packetc2w_req_star_lottery_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_req_star_lottery_result]; 
+
+	optional msg_type_def.e_msg_result_def result = 2 [default = e_rmt_fail];	
+
+	// 返回奖金
+	optional int64 award = 3;
+	// 奖品类型
+	optional int32 itemtype = 4;
+	// 奖品数量
+	optional int32 itemcount = 5;
+}

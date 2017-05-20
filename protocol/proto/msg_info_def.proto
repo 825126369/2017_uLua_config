@@ -1,0 +1,106 @@
+package msg_info_def;
+
+// 礼物
+message msg_gift
+{
+	optional int32 giftId = 1;
+	optional int64 count = 2;
+}
+
+// 道具信息
+message ItemInfo
+{
+	optional int32 itemId = 1;
+	optional int32 count = 2;
+}
+
+//任务信息
+message msg_quest_info
+{
+	optional int32 questid = 1;		//任务id
+	optional int32 count = 2;		//任务计数
+	optional bool received = 3;		//是否领取
+}
+
+// 客服信息
+message ServiceInfo
+{
+	// 信息类型，1，2，3，4来表示
+	optional int32 infoType = 1;
+
+	// 对应的文字显示
+	optional string key = 2;
+
+	// 实际内容
+	optional string value = 3;
+}
+
+message BoxInfo
+{
+	// 宝箱是否打开了, true已打开
+	optional bool isOpen = 1;
+
+	// 宝箱内含金币
+	optional int64 containGold = 2; 
+}
+
+message ActivityReceiveInfo
+{
+	optional int32 activityId = 1;
+	optional bool isReceive = 2;
+}
+
+//账号信息
+message msg_account_info{
+	optional int32 aid = 1;				//玩家id
+	//optional string account = 2;		//账号
+	optional string nickname = 3;		//昵称
+	optional int64 gold = 4;			//金币
+	optional int32 viplvl = 5;			//vip等级
+	optional int32 vipexp = 6;			//vip经验
+	//optional int32 icon_id = 7;			//废弃
+	optional string icon_custom = 8;	//自定义头像
+	optional int32 sex = 9;				// 性别
+	optional string selfSignature = 10;	// 签名
+	repeated msg_gift giftStat = 11;    // 收到的礼物统计
+	optional int64 maxGold = 12;		// 金币最大持有记录
+	optional int32 maxTicket = 13;		// 礼券最大持有记录
+	optional int32 Ticket = 14;			// 礼券
+	repeated ItemInfo bagItems = 15;	// 背包	 
+	optional int32 curPhotoFrameId = 16; // 当前相框ID
+	optional int32 hasReceiveOnlineRewardCount = 17; // 当天已领取在线奖励次数
+	optional int32 remainOnlineRewardTime = 18;		 // 领取在线奖励的剩余时间(秒)
+	repeated int32 payids = 19;						 // 已购买过的payid列表
+	optional bool isSafeDepositBoxPwdEmpty = 20;	 // 保险箱密码是否为空,true空
+	optional int64 safeBoxGold = 21;					 // 保险箱内的金币
+	optional int32 collected = 22;					//玩家今天内领取救济金的次数
+	optional int32 newGuildHasFinishStep = 23;		//已完成步骤
+	optional int64 sendGiftCoinCount = 24;			//今日赠送礼物的金币数量
+	optional int32 update_icon_count = 25;				// 修改头像次数
+	optional int32 updateNicknameCount = 26;			// 修改昵称次数
+	optional bool isBindMobilePhone = 27;	            // 是否绑定了手机
+	repeated ServiceInfo serviceInfos = 28;             // 客服信息
+	optional int32 monthCardRemainSecondTime = 29;		// 月卡到期剩余秒数，0表示到期了, -1表示还没有购买过月卡
+	optional bool hasReceiveRechargeReward = 30;		// 是否领取过充值奖励
+	optional int32 curRecharge = 31;					// 当前的充值金额
+	optional int32 Experience_VIP = 32;					//体验VIP
+	repeated BoxInfo boxInfoList = 33;					// 宝箱抽奖当前信息 
+	optional int32 thankYouJoinCount = 34;				// 谢谢参与获得次数
+	optional int32 boxLotteryCountToday = 35;			// 今日已抽取宝箱次数
+	optional int32 create_time = 36;			// 创建时间	
+	repeated ActivityReceiveInfo receiveInfo = 37; // 活动奖励的领取信息
+	optional int32 monthCard_time = 38;			// 月卡时间
+	optional bool isFirstLogined = 39;	            // 是否已经首次登陆过
+	optional int32 chip = 40;			// 碎片(话费卷)
+	optional bool hasReceiveMonthCardReward = 41;		// 当天是否领取过月卡奖励
+	optional int32 firstGiftTime = 42;				//首冲礼包时间
+	optional bool isBuyFirstGift = 43 [default = false];				//是否购买首冲礼包
+	optional int32 Privilege = 44;				//特权
+}
+
+message msg_account_info_ex{
+	optional bool is_robot = 1 [default = false];	//是否机器人
+	optional int32 lucky = 2;						//幸运
+	optional int64 temp_income = 3;					//临时收益
+	optional int64 total_income = 4;				//累计收益
+}

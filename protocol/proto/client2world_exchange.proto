@@ -1,0 +1,75 @@
+import "client2world_msg_type.proto";
+import "msg_type_def.proto";
+import "msg_info_def.proto";
+
+package client2world_protocols;
+
+// 请求兑换
+message packetc2w_exchange
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_exchange]; 
+
+	// 兑换ID
+	optional int32 exchangeId = 2;
+
+	// 电话号码
+	optional string phone = 3;
+}
+ 
+// 请求兑换结果
+message packetw2c_exchange_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_exchange_result]; 
+
+	optional int32 exchangeId = 2;
+	
+	optional int32 result = 3;
+}
+
+// 取得兑换状态
+message packetc2w_get_exchange_state
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_get_exchange_state]; 
+}
+
+// 兑换信息
+message ExchangeInfo
+{
+	// 时间
+	optional int32 time = 1;
+
+	// 兑换ID
+	optional int32 chgId = 2;
+
+	// 是否收到了兑换品
+	optional bool isReceive = 3;
+}
+
+// 取得兑换状态结果
+message packetw2c_get_exchange_state_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_get_exchange_state_result]; 
+
+	repeated ExchangeInfo infoList = 2;
+}
+
+
+
+// 请求购物
+message packetc2w_shopping
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_shopping]; 
+
+	// 兑换ID
+	optional int32 shopid = 2;
+}
+ 
+// 请求购物结果
+message packetw2c_shopping_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_shopping_result]; 
+
+	optional int32 shopid = 2;
+	
+	optional int32 result = 3;
+}

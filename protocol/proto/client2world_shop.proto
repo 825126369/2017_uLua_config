@@ -1,0 +1,54 @@
+import "client2world_msg_type.proto";
+import "msg_type_def.proto";
+import "msg_info_def.proto";
+
+package client2world_protocols;
+
+// 购买商品
+message packetc2w_buy_commodity
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_buy_commodity]; 
+
+	// 商品ID
+	optional int32 commodityId = 2;
+}
+
+// 购买商品结果
+message packetw2c_buy_commodity_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_buy_commodity_result]; 
+
+	// 购买结果
+	optional int32 result = 2;
+
+	// 商品ID
+	optional int32 commodityId = 3;
+}
+
+//校验苹果订单
+message packetw2c_check_apple_order_form
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_check_apple_order_form]; 
+
+	optional string apple = 2;
+}
+
+//礼包提示
+message packetw2c_open_first_gift
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_open_first_gift]; 
+}
+
+//请求充值记录
+message packetc2w_ask_recharge_history
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_ask_recharge_history]; 
+}
+
+//充值记录
+message packetw2c_recharge_history_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_recharge_history_result]; 
+	repeated string history_infos = 2;
+	
+}

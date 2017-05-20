@@ -1,0 +1,62 @@
+import "client2world_msg_type.proto";
+import "msg_type_def.proto";
+import "msg_info_def.proto";
+
+package client2world_protocols;
+
+// 请求转盘抽奖
+message packetc2w_req_dial_lottery
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_req_dial_lottery]; 
+}
+
+// 请求转盘抽奖结果
+message packetw2c_req_dial_lottery_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_req_dial_lottery_result]; 
+
+	// 抽奖结果
+	optional int32 result = 2;
+
+	// 所抽到的编号，当第7天及以后这个才有效
+	optional int32 num = 3;
+
+	// 是否有月卡奖励, true有
+	optional bool hasMonthCardReward = 4;
+}
+
+// 请求转盘标志
+message packetc2w_req_dial_lottery_flag
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_req_dial_lottery_flag]; 
+}
+
+// 请求转盘标志结果
+message packetw2c_req_dial_lottery_flag_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_req_dial_lottery_flag_result]; 
+
+	// 今日是否抽过奖，true已抽
+	optional bool isLotteryToday = 2;
+
+	// 已连续签到次数
+	optional int32 hasSignCount = 3;
+}
+
+// 领取月卡奖励
+message packetc2w_req_month_card_reward
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_req_month_card_reward]; 
+}
+ 
+// 领取月卡奖励结果
+message packetw2c_req_month_card_reward_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_req_month_card_reward_result]; 
+
+	optional int32 result = 2;
+}
+
+
+
+

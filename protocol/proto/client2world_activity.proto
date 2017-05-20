@@ -1,0 +1,28 @@
+import "client2world_msg_type.proto";
+import "msg_type_def.proto";
+import "msg_info_def.proto";
+
+package client2world_protocols;
+
+// 领取活动奖励
+message packetc2w_receive_activity_reward
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_receive_activity_reward]; 
+
+	// 活动ID
+	optional int32 activityId = 2;
+}
+
+// 领取活动奖励结果
+message packetw2c_receive_activity_reward_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_receive_activity_reward_result]; 
+
+	optional int32 result = 2;
+
+	// 活动id
+	optional int32 activityId = 3;
+}
+
+
+

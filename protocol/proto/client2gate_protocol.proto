@@ -1,0 +1,34 @@
+import "client2gate_msg_type.proto";
+import "msg_type_def.proto";
+package client2gate_protocols;
+
+//心跳包
+message packetc2g_heartbeat {
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2g_heartbeat];
+}
+
+message msg_packet 
+{
+	optional int32 msgid = 1;
+	optional bytes msginfo = 2;
+}
+
+//协议列表
+message packet_g2c_send_msglist {
+	optional e_server_msg_type packet_id = 1 [default = e_mst_g2c_send_msglist];
+	repeated msg_packet msgpaks = 3;
+}
+
+//选择网关
+message packetc2g_select_gate {
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2g_select_gate];
+}
+
+//选择网关返回结果
+message packetg2c_select_gate_result {
+	optional e_server_msg_type packet_id = 1 [default = e_mst_g2c_select_gate_result];
+	optional msg_type_def.e_msg_result_def result = 2 [default = e_rmt_success];	
+	optional string new_ip = 3;//新ip
+	optional int32 new_port = 4;//新port
+}
+

@@ -1,0 +1,46 @@
+import "client2world_msg_type.proto";
+import "msg_type_def.proto";
+import "msg_info_def.proto";
+
+package client2world_protocols;
+
+// 请求宝箱抽奖
+message packetc2w_req_lottery_box
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_req_lottery_box]; 
+
+	// box所在索引，从0开始
+	optional int32 boxIndex = 2;
+
+	// 是否使用礼券, true使用礼券抽奖
+	optional bool useTicket = 3;
+}
+
+// 请求宝箱抽奖结果
+message packetw2c_req_lottery_box_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_req_lottery_box_result]; 
+
+	// 结果
+	optional int32 result = 2;
+
+	optional bool useTicket = 3;
+
+	// 奖励类型 (BoxLotteryResult枚举)
+	optional int32 rewardType = 4;
+}
+
+// 谢谢参与兑换礼券
+message packetc2w_thankyou_exchange_ticket
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_thankyou_exchange_ticket]; 
+}
+
+// 谢谢参与兑换礼券结果
+message packetw2c_thankyou_exchange_ticket_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_thankyou_exchange_ticket_result]; 
+
+	// 结果
+	optional int32 result = 2;
+}

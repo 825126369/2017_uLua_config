@@ -1,0 +1,40 @@
+import "client2world_msg_type.proto";
+import "msg_type_def.proto";
+import "msg_info_def.proto";
+
+package client2world_protocols;
+
+// 请求公告
+message packetc2w_req_notice
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2w_req_notice]; 
+
+	optional int32 lastTime = 2;
+}
+
+message NoticeInfo
+{
+	// 生成时间
+	optional int32 genTime = 1;
+	// 标题
+	optional string title = 2;
+	// 内容
+	optional string content = 3;
+
+	// 排序，降序排列
+	optional int32 order = 4;
+}
+ 
+// 请求公告结果
+message packetw2c_req_notice_result
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_w2c_req_notice_result]; 
+
+	repeated NoticeInfo infoList = 2;
+
+	// 返回最后一个公告的时间
+	optional int32 lastTime = 3;
+}
+
+
+
