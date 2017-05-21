@@ -1,3 +1,2 @@
-BuildClient.bat
-BuildServer.bat
+ExeclExport.exe auto
 pause

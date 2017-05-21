@@ -23,6 +23,7 @@ function M_GameCFG:init()
 	self.datas[12] = {ID = 12, GameName = "金鲨银鲨", GamePrefix = "GoldShark", UpdateUrl = "http://121.199.75.142:26011", IsOpen = true, GameSize = "2.00M", ZipVersion = "0.0.0", AnimationName = "heihongmeifangab", PictureName = "heihongmeifangab", IsShow = true, ShowIndex = 12, EnterGold = 0, EnterVIP = 0}
 	self.datas[13] = {ID = 13, GameName = "欢乐五张", GamePrefix = "SuoHa", UpdateUrl = "http://121.199.75.142:26011", IsOpen = true, GameSize = "2.00M", ZipVersion = "0.0.0", AnimationName = "shuanglongbuyu", PictureName = "shuanglongbuyu", IsShow = true, ShowIndex = 13, EnterGold = 0, EnterVIP = 0}
 	self.datas[14] = {ID = 14, GameName = "欢乐至尊", GamePrefix = "HappySupremacy", UpdateUrl = "http://121.199.75.142:26011", IsOpen = true, GameSize = "2.00M", ZipVersion = "0.0.0", AnimationName = "shuanglongbuyu", PictureName = "happySupremacy", IsShow = true, ShowIndex = 14, EnterGold = 0, EnterVIP = 0}
+	self.datas[15] = {ID = 15, GameName = "斗地主", GamePrefix = "Landlord", UpdateUrl = "http://121.199.75.142:26011", IsOpen = true, GameSize = "2.00M", ZipVersion = "0.0.0", AnimationName = "shuanglongbuyu", PictureName = "landlord", IsShow = true, ShowIndex = 15, EnterGold = 0, EnterVIP = 0}
 end
 
 M_GameCFG:init()
