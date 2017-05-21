@@ -1,0 +1,30 @@
+package game_landlord_protocol; 
+
+enum e_server_msg_type {
+	//------------CS------------------
+    e_mst_start_c2l = 10000;
+	e_mst_c2l_enter_room=10001;//进入房间	
+	e_mst_c2l_get_room_scene_info=10002;//请求场景信息
+	e_mst_c2l_check_state=10003;//检查游戏状态
+
+	//------------SC-------------------
+	e_mst_start_l2c = 15000;
+
+	e_mst_l2c_enter_room=15001;
+	e_mst_l2c_get_room_scene_info=15002;
+	e_mst_l2c_check_state=15003;
+	
+	e_mst_l2c_start_game=15101;//通知开始游戏	
+	e_mst_clend_index = 20000;
+}
+
+enum e_server_error_code
+{
+	e_error_code_success=1;
+	e_error_code_failed=2;
+	e_error_code_not_enough_money=3;
+	
+}
+
+
+

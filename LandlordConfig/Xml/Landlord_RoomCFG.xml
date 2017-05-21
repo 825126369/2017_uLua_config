@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root>
+	<Data RoomID="1" RoomName="人机对战" IsOpen="true" RobTag="1,2,3" RoomImage="B_RoomItem_1" VipCondition="0" GoldCondition="1000" BetMax="10000" RobCount="10" />
+	<Data RoomID="2" RoomName="自由匹配" IsOpen="false" RobTag="1,2,3" RoomImage="B_RoomItem_2" VipCondition="0" GoldCondition="100000" BetMax="100000" RobCount="10" />
+	<Data RoomID="3" RoomName="排位赛" IsOpen="false" RobTag="1,2,3" RoomImage="B_RoomItem_2" VipCondition="0" GoldCondition="100000" BetMax="100000" RobCount="10" />
+</Root>

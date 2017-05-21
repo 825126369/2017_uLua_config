@@ -1,0 +1,53 @@
+package game_landlord_protocol;
+import "game_landlord_def.proto"; 
+import "msg_type_def.proto";
+
+//进入战场
+message packetc2l_enter_room 
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2l_enter_room];
+	optional int32 room_id = 2;
+}
+
+//进入战场 返回
+message packetl2c_enter_room_result 
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_l2c_enter_room];
+	optional e_server_error_code result = 2;
+	optional int32 wait_time=3; //返回匹配结果的预估等待时间
+}
+
+//请求桌子内场景信息
+message packetc2l_get_room_scene_info {
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2l_get_room_scene_info];
+}
+
+//获得桌子内场景信息		//进入桌子跟断线重连情况下调用
+message packetl2c_get_room_scene_info_result {
+	optional e_server_msg_type packet_id = 1 [default = e_mst_l2c_get_room_scene_info];
+	optional int32 room_id = 2;	
+}
+
+//检测游戏状态		//进游戏之后判断是否在桌子中
+message packetc2l_check_state {
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2l_check_state];
+}
+
+//检测是否在房间中,检测状态
+message packetl2c_check_state_result {
+	optional e_server_msg_type packet_id = 1 [default = e_mst_l2c_check_state];
+	optional bool or_Gameing = 2;//是否在游戏中
+}
+
+//通知开始游戏
+message packetl2c_notice_start_game 
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_l2c_start_game];
+}
+
+
+
+
+
+
+
