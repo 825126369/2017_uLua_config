@@ -50,24 +50,9 @@ void Landlord_RoomCFG::Load()
 		data.mRoomID = element->IntAttribute("RoomID");
 		data.mRoomName = element->Attribute("RoomName");
 		data.mIsOpen = element->BoolAttribute("IsOpen");
-		{
-			const char* RobTag = element->Attribute("RobTag");
-			std::vector<std::string> vecRobTag;
-			boost::split(vecRobTag, RobTag, boost::is_any_of(","));
-			int temp;
-			for (unsigned int i = 0; i < vecRobTag.size(); i++)
-			{
-				if (tinyxml2::XMLUtil::ToInt(vecRobTag[i].c_str(), &temp))
-				{
-					data.mRobTag.push_back(temp);
-				}
-			}
-		}
 		data.mRoomImage = element->Attribute("RoomImage");
 		data.mVipCondition = element->IntAttribute("VipCondition");
 		data.mGoldCondition = element->IntAttribute("GoldCondition");
-		data.mBetMax = element->IntAttribute("BetMax");
-		data.mRobCount = element->IntAttribute("RobCount");
 		if (mMapData.find(data.mRoomID) != mMapData.end())std::cout <<"data refind:" << data.mRoomID << std::endl;
 		CCASSERT(mMapData.find(data.mRoomID) == mMapData.end(), "data.mRoomID is exists");
 		mMapData.insert(std::make_pair(data.mRoomID, data));
@@ -93,12 +78,9 @@ void Landlord_RoomCFG::LoadLua()
 		LuaCfgHelper::readInt(L, "RoomID", data.mRoomID);
 		LuaCfgHelper::readString(L, "RoomName", data.mRoomName);
 		LuaCfgHelper::readBool(L, "IsOpen", data.mIsOpen);
-		LuaCfgHelper::readVectorInt(L, "RobTag", data.mRobTag);
 		LuaCfgHelper::readString(L, "RoomImage", data.mRoomImage);
 		LuaCfgHelper::readInt(L, "VipCondition", data.mVipCondition);
 		LuaCfgHelper::readInt(L, "GoldCondition", data.mGoldCondition);
-		LuaCfgHelper::readInt(L, "BetMax", data.mBetMax);
-		LuaCfgHelper::readInt(L, "RobCount", data.mRobCount);
 		if (mMapData.find(data.mRoomID) != mMapData.end())std::cout <<"data refind:" << data.mRoomID << std::endl;
 		CCASSERT(mMapData.find(data.mRoomID) == mMapData.end(), "data.mRoomID is exists");
 		mMapData.insert(std::make_pair(data.mRoomID, data));
