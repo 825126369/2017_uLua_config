@@ -22,8 +22,6 @@ struct M_GameCFGData
 	std::string mPictureName;
 	//是否显示
 	bool mIsShow;
-	//显示序号
-	int mShowIndex;
 	//进入金币要求
 	int mEnterGold;
 	//进入VIP

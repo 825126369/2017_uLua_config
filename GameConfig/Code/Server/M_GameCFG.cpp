@@ -77,7 +77,6 @@ void M_GameCFG::Reload(const std::string& path)
 		data.mAnimationName = element->Attribute("AnimationName");
 		data.mPictureName = element->Attribute("PictureName");
 		data.mIsShow = element->BoolAttribute("IsShow");
-		data.mShowIndex = element->IntAttribute("ShowIndex");
 		data.mEnterGold = element->IntAttribute("EnterGold");
 		data.mEnterVIP = element->IntAttribute("EnterVIP");
 		mMapData[data.mID] = data;
@@ -127,7 +126,6 @@ void M_GameCFG::Load(const std::string& path)
 		data.mAnimationName = element->Attribute("AnimationName");
 		data.mPictureName = element->Attribute("PictureName");
 		data.mIsShow = element->BoolAttribute("IsShow");
-		data.mShowIndex = element->IntAttribute("ShowIndex");
 		data.mEnterGold = element->IntAttribute("EnterGold");
 		data.mEnterVIP = element->IntAttribute("EnterVIP");
 		if (mMapData.find(data.mID) != mMapData.end())std::cout <<"data refind:" << data.mID << std::endl;

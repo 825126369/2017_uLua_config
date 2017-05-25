@@ -15,8 +15,21 @@ message packetl2c_enter_room_result
 	optional e_server_msg_type packet_id = 1 [default = e_mst_l2c_enter_room];
 	optional e_server_error_code result = 2;
 	optional int32 room_id=3;
-	optional int32 wait_time=4; //返回匹配结果的预估等待时间
 }
+
+//开始匹配队伍
+message packetc2l_start_match 
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2l_start_match];
+}
+
+//返回 匹配队伍
+message packetl2c_start_match_result 
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_l2c_start_match_result];
+	optional int32 wait_time=3; //返回匹配结果的预估等待时间
+}
+
 
 //离开战场
 message packetc2l_leave_room 
@@ -55,31 +68,92 @@ message packetl2c_check_state_result {
 
 message card_Info
 {
-	optional int32 deskId;
-	repeated int32 cards;
+	optional int32 deskId=1;
+	repeated int32 cards=2;
+}
+
+//玩家信息
+message player_info 
+{
+	optional int32 player_id = 1;				//玩家ID
+	optional string player_nickname = 2;		//玩家昵称
+	optional int32 player_head_frame = 3;		//头像框
+	optional string player_head_custom = 4;		//玩家头像
+	optional int64 player_gold = 5;				//玩家金币
+	optional int32 player_sex = 6;				// 玩家性别	
+	optional int32 player_vip_lv = 7;			// Vip等级
+	optional int32 deskId=8;					//凳子ID
+}
+
+//请求 抢地主
+message packetc2l_rob_landlord 
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2l_rob_landlord];
+	optional int32 or_Rob=2;//1:抢地主，2：不抢
+}
+
+//请求出牌
+message packetc2l_playhand 
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2l_playhand];
+	optional card_Info cards=2;// 某个玩家的出牌信息
+}
+
+//出牌返回
+message packetl2c_playhand_result 
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_l2c_playhand];
+	optional e_server_error_code result = 2;
 }
 
 //通知开始游戏
-message packetl2c_notice_start_game 
+message packetl2c_notice_startgame 
 {
-	optional e_server_msg_type packet_id = 1 [default = e_mst_l2c_start_game];
-	repeated card_Info cards=2;
-	optional int32 opencard=3;	
+	optional e_server_msg_type packet_id = 1 [default = e_mst_l2c_notice_startgame];
+	repeated card_Info cards=2;//所有玩家的卡牌信息
+	optional int32 opencard=3;//明牌	
+	repeated player_info playerList=4;	//所有玩家信息
+	optional int32 landlord_Id=5;//谁是地主		
 }
 
-//通知某人进入桌子
-message packetl2c_notice_start_game 
+
+//通知 其他人出牌信息
+message packetl2c_notice_playhand 
 {
-	optional e_server_msg_type packet_id = 1 [default = e_mst_l2c_start_game];
-	repeated card_Info cards=2;	
+	optional e_server_msg_type packet_id = 1 [default = e_mst_l2c_notice_playhand];
+	optional card_Info cards=2;// 某个玩家的出牌信息
 }
 
-//通知某人离开桌子
-message packetl2c_notice_start_game 
+//通知 该你抢地主啦
+message packetl2c_notice_rob_landlord 
 {
-	optional e_server_msg_type packet_id = 1 [default = e_mst_l2c_start_game];
-	repeated card_Info cards=2;	
+	optional e_server_msg_type packet_id = 1 [default = e_mst_l2c_notice_rob_landlord];
 }
+
+//通知 其他人抢地主的结果
+message packetl2c_notice_rob_landlord_result 
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_l2c_notice_rob_landlord_result];
+	optional int32 deskId=2;
+	optional int32 or_Rob=3;//1:抢地主，2：不抢	
+}
+
+//通知 胜负
+message packetl2c_notice_winlose 
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_l2c_notice_winlose];
+	optional int32 win_deskId=2;
+	optional int32 win_gold=3;	
+}
+
+
+
+
+
+
+
+
+
 
 
 
