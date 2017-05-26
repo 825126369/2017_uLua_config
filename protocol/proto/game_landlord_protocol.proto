@@ -27,6 +27,7 @@ message packetc2l_start_match
 message packetl2c_start_match_result 
 {
 	optional e_server_msg_type packet_id = 1 [default = e_mst_l2c_start_match_result];
+	optional e_server_error_code result = 2;
 	optional int32 wait_time=3; //返回匹配结果的预估等待时间
 }
 
@@ -52,7 +53,12 @@ message packetc2l_get_room_scene_info {
 //获得桌子内场景信息		//进入桌子跟断线重连情况下调用
 message packetl2c_get_room_scene_info_result {
 	optional e_server_msg_type packet_id = 1 [default = e_mst_l2c_get_room_scene_info];
-	optional int32 room_id = 2;	
+	optional int32 room_id = 2;
+	optional e_game_state gameState=3;//游戏状态
+	repeated card_Info cards=4;//所有玩家的卡牌信息
+	optional int32 opencard=5;//明牌	
+	repeated player_info playerList=6;	//所有玩家信息
+	optional int32 landlord_Id=7;//谁是地主				
 }
 
 //检测游戏状态		//进游戏之后判断是否在桌子中
@@ -110,10 +116,11 @@ message packetl2c_playhand_result
 message packetl2c_notice_startgame 
 {
 	optional e_server_msg_type packet_id = 1 [default = e_mst_l2c_notice_startgame];
-	repeated card_Info cards=2;//所有玩家的卡牌信息
-	optional int32 opencard=3;//明牌	
-	repeated player_info playerList=4;	//所有玩家信息
-	optional int32 landlord_Id=5;//谁是地主		
+	repeated int32 cards=2;//玩家的所有卡牌信息
+	optional int32 opencard=3;//明牌
+	repeated int32 cards_1=4;//留三张	
+	repeated player_info playerList=5;	//所有玩家信息
+	optional int32 landlord_Id=6;//谁是地主		
 }
 
 

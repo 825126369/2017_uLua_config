@@ -50,9 +50,12 @@ enum e_player_game_state
 {
 	e_player_game_state_none=0;
 	e_player_game_state_matching=1;
-	e_player_game_state_playhanding=2;
-	e_player_game_state_wait_playhanding=3;
-	e_player_game_state_award=4;
+	e_player_game_state_sendcarding=2;
+	e_player_game_state_robLandlord=3;
+	e_player_game_state_other_robLandlord=4;	
+	e_player_game_state_playhanding=5;
+	e_player_game_state_other_playhanding=6;
+	e_player_game_state_awarding=7;
 }
 
 
