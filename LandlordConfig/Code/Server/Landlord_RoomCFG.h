@@ -15,6 +15,8 @@ struct Landlord_RoomCFGData
 	int mVipCondition;
 	//进场金币条件
 	int mGoldCondition;
+	//是否洗牌
+	bool morShuffle;
 };
 
 class Landlord_RoomCFG
