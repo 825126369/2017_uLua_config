@@ -17,9 +17,7 @@ enum e_server_msg_type {
 	e_mst_l2c_get_room_scene_info=15002;
 	e_mst_l2c_check_state=15003;
 	e_mst_l2c_leave_room=15004;
-	e_mst_l2c_playhand=15005;
-	e_mst_l2c_start_match_result=15006;
-	e_mst_l2c_rob_landlord_result=15007;
+	e_mst_l2c_start_match_result=15005;
 
 	e_mst_l2c_notice_startgame=15101;//通知开始游戏
 	e_mst_l2c_notice_playhand=15102;//通知其他人出牌信息
