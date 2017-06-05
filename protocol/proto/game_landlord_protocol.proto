@@ -64,7 +64,8 @@ message packetl2c_get_room_scene_info_result {
 	optional int32 cdTime=11;//cd时间
 	optional e_player_game_state playerState=12;//玩家状态
 	optional int32 current_who_robLandlording=13;//当前谁在抢地主
-	optional int32 current_who_playhanding=14;//当前谁在出牌		
+	optional int32 current_who_playhanding=14;//当前谁在出牌
+	optional int32 score=15;//底分		
 }
 
 //检测游戏状态		//进游戏之后判断是否在桌子中
@@ -88,6 +89,12 @@ message card_Info_1
 {
 	optional int32 deskId=1;
 	optional int32 cards_count=2;
+}
+
+message desk_award_Info
+{
+	optional int32 deskId=1;
+	optional int32 win_count=2;
 }
 
 //玩家信息
@@ -125,7 +132,8 @@ message packetl2c_notice_startgame
 	optional int32 opencard=3;//明牌
 	repeated int32 cards_1=4;//留三张	
 	repeated player_info playerList=5;	//所有玩家信息
-	optional int32 landlord_Id=6;//谁是地主		
+	optional int32 landlord_Id=6;//谁是地主
+	optional int32 min_score=7;//底注		
 }
 
 //通知谁出牌
@@ -163,8 +171,7 @@ message packetl2c_notice_rob_landlord_result
 message packetl2c_notice_winlose 
 {
 	optional e_server_msg_type packet_id = 1 [default = e_mst_l2c_notice_winlose];
-	optional int32 win_deskId=2;
-	optional int32 win_gold=3;	
+ 	repeated desk_award_Info m_desk_awards=2; 	
 }
 
 

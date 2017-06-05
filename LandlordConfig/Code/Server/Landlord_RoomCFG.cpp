@@ -74,6 +74,8 @@ void Landlord_RoomCFG::Load()
 		data.mVipCondition = element->IntAttribute("VipCondition");
 		data.mGoldCondition = element->IntAttribute("GoldCondition");
 		data.morShuffle = element->BoolAttribute("orShuffle");
+		data.mdeskCount = element->IntAttribute("deskCount");
+		data.mScore = element->IntAttribute("Score");
 		if (mMapData.find(data.mRoomID) != mMapData.end())std::cout <<"data refind:" << data.mRoomID << std::endl;
 		assert(mMapData.find(data.mRoomID) == mMapData.end());
 		mMapData.insert(std::make_pair(data.mRoomID, data));

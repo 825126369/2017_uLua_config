@@ -54,6 +54,8 @@ void Landlord_RoomCFG::Load()
 		data.mVipCondition = element->IntAttribute("VipCondition");
 		data.mGoldCondition = element->IntAttribute("GoldCondition");
 		data.morShuffle = element->BoolAttribute("orShuffle");
+		data.mdeskCount = element->IntAttribute("deskCount");
+		data.mScore = element->IntAttribute("Score");
 		if (mMapData.find(data.mRoomID) != mMapData.end())std::cout <<"data refind:" << data.mRoomID << std::endl;
 		CCASSERT(mMapData.find(data.mRoomID) == mMapData.end(), "data.mRoomID is exists");
 		mMapData.insert(std::make_pair(data.mRoomID, data));
@@ -83,6 +85,8 @@ void Landlord_RoomCFG::LoadLua()
 		LuaCfgHelper::readInt(L, "VipCondition", data.mVipCondition);
 		LuaCfgHelper::readInt(L, "GoldCondition", data.mGoldCondition);
 		LuaCfgHelper::readBool(L, "orShuffle", data.morShuffle);
+		LuaCfgHelper::readInt(L, "deskCount", data.mdeskCount);
+		LuaCfgHelper::readInt(L, "Score", data.mScore);
 		if (mMapData.find(data.mRoomID) != mMapData.end())std::cout <<"data refind:" << data.mRoomID << std::endl;
 		CCASSERT(mMapData.find(data.mRoomID) == mMapData.end(), "data.mRoomID is exists");
 		mMapData.insert(std::make_pair(data.mRoomID, data));

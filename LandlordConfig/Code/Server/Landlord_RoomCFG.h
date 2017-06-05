@@ -17,6 +17,10 @@ struct Landlord_RoomCFGData
 	int mGoldCondition;
 	//是否洗牌
 	bool morShuffle;
+	//凳子数量
+	int mdeskCount;
+	//底分
+	int mScore;
 };
 
 class Landlord_RoomCFG

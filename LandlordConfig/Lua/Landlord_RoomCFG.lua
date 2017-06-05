@@ -9,9 +9,9 @@ end
 
 function Landlord_RoomCFG:init()
 	self.datas = {}
-	self.datas[1] = {RoomID = 1, RoomName = "人机对战", IsOpen = true, RoomImage = "B_RoomItem_1", VipCondition = 0, GoldCondition = 1000, orShuffle = false}
-	self.datas[2] = {RoomID = 2, RoomName = "自由匹配", IsOpen = true, RoomImage = "B_RoomItem_2", VipCondition = 0, GoldCondition = 100000, orShuffle = true}
-	self.datas[3] = {RoomID = 3, RoomName = "排位赛", IsOpen = true, RoomImage = "B_RoomItem_2", VipCondition = 0, GoldCondition = 100000, orShuffle = true}
+	self.datas[1] = {RoomID = 1, RoomName = "初级房", IsOpen = true, RoomImage = "B_RoomItem_1", VipCondition = 0, GoldCondition = 1000, orShuffle = false, deskCount = 3, Score = 100}
+	self.datas[2] = {RoomID = 2, RoomName = "中级房", IsOpen = true, RoomImage = "B_RoomItem_2", VipCondition = 0, GoldCondition = 1000, orShuffle = true, deskCount = 3, Score = 200}
+	self.datas[3] = {RoomID = 3, RoomName = "高级房", IsOpen = true, RoomImage = "B_RoomItem_2", VipCondition = 0, GoldCondition = 1000, orShuffle = true, deskCount = 3, Score = 300}
 end
 
 Landlord_RoomCFG:init()
