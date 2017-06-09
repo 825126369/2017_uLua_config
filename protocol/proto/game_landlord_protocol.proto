@@ -171,7 +171,8 @@ message packetl2c_notice_rob_landlord_result
 message packetl2c_notice_winlose 
 {
 	optional e_server_msg_type packet_id = 1 [default = e_mst_l2c_notice_winlose];
- 	repeated desk_award_Info m_desk_awards=2; 	
+ 	repeated desk_award_Info m_desk_awards=2;
+	repeated card_Info remain_cards=3;// 其他玩家剩余的牌的信息	 	
 }
 
 

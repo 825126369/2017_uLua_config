@@ -458,9 +458,10 @@ void protobuf_AssignDesc_game_5flandlord_5fprotocol_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_notice_rob_landlord_result));
   packetl2c_notice_winlose_descriptor_ = file->message_type(21);
-  static const int packetl2c_notice_winlose_offsets_[2] = {
+  static const int packetl2c_notice_winlose_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_winlose, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_winlose, m_desk_awards_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_winlose, remain_cards_),
   };
   packetl2c_notice_winlose_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -683,11 +684,13 @@ void protobuf_AddDesc_game_5flandlord_5fprotocol_2eproto() {
     "landlord_result\022Q\n\006result\030\002 \001(\0162+.game_l"
     "andlord_protocol.e_server_error_code:\024e_"
     "error_code_success\022\016\n\006deskId\030\003 \001(\005\022\016\n\006or"
-    "_Rob\030\004 \001(\005\"\262\001\n\030packetl2c_notice_winlose\022"
+    "_Rob\030\004 \001(\005\"\353\001\n\030packetl2c_notice_winlose\022"
     "V\n\tpacket_id\030\001 \001(\0162).game_landlord_proto"
     "col.e_server_msg_type:\030e_mst_l2c_notice_"
     "winlose\022>\n\rm_desk_awards\030\002 \003(\0132\'.game_la"
-    "ndlord_protocol.desk_award_Info", 3951);
+    "ndlord_protocol.desk_award_Info\0227\n\014remai"
+    "n_cards\030\003 \003(\0132!.game_landlord_protocol.c"
+    "ard_Info", 4008);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "game_landlord_protocol.proto", &protobuf_RegisterTypes);
   packetc2l_enter_room::default_instance_ = new packetc2l_enter_room();
@@ -7539,6 +7542,7 @@ void packetl2c_notice_rob_landlord_result::Swap(packetl2c_notice_rob_landlord_re
 #ifndef _MSC_VER
 const int packetl2c_notice_winlose::kPacketIdFieldNumber;
 const int packetl2c_notice_winlose::kMDeskAwardsFieldNumber;
+const int packetl2c_notice_winlose::kRemainCardsFieldNumber;
 #endif  // !_MSC_VER
 
 packetl2c_notice_winlose::packetl2c_notice_winlose()
@@ -7597,6 +7601,7 @@ packetl2c_notice_winlose* packetl2c_notice_winlose::New() const {
 void packetl2c_notice_winlose::Clear() {
   packet_id_ = 15104;
   m_desk_awards_.Clear();
+  remain_cards_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -7640,6 +7645,20 @@ bool packetl2c_notice_winlose::MergePartialFromCodedStream(
           goto handle_unusual;
         }
         if (input->ExpectTag(18)) goto parse_m_desk_awards;
+        if (input->ExpectTag(26)) goto parse_remain_cards;
+        break;
+      }
+
+      // repeated .game_landlord_protocol.card_Info remain_cards = 3;
+      case 3: {
+        if (tag == 26) {
+         parse_remain_cards:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_remain_cards()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(26)) goto parse_remain_cards;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -7681,6 +7700,12 @@ void packetl2c_notice_winlose::SerializeWithCachedSizes(
       2, this->m_desk_awards(i), output);
   }
 
+  // repeated .game_landlord_protocol.card_Info remain_cards = 3;
+  for (int i = 0; i < this->remain_cards_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      3, this->remain_cards(i), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -7702,6 +7727,13 @@ void packetl2c_notice_winlose::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         2, this->m_desk_awards(i), target);
+  }
+
+  // repeated .game_landlord_protocol.card_Info remain_cards = 3;
+  for (int i = 0; i < this->remain_cards_size(); i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        3, this->remain_cards(i), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -7731,6 +7763,14 @@ int packetl2c_notice_winlose::ByteSize() const {
         this->m_desk_awards(i));
   }
 
+  // repeated .game_landlord_protocol.card_Info remain_cards = 3;
+  total_size += 1 * this->remain_cards_size();
+  for (int i = 0; i < this->remain_cards_size(); i++) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        this->remain_cards(i));
+  }
+
   if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
@@ -7757,6 +7797,7 @@ void packetl2c_notice_winlose::MergeFrom(const ::google::protobuf::Message& from
 void packetl2c_notice_winlose::MergeFrom(const packetl2c_notice_winlose& from) {
   GOOGLE_CHECK_NE(&from, this);
   m_desk_awards_.MergeFrom(from.m_desk_awards_);
+  remain_cards_.MergeFrom(from.remain_cards_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_packet_id()) {
       set_packet_id(from.packet_id());
@@ -7786,6 +7827,7 @@ void packetl2c_notice_winlose::Swap(packetl2c_notice_winlose* other) {
   if (other != this) {
     std::swap(packet_id_, other->packet_id_);
     m_desk_awards_.Swap(&other->m_desk_awards_);
+    remain_cards_.Swap(&other->remain_cards_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);

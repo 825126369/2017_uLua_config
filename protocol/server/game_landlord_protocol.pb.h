@@ -2291,6 +2291,18 @@ class packetl2c_notice_winlose : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::game_landlord_protocol::desk_award_Info >*
       mutable_m_desk_awards();
 
+  // repeated .game_landlord_protocol.card_Info remain_cards = 3;
+  inline int remain_cards_size() const;
+  inline void clear_remain_cards();
+  static const int kRemainCardsFieldNumber = 3;
+  inline const ::game_landlord_protocol::card_Info& remain_cards(int index) const;
+  inline ::game_landlord_protocol::card_Info* mutable_remain_cards(int index);
+  inline ::game_landlord_protocol::card_Info* add_remain_cards();
+  inline const ::google::protobuf::RepeatedPtrField< ::game_landlord_protocol::card_Info >&
+      remain_cards() const;
+  inline ::google::protobuf::RepeatedPtrField< ::game_landlord_protocol::card_Info >*
+      mutable_remain_cards();
+
   // @@protoc_insertion_point(class_scope:game_landlord_protocol.packetl2c_notice_winlose)
  private:
   inline void set_has_packet_id();
@@ -2301,6 +2313,7 @@ class packetl2c_notice_winlose : public ::google::protobuf::Message {
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
   ::google::protobuf::RepeatedPtrField< ::game_landlord_protocol::desk_award_Info > m_desk_awards_;
+  ::google::protobuf::RepeatedPtrField< ::game_landlord_protocol::card_Info > remain_cards_;
   int packet_id_;
   friend void  protobuf_AddDesc_game_5flandlord_5fprotocol_2eproto();
   friend void protobuf_AssignDesc_game_5flandlord_5fprotocol_2eproto();
@@ -4288,6 +4301,36 @@ inline ::google::protobuf::RepeatedPtrField< ::game_landlord_protocol::desk_awar
 packetl2c_notice_winlose::mutable_m_desk_awards() {
   // @@protoc_insertion_point(field_mutable_list:game_landlord_protocol.packetl2c_notice_winlose.m_desk_awards)
   return &m_desk_awards_;
+}
+
+// repeated .game_landlord_protocol.card_Info remain_cards = 3;
+inline int packetl2c_notice_winlose::remain_cards_size() const {
+  return remain_cards_.size();
+}
+inline void packetl2c_notice_winlose::clear_remain_cards() {
+  remain_cards_.Clear();
+}
+inline const ::game_landlord_protocol::card_Info& packetl2c_notice_winlose::remain_cards(int index) const {
+  // @@protoc_insertion_point(field_get:game_landlord_protocol.packetl2c_notice_winlose.remain_cards)
+  return remain_cards_.Get(index);
+}
+inline ::game_landlord_protocol::card_Info* packetl2c_notice_winlose::mutable_remain_cards(int index) {
+  // @@protoc_insertion_point(field_mutable:game_landlord_protocol.packetl2c_notice_winlose.remain_cards)
+  return remain_cards_.Mutable(index);
+}
+inline ::game_landlord_protocol::card_Info* packetl2c_notice_winlose::add_remain_cards() {
+  // @@protoc_insertion_point(field_add:game_landlord_protocol.packetl2c_notice_winlose.remain_cards)
+  return remain_cards_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::game_landlord_protocol::card_Info >&
+packetl2c_notice_winlose::remain_cards() const {
+  // @@protoc_insertion_point(field_list:game_landlord_protocol.packetl2c_notice_winlose.remain_cards)
+  return remain_cards_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::game_landlord_protocol::card_Info >*
+packetl2c_notice_winlose::mutable_remain_cards() {
+  // @@protoc_insertion_point(field_mutable_list:game_landlord_protocol.packetl2c_notice_winlose.remain_cards)
+  return &remain_cards_;
 }
 
 
