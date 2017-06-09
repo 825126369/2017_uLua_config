@@ -71,7 +71,6 @@ void Landlord_RoomCFG::Load()
 		data.mRoomName = element->Attribute("RoomName");
 		data.mIsOpen = element->BoolAttribute("IsOpen");
 		data.mRoomImage = element->Attribute("RoomImage");
-		data.mVipCondition = element->IntAttribute("VipCondition");
 		data.mGoldCondition = element->IntAttribute("GoldCondition");
 		data.morShuffle = element->BoolAttribute("orShuffle");
 		data.mdeskCount = element->IntAttribute("deskCount");

@@ -51,7 +51,6 @@ void Landlord_RoomCFG::Load()
 		data.mRoomName = element->Attribute("RoomName");
 		data.mIsOpen = element->BoolAttribute("IsOpen");
 		data.mRoomImage = element->Attribute("RoomImage");
-		data.mVipCondition = element->IntAttribute("VipCondition");
 		data.mGoldCondition = element->IntAttribute("GoldCondition");
 		data.morShuffle = element->BoolAttribute("orShuffle");
 		data.mdeskCount = element->IntAttribute("deskCount");
@@ -82,7 +81,6 @@ void Landlord_RoomCFG::LoadLua()
 		LuaCfgHelper::readString(L, "RoomName", data.mRoomName);
 		LuaCfgHelper::readBool(L, "IsOpen", data.mIsOpen);
 		LuaCfgHelper::readString(L, "RoomImage", data.mRoomImage);
-		LuaCfgHelper::readInt(L, "VipCondition", data.mVipCondition);
 		LuaCfgHelper::readInt(L, "GoldCondition", data.mGoldCondition);
 		LuaCfgHelper::readBool(L, "orShuffle", data.morShuffle);
 		LuaCfgHelper::readInt(L, "deskCount", data.mdeskCount);

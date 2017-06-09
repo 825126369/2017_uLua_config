@@ -102,7 +102,7 @@ message player_info
 {
 	optional int32 player_id = 1;				//玩家ID
 	optional string player_nickname = 2;		//玩家昵称
-	optional int32 player_head_frame = 3;		//头像框
+	optional int32 player_head_frame = 3;		//头像
 	optional string player_head_custom = 4;		//玩家头像
 	optional int64 player_gold = 5;				//玩家金币
 	optional int32 player_sex = 6;				// 玩家性别	

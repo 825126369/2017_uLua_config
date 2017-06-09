@@ -11,8 +11,6 @@ struct Landlord_RoomCFGData
 	bool mIsOpen;
 	//房间图片
 	std::string mRoomImage;
-	//进场VIP条件
-	int mVipCondition;
 	//进场金币条件
 	int mGoldCondition;
 	//是否洗牌
