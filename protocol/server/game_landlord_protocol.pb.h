@@ -35,6 +35,11 @@ void  protobuf_AddDesc_game_5flandlord_5fprotocol_2eproto();
 void protobuf_AssignDesc_game_5flandlord_5fprotocol_2eproto();
 void protobuf_ShutdownFile_game_5flandlord_5fprotocol_2eproto();
 
+class packetc2l_Hang;
+class packetl2c_Hang_result;
+class packetc2l_ChangeTable;
+class packetl2c_ChangeTable_result;
+class packetc2l_SystemTalk;
 class packetc2l_enter_room;
 class packetl2c_enter_room_result;
 class packetc2l_start_match;
@@ -45,10 +50,6 @@ class packetc2l_get_room_scene_info;
 class packetl2c_get_room_scene_info_result;
 class packetc2l_check_state;
 class packetl2c_check_state_result;
-class card_Info;
-class card_Info_1;
-class desk_award_Info;
-class player_info;
 class packetc2l_rob_landlord;
 class packetc2l_playhand;
 class packetl2c_notice_startgame;
@@ -57,8 +58,454 @@ class packetl2c_notice_playhand;
 class packetl2c_notice_rob_landlord;
 class packetl2c_notice_rob_landlord_result;
 class packetl2c_notice_winlose;
+class packetl2c_notice_SystemTalk;
 
 // ===================================================================
+
+class packetc2l_Hang : public ::google::protobuf::Message {
+ public:
+  packetc2l_Hang();
+  virtual ~packetc2l_Hang();
+
+  packetc2l_Hang(const packetc2l_Hang& from);
+
+  inline packetc2l_Hang& operator=(const packetc2l_Hang& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const packetc2l_Hang& default_instance();
+
+  void Swap(packetc2l_Hang* other);
+
+  // implements Message ----------------------------------------------
+
+  packetc2l_Hang* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const packetc2l_Hang& from);
+  void MergeFrom(const packetc2l_Hang& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_c2l_Hang];
+  inline bool has_packet_id() const;
+  inline void clear_packet_id();
+  static const int kPacketIdFieldNumber = 1;
+  inline ::game_landlord_protocol::e_server_msg_type packet_id() const;
+  inline void set_packet_id(::game_landlord_protocol::e_server_msg_type value);
+
+  // optional bool orHang = 2;
+  inline bool has_orhang() const;
+  inline void clear_orhang();
+  static const int kOrHangFieldNumber = 2;
+  inline bool orhang() const;
+  inline void set_orhang(bool value);
+
+  // @@protoc_insertion_point(class_scope:game_landlord_protocol.packetc2l_Hang)
+ private:
+  inline void set_has_packet_id();
+  inline void clear_has_packet_id();
+  inline void set_has_orhang();
+  inline void clear_has_orhang();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  int packet_id_;
+  bool orhang_;
+  friend void  protobuf_AddDesc_game_5flandlord_5fprotocol_2eproto();
+  friend void protobuf_AssignDesc_game_5flandlord_5fprotocol_2eproto();
+  friend void protobuf_ShutdownFile_game_5flandlord_5fprotocol_2eproto();
+
+  void InitAsDefaultInstance();
+  static packetc2l_Hang* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class packetl2c_Hang_result : public ::google::protobuf::Message {
+ public:
+  packetl2c_Hang_result();
+  virtual ~packetl2c_Hang_result();
+
+  packetl2c_Hang_result(const packetl2c_Hang_result& from);
+
+  inline packetl2c_Hang_result& operator=(const packetl2c_Hang_result& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const packetl2c_Hang_result& default_instance();
+
+  void Swap(packetl2c_Hang_result* other);
+
+  // implements Message ----------------------------------------------
+
+  packetl2c_Hang_result* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const packetl2c_Hang_result& from);
+  void MergeFrom(const packetl2c_Hang_result& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_l2c_Hang];
+  inline bool has_packet_id() const;
+  inline void clear_packet_id();
+  static const int kPacketIdFieldNumber = 1;
+  inline ::game_landlord_protocol::e_server_msg_type packet_id() const;
+  inline void set_packet_id(::game_landlord_protocol::e_server_msg_type value);
+
+  // optional .game_landlord_protocol.e_server_error_code result = 2 [default = e_error_code_success];
+  inline bool has_result() const;
+  inline void clear_result();
+  static const int kResultFieldNumber = 2;
+  inline ::game_landlord_protocol::e_server_error_code result() const;
+  inline void set_result(::game_landlord_protocol::e_server_error_code value);
+
+  // optional bool orHang = 3;
+  inline bool has_orhang() const;
+  inline void clear_orhang();
+  static const int kOrHangFieldNumber = 3;
+  inline bool orhang() const;
+  inline void set_orhang(bool value);
+
+  // @@protoc_insertion_point(class_scope:game_landlord_protocol.packetl2c_Hang_result)
+ private:
+  inline void set_has_packet_id();
+  inline void clear_has_packet_id();
+  inline void set_has_result();
+  inline void clear_has_result();
+  inline void set_has_orhang();
+  inline void clear_has_orhang();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  int packet_id_;
+  int result_;
+  bool orhang_;
+  friend void  protobuf_AddDesc_game_5flandlord_5fprotocol_2eproto();
+  friend void protobuf_AssignDesc_game_5flandlord_5fprotocol_2eproto();
+  friend void protobuf_ShutdownFile_game_5flandlord_5fprotocol_2eproto();
+
+  void InitAsDefaultInstance();
+  static packetl2c_Hang_result* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class packetc2l_ChangeTable : public ::google::protobuf::Message {
+ public:
+  packetc2l_ChangeTable();
+  virtual ~packetc2l_ChangeTable();
+
+  packetc2l_ChangeTable(const packetc2l_ChangeTable& from);
+
+  inline packetc2l_ChangeTable& operator=(const packetc2l_ChangeTable& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const packetc2l_ChangeTable& default_instance();
+
+  void Swap(packetc2l_ChangeTable* other);
+
+  // implements Message ----------------------------------------------
+
+  packetc2l_ChangeTable* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const packetc2l_ChangeTable& from);
+  void MergeFrom(const packetc2l_ChangeTable& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_c2l_changetable];
+  inline bool has_packet_id() const;
+  inline void clear_packet_id();
+  static const int kPacketIdFieldNumber = 1;
+  inline ::game_landlord_protocol::e_server_msg_type packet_id() const;
+  inline void set_packet_id(::game_landlord_protocol::e_server_msg_type value);
+
+  // @@protoc_insertion_point(class_scope:game_landlord_protocol.packetc2l_ChangeTable)
+ private:
+  inline void set_has_packet_id();
+  inline void clear_has_packet_id();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  int packet_id_;
+  friend void  protobuf_AddDesc_game_5flandlord_5fprotocol_2eproto();
+  friend void protobuf_AssignDesc_game_5flandlord_5fprotocol_2eproto();
+  friend void protobuf_ShutdownFile_game_5flandlord_5fprotocol_2eproto();
+
+  void InitAsDefaultInstance();
+  static packetc2l_ChangeTable* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class packetl2c_ChangeTable_result : public ::google::protobuf::Message {
+ public:
+  packetl2c_ChangeTable_result();
+  virtual ~packetl2c_ChangeTable_result();
+
+  packetl2c_ChangeTable_result(const packetl2c_ChangeTable_result& from);
+
+  inline packetl2c_ChangeTable_result& operator=(const packetl2c_ChangeTable_result& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const packetl2c_ChangeTable_result& default_instance();
+
+  void Swap(packetl2c_ChangeTable_result* other);
+
+  // implements Message ----------------------------------------------
+
+  packetl2c_ChangeTable_result* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const packetl2c_ChangeTable_result& from);
+  void MergeFrom(const packetl2c_ChangeTable_result& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_l2c_changetable];
+  inline bool has_packet_id() const;
+  inline void clear_packet_id();
+  static const int kPacketIdFieldNumber = 1;
+  inline ::game_landlord_protocol::e_server_msg_type packet_id() const;
+  inline void set_packet_id(::game_landlord_protocol::e_server_msg_type value);
+
+  // optional .game_landlord_protocol.e_server_error_code result = 2 [default = e_error_code_success];
+  inline bool has_result() const;
+  inline void clear_result();
+  static const int kResultFieldNumber = 2;
+  inline ::game_landlord_protocol::e_server_error_code result() const;
+  inline void set_result(::game_landlord_protocol::e_server_error_code value);
+
+  // @@protoc_insertion_point(class_scope:game_landlord_protocol.packetl2c_ChangeTable_result)
+ private:
+  inline void set_has_packet_id();
+  inline void clear_has_packet_id();
+  inline void set_has_result();
+  inline void clear_has_result();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  int packet_id_;
+  int result_;
+  friend void  protobuf_AddDesc_game_5flandlord_5fprotocol_2eproto();
+  friend void protobuf_AssignDesc_game_5flandlord_5fprotocol_2eproto();
+  friend void protobuf_ShutdownFile_game_5flandlord_5fprotocol_2eproto();
+
+  void InitAsDefaultInstance();
+  static packetl2c_ChangeTable_result* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class packetc2l_SystemTalk : public ::google::protobuf::Message {
+ public:
+  packetc2l_SystemTalk();
+  virtual ~packetc2l_SystemTalk();
+
+  packetc2l_SystemTalk(const packetc2l_SystemTalk& from);
+
+  inline packetc2l_SystemTalk& operator=(const packetc2l_SystemTalk& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const packetc2l_SystemTalk& default_instance();
+
+  void Swap(packetc2l_SystemTalk* other);
+
+  // implements Message ----------------------------------------------
+
+  packetc2l_SystemTalk* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const packetc2l_SystemTalk& from);
+  void MergeFrom(const packetc2l_SystemTalk& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_c2l_SystemTalk];
+  inline bool has_packet_id() const;
+  inline void clear_packet_id();
+  static const int kPacketIdFieldNumber = 1;
+  inline ::game_landlord_protocol::e_server_msg_type packet_id() const;
+  inline void set_packet_id(::game_landlord_protocol::e_server_msg_type value);
+
+  // optional int32 talk_Id = 2;
+  inline bool has_talk_id() const;
+  inline void clear_talk_id();
+  static const int kTalkIdFieldNumber = 2;
+  inline ::google::protobuf::int32 talk_id() const;
+  inline void set_talk_id(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:game_landlord_protocol.packetc2l_SystemTalk)
+ private:
+  inline void set_has_packet_id();
+  inline void clear_has_packet_id();
+  inline void set_has_talk_id();
+  inline void clear_has_talk_id();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  int packet_id_;
+  ::google::protobuf::int32 talk_id_;
+  friend void  protobuf_AddDesc_game_5flandlord_5fprotocol_2eproto();
+  friend void protobuf_AssignDesc_game_5flandlord_5fprotocol_2eproto();
+  friend void protobuf_ShutdownFile_game_5flandlord_5fprotocol_2eproto();
+
+  void InitAsDefaultInstance();
+  static packetc2l_SystemTalk* default_instance_;
+};
+// -------------------------------------------------------------------
 
 class packetc2l_enter_room : public ::google::protobuf::Message {
  public:
@@ -1074,435 +1521,6 @@ class packetl2c_check_state_result : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class card_Info : public ::google::protobuf::Message {
- public:
-  card_Info();
-  virtual ~card_Info();
-
-  card_Info(const card_Info& from);
-
-  inline card_Info& operator=(const card_Info& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const card_Info& default_instance();
-
-  void Swap(card_Info* other);
-
-  // implements Message ----------------------------------------------
-
-  card_Info* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const card_Info& from);
-  void MergeFrom(const card_Info& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // optional int32 deskId = 1;
-  inline bool has_deskid() const;
-  inline void clear_deskid();
-  static const int kDeskIdFieldNumber = 1;
-  inline ::google::protobuf::int32 deskid() const;
-  inline void set_deskid(::google::protobuf::int32 value);
-
-  // repeated int32 cards = 2;
-  inline int cards_size() const;
-  inline void clear_cards();
-  static const int kCardsFieldNumber = 2;
-  inline ::google::protobuf::int32 cards(int index) const;
-  inline void set_cards(int index, ::google::protobuf::int32 value);
-  inline void add_cards(::google::protobuf::int32 value);
-  inline const ::google::protobuf::RepeatedField< ::google::protobuf::int32 >&
-      cards() const;
-  inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
-      mutable_cards();
-
-  // @@protoc_insertion_point(class_scope:game_landlord_protocol.card_Info)
- private:
-  inline void set_has_deskid();
-  inline void clear_has_deskid();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
-  ::google::protobuf::RepeatedField< ::google::protobuf::int32 > cards_;
-  ::google::protobuf::int32 deskid_;
-  friend void  protobuf_AddDesc_game_5flandlord_5fprotocol_2eproto();
-  friend void protobuf_AssignDesc_game_5flandlord_5fprotocol_2eproto();
-  friend void protobuf_ShutdownFile_game_5flandlord_5fprotocol_2eproto();
-
-  void InitAsDefaultInstance();
-  static card_Info* default_instance_;
-};
-// -------------------------------------------------------------------
-
-class card_Info_1 : public ::google::protobuf::Message {
- public:
-  card_Info_1();
-  virtual ~card_Info_1();
-
-  card_Info_1(const card_Info_1& from);
-
-  inline card_Info_1& operator=(const card_Info_1& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const card_Info_1& default_instance();
-
-  void Swap(card_Info_1* other);
-
-  // implements Message ----------------------------------------------
-
-  card_Info_1* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const card_Info_1& from);
-  void MergeFrom(const card_Info_1& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // optional int32 deskId = 1;
-  inline bool has_deskid() const;
-  inline void clear_deskid();
-  static const int kDeskIdFieldNumber = 1;
-  inline ::google::protobuf::int32 deskid() const;
-  inline void set_deskid(::google::protobuf::int32 value);
-
-  // optional int32 cards_count = 2;
-  inline bool has_cards_count() const;
-  inline void clear_cards_count();
-  static const int kCardsCountFieldNumber = 2;
-  inline ::google::protobuf::int32 cards_count() const;
-  inline void set_cards_count(::google::protobuf::int32 value);
-
-  // @@protoc_insertion_point(class_scope:game_landlord_protocol.card_Info_1)
- private:
-  inline void set_has_deskid();
-  inline void clear_has_deskid();
-  inline void set_has_cards_count();
-  inline void clear_has_cards_count();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
-  ::google::protobuf::int32 deskid_;
-  ::google::protobuf::int32 cards_count_;
-  friend void  protobuf_AddDesc_game_5flandlord_5fprotocol_2eproto();
-  friend void protobuf_AssignDesc_game_5flandlord_5fprotocol_2eproto();
-  friend void protobuf_ShutdownFile_game_5flandlord_5fprotocol_2eproto();
-
-  void InitAsDefaultInstance();
-  static card_Info_1* default_instance_;
-};
-// -------------------------------------------------------------------
-
-class desk_award_Info : public ::google::protobuf::Message {
- public:
-  desk_award_Info();
-  virtual ~desk_award_Info();
-
-  desk_award_Info(const desk_award_Info& from);
-
-  inline desk_award_Info& operator=(const desk_award_Info& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const desk_award_Info& default_instance();
-
-  void Swap(desk_award_Info* other);
-
-  // implements Message ----------------------------------------------
-
-  desk_award_Info* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const desk_award_Info& from);
-  void MergeFrom(const desk_award_Info& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // optional int32 deskId = 1;
-  inline bool has_deskid() const;
-  inline void clear_deskid();
-  static const int kDeskIdFieldNumber = 1;
-  inline ::google::protobuf::int32 deskid() const;
-  inline void set_deskid(::google::protobuf::int32 value);
-
-  // optional int32 win_count = 2;
-  inline bool has_win_count() const;
-  inline void clear_win_count();
-  static const int kWinCountFieldNumber = 2;
-  inline ::google::protobuf::int32 win_count() const;
-  inline void set_win_count(::google::protobuf::int32 value);
-
-  // @@protoc_insertion_point(class_scope:game_landlord_protocol.desk_award_Info)
- private:
-  inline void set_has_deskid();
-  inline void clear_has_deskid();
-  inline void set_has_win_count();
-  inline void clear_has_win_count();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
-  ::google::protobuf::int32 deskid_;
-  ::google::protobuf::int32 win_count_;
-  friend void  protobuf_AddDesc_game_5flandlord_5fprotocol_2eproto();
-  friend void protobuf_AssignDesc_game_5flandlord_5fprotocol_2eproto();
-  friend void protobuf_ShutdownFile_game_5flandlord_5fprotocol_2eproto();
-
-  void InitAsDefaultInstance();
-  static desk_award_Info* default_instance_;
-};
-// -------------------------------------------------------------------
-
-class player_info : public ::google::protobuf::Message {
- public:
-  player_info();
-  virtual ~player_info();
-
-  player_info(const player_info& from);
-
-  inline player_info& operator=(const player_info& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const player_info& default_instance();
-
-  void Swap(player_info* other);
-
-  // implements Message ----------------------------------------------
-
-  player_info* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const player_info& from);
-  void MergeFrom(const player_info& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // optional int32 player_id = 1;
-  inline bool has_player_id() const;
-  inline void clear_player_id();
-  static const int kPlayerIdFieldNumber = 1;
-  inline ::google::protobuf::int32 player_id() const;
-  inline void set_player_id(::google::protobuf::int32 value);
-
-  // optional string player_nickname = 2;
-  inline bool has_player_nickname() const;
-  inline void clear_player_nickname();
-  static const int kPlayerNicknameFieldNumber = 2;
-  inline const ::std::string& player_nickname() const;
-  inline void set_player_nickname(const ::std::string& value);
-  inline void set_player_nickname(const char* value);
-  inline void set_player_nickname(const char* value, size_t size);
-  inline ::std::string* mutable_player_nickname();
-  inline ::std::string* release_player_nickname();
-  inline void set_allocated_player_nickname(::std::string* player_nickname);
-
-  // optional int32 player_head_frame = 3;
-  inline bool has_player_head_frame() const;
-  inline void clear_player_head_frame();
-  static const int kPlayerHeadFrameFieldNumber = 3;
-  inline ::google::protobuf::int32 player_head_frame() const;
-  inline void set_player_head_frame(::google::protobuf::int32 value);
-
-  // optional string player_head_custom = 4;
-  inline bool has_player_head_custom() const;
-  inline void clear_player_head_custom();
-  static const int kPlayerHeadCustomFieldNumber = 4;
-  inline const ::std::string& player_head_custom() const;
-  inline void set_player_head_custom(const ::std::string& value);
-  inline void set_player_head_custom(const char* value);
-  inline void set_player_head_custom(const char* value, size_t size);
-  inline ::std::string* mutable_player_head_custom();
-  inline ::std::string* release_player_head_custom();
-  inline void set_allocated_player_head_custom(::std::string* player_head_custom);
-
-  // optional int64 player_gold = 5;
-  inline bool has_player_gold() const;
-  inline void clear_player_gold();
-  static const int kPlayerGoldFieldNumber = 5;
-  inline ::google::protobuf::int64 player_gold() const;
-  inline void set_player_gold(::google::protobuf::int64 value);
-
-  // optional int32 player_sex = 6;
-  inline bool has_player_sex() const;
-  inline void clear_player_sex();
-  static const int kPlayerSexFieldNumber = 6;
-  inline ::google::protobuf::int32 player_sex() const;
-  inline void set_player_sex(::google::protobuf::int32 value);
-
-  // optional int32 player_vip_lv = 7;
-  inline bool has_player_vip_lv() const;
-  inline void clear_player_vip_lv();
-  static const int kPlayerVipLvFieldNumber = 7;
-  inline ::google::protobuf::int32 player_vip_lv() const;
-  inline void set_player_vip_lv(::google::protobuf::int32 value);
-
-  // optional int32 deskId = 8;
-  inline bool has_deskid() const;
-  inline void clear_deskid();
-  static const int kDeskIdFieldNumber = 8;
-  inline ::google::protobuf::int32 deskid() const;
-  inline void set_deskid(::google::protobuf::int32 value);
-
-  // @@protoc_insertion_point(class_scope:game_landlord_protocol.player_info)
- private:
-  inline void set_has_player_id();
-  inline void clear_has_player_id();
-  inline void set_has_player_nickname();
-  inline void clear_has_player_nickname();
-  inline void set_has_player_head_frame();
-  inline void clear_has_player_head_frame();
-  inline void set_has_player_head_custom();
-  inline void clear_has_player_head_custom();
-  inline void set_has_player_gold();
-  inline void clear_has_player_gold();
-  inline void set_has_player_sex();
-  inline void clear_has_player_sex();
-  inline void set_has_player_vip_lv();
-  inline void clear_has_player_vip_lv();
-  inline void set_has_deskid();
-  inline void clear_has_deskid();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
-  ::std::string* player_nickname_;
-  ::google::protobuf::int32 player_id_;
-  ::google::protobuf::int32 player_head_frame_;
-  ::std::string* player_head_custom_;
-  ::google::protobuf::int64 player_gold_;
-  ::google::protobuf::int32 player_sex_;
-  ::google::protobuf::int32 player_vip_lv_;
-  ::google::protobuf::int32 deskid_;
-  friend void  protobuf_AddDesc_game_5flandlord_5fprotocol_2eproto();
-  friend void protobuf_AssignDesc_game_5flandlord_5fprotocol_2eproto();
-  friend void protobuf_ShutdownFile_game_5flandlord_5fprotocol_2eproto();
-
-  void InitAsDefaultInstance();
-  static player_info* default_instance_;
-};
-// -------------------------------------------------------------------
-
 class packetc2l_rob_landlord : public ::google::protobuf::Message {
  public:
   packetc2l_rob_landlord();
@@ -2322,10 +2340,366 @@ class packetl2c_notice_winlose : public ::google::protobuf::Message {
   void InitAsDefaultInstance();
   static packetl2c_notice_winlose* default_instance_;
 };
+// -------------------------------------------------------------------
+
+class packetl2c_notice_SystemTalk : public ::google::protobuf::Message {
+ public:
+  packetl2c_notice_SystemTalk();
+  virtual ~packetl2c_notice_SystemTalk();
+
+  packetl2c_notice_SystemTalk(const packetl2c_notice_SystemTalk& from);
+
+  inline packetl2c_notice_SystemTalk& operator=(const packetl2c_notice_SystemTalk& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const packetl2c_notice_SystemTalk& default_instance();
+
+  void Swap(packetl2c_notice_SystemTalk* other);
+
+  // implements Message ----------------------------------------------
+
+  packetl2c_notice_SystemTalk* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const packetl2c_notice_SystemTalk& from);
+  void MergeFrom(const packetl2c_notice_SystemTalk& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_l2c_notice_SystemTalk];
+  inline bool has_packet_id() const;
+  inline void clear_packet_id();
+  static const int kPacketIdFieldNumber = 1;
+  inline ::game_landlord_protocol::e_server_msg_type packet_id() const;
+  inline void set_packet_id(::game_landlord_protocol::e_server_msg_type value);
+
+  // optional int32 talk_Id = 2;
+  inline bool has_talk_id() const;
+  inline void clear_talk_id();
+  static const int kTalkIdFieldNumber = 2;
+  inline ::google::protobuf::int32 talk_id() const;
+  inline void set_talk_id(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:game_landlord_protocol.packetl2c_notice_SystemTalk)
+ private:
+  inline void set_has_packet_id();
+  inline void clear_has_packet_id();
+  inline void set_has_talk_id();
+  inline void clear_has_talk_id();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  int packet_id_;
+  ::google::protobuf::int32 talk_id_;
+  friend void  protobuf_AddDesc_game_5flandlord_5fprotocol_2eproto();
+  friend void protobuf_AssignDesc_game_5flandlord_5fprotocol_2eproto();
+  friend void protobuf_ShutdownFile_game_5flandlord_5fprotocol_2eproto();
+
+  void InitAsDefaultInstance();
+  static packetl2c_notice_SystemTalk* default_instance_;
+};
 // ===================================================================
 
 
 // ===================================================================
+
+// packetc2l_Hang
+
+// optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_c2l_Hang];
+inline bool packetc2l_Hang::has_packet_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void packetc2l_Hang::set_has_packet_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void packetc2l_Hang::clear_has_packet_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void packetc2l_Hang::clear_packet_id() {
+  packet_id_ = 10008;
+  clear_has_packet_id();
+}
+inline ::game_landlord_protocol::e_server_msg_type packetc2l_Hang::packet_id() const {
+  // @@protoc_insertion_point(field_get:game_landlord_protocol.packetc2l_Hang.packet_id)
+  return static_cast< ::game_landlord_protocol::e_server_msg_type >(packet_id_);
+}
+inline void packetc2l_Hang::set_packet_id(::game_landlord_protocol::e_server_msg_type value) {
+  assert(::game_landlord_protocol::e_server_msg_type_IsValid(value));
+  set_has_packet_id();
+  packet_id_ = value;
+  // @@protoc_insertion_point(field_set:game_landlord_protocol.packetc2l_Hang.packet_id)
+}
+
+// optional bool orHang = 2;
+inline bool packetc2l_Hang::has_orhang() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void packetc2l_Hang::set_has_orhang() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void packetc2l_Hang::clear_has_orhang() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void packetc2l_Hang::clear_orhang() {
+  orhang_ = false;
+  clear_has_orhang();
+}
+inline bool packetc2l_Hang::orhang() const {
+  // @@protoc_insertion_point(field_get:game_landlord_protocol.packetc2l_Hang.orHang)
+  return orhang_;
+}
+inline void packetc2l_Hang::set_orhang(bool value) {
+  set_has_orhang();
+  orhang_ = value;
+  // @@protoc_insertion_point(field_set:game_landlord_protocol.packetc2l_Hang.orHang)
+}
+
+// -------------------------------------------------------------------
+
+// packetl2c_Hang_result
+
+// optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_l2c_Hang];
+inline bool packetl2c_Hang_result::has_packet_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void packetl2c_Hang_result::set_has_packet_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void packetl2c_Hang_result::clear_has_packet_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void packetl2c_Hang_result::clear_packet_id() {
+  packet_id_ = 15006;
+  clear_has_packet_id();
+}
+inline ::game_landlord_protocol::e_server_msg_type packetl2c_Hang_result::packet_id() const {
+  // @@protoc_insertion_point(field_get:game_landlord_protocol.packetl2c_Hang_result.packet_id)
+  return static_cast< ::game_landlord_protocol::e_server_msg_type >(packet_id_);
+}
+inline void packetl2c_Hang_result::set_packet_id(::game_landlord_protocol::e_server_msg_type value) {
+  assert(::game_landlord_protocol::e_server_msg_type_IsValid(value));
+  set_has_packet_id();
+  packet_id_ = value;
+  // @@protoc_insertion_point(field_set:game_landlord_protocol.packetl2c_Hang_result.packet_id)
+}
+
+// optional .game_landlord_protocol.e_server_error_code result = 2 [default = e_error_code_success];
+inline bool packetl2c_Hang_result::has_result() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void packetl2c_Hang_result::set_has_result() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void packetl2c_Hang_result::clear_has_result() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void packetl2c_Hang_result::clear_result() {
+  result_ = 1;
+  clear_has_result();
+}
+inline ::game_landlord_protocol::e_server_error_code packetl2c_Hang_result::result() const {
+  // @@protoc_insertion_point(field_get:game_landlord_protocol.packetl2c_Hang_result.result)
+  return static_cast< ::game_landlord_protocol::e_server_error_code >(result_);
+}
+inline void packetl2c_Hang_result::set_result(::game_landlord_protocol::e_server_error_code value) {
+  assert(::game_landlord_protocol::e_server_error_code_IsValid(value));
+  set_has_result();
+  result_ = value;
+  // @@protoc_insertion_point(field_set:game_landlord_protocol.packetl2c_Hang_result.result)
+}
+
+// optional bool orHang = 3;
+inline bool packetl2c_Hang_result::has_orhang() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void packetl2c_Hang_result::set_has_orhang() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void packetl2c_Hang_result::clear_has_orhang() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void packetl2c_Hang_result::clear_orhang() {
+  orhang_ = false;
+  clear_has_orhang();
+}
+inline bool packetl2c_Hang_result::orhang() const {
+  // @@protoc_insertion_point(field_get:game_landlord_protocol.packetl2c_Hang_result.orHang)
+  return orhang_;
+}
+inline void packetl2c_Hang_result::set_orhang(bool value) {
+  set_has_orhang();
+  orhang_ = value;
+  // @@protoc_insertion_point(field_set:game_landlord_protocol.packetl2c_Hang_result.orHang)
+}
+
+// -------------------------------------------------------------------
+
+// packetc2l_ChangeTable
+
+// optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_c2l_changetable];
+inline bool packetc2l_ChangeTable::has_packet_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void packetc2l_ChangeTable::set_has_packet_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void packetc2l_ChangeTable::clear_has_packet_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void packetc2l_ChangeTable::clear_packet_id() {
+  packet_id_ = 10010;
+  clear_has_packet_id();
+}
+inline ::game_landlord_protocol::e_server_msg_type packetc2l_ChangeTable::packet_id() const {
+  // @@protoc_insertion_point(field_get:game_landlord_protocol.packetc2l_ChangeTable.packet_id)
+  return static_cast< ::game_landlord_protocol::e_server_msg_type >(packet_id_);
+}
+inline void packetc2l_ChangeTable::set_packet_id(::game_landlord_protocol::e_server_msg_type value) {
+  assert(::game_landlord_protocol::e_server_msg_type_IsValid(value));
+  set_has_packet_id();
+  packet_id_ = value;
+  // @@protoc_insertion_point(field_set:game_landlord_protocol.packetc2l_ChangeTable.packet_id)
+}
+
+// -------------------------------------------------------------------
+
+// packetl2c_ChangeTable_result
+
+// optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_l2c_changetable];
+inline bool packetl2c_ChangeTable_result::has_packet_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void packetl2c_ChangeTable_result::set_has_packet_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void packetl2c_ChangeTable_result::clear_has_packet_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void packetl2c_ChangeTable_result::clear_packet_id() {
+  packet_id_ = 15007;
+  clear_has_packet_id();
+}
+inline ::game_landlord_protocol::e_server_msg_type packetl2c_ChangeTable_result::packet_id() const {
+  // @@protoc_insertion_point(field_get:game_landlord_protocol.packetl2c_ChangeTable_result.packet_id)
+  return static_cast< ::game_landlord_protocol::e_server_msg_type >(packet_id_);
+}
+inline void packetl2c_ChangeTable_result::set_packet_id(::game_landlord_protocol::e_server_msg_type value) {
+  assert(::game_landlord_protocol::e_server_msg_type_IsValid(value));
+  set_has_packet_id();
+  packet_id_ = value;
+  // @@protoc_insertion_point(field_set:game_landlord_protocol.packetl2c_ChangeTable_result.packet_id)
+}
+
+// optional .game_landlord_protocol.e_server_error_code result = 2 [default = e_error_code_success];
+inline bool packetl2c_ChangeTable_result::has_result() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void packetl2c_ChangeTable_result::set_has_result() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void packetl2c_ChangeTable_result::clear_has_result() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void packetl2c_ChangeTable_result::clear_result() {
+  result_ = 1;
+  clear_has_result();
+}
+inline ::game_landlord_protocol::e_server_error_code packetl2c_ChangeTable_result::result() const {
+  // @@protoc_insertion_point(field_get:game_landlord_protocol.packetl2c_ChangeTable_result.result)
+  return static_cast< ::game_landlord_protocol::e_server_error_code >(result_);
+}
+inline void packetl2c_ChangeTable_result::set_result(::game_landlord_protocol::e_server_error_code value) {
+  assert(::game_landlord_protocol::e_server_error_code_IsValid(value));
+  set_has_result();
+  result_ = value;
+  // @@protoc_insertion_point(field_set:game_landlord_protocol.packetl2c_ChangeTable_result.result)
+}
+
+// -------------------------------------------------------------------
+
+// packetc2l_SystemTalk
+
+// optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_c2l_SystemTalk];
+inline bool packetc2l_SystemTalk::has_packet_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void packetc2l_SystemTalk::set_has_packet_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void packetc2l_SystemTalk::clear_has_packet_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void packetc2l_SystemTalk::clear_packet_id() {
+  packet_id_ = 10009;
+  clear_has_packet_id();
+}
+inline ::game_landlord_protocol::e_server_msg_type packetc2l_SystemTalk::packet_id() const {
+  // @@protoc_insertion_point(field_get:game_landlord_protocol.packetc2l_SystemTalk.packet_id)
+  return static_cast< ::game_landlord_protocol::e_server_msg_type >(packet_id_);
+}
+inline void packetc2l_SystemTalk::set_packet_id(::game_landlord_protocol::e_server_msg_type value) {
+  assert(::game_landlord_protocol::e_server_msg_type_IsValid(value));
+  set_has_packet_id();
+  packet_id_ = value;
+  // @@protoc_insertion_point(field_set:game_landlord_protocol.packetc2l_SystemTalk.packet_id)
+}
+
+// optional int32 talk_Id = 2;
+inline bool packetc2l_SystemTalk::has_talk_id() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void packetc2l_SystemTalk::set_has_talk_id() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void packetc2l_SystemTalk::clear_has_talk_id() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void packetc2l_SystemTalk::clear_talk_id() {
+  talk_id_ = 0;
+  clear_has_talk_id();
+}
+inline ::google::protobuf::int32 packetc2l_SystemTalk::talk_id() const {
+  // @@protoc_insertion_point(field_get:game_landlord_protocol.packetc2l_SystemTalk.talk_Id)
+  return talk_id_;
+}
+inline void packetc2l_SystemTalk::set_talk_id(::google::protobuf::int32 value) {
+  set_has_talk_id();
+  talk_id_ = value;
+  // @@protoc_insertion_point(field_set:game_landlord_protocol.packetc2l_SystemTalk.talk_Id)
+}
+
+// -------------------------------------------------------------------
 
 // packetc2l_enter_room
 
@@ -3167,468 +3541,6 @@ inline void packetl2c_check_state_result::set_is_intable(bool value) {
 
 // -------------------------------------------------------------------
 
-// card_Info
-
-// optional int32 deskId = 1;
-inline bool card_Info::has_deskid() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline void card_Info::set_has_deskid() {
-  _has_bits_[0] |= 0x00000001u;
-}
-inline void card_Info::clear_has_deskid() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void card_Info::clear_deskid() {
-  deskid_ = 0;
-  clear_has_deskid();
-}
-inline ::google::protobuf::int32 card_Info::deskid() const {
-  // @@protoc_insertion_point(field_get:game_landlord_protocol.card_Info.deskId)
-  return deskid_;
-}
-inline void card_Info::set_deskid(::google::protobuf::int32 value) {
-  set_has_deskid();
-  deskid_ = value;
-  // @@protoc_insertion_point(field_set:game_landlord_protocol.card_Info.deskId)
-}
-
-// repeated int32 cards = 2;
-inline int card_Info::cards_size() const {
-  return cards_.size();
-}
-inline void card_Info::clear_cards() {
-  cards_.Clear();
-}
-inline ::google::protobuf::int32 card_Info::cards(int index) const {
-  // @@protoc_insertion_point(field_get:game_landlord_protocol.card_Info.cards)
-  return cards_.Get(index);
-}
-inline void card_Info::set_cards(int index, ::google::protobuf::int32 value) {
-  cards_.Set(index, value);
-  // @@protoc_insertion_point(field_set:game_landlord_protocol.card_Info.cards)
-}
-inline void card_Info::add_cards(::google::protobuf::int32 value) {
-  cards_.Add(value);
-  // @@protoc_insertion_point(field_add:game_landlord_protocol.card_Info.cards)
-}
-inline const ::google::protobuf::RepeatedField< ::google::protobuf::int32 >&
-card_Info::cards() const {
-  // @@protoc_insertion_point(field_list:game_landlord_protocol.card_Info.cards)
-  return cards_;
-}
-inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
-card_Info::mutable_cards() {
-  // @@protoc_insertion_point(field_mutable_list:game_landlord_protocol.card_Info.cards)
-  return &cards_;
-}
-
-// -------------------------------------------------------------------
-
-// card_Info_1
-
-// optional int32 deskId = 1;
-inline bool card_Info_1::has_deskid() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline void card_Info_1::set_has_deskid() {
-  _has_bits_[0] |= 0x00000001u;
-}
-inline void card_Info_1::clear_has_deskid() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void card_Info_1::clear_deskid() {
-  deskid_ = 0;
-  clear_has_deskid();
-}
-inline ::google::protobuf::int32 card_Info_1::deskid() const {
-  // @@protoc_insertion_point(field_get:game_landlord_protocol.card_Info_1.deskId)
-  return deskid_;
-}
-inline void card_Info_1::set_deskid(::google::protobuf::int32 value) {
-  set_has_deskid();
-  deskid_ = value;
-  // @@protoc_insertion_point(field_set:game_landlord_protocol.card_Info_1.deskId)
-}
-
-// optional int32 cards_count = 2;
-inline bool card_Info_1::has_cards_count() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-inline void card_Info_1::set_has_cards_count() {
-  _has_bits_[0] |= 0x00000002u;
-}
-inline void card_Info_1::clear_has_cards_count() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-inline void card_Info_1::clear_cards_count() {
-  cards_count_ = 0;
-  clear_has_cards_count();
-}
-inline ::google::protobuf::int32 card_Info_1::cards_count() const {
-  // @@protoc_insertion_point(field_get:game_landlord_protocol.card_Info_1.cards_count)
-  return cards_count_;
-}
-inline void card_Info_1::set_cards_count(::google::protobuf::int32 value) {
-  set_has_cards_count();
-  cards_count_ = value;
-  // @@protoc_insertion_point(field_set:game_landlord_protocol.card_Info_1.cards_count)
-}
-
-// -------------------------------------------------------------------
-
-// desk_award_Info
-
-// optional int32 deskId = 1;
-inline bool desk_award_Info::has_deskid() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline void desk_award_Info::set_has_deskid() {
-  _has_bits_[0] |= 0x00000001u;
-}
-inline void desk_award_Info::clear_has_deskid() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void desk_award_Info::clear_deskid() {
-  deskid_ = 0;
-  clear_has_deskid();
-}
-inline ::google::protobuf::int32 desk_award_Info::deskid() const {
-  // @@protoc_insertion_point(field_get:game_landlord_protocol.desk_award_Info.deskId)
-  return deskid_;
-}
-inline void desk_award_Info::set_deskid(::google::protobuf::int32 value) {
-  set_has_deskid();
-  deskid_ = value;
-  // @@protoc_insertion_point(field_set:game_landlord_protocol.desk_award_Info.deskId)
-}
-
-// optional int32 win_count = 2;
-inline bool desk_award_Info::has_win_count() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-inline void desk_award_Info::set_has_win_count() {
-  _has_bits_[0] |= 0x00000002u;
-}
-inline void desk_award_Info::clear_has_win_count() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-inline void desk_award_Info::clear_win_count() {
-  win_count_ = 0;
-  clear_has_win_count();
-}
-inline ::google::protobuf::int32 desk_award_Info::win_count() const {
-  // @@protoc_insertion_point(field_get:game_landlord_protocol.desk_award_Info.win_count)
-  return win_count_;
-}
-inline void desk_award_Info::set_win_count(::google::protobuf::int32 value) {
-  set_has_win_count();
-  win_count_ = value;
-  // @@protoc_insertion_point(field_set:game_landlord_protocol.desk_award_Info.win_count)
-}
-
-// -------------------------------------------------------------------
-
-// player_info
-
-// optional int32 player_id = 1;
-inline bool player_info::has_player_id() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline void player_info::set_has_player_id() {
-  _has_bits_[0] |= 0x00000001u;
-}
-inline void player_info::clear_has_player_id() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void player_info::clear_player_id() {
-  player_id_ = 0;
-  clear_has_player_id();
-}
-inline ::google::protobuf::int32 player_info::player_id() const {
-  // @@protoc_insertion_point(field_get:game_landlord_protocol.player_info.player_id)
-  return player_id_;
-}
-inline void player_info::set_player_id(::google::protobuf::int32 value) {
-  set_has_player_id();
-  player_id_ = value;
-  // @@protoc_insertion_point(field_set:game_landlord_protocol.player_info.player_id)
-}
-
-// optional string player_nickname = 2;
-inline bool player_info::has_player_nickname() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-inline void player_info::set_has_player_nickname() {
-  _has_bits_[0] |= 0x00000002u;
-}
-inline void player_info::clear_has_player_nickname() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-inline void player_info::clear_player_nickname() {
-  if (player_nickname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    player_nickname_->clear();
-  }
-  clear_has_player_nickname();
-}
-inline const ::std::string& player_info::player_nickname() const {
-  // @@protoc_insertion_point(field_get:game_landlord_protocol.player_info.player_nickname)
-  return *player_nickname_;
-}
-inline void player_info::set_player_nickname(const ::std::string& value) {
-  set_has_player_nickname();
-  if (player_nickname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    player_nickname_ = new ::std::string;
-  }
-  player_nickname_->assign(value);
-  // @@protoc_insertion_point(field_set:game_landlord_protocol.player_info.player_nickname)
-}
-inline void player_info::set_player_nickname(const char* value) {
-  set_has_player_nickname();
-  if (player_nickname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    player_nickname_ = new ::std::string;
-  }
-  player_nickname_->assign(value);
-  // @@protoc_insertion_point(field_set_char:game_landlord_protocol.player_info.player_nickname)
-}
-inline void player_info::set_player_nickname(const char* value, size_t size) {
-  set_has_player_nickname();
-  if (player_nickname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    player_nickname_ = new ::std::string;
-  }
-  player_nickname_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:game_landlord_protocol.player_info.player_nickname)
-}
-inline ::std::string* player_info::mutable_player_nickname() {
-  set_has_player_nickname();
-  if (player_nickname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    player_nickname_ = new ::std::string;
-  }
-  // @@protoc_insertion_point(field_mutable:game_landlord_protocol.player_info.player_nickname)
-  return player_nickname_;
-}
-inline ::std::string* player_info::release_player_nickname() {
-  clear_has_player_nickname();
-  if (player_nickname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    return NULL;
-  } else {
-    ::std::string* temp = player_nickname_;
-    player_nickname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-    return temp;
-  }
-}
-inline void player_info::set_allocated_player_nickname(::std::string* player_nickname) {
-  if (player_nickname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete player_nickname_;
-  }
-  if (player_nickname) {
-    set_has_player_nickname();
-    player_nickname_ = player_nickname;
-  } else {
-    clear_has_player_nickname();
-    player_nickname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  // @@protoc_insertion_point(field_set_allocated:game_landlord_protocol.player_info.player_nickname)
-}
-
-// optional int32 player_head_frame = 3;
-inline bool player_info::has_player_head_frame() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-inline void player_info::set_has_player_head_frame() {
-  _has_bits_[0] |= 0x00000004u;
-}
-inline void player_info::clear_has_player_head_frame() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-inline void player_info::clear_player_head_frame() {
-  player_head_frame_ = 0;
-  clear_has_player_head_frame();
-}
-inline ::google::protobuf::int32 player_info::player_head_frame() const {
-  // @@protoc_insertion_point(field_get:game_landlord_protocol.player_info.player_head_frame)
-  return player_head_frame_;
-}
-inline void player_info::set_player_head_frame(::google::protobuf::int32 value) {
-  set_has_player_head_frame();
-  player_head_frame_ = value;
-  // @@protoc_insertion_point(field_set:game_landlord_protocol.player_info.player_head_frame)
-}
-
-// optional string player_head_custom = 4;
-inline bool player_info::has_player_head_custom() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-inline void player_info::set_has_player_head_custom() {
-  _has_bits_[0] |= 0x00000008u;
-}
-inline void player_info::clear_has_player_head_custom() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-inline void player_info::clear_player_head_custom() {
-  if (player_head_custom_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    player_head_custom_->clear();
-  }
-  clear_has_player_head_custom();
-}
-inline const ::std::string& player_info::player_head_custom() const {
-  // @@protoc_insertion_point(field_get:game_landlord_protocol.player_info.player_head_custom)
-  return *player_head_custom_;
-}
-inline void player_info::set_player_head_custom(const ::std::string& value) {
-  set_has_player_head_custom();
-  if (player_head_custom_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    player_head_custom_ = new ::std::string;
-  }
-  player_head_custom_->assign(value);
-  // @@protoc_insertion_point(field_set:game_landlord_protocol.player_info.player_head_custom)
-}
-inline void player_info::set_player_head_custom(const char* value) {
-  set_has_player_head_custom();
-  if (player_head_custom_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    player_head_custom_ = new ::std::string;
-  }
-  player_head_custom_->assign(value);
-  // @@protoc_insertion_point(field_set_char:game_landlord_protocol.player_info.player_head_custom)
-}
-inline void player_info::set_player_head_custom(const char* value, size_t size) {
-  set_has_player_head_custom();
-  if (player_head_custom_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    player_head_custom_ = new ::std::string;
-  }
-  player_head_custom_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:game_landlord_protocol.player_info.player_head_custom)
-}
-inline ::std::string* player_info::mutable_player_head_custom() {
-  set_has_player_head_custom();
-  if (player_head_custom_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    player_head_custom_ = new ::std::string;
-  }
-  // @@protoc_insertion_point(field_mutable:game_landlord_protocol.player_info.player_head_custom)
-  return player_head_custom_;
-}
-inline ::std::string* player_info::release_player_head_custom() {
-  clear_has_player_head_custom();
-  if (player_head_custom_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    return NULL;
-  } else {
-    ::std::string* temp = player_head_custom_;
-    player_head_custom_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-    return temp;
-  }
-}
-inline void player_info::set_allocated_player_head_custom(::std::string* player_head_custom) {
-  if (player_head_custom_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete player_head_custom_;
-  }
-  if (player_head_custom) {
-    set_has_player_head_custom();
-    player_head_custom_ = player_head_custom;
-  } else {
-    clear_has_player_head_custom();
-    player_head_custom_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  // @@protoc_insertion_point(field_set_allocated:game_landlord_protocol.player_info.player_head_custom)
-}
-
-// optional int64 player_gold = 5;
-inline bool player_info::has_player_gold() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
-}
-inline void player_info::set_has_player_gold() {
-  _has_bits_[0] |= 0x00000010u;
-}
-inline void player_info::clear_has_player_gold() {
-  _has_bits_[0] &= ~0x00000010u;
-}
-inline void player_info::clear_player_gold() {
-  player_gold_ = GOOGLE_LONGLONG(0);
-  clear_has_player_gold();
-}
-inline ::google::protobuf::int64 player_info::player_gold() const {
-  // @@protoc_insertion_point(field_get:game_landlord_protocol.player_info.player_gold)
-  return player_gold_;
-}
-inline void player_info::set_player_gold(::google::protobuf::int64 value) {
-  set_has_player_gold();
-  player_gold_ = value;
-  // @@protoc_insertion_point(field_set:game_landlord_protocol.player_info.player_gold)
-}
-
-// optional int32 player_sex = 6;
-inline bool player_info::has_player_sex() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
-}
-inline void player_info::set_has_player_sex() {
-  _has_bits_[0] |= 0x00000020u;
-}
-inline void player_info::clear_has_player_sex() {
-  _has_bits_[0] &= ~0x00000020u;
-}
-inline void player_info::clear_player_sex() {
-  player_sex_ = 0;
-  clear_has_player_sex();
-}
-inline ::google::protobuf::int32 player_info::player_sex() const {
-  // @@protoc_insertion_point(field_get:game_landlord_protocol.player_info.player_sex)
-  return player_sex_;
-}
-inline void player_info::set_player_sex(::google::protobuf::int32 value) {
-  set_has_player_sex();
-  player_sex_ = value;
-  // @@protoc_insertion_point(field_set:game_landlord_protocol.player_info.player_sex)
-}
-
-// optional int32 player_vip_lv = 7;
-inline bool player_info::has_player_vip_lv() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
-}
-inline void player_info::set_has_player_vip_lv() {
-  _has_bits_[0] |= 0x00000040u;
-}
-inline void player_info::clear_has_player_vip_lv() {
-  _has_bits_[0] &= ~0x00000040u;
-}
-inline void player_info::clear_player_vip_lv() {
-  player_vip_lv_ = 0;
-  clear_has_player_vip_lv();
-}
-inline ::google::protobuf::int32 player_info::player_vip_lv() const {
-  // @@protoc_insertion_point(field_get:game_landlord_protocol.player_info.player_vip_lv)
-  return player_vip_lv_;
-}
-inline void player_info::set_player_vip_lv(::google::protobuf::int32 value) {
-  set_has_player_vip_lv();
-  player_vip_lv_ = value;
-  // @@protoc_insertion_point(field_set:game_landlord_protocol.player_info.player_vip_lv)
-}
-
-// optional int32 deskId = 8;
-inline bool player_info::has_deskid() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
-}
-inline void player_info::set_has_deskid() {
-  _has_bits_[0] |= 0x00000080u;
-}
-inline void player_info::clear_has_deskid() {
-  _has_bits_[0] &= ~0x00000080u;
-}
-inline void player_info::clear_deskid() {
-  deskid_ = 0;
-  clear_has_deskid();
-}
-inline ::google::protobuf::int32 player_info::deskid() const {
-  // @@protoc_insertion_point(field_get:game_landlord_protocol.player_info.deskId)
-  return deskid_;
-}
-inline void player_info::set_deskid(::google::protobuf::int32 value) {
-  set_has_deskid();
-  deskid_ = value;
-  // @@protoc_insertion_point(field_set:game_landlord_protocol.player_info.deskId)
-}
-
-// -------------------------------------------------------------------
-
 // packetc2l_rob_landlord
 
 // optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_c2l_rob_landlord];
@@ -4331,6 +4243,59 @@ inline ::google::protobuf::RepeatedPtrField< ::game_landlord_protocol::card_Info
 packetl2c_notice_winlose::mutable_remain_cards() {
   // @@protoc_insertion_point(field_mutable_list:game_landlord_protocol.packetl2c_notice_winlose.remain_cards)
   return &remain_cards_;
+}
+
+// -------------------------------------------------------------------
+
+// packetl2c_notice_SystemTalk
+
+// optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_l2c_notice_SystemTalk];
+inline bool packetl2c_notice_SystemTalk::has_packet_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void packetl2c_notice_SystemTalk::set_has_packet_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void packetl2c_notice_SystemTalk::clear_has_packet_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void packetl2c_notice_SystemTalk::clear_packet_id() {
+  packet_id_ = 15107;
+  clear_has_packet_id();
+}
+inline ::game_landlord_protocol::e_server_msg_type packetl2c_notice_SystemTalk::packet_id() const {
+  // @@protoc_insertion_point(field_get:game_landlord_protocol.packetl2c_notice_SystemTalk.packet_id)
+  return static_cast< ::game_landlord_protocol::e_server_msg_type >(packet_id_);
+}
+inline void packetl2c_notice_SystemTalk::set_packet_id(::game_landlord_protocol::e_server_msg_type value) {
+  assert(::game_landlord_protocol::e_server_msg_type_IsValid(value));
+  set_has_packet_id();
+  packet_id_ = value;
+  // @@protoc_insertion_point(field_set:game_landlord_protocol.packetl2c_notice_SystemTalk.packet_id)
+}
+
+// optional int32 talk_Id = 2;
+inline bool packetl2c_notice_SystemTalk::has_talk_id() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void packetl2c_notice_SystemTalk::set_has_talk_id() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void packetl2c_notice_SystemTalk::clear_has_talk_id() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void packetl2c_notice_SystemTalk::clear_talk_id() {
+  talk_id_ = 0;
+  clear_has_talk_id();
+}
+inline ::google::protobuf::int32 packetl2c_notice_SystemTalk::talk_id() const {
+  // @@protoc_insertion_point(field_get:game_landlord_protocol.packetl2c_notice_SystemTalk.talk_Id)
+  return talk_id_;
+}
+inline void packetl2c_notice_SystemTalk::set_talk_id(::google::protobuf::int32 value) {
+  set_has_talk_id();
+  talk_id_ = value;
+  // @@protoc_insertion_point(field_set:game_landlord_protocol.packetl2c_notice_SystemTalk.talk_Id)
 }
 
 

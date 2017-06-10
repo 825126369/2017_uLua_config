@@ -10,6 +10,9 @@ enum e_server_msg_type {
 	e_mst_c2l_rob_landlord=10005;//抢地主
 	e_mst_c2l_playhand=10006;//出牌
 	e_mst_c2l_start_match=10007;//开始匹配队伍
+	e_mst_c2l_Hang=10008;//请求托管
+	e_mst_c2l_SystemTalk=10009;//说个玩笑话
+	e_mst_c2l_changetable=10010;//换桌
 	//------------SC-------------------
 	e_mst_start_l2c = 15000;
 
@@ -18,13 +21,16 @@ enum e_server_msg_type {
 	e_mst_l2c_check_state=15003;
 	e_mst_l2c_leave_room=15004;
 	e_mst_l2c_start_match_result=15005;
+	e_mst_l2c_Hang=15006;
+	e_mst_l2c_changetable=15007;	
 
 	e_mst_l2c_notice_startgame=15101;//通知开始游戏
 	e_mst_l2c_notice_playhand=15102;//通知其他人出牌信息
 	e_mst_l2c_notice_rob_landlord=15103;//通知抢地主啦
 	e_mst_l2c_notice_winlose=15104;//通知输赢
 	e_mst_l2c_notice_rob_landlord_result=15105;//其他人抢地主的结果
-	e_mst_l2c_notice_who_playhand=15106;//通知谁出牌	
+	e_mst_l2c_notice_who_playhand=15106;//通知谁出牌
+	e_mst_l2c_notice_SystemTalk=15107;//通知玩家说话	
 	e_mst_clend_index = 20000;
 }
 
@@ -59,4 +65,33 @@ enum e_player_game_state
 }
 
 
+message card_Info
+{
+	optional int32 deskId=1;
+	repeated int32 cards=2;
+}
 
+message card_Info_1
+{
+	optional int32 deskId=1;
+	optional int32 cards_count=2;
+}
+
+message desk_award_Info
+{
+	optional int32 deskId=1;
+	optional int32 win_count=2;
+}
+
+//玩家信息
+message player_info 
+{
+	optional int32 player_id = 1;				//玩家ID
+	optional string player_nickname = 2;		//玩家昵称
+	optional int32 player_head_frame = 3;		//头像
+	optional string player_head_custom = 4;		//玩家头像
+	optional int64 player_gold = 5;				//玩家金币
+	optional int32 player_sex = 6;				// 玩家性别	
+	optional int32 player_vip_lv = 7;			// Vip等级
+	optional int32 deskId=8;					//凳子ID
+}

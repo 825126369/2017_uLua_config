@@ -20,6 +20,21 @@ namespace game_landlord_protocol {
 
 namespace {
 
+const ::google::protobuf::Descriptor* packetc2l_Hang_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  packetc2l_Hang_reflection_ = NULL;
+const ::google::protobuf::Descriptor* packetl2c_Hang_result_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  packetl2c_Hang_result_reflection_ = NULL;
+const ::google::protobuf::Descriptor* packetc2l_ChangeTable_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  packetc2l_ChangeTable_reflection_ = NULL;
+const ::google::protobuf::Descriptor* packetl2c_ChangeTable_result_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  packetl2c_ChangeTable_result_reflection_ = NULL;
+const ::google::protobuf::Descriptor* packetc2l_SystemTalk_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  packetc2l_SystemTalk_reflection_ = NULL;
 const ::google::protobuf::Descriptor* packetc2l_enter_room_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   packetc2l_enter_room_reflection_ = NULL;
@@ -50,18 +65,6 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* packetl2c_check_state_result_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   packetl2c_check_state_result_reflection_ = NULL;
-const ::google::protobuf::Descriptor* card_Info_descriptor_ = NULL;
-const ::google::protobuf::internal::GeneratedMessageReflection*
-  card_Info_reflection_ = NULL;
-const ::google::protobuf::Descriptor* card_Info_1_descriptor_ = NULL;
-const ::google::protobuf::internal::GeneratedMessageReflection*
-  card_Info_1_reflection_ = NULL;
-const ::google::protobuf::Descriptor* desk_award_Info_descriptor_ = NULL;
-const ::google::protobuf::internal::GeneratedMessageReflection*
-  desk_award_Info_reflection_ = NULL;
-const ::google::protobuf::Descriptor* player_info_descriptor_ = NULL;
-const ::google::protobuf::internal::GeneratedMessageReflection*
-  player_info_reflection_ = NULL;
 const ::google::protobuf::Descriptor* packetc2l_rob_landlord_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   packetc2l_rob_landlord_reflection_ = NULL;
@@ -86,6 +89,9 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* packetl2c_notice_winlose_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   packetl2c_notice_winlose_reflection_ = NULL;
+const ::google::protobuf::Descriptor* packetl2c_notice_SystemTalk_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  packetl2c_notice_SystemTalk_reflection_ = NULL;
 
 }  // namespace
 
@@ -96,7 +102,87 @@ void protobuf_AssignDesc_game_5flandlord_5fprotocol_2eproto() {
     ::google::protobuf::DescriptorPool::generated_pool()->FindFileByName(
       "game_landlord_protocol.proto");
   GOOGLE_CHECK(file != NULL);
-  packetc2l_enter_room_descriptor_ = file->message_type(0);
+  packetc2l_Hang_descriptor_ = file->message_type(0);
+  static const int packetc2l_Hang_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_Hang, packet_id_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_Hang, orhang_),
+  };
+  packetc2l_Hang_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      packetc2l_Hang_descriptor_,
+      packetc2l_Hang::default_instance_,
+      packetc2l_Hang_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_Hang, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_Hang, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(packetc2l_Hang));
+  packetl2c_Hang_result_descriptor_ = file->message_type(1);
+  static const int packetl2c_Hang_result_offsets_[3] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_Hang_result, packet_id_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_Hang_result, result_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_Hang_result, orhang_),
+  };
+  packetl2c_Hang_result_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      packetl2c_Hang_result_descriptor_,
+      packetl2c_Hang_result::default_instance_,
+      packetl2c_Hang_result_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_Hang_result, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_Hang_result, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(packetl2c_Hang_result));
+  packetc2l_ChangeTable_descriptor_ = file->message_type(2);
+  static const int packetc2l_ChangeTable_offsets_[1] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_ChangeTable, packet_id_),
+  };
+  packetc2l_ChangeTable_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      packetc2l_ChangeTable_descriptor_,
+      packetc2l_ChangeTable::default_instance_,
+      packetc2l_ChangeTable_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_ChangeTable, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_ChangeTable, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(packetc2l_ChangeTable));
+  packetl2c_ChangeTable_result_descriptor_ = file->message_type(3);
+  static const int packetl2c_ChangeTable_result_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_ChangeTable_result, packet_id_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_ChangeTable_result, result_),
+  };
+  packetl2c_ChangeTable_result_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      packetl2c_ChangeTable_result_descriptor_,
+      packetl2c_ChangeTable_result::default_instance_,
+      packetl2c_ChangeTable_result_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_ChangeTable_result, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_ChangeTable_result, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(packetl2c_ChangeTable_result));
+  packetc2l_SystemTalk_descriptor_ = file->message_type(4);
+  static const int packetc2l_SystemTalk_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_SystemTalk, packet_id_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_SystemTalk, talk_id_),
+  };
+  packetc2l_SystemTalk_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      packetc2l_SystemTalk_descriptor_,
+      packetc2l_SystemTalk::default_instance_,
+      packetc2l_SystemTalk_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_SystemTalk, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_SystemTalk, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(packetc2l_SystemTalk));
+  packetc2l_enter_room_descriptor_ = file->message_type(5);
   static const int packetc2l_enter_room_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_enter_room, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_enter_room, room_id_),
@@ -112,7 +198,7 @@ void protobuf_AssignDesc_game_5flandlord_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetc2l_enter_room));
-  packetl2c_enter_room_result_descriptor_ = file->message_type(1);
+  packetl2c_enter_room_result_descriptor_ = file->message_type(6);
   static const int packetl2c_enter_room_result_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_enter_room_result, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_enter_room_result, result_),
@@ -129,7 +215,7 @@ void protobuf_AssignDesc_game_5flandlord_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_enter_room_result));
-  packetc2l_start_match_descriptor_ = file->message_type(2);
+  packetc2l_start_match_descriptor_ = file->message_type(7);
   static const int packetc2l_start_match_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_start_match, packet_id_),
   };
@@ -144,7 +230,7 @@ void protobuf_AssignDesc_game_5flandlord_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetc2l_start_match));
-  packetl2c_start_match_result_descriptor_ = file->message_type(3);
+  packetl2c_start_match_result_descriptor_ = file->message_type(8);
   static const int packetl2c_start_match_result_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_start_match_result, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_start_match_result, result_),
@@ -161,7 +247,7 @@ void protobuf_AssignDesc_game_5flandlord_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_start_match_result));
-  packetc2l_leave_room_descriptor_ = file->message_type(4);
+  packetc2l_leave_room_descriptor_ = file->message_type(9);
   static const int packetc2l_leave_room_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_leave_room, packet_id_),
   };
@@ -176,7 +262,7 @@ void protobuf_AssignDesc_game_5flandlord_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetc2l_leave_room));
-  packetl2c_leave_room_result_descriptor_ = file->message_type(5);
+  packetl2c_leave_room_result_descriptor_ = file->message_type(10);
   static const int packetl2c_leave_room_result_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_leave_room_result, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_leave_room_result, result_),
@@ -192,7 +278,7 @@ void protobuf_AssignDesc_game_5flandlord_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_leave_room_result));
-  packetc2l_get_room_scene_info_descriptor_ = file->message_type(6);
+  packetc2l_get_room_scene_info_descriptor_ = file->message_type(11);
   static const int packetc2l_get_room_scene_info_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_get_room_scene_info, packet_id_),
   };
@@ -207,7 +293,7 @@ void protobuf_AssignDesc_game_5flandlord_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetc2l_get_room_scene_info));
-  packetl2c_get_room_scene_info_result_descriptor_ = file->message_type(7);
+  packetl2c_get_room_scene_info_result_descriptor_ = file->message_type(12);
   static const int packetl2c_get_room_scene_info_result_offsets_[15] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_get_room_scene_info_result, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_get_room_scene_info_result, room_id_),
@@ -236,7 +322,7 @@ void protobuf_AssignDesc_game_5flandlord_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_get_room_scene_info_result));
-  packetc2l_check_state_descriptor_ = file->message_type(8);
+  packetc2l_check_state_descriptor_ = file->message_type(13);
   static const int packetc2l_check_state_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_check_state, packet_id_),
   };
@@ -251,7 +337,7 @@ void protobuf_AssignDesc_game_5flandlord_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetc2l_check_state));
-  packetl2c_check_state_result_descriptor_ = file->message_type(9);
+  packetl2c_check_state_result_descriptor_ = file->message_type(14);
   static const int packetl2c_check_state_result_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_check_state_result, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_check_state_result, is_intable_),
@@ -267,77 +353,7 @@ void protobuf_AssignDesc_game_5flandlord_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_check_state_result));
-  card_Info_descriptor_ = file->message_type(10);
-  static const int card_Info_offsets_[2] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(card_Info, deskid_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(card_Info, cards_),
-  };
-  card_Info_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
-      card_Info_descriptor_,
-      card_Info::default_instance_,
-      card_Info_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(card_Info, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(card_Info, _unknown_fields_),
-      -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(card_Info));
-  card_Info_1_descriptor_ = file->message_type(11);
-  static const int card_Info_1_offsets_[2] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(card_Info_1, deskid_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(card_Info_1, cards_count_),
-  };
-  card_Info_1_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
-      card_Info_1_descriptor_,
-      card_Info_1::default_instance_,
-      card_Info_1_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(card_Info_1, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(card_Info_1, _unknown_fields_),
-      -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(card_Info_1));
-  desk_award_Info_descriptor_ = file->message_type(12);
-  static const int desk_award_Info_offsets_[2] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(desk_award_Info, deskid_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(desk_award_Info, win_count_),
-  };
-  desk_award_Info_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
-      desk_award_Info_descriptor_,
-      desk_award_Info::default_instance_,
-      desk_award_Info_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(desk_award_Info, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(desk_award_Info, _unknown_fields_),
-      -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(desk_award_Info));
-  player_info_descriptor_ = file->message_type(13);
-  static const int player_info_offsets_[8] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(player_info, player_id_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(player_info, player_nickname_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(player_info, player_head_frame_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(player_info, player_head_custom_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(player_info, player_gold_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(player_info, player_sex_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(player_info, player_vip_lv_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(player_info, deskid_),
-  };
-  player_info_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
-      player_info_descriptor_,
-      player_info::default_instance_,
-      player_info_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(player_info, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(player_info, _unknown_fields_),
-      -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(player_info));
-  packetc2l_rob_landlord_descriptor_ = file->message_type(14);
+  packetc2l_rob_landlord_descriptor_ = file->message_type(15);
   static const int packetc2l_rob_landlord_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_rob_landlord, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_rob_landlord, or_rob_),
@@ -353,7 +369,7 @@ void protobuf_AssignDesc_game_5flandlord_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetc2l_rob_landlord));
-  packetc2l_playhand_descriptor_ = file->message_type(15);
+  packetc2l_playhand_descriptor_ = file->message_type(16);
   static const int packetc2l_playhand_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_playhand, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_playhand, cards_),
@@ -369,7 +385,7 @@ void protobuf_AssignDesc_game_5flandlord_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetc2l_playhand));
-  packetl2c_notice_startgame_descriptor_ = file->message_type(16);
+  packetl2c_notice_startgame_descriptor_ = file->message_type(17);
   static const int packetl2c_notice_startgame_offsets_[7] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_startgame, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_startgame, cards_),
@@ -390,7 +406,7 @@ void protobuf_AssignDesc_game_5flandlord_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_notice_startgame));
-  packetl2c_notice_who_playhand_descriptor_ = file->message_type(17);
+  packetl2c_notice_who_playhand_descriptor_ = file->message_type(18);
   static const int packetl2c_notice_who_playhand_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_who_playhand, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_who_playhand, deskid_),
@@ -406,7 +422,7 @@ void protobuf_AssignDesc_game_5flandlord_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_notice_who_playhand));
-  packetl2c_notice_playhand_descriptor_ = file->message_type(18);
+  packetl2c_notice_playhand_descriptor_ = file->message_type(19);
   static const int packetl2c_notice_playhand_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_playhand, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_playhand, result_),
@@ -423,7 +439,7 @@ void protobuf_AssignDesc_game_5flandlord_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_notice_playhand));
-  packetl2c_notice_rob_landlord_descriptor_ = file->message_type(19);
+  packetl2c_notice_rob_landlord_descriptor_ = file->message_type(20);
   static const int packetl2c_notice_rob_landlord_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_rob_landlord, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_rob_landlord, deskid_),
@@ -439,7 +455,7 @@ void protobuf_AssignDesc_game_5flandlord_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_notice_rob_landlord));
-  packetl2c_notice_rob_landlord_result_descriptor_ = file->message_type(20);
+  packetl2c_notice_rob_landlord_result_descriptor_ = file->message_type(21);
   static const int packetl2c_notice_rob_landlord_result_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_rob_landlord_result, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_rob_landlord_result, result_),
@@ -457,7 +473,7 @@ void protobuf_AssignDesc_game_5flandlord_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_notice_rob_landlord_result));
-  packetl2c_notice_winlose_descriptor_ = file->message_type(21);
+  packetl2c_notice_winlose_descriptor_ = file->message_type(22);
   static const int packetl2c_notice_winlose_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_winlose, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_winlose, m_desk_awards_),
@@ -474,6 +490,22 @@ void protobuf_AssignDesc_game_5flandlord_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_notice_winlose));
+  packetl2c_notice_SystemTalk_descriptor_ = file->message_type(23);
+  static const int packetl2c_notice_SystemTalk_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_SystemTalk, packet_id_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_SystemTalk, talk_id_),
+  };
+  packetl2c_notice_SystemTalk_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      packetl2c_notice_SystemTalk_descriptor_,
+      packetl2c_notice_SystemTalk::default_instance_,
+      packetl2c_notice_SystemTalk_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_SystemTalk, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_SystemTalk, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(packetl2c_notice_SystemTalk));
 }
 
 namespace {
@@ -486,6 +518,16 @@ inline void protobuf_AssignDescriptorsOnce() {
 
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    packetc2l_Hang_descriptor_, &packetc2l_Hang::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    packetl2c_Hang_result_descriptor_, &packetl2c_Hang_result::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    packetc2l_ChangeTable_descriptor_, &packetc2l_ChangeTable::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    packetl2c_ChangeTable_result_descriptor_, &packetl2c_ChangeTable_result::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    packetc2l_SystemTalk_descriptor_, &packetc2l_SystemTalk::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     packetc2l_enter_room_descriptor_, &packetc2l_enter_room::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
@@ -507,14 +549,6 @@ void protobuf_RegisterTypes(const ::std::string&) {
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     packetl2c_check_state_result_descriptor_, &packetl2c_check_state_result::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    card_Info_descriptor_, &card_Info::default_instance());
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    card_Info_1_descriptor_, &card_Info_1::default_instance());
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    desk_award_Info_descriptor_, &desk_award_Info::default_instance());
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    player_info_descriptor_, &player_info::default_instance());
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     packetc2l_rob_landlord_descriptor_, &packetc2l_rob_landlord::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     packetc2l_playhand_descriptor_, &packetc2l_playhand::default_instance());
@@ -530,11 +564,23 @@ void protobuf_RegisterTypes(const ::std::string&) {
     packetl2c_notice_rob_landlord_result_descriptor_, &packetl2c_notice_rob_landlord_result::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     packetl2c_notice_winlose_descriptor_, &packetl2c_notice_winlose::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    packetl2c_notice_SystemTalk_descriptor_, &packetl2c_notice_SystemTalk::default_instance());
 }
 
 }  // namespace
 
 void protobuf_ShutdownFile_game_5flandlord_5fprotocol_2eproto() {
+  delete packetc2l_Hang::default_instance_;
+  delete packetc2l_Hang_reflection_;
+  delete packetl2c_Hang_result::default_instance_;
+  delete packetl2c_Hang_result_reflection_;
+  delete packetc2l_ChangeTable::default_instance_;
+  delete packetc2l_ChangeTable_reflection_;
+  delete packetl2c_ChangeTable_result::default_instance_;
+  delete packetl2c_ChangeTable_result_reflection_;
+  delete packetc2l_SystemTalk::default_instance_;
+  delete packetc2l_SystemTalk_reflection_;
   delete packetc2l_enter_room::default_instance_;
   delete packetc2l_enter_room_reflection_;
   delete packetl2c_enter_room_result::default_instance_;
@@ -555,14 +601,6 @@ void protobuf_ShutdownFile_game_5flandlord_5fprotocol_2eproto() {
   delete packetc2l_check_state_reflection_;
   delete packetl2c_check_state_result::default_instance_;
   delete packetl2c_check_state_result_reflection_;
-  delete card_Info::default_instance_;
-  delete card_Info_reflection_;
-  delete card_Info_1::default_instance_;
-  delete card_Info_1_reflection_;
-  delete desk_award_Info::default_instance_;
-  delete desk_award_Info_reflection_;
-  delete player_info::default_instance_;
-  delete player_info_reflection_;
   delete packetc2l_rob_landlord::default_instance_;
   delete packetc2l_rob_landlord_reflection_;
   delete packetc2l_playhand::default_instance_;
@@ -579,6 +617,8 @@ void protobuf_ShutdownFile_game_5flandlord_5fprotocol_2eproto() {
   delete packetl2c_notice_rob_landlord_result_reflection_;
   delete packetl2c_notice_winlose::default_instance_;
   delete packetl2c_notice_winlose_reflection_;
+  delete packetl2c_notice_SystemTalk::default_instance_;
+  delete packetl2c_notice_SystemTalk_reflection_;
 }
 
 void protobuf_AddDesc_game_5flandlord_5fprotocol_2eproto() {
@@ -592,107 +632,125 @@ void protobuf_AddDesc_game_5flandlord_5fprotocol_2eproto() {
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\034game_landlord_protocol.proto\022\026game_lan"
     "dlord_protocol\032\027game_landlord_def.proto\032"
-    "\022msg_type_def.proto\"{\n\024packetc2l_enter_r"
-    "oom\022R\n\tpacket_id\030\001 \001(\0162).game_landlord_p"
-    "rotocol.e_server_msg_type:\024e_mst_c2l_ent"
-    "er_room\022\017\n\007room_id\030\002 \001(\005\"\325\001\n\033packetl2c_e"
-    "nter_room_result\022R\n\tpacket_id\030\001 \001(\0162).ga"
-    "me_landlord_protocol.e_server_msg_type:\024"
-    "e_mst_l2c_enter_room\022Q\n\006result\030\002 \001(\0162+.g"
-    "ame_landlord_protocol.e_server_error_cod"
-    "e:\024e_error_code_success\022\017\n\007room_id\030\003 \001(\005"
-    "\"l\n\025packetc2l_start_match\022S\n\tpacket_id\030\001"
-    " \001(\0162).game_landlord_protocol.e_server_m"
-    "sg_type:\025e_mst_c2l_start_match\"\340\001\n\034packe"
-    "tl2c_start_match_result\022Z\n\tpacket_id\030\001 \001"
-    "(\0162).game_landlord_protocol.e_server_msg"
-    "_type:\034e_mst_l2c_start_match_result\022Q\n\006r"
+    "\022msg_type_def.proto\"n\n\016packetc2l_Hang\022L\n"
+    "\tpacket_id\030\001 \001(\0162).game_landlord_protoco"
+    "l.e_server_msg_type:\016e_mst_c2l_Hang\022\016\n\006o"
+    "rHang\030\002 \001(\010\"\310\001\n\025packetl2c_Hang_result\022L\n"
+    "\tpacket_id\030\001 \001(\0162).game_landlord_protoco"
+    "l.e_server_msg_type:\016e_mst_l2c_Hang\022Q\n\006r"
     "esult\030\002 \001(\0162+.game_landlord_protocol.e_s"
-    "erver_error_code:\024e_error_code_success\022\021"
-    "\n\twait_time\030\003 \001(\005\"j\n\024packetc2l_leave_roo"
-    "m\022R\n\tpacket_id\030\001 \001(\0162).game_landlord_pro"
-    "tocol.e_server_msg_type:\024e_mst_c2l_leave"
-    "_room\"\304\001\n\033packetl2c_leave_room_result\022R\n"
+    "erver_error_code:\024e_error_code_success\022\016"
+    "\n\006orHang\030\003 \001(\010\"l\n\025packetc2l_ChangeTable\022"
+    "S\n\tpacket_id\030\001 \001(\0162).game_landlord_proto"
+    "col.e_server_msg_type:\025e_mst_c2l_changet"
+    "able\"\306\001\n\034packetl2c_ChangeTable_result\022S\n"
     "\tpacket_id\030\001 \001(\0162).game_landlord_protoco"
-    "l.e_server_msg_type:\024e_mst_l2c_leave_roo"
-    "m\022Q\n\006result\030\002 \001(\0162+.game_landlord_protoc"
-    "ol.e_server_error_code:\024e_error_code_suc"
-    "cess\"|\n\035packetc2l_get_room_scene_info\022[\n"
-    "\tpacket_id\030\001 \001(\0162).game_landlord_protoco"
-    "l.e_server_msg_type:\035e_mst_c2l_get_room_"
-    "scene_info\"\353\004\n$packetl2c_get_room_scene_"
-    "info_result\022[\n\tpacket_id\030\001 \001(\0162).game_la"
-    "ndlord_protocol.e_server_msg_type:\035e_mst"
-    "_l2c_get_room_scene_info\022\017\n\007room_id\030\002 \001("
-    "\005\0227\n\tgameState\030\003 \001(\0162$.game_landlord_pro"
-    "tocol.e_game_state\022\r\n\005cards\030\004 \003(\005\022\020\n\010ope"
-    "ncard\030\005 \001(\005\022=\n\020other_cards_info\030\006 \003(\0132#."
-    "game_landlord_protocol.card_Info_1\0227\n\npl"
-    "ayerList\030\007 \003(\0132#.game_landlord_protocol."
-    "player_info\022\023\n\013landlord_Id\030\010 \001(\005\0227\n\014last"
-    "PlayHand\030\t \001(\0132!.game_landlord_protocol."
-    "card_Info\022\017\n\007cards_1\030\n \003(\005\022\016\n\006cdTime\030\013 \001"
-    "(\005\022@\n\013playerState\030\014 \001(\0162+.game_landlord_"
-    "protocol.e_player_game_state\022\"\n\032current_"
-    "who_robLandlording\030\r \001(\005\022\037\n\027current_who_"
-    "playhanding\030\016 \001(\005\022\r\n\005score\030\017 \001(\005\"l\n\025pack"
-    "etc2l_check_state\022S\n\tpacket_id\030\001 \001(\0162).g"
-    "ame_landlord_protocol.e_server_msg_type:"
-    "\025e_mst_c2l_check_state\"\207\001\n\034packetl2c_che"
-    "ck_state_result\022S\n\tpacket_id\030\001 \001(\0162).gam"
-    "e_landlord_protocol.e_server_msg_type:\025e"
-    "_mst_l2c_check_state\022\022\n\nis_intable\030\002 \001(\010"
-    "\"*\n\tcard_Info\022\016\n\006deskId\030\001 \001(\005\022\r\n\005cards\030\002"
-    " \003(\005\"2\n\013card_Info_1\022\016\n\006deskId\030\001 \001(\005\022\023\n\013c"
-    "ards_count\030\002 \001(\005\"4\n\017desk_award_Info\022\016\n\006d"
-    "eskId\030\001 \001(\005\022\021\n\twin_count\030\002 \001(\005\"\300\001\n\013playe"
-    "r_info\022\021\n\tplayer_id\030\001 \001(\005\022\027\n\017player_nick"
-    "name\030\002 \001(\t\022\031\n\021player_head_frame\030\003 \001(\005\022\032\n"
-    "\022player_head_custom\030\004 \001(\t\022\023\n\013player_gold"
-    "\030\005 \001(\003\022\022\n\nplayer_sex\030\006 \001(\005\022\025\n\rplayer_vip"
-    "_lv\030\007 \001(\005\022\016\n\006deskId\030\010 \001(\005\"~\n\026packetc2l_r"
-    "ob_landlord\022T\n\tpacket_id\030\001 \001(\0162).game_la"
-    "ndlord_protocol.e_server_msg_type:\026e_mst"
-    "_c2l_rob_landlord\022\016\n\006or_Rob\030\002 \001(\005\"\230\001\n\022pa"
-    "cketc2l_playhand\022P\n\tpacket_id\030\001 \001(\0162).ga"
-    "me_landlord_protocol.e_server_msg_type:\022"
-    "e_mst_c2l_playhand\0220\n\005cards\030\002 \001(\0132!.game"
-    "_landlord_protocol.card_Info\"\211\002\n\032packetl"
-    "2c_notice_startgame\022X\n\tpacket_id\030\001 \001(\0162)"
-    ".game_landlord_protocol.e_server_msg_typ"
-    "e:\032e_mst_l2c_notice_startgame\022\r\n\005cards\030\002"
-    " \003(\005\022\020\n\010opencard\030\003 \001(\005\022\017\n\007cards_1\030\004 \003(\005\022"
-    "7\n\nplayerList\030\005 \003(\0132#.game_landlord_prot"
-    "ocol.player_info\022\023\n\013landlord_Id\030\006 \001(\005\022\021\n"
-    "\tmin_score\030\007 \001(\005\"\214\001\n\035packetl2c_notice_wh"
-    "o_playhand\022[\n\tpacket_id\030\001 \001(\0162).game_lan"
-    "dlord_protocol.e_server_msg_type:\035e_mst_"
-    "l2c_notice_who_playhand\022\016\n\006deskId\030\002 \001(\005\""
-    "\371\001\n\031packetl2c_notice_playhand\022W\n\tpacket_"
+    "l.e_server_msg_type:\025e_mst_l2c_changetab"
+    "le\022Q\n\006result\030\002 \001(\0162+.game_landlord_proto"
+    "col.e_server_error_code:\024e_error_code_su"
+    "ccess\"{\n\024packetc2l_SystemTalk\022R\n\tpacket_"
     "id\030\001 \001(\0162).game_landlord_protocol.e_serv"
-    "er_msg_type:\031e_mst_l2c_notice_playhand\022Q"
-    "\n\006result\030\002 \001(\0162+.game_landlord_protocol."
-    "e_server_error_code:\024e_error_code_succes"
-    "s\0220\n\005cards\030\003 \001(\0132!.game_landlord_protoco"
-    "l.card_Info\"\214\001\n\035packetl2c_notice_rob_lan"
-    "dlord\022[\n\tpacket_id\030\001 \001(\0162).game_landlord"
-    "_protocol.e_server_msg_type:\035e_mst_l2c_n"
-    "otice_rob_landlord\022\016\n\006deskId\030\002 \001(\005\"\375\001\n$p"
-    "acketl2c_notice_rob_landlord_result\022b\n\tp"
+    "er_msg_type:\024e_mst_c2l_SystemTalk\022\017\n\007tal"
+    "k_Id\030\002 \001(\005\"{\n\024packetc2l_enter_room\022R\n\tpa"
+    "cket_id\030\001 \001(\0162).game_landlord_protocol.e"
+    "_server_msg_type:\024e_mst_c2l_enter_room\022\017"
+    "\n\007room_id\030\002 \001(\005\"\325\001\n\033packetl2c_enter_room"
+    "_result\022R\n\tpacket_id\030\001 \001(\0162).game_landlo"
+    "rd_protocol.e_server_msg_type:\024e_mst_l2c"
+    "_enter_room\022Q\n\006result\030\002 \001(\0162+.game_landl"
+    "ord_protocol.e_server_error_code:\024e_erro"
+    "r_code_success\022\017\n\007room_id\030\003 \001(\005\"l\n\025packe"
+    "tc2l_start_match\022S\n\tpacket_id\030\001 \001(\0162).ga"
+    "me_landlord_protocol.e_server_msg_type:\025"
+    "e_mst_c2l_start_match\"\340\001\n\034packetl2c_star"
+    "t_match_result\022Z\n\tpacket_id\030\001 \001(\0162).game"
+    "_landlord_protocol.e_server_msg_type:\034e_"
+    "mst_l2c_start_match_result\022Q\n\006result\030\002 \001"
+    "(\0162+.game_landlord_protocol.e_server_err"
+    "or_code:\024e_error_code_success\022\021\n\twait_ti"
+    "me\030\003 \001(\005\"j\n\024packetc2l_leave_room\022R\n\tpack"
+    "et_id\030\001 \001(\0162).game_landlord_protocol.e_s"
+    "erver_msg_type:\024e_mst_c2l_leave_room\"\304\001\n"
+    "\033packetl2c_leave_room_result\022R\n\tpacket_i"
+    "d\030\001 \001(\0162).game_landlord_protocol.e_serve"
+    "r_msg_type:\024e_mst_l2c_leave_room\022Q\n\006resu"
+    "lt\030\002 \001(\0162+.game_landlord_protocol.e_serv"
+    "er_error_code:\024e_error_code_success\"|\n\035p"
+    "acketc2l_get_room_scene_info\022[\n\tpacket_i"
+    "d\030\001 \001(\0162).game_landlord_protocol.e_serve"
+    "r_msg_type:\035e_mst_c2l_get_room_scene_inf"
+    "o\"\353\004\n$packetl2c_get_room_scene_info_resu"
+    "lt\022[\n\tpacket_id\030\001 \001(\0162).game_landlord_pr"
+    "otocol.e_server_msg_type:\035e_mst_l2c_get_"
+    "room_scene_info\022\017\n\007room_id\030\002 \001(\005\0227\n\tgame"
+    "State\030\003 \001(\0162$.game_landlord_protocol.e_g"
+    "ame_state\022\r\n\005cards\030\004 \003(\005\022\020\n\010opencard\030\005 \001"
+    "(\005\022=\n\020other_cards_info\030\006 \003(\0132#.game_land"
+    "lord_protocol.card_Info_1\0227\n\nplayerList\030"
+    "\007 \003(\0132#.game_landlord_protocol.player_in"
+    "fo\022\023\n\013landlord_Id\030\010 \001(\005\0227\n\014lastPlayHand\030"
+    "\t \001(\0132!.game_landlord_protocol.card_Info"
+    "\022\017\n\007cards_1\030\n \003(\005\022\016\n\006cdTime\030\013 \001(\005\022@\n\013pla"
+    "yerState\030\014 \001(\0162+.game_landlord_protocol."
+    "e_player_game_state\022\"\n\032current_who_robLa"
+    "ndlording\030\r \001(\005\022\037\n\027current_who_playhandi"
+    "ng\030\016 \001(\005\022\r\n\005score\030\017 \001(\005\"l\n\025packetc2l_che"
+    "ck_state\022S\n\tpacket_id\030\001 \001(\0162).game_landl"
+    "ord_protocol.e_server_msg_type:\025e_mst_c2"
+    "l_check_state\"\207\001\n\034packetl2c_check_state_"
+    "result\022S\n\tpacket_id\030\001 \001(\0162).game_landlor"
+    "d_protocol.e_server_msg_type:\025e_mst_l2c_"
+    "check_state\022\022\n\nis_intable\030\002 \001(\010\"~\n\026packe"
+    "tc2l_rob_landlord\022T\n\tpacket_id\030\001 \001(\0162).g"
+    "ame_landlord_protocol.e_server_msg_type:"
+    "\026e_mst_c2l_rob_landlord\022\016\n\006or_Rob\030\002 \001(\005\""
+    "\230\001\n\022packetc2l_playhand\022P\n\tpacket_id\030\001 \001("
+    "\0162).game_landlord_protocol.e_server_msg_"
+    "type:\022e_mst_c2l_playhand\0220\n\005cards\030\002 \001(\0132"
+    "!.game_landlord_protocol.card_Info\"\211\002\n\032p"
+    "acketl2c_notice_startgame\022X\n\tpacket_id\030\001"
+    " \001(\0162).game_landlord_protocol.e_server_m"
+    "sg_type:\032e_mst_l2c_notice_startgame\022\r\n\005c"
+    "ards\030\002 \003(\005\022\020\n\010opencard\030\003 \001(\005\022\017\n\007cards_1\030"
+    "\004 \003(\005\0227\n\nplayerList\030\005 \003(\0132#.game_landlor"
+    "d_protocol.player_info\022\023\n\013landlord_Id\030\006 "
+    "\001(\005\022\021\n\tmin_score\030\007 \001(\005\"\214\001\n\035packetl2c_not"
+    "ice_who_playhand\022[\n\tpacket_id\030\001 \001(\0162).ga"
+    "me_landlord_protocol.e_server_msg_type:\035"
+    "e_mst_l2c_notice_who_playhand\022\016\n\006deskId\030"
+    "\002 \001(\005\"\371\001\n\031packetl2c_notice_playhand\022W\n\tp"
     "acket_id\030\001 \001(\0162).game_landlord_protocol."
-    "e_server_msg_type:$e_mst_l2c_notice_rob_"
-    "landlord_result\022Q\n\006result\030\002 \001(\0162+.game_l"
-    "andlord_protocol.e_server_error_code:\024e_"
-    "error_code_success\022\016\n\006deskId\030\003 \001(\005\022\016\n\006or"
-    "_Rob\030\004 \001(\005\"\353\001\n\030packetl2c_notice_winlose\022"
-    "V\n\tpacket_id\030\001 \001(\0162).game_landlord_proto"
-    "col.e_server_msg_type:\030e_mst_l2c_notice_"
-    "winlose\022>\n\rm_desk_awards\030\002 \003(\0132\'.game_la"
-    "ndlord_protocol.desk_award_Info\0227\n\014remai"
-    "n_cards\030\003 \003(\0132!.game_landlord_protocol.c"
-    "ard_Info", 4008);
+    "e_server_msg_type:\031e_mst_l2c_notice_play"
+    "hand\022Q\n\006result\030\002 \001(\0162+.game_landlord_pro"
+    "tocol.e_server_error_code:\024e_error_code_"
+    "success\0220\n\005cards\030\003 \001(\0132!.game_landlord_p"
+    "rotocol.card_Info\"\214\001\n\035packetl2c_notice_r"
+    "ob_landlord\022[\n\tpacket_id\030\001 \001(\0162).game_la"
+    "ndlord_protocol.e_server_msg_type:\035e_mst"
+    "_l2c_notice_rob_landlord\022\016\n\006deskId\030\002 \001(\005"
+    "\"\375\001\n$packetl2c_notice_rob_landlord_resul"
+    "t\022b\n\tpacket_id\030\001 \001(\0162).game_landlord_pro"
+    "tocol.e_server_msg_type:$e_mst_l2c_notic"
+    "e_rob_landlord_result\022Q\n\006result\030\002 \001(\0162+."
+    "game_landlord_protocol.e_server_error_co"
+    "de:\024e_error_code_success\022\016\n\006deskId\030\003 \001(\005"
+    "\022\016\n\006or_Rob\030\004 \001(\005\"\353\001\n\030packetl2c_notice_wi"
+    "nlose\022V\n\tpacket_id\030\001 \001(\0162).game_landlord"
+    "_protocol.e_server_msg_type:\030e_mst_l2c_n"
+    "otice_winlose\022>\n\rm_desk_awards\030\002 \003(\0132\'.g"
+    "ame_landlord_protocol.desk_award_Info\0227\n"
+    "\014remain_cards\030\003 \003(\0132!.game_landlord_prot"
+    "ocol.card_Info\"\211\001\n\033packetl2c_notice_Syst"
+    "emTalk\022Y\n\tpacket_id\030\001 \001(\0162).game_landlor"
+    "d_protocol.e_server_msg_type:\033e_mst_l2c_"
+    "notice_SystemTalk\022\017\n\007talk_Id\030\002 \001(\005", 4554);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "game_landlord_protocol.proto", &protobuf_RegisterTypes);
+  packetc2l_Hang::default_instance_ = new packetc2l_Hang();
+  packetl2c_Hang_result::default_instance_ = new packetl2c_Hang_result();
+  packetc2l_ChangeTable::default_instance_ = new packetc2l_ChangeTable();
+  packetl2c_ChangeTable_result::default_instance_ = new packetl2c_ChangeTable_result();
+  packetc2l_SystemTalk::default_instance_ = new packetc2l_SystemTalk();
   packetc2l_enter_room::default_instance_ = new packetc2l_enter_room();
   packetl2c_enter_room_result::default_instance_ = new packetl2c_enter_room_result();
   packetc2l_start_match::default_instance_ = new packetc2l_start_match();
@@ -703,10 +761,6 @@ void protobuf_AddDesc_game_5flandlord_5fprotocol_2eproto() {
   packetl2c_get_room_scene_info_result::default_instance_ = new packetl2c_get_room_scene_info_result();
   packetc2l_check_state::default_instance_ = new packetc2l_check_state();
   packetl2c_check_state_result::default_instance_ = new packetl2c_check_state_result();
-  card_Info::default_instance_ = new card_Info();
-  card_Info_1::default_instance_ = new card_Info_1();
-  desk_award_Info::default_instance_ = new desk_award_Info();
-  player_info::default_instance_ = new player_info();
   packetc2l_rob_landlord::default_instance_ = new packetc2l_rob_landlord();
   packetc2l_playhand::default_instance_ = new packetc2l_playhand();
   packetl2c_notice_startgame::default_instance_ = new packetl2c_notice_startgame();
@@ -715,6 +769,12 @@ void protobuf_AddDesc_game_5flandlord_5fprotocol_2eproto() {
   packetl2c_notice_rob_landlord::default_instance_ = new packetl2c_notice_rob_landlord();
   packetl2c_notice_rob_landlord_result::default_instance_ = new packetl2c_notice_rob_landlord_result();
   packetl2c_notice_winlose::default_instance_ = new packetl2c_notice_winlose();
+  packetl2c_notice_SystemTalk::default_instance_ = new packetl2c_notice_SystemTalk();
+  packetc2l_Hang::default_instance_->InitAsDefaultInstance();
+  packetl2c_Hang_result::default_instance_->InitAsDefaultInstance();
+  packetc2l_ChangeTable::default_instance_->InitAsDefaultInstance();
+  packetl2c_ChangeTable_result::default_instance_->InitAsDefaultInstance();
+  packetc2l_SystemTalk::default_instance_->InitAsDefaultInstance();
   packetc2l_enter_room::default_instance_->InitAsDefaultInstance();
   packetl2c_enter_room_result::default_instance_->InitAsDefaultInstance();
   packetc2l_start_match::default_instance_->InitAsDefaultInstance();
@@ -725,10 +785,6 @@ void protobuf_AddDesc_game_5flandlord_5fprotocol_2eproto() {
   packetl2c_get_room_scene_info_result::default_instance_->InitAsDefaultInstance();
   packetc2l_check_state::default_instance_->InitAsDefaultInstance();
   packetl2c_check_state_result::default_instance_->InitAsDefaultInstance();
-  card_Info::default_instance_->InitAsDefaultInstance();
-  card_Info_1::default_instance_->InitAsDefaultInstance();
-  desk_award_Info::default_instance_->InitAsDefaultInstance();
-  player_info::default_instance_->InitAsDefaultInstance();
   packetc2l_rob_landlord::default_instance_->InitAsDefaultInstance();
   packetc2l_playhand::default_instance_->InitAsDefaultInstance();
   packetl2c_notice_startgame::default_instance_->InitAsDefaultInstance();
@@ -737,6 +793,7 @@ void protobuf_AddDesc_game_5flandlord_5fprotocol_2eproto() {
   packetl2c_notice_rob_landlord::default_instance_->InitAsDefaultInstance();
   packetl2c_notice_rob_landlord_result::default_instance_->InitAsDefaultInstance();
   packetl2c_notice_winlose::default_instance_->InitAsDefaultInstance();
+  packetl2c_notice_SystemTalk::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_game_5flandlord_5fprotocol_2eproto);
 }
 
@@ -746,6 +803,1357 @@ struct StaticDescriptorInitializer_game_5flandlord_5fprotocol_2eproto {
     protobuf_AddDesc_game_5flandlord_5fprotocol_2eproto();
   }
 } static_descriptor_initializer_game_5flandlord_5fprotocol_2eproto_;
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int packetc2l_Hang::kPacketIdFieldNumber;
+const int packetc2l_Hang::kOrHangFieldNumber;
+#endif  // !_MSC_VER
+
+packetc2l_Hang::packetc2l_Hang()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:game_landlord_protocol.packetc2l_Hang)
+}
+
+void packetc2l_Hang::InitAsDefaultInstance() {
+}
+
+packetc2l_Hang::packetc2l_Hang(const packetc2l_Hang& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:game_landlord_protocol.packetc2l_Hang)
+}
+
+void packetc2l_Hang::SharedCtor() {
+  _cached_size_ = 0;
+  packet_id_ = 10008;
+  orhang_ = false;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+packetc2l_Hang::~packetc2l_Hang() {
+  // @@protoc_insertion_point(destructor:game_landlord_protocol.packetc2l_Hang)
+  SharedDtor();
+}
+
+void packetc2l_Hang::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void packetc2l_Hang::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* packetc2l_Hang::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return packetc2l_Hang_descriptor_;
+}
+
+const packetc2l_Hang& packetc2l_Hang::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_game_5flandlord_5fprotocol_2eproto();
+  return *default_instance_;
+}
+
+packetc2l_Hang* packetc2l_Hang::default_instance_ = NULL;
+
+packetc2l_Hang* packetc2l_Hang::New() const {
+  return new packetc2l_Hang;
+}
+
+void packetc2l_Hang::Clear() {
+  if (_has_bits_[0 / 32] & 3) {
+    packet_id_ = 10008;
+    orhang_ = false;
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool packetc2l_Hang::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:game_landlord_protocol.packetc2l_Hang)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_c2l_Hang];
+      case 1: {
+        if (tag == 8) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::game_landlord_protocol::e_server_msg_type_IsValid(value)) {
+            set_packet_id(static_cast< ::game_landlord_protocol::e_server_msg_type >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(1, value);
+          }
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_orHang;
+        break;
+      }
+
+      // optional bool orHang = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_orHang:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &orhang_)));
+          set_has_orhang();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:game_landlord_protocol.packetc2l_Hang)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:game_landlord_protocol.packetc2l_Hang)
+  return false;
+#undef DO_
+}
+
+void packetc2l_Hang::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:game_landlord_protocol.packetc2l_Hang)
+  // optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_c2l_Hang];
+  if (has_packet_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->packet_id(), output);
+  }
+
+  // optional bool orHang = 2;
+  if (has_orhang()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(2, this->orhang(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:game_landlord_protocol.packetc2l_Hang)
+}
+
+::google::protobuf::uint8* packetc2l_Hang::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:game_landlord_protocol.packetc2l_Hang)
+  // optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_c2l_Hang];
+  if (has_packet_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->packet_id(), target);
+  }
+
+  // optional bool orHang = 2;
+  if (has_orhang()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(2, this->orhang(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:game_landlord_protocol.packetc2l_Hang)
+  return target;
+}
+
+int packetc2l_Hang::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_c2l_Hang];
+    if (has_packet_id()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->packet_id());
+    }
+
+    // optional bool orHang = 2;
+    if (has_orhang()) {
+      total_size += 1 + 1;
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void packetc2l_Hang::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const packetc2l_Hang* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const packetc2l_Hang*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void packetc2l_Hang::MergeFrom(const packetc2l_Hang& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_packet_id()) {
+      set_packet_id(from.packet_id());
+    }
+    if (from.has_orhang()) {
+      set_orhang(from.orhang());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void packetc2l_Hang::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void packetc2l_Hang::CopyFrom(const packetc2l_Hang& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool packetc2l_Hang::IsInitialized() const {
+
+  return true;
+}
+
+void packetc2l_Hang::Swap(packetc2l_Hang* other) {
+  if (other != this) {
+    std::swap(packet_id_, other->packet_id_);
+    std::swap(orhang_, other->orhang_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata packetc2l_Hang::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = packetc2l_Hang_descriptor_;
+  metadata.reflection = packetc2l_Hang_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int packetl2c_Hang_result::kPacketIdFieldNumber;
+const int packetl2c_Hang_result::kResultFieldNumber;
+const int packetl2c_Hang_result::kOrHangFieldNumber;
+#endif  // !_MSC_VER
+
+packetl2c_Hang_result::packetl2c_Hang_result()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:game_landlord_protocol.packetl2c_Hang_result)
+}
+
+void packetl2c_Hang_result::InitAsDefaultInstance() {
+}
+
+packetl2c_Hang_result::packetl2c_Hang_result(const packetl2c_Hang_result& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:game_landlord_protocol.packetl2c_Hang_result)
+}
+
+void packetl2c_Hang_result::SharedCtor() {
+  _cached_size_ = 0;
+  packet_id_ = 15006;
+  result_ = 1;
+  orhang_ = false;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+packetl2c_Hang_result::~packetl2c_Hang_result() {
+  // @@protoc_insertion_point(destructor:game_landlord_protocol.packetl2c_Hang_result)
+  SharedDtor();
+}
+
+void packetl2c_Hang_result::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void packetl2c_Hang_result::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* packetl2c_Hang_result::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return packetl2c_Hang_result_descriptor_;
+}
+
+const packetl2c_Hang_result& packetl2c_Hang_result::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_game_5flandlord_5fprotocol_2eproto();
+  return *default_instance_;
+}
+
+packetl2c_Hang_result* packetl2c_Hang_result::default_instance_ = NULL;
+
+packetl2c_Hang_result* packetl2c_Hang_result::New() const {
+  return new packetl2c_Hang_result;
+}
+
+void packetl2c_Hang_result::Clear() {
+  if (_has_bits_[0 / 32] & 7) {
+    packet_id_ = 15006;
+    result_ = 1;
+    orhang_ = false;
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool packetl2c_Hang_result::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:game_landlord_protocol.packetl2c_Hang_result)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_l2c_Hang];
+      case 1: {
+        if (tag == 8) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::game_landlord_protocol::e_server_msg_type_IsValid(value)) {
+            set_packet_id(static_cast< ::game_landlord_protocol::e_server_msg_type >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(1, value);
+          }
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_result;
+        break;
+      }
+
+      // optional .game_landlord_protocol.e_server_error_code result = 2 [default = e_error_code_success];
+      case 2: {
+        if (tag == 16) {
+         parse_result:
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::game_landlord_protocol::e_server_error_code_IsValid(value)) {
+            set_result(static_cast< ::game_landlord_protocol::e_server_error_code >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(2, value);
+          }
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(24)) goto parse_orHang;
+        break;
+      }
+
+      // optional bool orHang = 3;
+      case 3: {
+        if (tag == 24) {
+         parse_orHang:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &orhang_)));
+          set_has_orhang();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:game_landlord_protocol.packetl2c_Hang_result)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:game_landlord_protocol.packetl2c_Hang_result)
+  return false;
+#undef DO_
+}
+
+void packetl2c_Hang_result::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:game_landlord_protocol.packetl2c_Hang_result)
+  // optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_l2c_Hang];
+  if (has_packet_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->packet_id(), output);
+  }
+
+  // optional .game_landlord_protocol.e_server_error_code result = 2 [default = e_error_code_success];
+  if (has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      2, this->result(), output);
+  }
+
+  // optional bool orHang = 3;
+  if (has_orhang()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(3, this->orhang(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:game_landlord_protocol.packetl2c_Hang_result)
+}
+
+::google::protobuf::uint8* packetl2c_Hang_result::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:game_landlord_protocol.packetl2c_Hang_result)
+  // optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_l2c_Hang];
+  if (has_packet_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->packet_id(), target);
+  }
+
+  // optional .game_landlord_protocol.e_server_error_code result = 2 [default = e_error_code_success];
+  if (has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      2, this->result(), target);
+  }
+
+  // optional bool orHang = 3;
+  if (has_orhang()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(3, this->orhang(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:game_landlord_protocol.packetl2c_Hang_result)
+  return target;
+}
+
+int packetl2c_Hang_result::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_l2c_Hang];
+    if (has_packet_id()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->packet_id());
+    }
+
+    // optional .game_landlord_protocol.e_server_error_code result = 2 [default = e_error_code_success];
+    if (has_result()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->result());
+    }
+
+    // optional bool orHang = 3;
+    if (has_orhang()) {
+      total_size += 1 + 1;
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void packetl2c_Hang_result::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const packetl2c_Hang_result* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const packetl2c_Hang_result*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void packetl2c_Hang_result::MergeFrom(const packetl2c_Hang_result& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_packet_id()) {
+      set_packet_id(from.packet_id());
+    }
+    if (from.has_result()) {
+      set_result(from.result());
+    }
+    if (from.has_orhang()) {
+      set_orhang(from.orhang());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void packetl2c_Hang_result::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void packetl2c_Hang_result::CopyFrom(const packetl2c_Hang_result& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool packetl2c_Hang_result::IsInitialized() const {
+
+  return true;
+}
+
+void packetl2c_Hang_result::Swap(packetl2c_Hang_result* other) {
+  if (other != this) {
+    std::swap(packet_id_, other->packet_id_);
+    std::swap(result_, other->result_);
+    std::swap(orhang_, other->orhang_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata packetl2c_Hang_result::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = packetl2c_Hang_result_descriptor_;
+  metadata.reflection = packetl2c_Hang_result_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int packetc2l_ChangeTable::kPacketIdFieldNumber;
+#endif  // !_MSC_VER
+
+packetc2l_ChangeTable::packetc2l_ChangeTable()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:game_landlord_protocol.packetc2l_ChangeTable)
+}
+
+void packetc2l_ChangeTable::InitAsDefaultInstance() {
+}
+
+packetc2l_ChangeTable::packetc2l_ChangeTable(const packetc2l_ChangeTable& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:game_landlord_protocol.packetc2l_ChangeTable)
+}
+
+void packetc2l_ChangeTable::SharedCtor() {
+  _cached_size_ = 0;
+  packet_id_ = 10010;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+packetc2l_ChangeTable::~packetc2l_ChangeTable() {
+  // @@protoc_insertion_point(destructor:game_landlord_protocol.packetc2l_ChangeTable)
+  SharedDtor();
+}
+
+void packetc2l_ChangeTable::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void packetc2l_ChangeTable::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* packetc2l_ChangeTable::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return packetc2l_ChangeTable_descriptor_;
+}
+
+const packetc2l_ChangeTable& packetc2l_ChangeTable::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_game_5flandlord_5fprotocol_2eproto();
+  return *default_instance_;
+}
+
+packetc2l_ChangeTable* packetc2l_ChangeTable::default_instance_ = NULL;
+
+packetc2l_ChangeTable* packetc2l_ChangeTable::New() const {
+  return new packetc2l_ChangeTable;
+}
+
+void packetc2l_ChangeTable::Clear() {
+  packet_id_ = 10010;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool packetc2l_ChangeTable::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:game_landlord_protocol.packetc2l_ChangeTable)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_c2l_changetable];
+      case 1: {
+        if (tag == 8) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::game_landlord_protocol::e_server_msg_type_IsValid(value)) {
+            set_packet_id(static_cast< ::game_landlord_protocol::e_server_msg_type >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(1, value);
+          }
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:game_landlord_protocol.packetc2l_ChangeTable)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:game_landlord_protocol.packetc2l_ChangeTable)
+  return false;
+#undef DO_
+}
+
+void packetc2l_ChangeTable::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:game_landlord_protocol.packetc2l_ChangeTable)
+  // optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_c2l_changetable];
+  if (has_packet_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->packet_id(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:game_landlord_protocol.packetc2l_ChangeTable)
+}
+
+::google::protobuf::uint8* packetc2l_ChangeTable::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:game_landlord_protocol.packetc2l_ChangeTable)
+  // optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_c2l_changetable];
+  if (has_packet_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->packet_id(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:game_landlord_protocol.packetc2l_ChangeTable)
+  return target;
+}
+
+int packetc2l_ChangeTable::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_c2l_changetable];
+    if (has_packet_id()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->packet_id());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void packetc2l_ChangeTable::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const packetc2l_ChangeTable* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const packetc2l_ChangeTable*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void packetc2l_ChangeTable::MergeFrom(const packetc2l_ChangeTable& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_packet_id()) {
+      set_packet_id(from.packet_id());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void packetc2l_ChangeTable::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void packetc2l_ChangeTable::CopyFrom(const packetc2l_ChangeTable& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool packetc2l_ChangeTable::IsInitialized() const {
+
+  return true;
+}
+
+void packetc2l_ChangeTable::Swap(packetc2l_ChangeTable* other) {
+  if (other != this) {
+    std::swap(packet_id_, other->packet_id_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata packetc2l_ChangeTable::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = packetc2l_ChangeTable_descriptor_;
+  metadata.reflection = packetc2l_ChangeTable_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int packetl2c_ChangeTable_result::kPacketIdFieldNumber;
+const int packetl2c_ChangeTable_result::kResultFieldNumber;
+#endif  // !_MSC_VER
+
+packetl2c_ChangeTable_result::packetl2c_ChangeTable_result()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:game_landlord_protocol.packetl2c_ChangeTable_result)
+}
+
+void packetl2c_ChangeTable_result::InitAsDefaultInstance() {
+}
+
+packetl2c_ChangeTable_result::packetl2c_ChangeTable_result(const packetl2c_ChangeTable_result& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:game_landlord_protocol.packetl2c_ChangeTable_result)
+}
+
+void packetl2c_ChangeTable_result::SharedCtor() {
+  _cached_size_ = 0;
+  packet_id_ = 15007;
+  result_ = 1;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+packetl2c_ChangeTable_result::~packetl2c_ChangeTable_result() {
+  // @@protoc_insertion_point(destructor:game_landlord_protocol.packetl2c_ChangeTable_result)
+  SharedDtor();
+}
+
+void packetl2c_ChangeTable_result::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void packetl2c_ChangeTable_result::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* packetl2c_ChangeTable_result::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return packetl2c_ChangeTable_result_descriptor_;
+}
+
+const packetl2c_ChangeTable_result& packetl2c_ChangeTable_result::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_game_5flandlord_5fprotocol_2eproto();
+  return *default_instance_;
+}
+
+packetl2c_ChangeTable_result* packetl2c_ChangeTable_result::default_instance_ = NULL;
+
+packetl2c_ChangeTable_result* packetl2c_ChangeTable_result::New() const {
+  return new packetl2c_ChangeTable_result;
+}
+
+void packetl2c_ChangeTable_result::Clear() {
+  if (_has_bits_[0 / 32] & 3) {
+    packet_id_ = 15007;
+    result_ = 1;
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool packetl2c_ChangeTable_result::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:game_landlord_protocol.packetl2c_ChangeTable_result)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_l2c_changetable];
+      case 1: {
+        if (tag == 8) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::game_landlord_protocol::e_server_msg_type_IsValid(value)) {
+            set_packet_id(static_cast< ::game_landlord_protocol::e_server_msg_type >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(1, value);
+          }
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_result;
+        break;
+      }
+
+      // optional .game_landlord_protocol.e_server_error_code result = 2 [default = e_error_code_success];
+      case 2: {
+        if (tag == 16) {
+         parse_result:
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::game_landlord_protocol::e_server_error_code_IsValid(value)) {
+            set_result(static_cast< ::game_landlord_protocol::e_server_error_code >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(2, value);
+          }
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:game_landlord_protocol.packetl2c_ChangeTable_result)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:game_landlord_protocol.packetl2c_ChangeTable_result)
+  return false;
+#undef DO_
+}
+
+void packetl2c_ChangeTable_result::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:game_landlord_protocol.packetl2c_ChangeTable_result)
+  // optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_l2c_changetable];
+  if (has_packet_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->packet_id(), output);
+  }
+
+  // optional .game_landlord_protocol.e_server_error_code result = 2 [default = e_error_code_success];
+  if (has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      2, this->result(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:game_landlord_protocol.packetl2c_ChangeTable_result)
+}
+
+::google::protobuf::uint8* packetl2c_ChangeTable_result::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:game_landlord_protocol.packetl2c_ChangeTable_result)
+  // optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_l2c_changetable];
+  if (has_packet_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->packet_id(), target);
+  }
+
+  // optional .game_landlord_protocol.e_server_error_code result = 2 [default = e_error_code_success];
+  if (has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      2, this->result(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:game_landlord_protocol.packetl2c_ChangeTable_result)
+  return target;
+}
+
+int packetl2c_ChangeTable_result::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_l2c_changetable];
+    if (has_packet_id()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->packet_id());
+    }
+
+    // optional .game_landlord_protocol.e_server_error_code result = 2 [default = e_error_code_success];
+    if (has_result()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->result());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void packetl2c_ChangeTable_result::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const packetl2c_ChangeTable_result* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const packetl2c_ChangeTable_result*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void packetl2c_ChangeTable_result::MergeFrom(const packetl2c_ChangeTable_result& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_packet_id()) {
+      set_packet_id(from.packet_id());
+    }
+    if (from.has_result()) {
+      set_result(from.result());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void packetl2c_ChangeTable_result::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void packetl2c_ChangeTable_result::CopyFrom(const packetl2c_ChangeTable_result& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool packetl2c_ChangeTable_result::IsInitialized() const {
+
+  return true;
+}
+
+void packetl2c_ChangeTable_result::Swap(packetl2c_ChangeTable_result* other) {
+  if (other != this) {
+    std::swap(packet_id_, other->packet_id_);
+    std::swap(result_, other->result_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata packetl2c_ChangeTable_result::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = packetl2c_ChangeTable_result_descriptor_;
+  metadata.reflection = packetl2c_ChangeTable_result_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int packetc2l_SystemTalk::kPacketIdFieldNumber;
+const int packetc2l_SystemTalk::kTalkIdFieldNumber;
+#endif  // !_MSC_VER
+
+packetc2l_SystemTalk::packetc2l_SystemTalk()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:game_landlord_protocol.packetc2l_SystemTalk)
+}
+
+void packetc2l_SystemTalk::InitAsDefaultInstance() {
+}
+
+packetc2l_SystemTalk::packetc2l_SystemTalk(const packetc2l_SystemTalk& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:game_landlord_protocol.packetc2l_SystemTalk)
+}
+
+void packetc2l_SystemTalk::SharedCtor() {
+  _cached_size_ = 0;
+  packet_id_ = 10009;
+  talk_id_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+packetc2l_SystemTalk::~packetc2l_SystemTalk() {
+  // @@protoc_insertion_point(destructor:game_landlord_protocol.packetc2l_SystemTalk)
+  SharedDtor();
+}
+
+void packetc2l_SystemTalk::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void packetc2l_SystemTalk::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* packetc2l_SystemTalk::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return packetc2l_SystemTalk_descriptor_;
+}
+
+const packetc2l_SystemTalk& packetc2l_SystemTalk::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_game_5flandlord_5fprotocol_2eproto();
+  return *default_instance_;
+}
+
+packetc2l_SystemTalk* packetc2l_SystemTalk::default_instance_ = NULL;
+
+packetc2l_SystemTalk* packetc2l_SystemTalk::New() const {
+  return new packetc2l_SystemTalk;
+}
+
+void packetc2l_SystemTalk::Clear() {
+  if (_has_bits_[0 / 32] & 3) {
+    packet_id_ = 10009;
+    talk_id_ = 0;
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool packetc2l_SystemTalk::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:game_landlord_protocol.packetc2l_SystemTalk)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_c2l_SystemTalk];
+      case 1: {
+        if (tag == 8) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::game_landlord_protocol::e_server_msg_type_IsValid(value)) {
+            set_packet_id(static_cast< ::game_landlord_protocol::e_server_msg_type >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(1, value);
+          }
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_talk_Id;
+        break;
+      }
+
+      // optional int32 talk_Id = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_talk_Id:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &talk_id_)));
+          set_has_talk_id();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:game_landlord_protocol.packetc2l_SystemTalk)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:game_landlord_protocol.packetc2l_SystemTalk)
+  return false;
+#undef DO_
+}
+
+void packetc2l_SystemTalk::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:game_landlord_protocol.packetc2l_SystemTalk)
+  // optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_c2l_SystemTalk];
+  if (has_packet_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->packet_id(), output);
+  }
+
+  // optional int32 talk_Id = 2;
+  if (has_talk_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->talk_id(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:game_landlord_protocol.packetc2l_SystemTalk)
+}
+
+::google::protobuf::uint8* packetc2l_SystemTalk::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:game_landlord_protocol.packetc2l_SystemTalk)
+  // optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_c2l_SystemTalk];
+  if (has_packet_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->packet_id(), target);
+  }
+
+  // optional int32 talk_Id = 2;
+  if (has_talk_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->talk_id(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:game_landlord_protocol.packetc2l_SystemTalk)
+  return target;
+}
+
+int packetc2l_SystemTalk::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_c2l_SystemTalk];
+    if (has_packet_id()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->packet_id());
+    }
+
+    // optional int32 talk_Id = 2;
+    if (has_talk_id()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->talk_id());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void packetc2l_SystemTalk::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const packetc2l_SystemTalk* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const packetc2l_SystemTalk*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void packetc2l_SystemTalk::MergeFrom(const packetc2l_SystemTalk& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_packet_id()) {
+      set_packet_id(from.packet_id());
+    }
+    if (from.has_talk_id()) {
+      set_talk_id(from.talk_id());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void packetc2l_SystemTalk::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void packetc2l_SystemTalk::CopyFrom(const packetc2l_SystemTalk& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool packetc2l_SystemTalk::IsInitialized() const {
+
+  return true;
+}
+
+void packetc2l_SystemTalk::Swap(packetc2l_SystemTalk* other) {
+  if (other != this) {
+    std::swap(packet_id_, other->packet_id_);
+    std::swap(talk_id_, other->talk_id_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata packetc2l_SystemTalk::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = packetc2l_SystemTalk_descriptor_;
+  metadata.reflection = packetc2l_SystemTalk_reflection_;
+  return metadata;
+}
+
 
 // ===================================================================
 
@@ -3922,1369 +5330,6 @@ void packetl2c_check_state_result::Swap(packetl2c_check_state_result* other) {
 // ===================================================================
 
 #ifndef _MSC_VER
-const int card_Info::kDeskIdFieldNumber;
-const int card_Info::kCardsFieldNumber;
-#endif  // !_MSC_VER
-
-card_Info::card_Info()
-  : ::google::protobuf::Message() {
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:game_landlord_protocol.card_Info)
-}
-
-void card_Info::InitAsDefaultInstance() {
-}
-
-card_Info::card_Info(const card_Info& from)
-  : ::google::protobuf::Message() {
-  SharedCtor();
-  MergeFrom(from);
-  // @@protoc_insertion_point(copy_constructor:game_landlord_protocol.card_Info)
-}
-
-void card_Info::SharedCtor() {
-  _cached_size_ = 0;
-  deskid_ = 0;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-}
-
-card_Info::~card_Info() {
-  // @@protoc_insertion_point(destructor:game_landlord_protocol.card_Info)
-  SharedDtor();
-}
-
-void card_Info::SharedDtor() {
-  if (this != default_instance_) {
-  }
-}
-
-void card_Info::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-}
-const ::google::protobuf::Descriptor* card_Info::descriptor() {
-  protobuf_AssignDescriptorsOnce();
-  return card_Info_descriptor_;
-}
-
-const card_Info& card_Info::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_game_5flandlord_5fprotocol_2eproto();
-  return *default_instance_;
-}
-
-card_Info* card_Info::default_instance_ = NULL;
-
-card_Info* card_Info::New() const {
-  return new card_Info;
-}
-
-void card_Info::Clear() {
-  deskid_ = 0;
-  cards_.Clear();
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
-}
-
-bool card_Info::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:game_landlord_protocol.card_Info)
-  for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional int32 deskId = 1;
-      case 1: {
-        if (tag == 8) {
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &deskid_)));
-          set_has_deskid();
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(16)) goto parse_cards;
-        break;
-      }
-
-      // repeated int32 cards = 2;
-      case 2: {
-        if (tag == 16) {
-         parse_cards:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 1, 16, input, this->mutable_cards())));
-        } else if (tag == 18) {
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitiveNoInline<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, this->mutable_cards())));
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(16)) goto parse_cards;
-        if (input->ExpectAtEnd()) goto success;
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:game_landlord_protocol.card_Info)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:game_landlord_protocol.card_Info)
-  return false;
-#undef DO_
-}
-
-void card_Info::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:game_landlord_protocol.card_Info)
-  // optional int32 deskId = 1;
-  if (has_deskid()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->deskid(), output);
-  }
-
-  // repeated int32 cards = 2;
-  for (int i = 0; i < this->cards_size(); i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(
-      2, this->cards(i), output);
-  }
-
-  if (!unknown_fields().empty()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:game_landlord_protocol.card_Info)
-}
-
-::google::protobuf::uint8* card_Info::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:game_landlord_protocol.card_Info)
-  // optional int32 deskId = 1;
-  if (has_deskid()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->deskid(), target);
-  }
-
-  // repeated int32 cards = 2;
-  for (int i = 0; i < this->cards_size(); i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteInt32ToArray(2, this->cards(i), target);
-  }
-
-  if (!unknown_fields().empty()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        unknown_fields(), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:game_landlord_protocol.card_Info)
-  return target;
-}
-
-int card_Info::ByteSize() const {
-  int total_size = 0;
-
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional int32 deskId = 1;
-    if (has_deskid()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->deskid());
-    }
-
-  }
-  // repeated int32 cards = 2;
-  {
-    int data_size = 0;
-    for (int i = 0; i < this->cards_size(); i++) {
-      data_size += ::google::protobuf::internal::WireFormatLite::
-        Int32Size(this->cards(i));
-    }
-    total_size += 1 * this->cards_size() + data_size;
-  }
-
-  if (!unknown_fields().empty()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        unknown_fields());
-  }
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-  return total_size;
-}
-
-void card_Info::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const card_Info* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const card_Info*>(
-      &from);
-  if (source == NULL) {
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-    MergeFrom(*source);
-  }
-}
-
-void card_Info::MergeFrom(const card_Info& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  cards_.MergeFrom(from.cards_);
-  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    if (from.has_deskid()) {
-      set_deskid(from.deskid());
-    }
-  }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-}
-
-void card_Info::CopyFrom(const ::google::protobuf::Message& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void card_Info::CopyFrom(const card_Info& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool card_Info::IsInitialized() const {
-
-  return true;
-}
-
-void card_Info::Swap(card_Info* other) {
-  if (other != this) {
-    std::swap(deskid_, other->deskid_);
-    cards_.Swap(&other->cards_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
-}
-
-::google::protobuf::Metadata card_Info::GetMetadata() const {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::Metadata metadata;
-  metadata.descriptor = card_Info_descriptor_;
-  metadata.reflection = card_Info_reflection_;
-  return metadata;
-}
-
-
-// ===================================================================
-
-#ifndef _MSC_VER
-const int card_Info_1::kDeskIdFieldNumber;
-const int card_Info_1::kCardsCountFieldNumber;
-#endif  // !_MSC_VER
-
-card_Info_1::card_Info_1()
-  : ::google::protobuf::Message() {
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:game_landlord_protocol.card_Info_1)
-}
-
-void card_Info_1::InitAsDefaultInstance() {
-}
-
-card_Info_1::card_Info_1(const card_Info_1& from)
-  : ::google::protobuf::Message() {
-  SharedCtor();
-  MergeFrom(from);
-  // @@protoc_insertion_point(copy_constructor:game_landlord_protocol.card_Info_1)
-}
-
-void card_Info_1::SharedCtor() {
-  _cached_size_ = 0;
-  deskid_ = 0;
-  cards_count_ = 0;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-}
-
-card_Info_1::~card_Info_1() {
-  // @@protoc_insertion_point(destructor:game_landlord_protocol.card_Info_1)
-  SharedDtor();
-}
-
-void card_Info_1::SharedDtor() {
-  if (this != default_instance_) {
-  }
-}
-
-void card_Info_1::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-}
-const ::google::protobuf::Descriptor* card_Info_1::descriptor() {
-  protobuf_AssignDescriptorsOnce();
-  return card_Info_1_descriptor_;
-}
-
-const card_Info_1& card_Info_1::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_game_5flandlord_5fprotocol_2eproto();
-  return *default_instance_;
-}
-
-card_Info_1* card_Info_1::default_instance_ = NULL;
-
-card_Info_1* card_Info_1::New() const {
-  return new card_Info_1;
-}
-
-void card_Info_1::Clear() {
-#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
-  &reinterpret_cast<card_Info_1*>(16)->f) - \
-   reinterpret_cast<char*>(16))
-
-#define ZR_(first, last) do {                              \
-    size_t f = OFFSET_OF_FIELD_(first);                    \
-    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
-    ::memset(&first, 0, n);                                \
-  } while (0)
-
-  ZR_(deskid_, cards_count_);
-
-#undef OFFSET_OF_FIELD_
-#undef ZR_
-
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
-}
-
-bool card_Info_1::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:game_landlord_protocol.card_Info_1)
-  for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional int32 deskId = 1;
-      case 1: {
-        if (tag == 8) {
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &deskid_)));
-          set_has_deskid();
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(16)) goto parse_cards_count;
-        break;
-      }
-
-      // optional int32 cards_count = 2;
-      case 2: {
-        if (tag == 16) {
-         parse_cards_count:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &cards_count_)));
-          set_has_cards_count();
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectAtEnd()) goto success;
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:game_landlord_protocol.card_Info_1)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:game_landlord_protocol.card_Info_1)
-  return false;
-#undef DO_
-}
-
-void card_Info_1::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:game_landlord_protocol.card_Info_1)
-  // optional int32 deskId = 1;
-  if (has_deskid()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->deskid(), output);
-  }
-
-  // optional int32 cards_count = 2;
-  if (has_cards_count()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->cards_count(), output);
-  }
-
-  if (!unknown_fields().empty()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:game_landlord_protocol.card_Info_1)
-}
-
-::google::protobuf::uint8* card_Info_1::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:game_landlord_protocol.card_Info_1)
-  // optional int32 deskId = 1;
-  if (has_deskid()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->deskid(), target);
-  }
-
-  // optional int32 cards_count = 2;
-  if (has_cards_count()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->cards_count(), target);
-  }
-
-  if (!unknown_fields().empty()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        unknown_fields(), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:game_landlord_protocol.card_Info_1)
-  return target;
-}
-
-int card_Info_1::ByteSize() const {
-  int total_size = 0;
-
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional int32 deskId = 1;
-    if (has_deskid()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->deskid());
-    }
-
-    // optional int32 cards_count = 2;
-    if (has_cards_count()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->cards_count());
-    }
-
-  }
-  if (!unknown_fields().empty()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        unknown_fields());
-  }
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-  return total_size;
-}
-
-void card_Info_1::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const card_Info_1* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const card_Info_1*>(
-      &from);
-  if (source == NULL) {
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-    MergeFrom(*source);
-  }
-}
-
-void card_Info_1::MergeFrom(const card_Info_1& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    if (from.has_deskid()) {
-      set_deskid(from.deskid());
-    }
-    if (from.has_cards_count()) {
-      set_cards_count(from.cards_count());
-    }
-  }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-}
-
-void card_Info_1::CopyFrom(const ::google::protobuf::Message& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void card_Info_1::CopyFrom(const card_Info_1& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool card_Info_1::IsInitialized() const {
-
-  return true;
-}
-
-void card_Info_1::Swap(card_Info_1* other) {
-  if (other != this) {
-    std::swap(deskid_, other->deskid_);
-    std::swap(cards_count_, other->cards_count_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
-}
-
-::google::protobuf::Metadata card_Info_1::GetMetadata() const {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::Metadata metadata;
-  metadata.descriptor = card_Info_1_descriptor_;
-  metadata.reflection = card_Info_1_reflection_;
-  return metadata;
-}
-
-
-// ===================================================================
-
-#ifndef _MSC_VER
-const int desk_award_Info::kDeskIdFieldNumber;
-const int desk_award_Info::kWinCountFieldNumber;
-#endif  // !_MSC_VER
-
-desk_award_Info::desk_award_Info()
-  : ::google::protobuf::Message() {
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:game_landlord_protocol.desk_award_Info)
-}
-
-void desk_award_Info::InitAsDefaultInstance() {
-}
-
-desk_award_Info::desk_award_Info(const desk_award_Info& from)
-  : ::google::protobuf::Message() {
-  SharedCtor();
-  MergeFrom(from);
-  // @@protoc_insertion_point(copy_constructor:game_landlord_protocol.desk_award_Info)
-}
-
-void desk_award_Info::SharedCtor() {
-  _cached_size_ = 0;
-  deskid_ = 0;
-  win_count_ = 0;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-}
-
-desk_award_Info::~desk_award_Info() {
-  // @@protoc_insertion_point(destructor:game_landlord_protocol.desk_award_Info)
-  SharedDtor();
-}
-
-void desk_award_Info::SharedDtor() {
-  if (this != default_instance_) {
-  }
-}
-
-void desk_award_Info::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-}
-const ::google::protobuf::Descriptor* desk_award_Info::descriptor() {
-  protobuf_AssignDescriptorsOnce();
-  return desk_award_Info_descriptor_;
-}
-
-const desk_award_Info& desk_award_Info::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_game_5flandlord_5fprotocol_2eproto();
-  return *default_instance_;
-}
-
-desk_award_Info* desk_award_Info::default_instance_ = NULL;
-
-desk_award_Info* desk_award_Info::New() const {
-  return new desk_award_Info;
-}
-
-void desk_award_Info::Clear() {
-#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
-  &reinterpret_cast<desk_award_Info*>(16)->f) - \
-   reinterpret_cast<char*>(16))
-
-#define ZR_(first, last) do {                              \
-    size_t f = OFFSET_OF_FIELD_(first);                    \
-    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
-    ::memset(&first, 0, n);                                \
-  } while (0)
-
-  ZR_(deskid_, win_count_);
-
-#undef OFFSET_OF_FIELD_
-#undef ZR_
-
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
-}
-
-bool desk_award_Info::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:game_landlord_protocol.desk_award_Info)
-  for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional int32 deskId = 1;
-      case 1: {
-        if (tag == 8) {
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &deskid_)));
-          set_has_deskid();
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(16)) goto parse_win_count;
-        break;
-      }
-
-      // optional int32 win_count = 2;
-      case 2: {
-        if (tag == 16) {
-         parse_win_count:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &win_count_)));
-          set_has_win_count();
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectAtEnd()) goto success;
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:game_landlord_protocol.desk_award_Info)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:game_landlord_protocol.desk_award_Info)
-  return false;
-#undef DO_
-}
-
-void desk_award_Info::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:game_landlord_protocol.desk_award_Info)
-  // optional int32 deskId = 1;
-  if (has_deskid()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->deskid(), output);
-  }
-
-  // optional int32 win_count = 2;
-  if (has_win_count()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->win_count(), output);
-  }
-
-  if (!unknown_fields().empty()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:game_landlord_protocol.desk_award_Info)
-}
-
-::google::protobuf::uint8* desk_award_Info::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:game_landlord_protocol.desk_award_Info)
-  // optional int32 deskId = 1;
-  if (has_deskid()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->deskid(), target);
-  }
-
-  // optional int32 win_count = 2;
-  if (has_win_count()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->win_count(), target);
-  }
-
-  if (!unknown_fields().empty()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        unknown_fields(), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:game_landlord_protocol.desk_award_Info)
-  return target;
-}
-
-int desk_award_Info::ByteSize() const {
-  int total_size = 0;
-
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional int32 deskId = 1;
-    if (has_deskid()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->deskid());
-    }
-
-    // optional int32 win_count = 2;
-    if (has_win_count()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->win_count());
-    }
-
-  }
-  if (!unknown_fields().empty()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        unknown_fields());
-  }
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-  return total_size;
-}
-
-void desk_award_Info::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const desk_award_Info* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const desk_award_Info*>(
-      &from);
-  if (source == NULL) {
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-    MergeFrom(*source);
-  }
-}
-
-void desk_award_Info::MergeFrom(const desk_award_Info& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    if (from.has_deskid()) {
-      set_deskid(from.deskid());
-    }
-    if (from.has_win_count()) {
-      set_win_count(from.win_count());
-    }
-  }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-}
-
-void desk_award_Info::CopyFrom(const ::google::protobuf::Message& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void desk_award_Info::CopyFrom(const desk_award_Info& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool desk_award_Info::IsInitialized() const {
-
-  return true;
-}
-
-void desk_award_Info::Swap(desk_award_Info* other) {
-  if (other != this) {
-    std::swap(deskid_, other->deskid_);
-    std::swap(win_count_, other->win_count_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
-}
-
-::google::protobuf::Metadata desk_award_Info::GetMetadata() const {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::Metadata metadata;
-  metadata.descriptor = desk_award_Info_descriptor_;
-  metadata.reflection = desk_award_Info_reflection_;
-  return metadata;
-}
-
-
-// ===================================================================
-
-#ifndef _MSC_VER
-const int player_info::kPlayerIdFieldNumber;
-const int player_info::kPlayerNicknameFieldNumber;
-const int player_info::kPlayerHeadFrameFieldNumber;
-const int player_info::kPlayerHeadCustomFieldNumber;
-const int player_info::kPlayerGoldFieldNumber;
-const int player_info::kPlayerSexFieldNumber;
-const int player_info::kPlayerVipLvFieldNumber;
-const int player_info::kDeskIdFieldNumber;
-#endif  // !_MSC_VER
-
-player_info::player_info()
-  : ::google::protobuf::Message() {
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:game_landlord_protocol.player_info)
-}
-
-void player_info::InitAsDefaultInstance() {
-}
-
-player_info::player_info(const player_info& from)
-  : ::google::protobuf::Message() {
-  SharedCtor();
-  MergeFrom(from);
-  // @@protoc_insertion_point(copy_constructor:game_landlord_protocol.player_info)
-}
-
-void player_info::SharedCtor() {
-  ::google::protobuf::internal::GetEmptyString();
-  _cached_size_ = 0;
-  player_id_ = 0;
-  player_nickname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  player_head_frame_ = 0;
-  player_head_custom_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  player_gold_ = GOOGLE_LONGLONG(0);
-  player_sex_ = 0;
-  player_vip_lv_ = 0;
-  deskid_ = 0;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-}
-
-player_info::~player_info() {
-  // @@protoc_insertion_point(destructor:game_landlord_protocol.player_info)
-  SharedDtor();
-}
-
-void player_info::SharedDtor() {
-  if (player_nickname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete player_nickname_;
-  }
-  if (player_head_custom_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete player_head_custom_;
-  }
-  if (this != default_instance_) {
-  }
-}
-
-void player_info::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-}
-const ::google::protobuf::Descriptor* player_info::descriptor() {
-  protobuf_AssignDescriptorsOnce();
-  return player_info_descriptor_;
-}
-
-const player_info& player_info::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_game_5flandlord_5fprotocol_2eproto();
-  return *default_instance_;
-}
-
-player_info* player_info::default_instance_ = NULL;
-
-player_info* player_info::New() const {
-  return new player_info;
-}
-
-void player_info::Clear() {
-#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
-  &reinterpret_cast<player_info*>(16)->f) - \
-   reinterpret_cast<char*>(16))
-
-#define ZR_(first, last) do {                              \
-    size_t f = OFFSET_OF_FIELD_(first);                    \
-    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
-    ::memset(&first, 0, n);                                \
-  } while (0)
-
-  if (_has_bits_[0 / 32] & 255) {
-    ZR_(player_id_, player_head_frame_);
-    ZR_(player_gold_, deskid_);
-    if (has_player_nickname()) {
-      if (player_nickname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-        player_nickname_->clear();
-      }
-    }
-    if (has_player_head_custom()) {
-      if (player_head_custom_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-        player_head_custom_->clear();
-      }
-    }
-  }
-
-#undef OFFSET_OF_FIELD_
-#undef ZR_
-
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
-}
-
-bool player_info::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:game_landlord_protocol.player_info)
-  for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional int32 player_id = 1;
-      case 1: {
-        if (tag == 8) {
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &player_id_)));
-          set_has_player_id();
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(18)) goto parse_player_nickname;
-        break;
-      }
-
-      // optional string player_nickname = 2;
-      case 2: {
-        if (tag == 18) {
-         parse_player_nickname:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_player_nickname()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->player_nickname().data(), this->player_nickname().length(),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "player_nickname");
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(24)) goto parse_player_head_frame;
-        break;
-      }
-
-      // optional int32 player_head_frame = 3;
-      case 3: {
-        if (tag == 24) {
-         parse_player_head_frame:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &player_head_frame_)));
-          set_has_player_head_frame();
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(34)) goto parse_player_head_custom;
-        break;
-      }
-
-      // optional string player_head_custom = 4;
-      case 4: {
-        if (tag == 34) {
-         parse_player_head_custom:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_player_head_custom()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->player_head_custom().data(), this->player_head_custom().length(),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "player_head_custom");
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(40)) goto parse_player_gold;
-        break;
-      }
-
-      // optional int64 player_gold = 5;
-      case 5: {
-        if (tag == 40) {
-         parse_player_gold:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
-                 input, &player_gold_)));
-          set_has_player_gold();
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(48)) goto parse_player_sex;
-        break;
-      }
-
-      // optional int32 player_sex = 6;
-      case 6: {
-        if (tag == 48) {
-         parse_player_sex:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &player_sex_)));
-          set_has_player_sex();
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(56)) goto parse_player_vip_lv;
-        break;
-      }
-
-      // optional int32 player_vip_lv = 7;
-      case 7: {
-        if (tag == 56) {
-         parse_player_vip_lv:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &player_vip_lv_)));
-          set_has_player_vip_lv();
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(64)) goto parse_deskId;
-        break;
-      }
-
-      // optional int32 deskId = 8;
-      case 8: {
-        if (tag == 64) {
-         parse_deskId:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &deskid_)));
-          set_has_deskid();
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectAtEnd()) goto success;
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:game_landlord_protocol.player_info)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:game_landlord_protocol.player_info)
-  return false;
-#undef DO_
-}
-
-void player_info::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:game_landlord_protocol.player_info)
-  // optional int32 player_id = 1;
-  if (has_player_id()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->player_id(), output);
-  }
-
-  // optional string player_nickname = 2;
-  if (has_player_nickname()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->player_nickname().data(), this->player_nickname().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "player_nickname");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->player_nickname(), output);
-  }
-
-  // optional int32 player_head_frame = 3;
-  if (has_player_head_frame()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->player_head_frame(), output);
-  }
-
-  // optional string player_head_custom = 4;
-  if (has_player_head_custom()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->player_head_custom().data(), this->player_head_custom().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "player_head_custom");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      4, this->player_head_custom(), output);
-  }
-
-  // optional int64 player_gold = 5;
-  if (has_player_gold()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt64(5, this->player_gold(), output);
-  }
-
-  // optional int32 player_sex = 6;
-  if (has_player_sex()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(6, this->player_sex(), output);
-  }
-
-  // optional int32 player_vip_lv = 7;
-  if (has_player_vip_lv()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(7, this->player_vip_lv(), output);
-  }
-
-  // optional int32 deskId = 8;
-  if (has_deskid()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(8, this->deskid(), output);
-  }
-
-  if (!unknown_fields().empty()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:game_landlord_protocol.player_info)
-}
-
-::google::protobuf::uint8* player_info::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:game_landlord_protocol.player_info)
-  // optional int32 player_id = 1;
-  if (has_player_id()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->player_id(), target);
-  }
-
-  // optional string player_nickname = 2;
-  if (has_player_nickname()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->player_nickname().data(), this->player_nickname().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "player_nickname");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->player_nickname(), target);
-  }
-
-  // optional int32 player_head_frame = 3;
-  if (has_player_head_frame()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->player_head_frame(), target);
-  }
-
-  // optional string player_head_custom = 4;
-  if (has_player_head_custom()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->player_head_custom().data(), this->player_head_custom().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "player_head_custom");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        4, this->player_head_custom(), target);
-  }
-
-  // optional int64 player_gold = 5;
-  if (has_player_gold()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(5, this->player_gold(), target);
-  }
-
-  // optional int32 player_sex = 6;
-  if (has_player_sex()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(6, this->player_sex(), target);
-  }
-
-  // optional int32 player_vip_lv = 7;
-  if (has_player_vip_lv()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(7, this->player_vip_lv(), target);
-  }
-
-  // optional int32 deskId = 8;
-  if (has_deskid()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(8, this->deskid(), target);
-  }
-
-  if (!unknown_fields().empty()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        unknown_fields(), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:game_landlord_protocol.player_info)
-  return target;
-}
-
-int player_info::ByteSize() const {
-  int total_size = 0;
-
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional int32 player_id = 1;
-    if (has_player_id()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->player_id());
-    }
-
-    // optional string player_nickname = 2;
-    if (has_player_nickname()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->player_nickname());
-    }
-
-    // optional int32 player_head_frame = 3;
-    if (has_player_head_frame()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->player_head_frame());
-    }
-
-    // optional string player_head_custom = 4;
-    if (has_player_head_custom()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->player_head_custom());
-    }
-
-    // optional int64 player_gold = 5;
-    if (has_player_gold()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int64Size(
-          this->player_gold());
-    }
-
-    // optional int32 player_sex = 6;
-    if (has_player_sex()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->player_sex());
-    }
-
-    // optional int32 player_vip_lv = 7;
-    if (has_player_vip_lv()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->player_vip_lv());
-    }
-
-    // optional int32 deskId = 8;
-    if (has_deskid()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->deskid());
-    }
-
-  }
-  if (!unknown_fields().empty()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        unknown_fields());
-  }
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-  return total_size;
-}
-
-void player_info::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const player_info* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const player_info*>(
-      &from);
-  if (source == NULL) {
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-    MergeFrom(*source);
-  }
-}
-
-void player_info::MergeFrom(const player_info& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    if (from.has_player_id()) {
-      set_player_id(from.player_id());
-    }
-    if (from.has_player_nickname()) {
-      set_player_nickname(from.player_nickname());
-    }
-    if (from.has_player_head_frame()) {
-      set_player_head_frame(from.player_head_frame());
-    }
-    if (from.has_player_head_custom()) {
-      set_player_head_custom(from.player_head_custom());
-    }
-    if (from.has_player_gold()) {
-      set_player_gold(from.player_gold());
-    }
-    if (from.has_player_sex()) {
-      set_player_sex(from.player_sex());
-    }
-    if (from.has_player_vip_lv()) {
-      set_player_vip_lv(from.player_vip_lv());
-    }
-    if (from.has_deskid()) {
-      set_deskid(from.deskid());
-    }
-  }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-}
-
-void player_info::CopyFrom(const ::google::protobuf::Message& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void player_info::CopyFrom(const player_info& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool player_info::IsInitialized() const {
-
-  return true;
-}
-
-void player_info::Swap(player_info* other) {
-  if (other != this) {
-    std::swap(player_id_, other->player_id_);
-    std::swap(player_nickname_, other->player_nickname_);
-    std::swap(player_head_frame_, other->player_head_frame_);
-    std::swap(player_head_custom_, other->player_head_custom_);
-    std::swap(player_gold_, other->player_gold_);
-    std::swap(player_sex_, other->player_sex_);
-    std::swap(player_vip_lv_, other->player_vip_lv_);
-    std::swap(deskid_, other->deskid_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
-}
-
-::google::protobuf::Metadata player_info::GetMetadata() const {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::Metadata metadata;
-  metadata.descriptor = player_info_descriptor_;
-  metadata.reflection = player_info_reflection_;
-  return metadata;
-}
-
-
-// ===================================================================
-
-#ifndef _MSC_VER
 const int packetc2l_rob_landlord::kPacketIdFieldNumber;
 const int packetc2l_rob_landlord::kOrRobFieldNumber;
 #endif  // !_MSC_VER
@@ -7839,6 +7884,275 @@ void packetl2c_notice_winlose::Swap(packetl2c_notice_winlose* other) {
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = packetl2c_notice_winlose_descriptor_;
   metadata.reflection = packetl2c_notice_winlose_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int packetl2c_notice_SystemTalk::kPacketIdFieldNumber;
+const int packetl2c_notice_SystemTalk::kTalkIdFieldNumber;
+#endif  // !_MSC_VER
+
+packetl2c_notice_SystemTalk::packetl2c_notice_SystemTalk()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:game_landlord_protocol.packetl2c_notice_SystemTalk)
+}
+
+void packetl2c_notice_SystemTalk::InitAsDefaultInstance() {
+}
+
+packetl2c_notice_SystemTalk::packetl2c_notice_SystemTalk(const packetl2c_notice_SystemTalk& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:game_landlord_protocol.packetl2c_notice_SystemTalk)
+}
+
+void packetl2c_notice_SystemTalk::SharedCtor() {
+  _cached_size_ = 0;
+  packet_id_ = 15107;
+  talk_id_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+packetl2c_notice_SystemTalk::~packetl2c_notice_SystemTalk() {
+  // @@protoc_insertion_point(destructor:game_landlord_protocol.packetl2c_notice_SystemTalk)
+  SharedDtor();
+}
+
+void packetl2c_notice_SystemTalk::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void packetl2c_notice_SystemTalk::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* packetl2c_notice_SystemTalk::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return packetl2c_notice_SystemTalk_descriptor_;
+}
+
+const packetl2c_notice_SystemTalk& packetl2c_notice_SystemTalk::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_game_5flandlord_5fprotocol_2eproto();
+  return *default_instance_;
+}
+
+packetl2c_notice_SystemTalk* packetl2c_notice_SystemTalk::default_instance_ = NULL;
+
+packetl2c_notice_SystemTalk* packetl2c_notice_SystemTalk::New() const {
+  return new packetl2c_notice_SystemTalk;
+}
+
+void packetl2c_notice_SystemTalk::Clear() {
+  if (_has_bits_[0 / 32] & 3) {
+    packet_id_ = 15107;
+    talk_id_ = 0;
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool packetl2c_notice_SystemTalk::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:game_landlord_protocol.packetl2c_notice_SystemTalk)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_l2c_notice_SystemTalk];
+      case 1: {
+        if (tag == 8) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::game_landlord_protocol::e_server_msg_type_IsValid(value)) {
+            set_packet_id(static_cast< ::game_landlord_protocol::e_server_msg_type >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(1, value);
+          }
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_talk_Id;
+        break;
+      }
+
+      // optional int32 talk_Id = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_talk_Id:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &talk_id_)));
+          set_has_talk_id();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:game_landlord_protocol.packetl2c_notice_SystemTalk)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:game_landlord_protocol.packetl2c_notice_SystemTalk)
+  return false;
+#undef DO_
+}
+
+void packetl2c_notice_SystemTalk::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:game_landlord_protocol.packetl2c_notice_SystemTalk)
+  // optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_l2c_notice_SystemTalk];
+  if (has_packet_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->packet_id(), output);
+  }
+
+  // optional int32 talk_Id = 2;
+  if (has_talk_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->talk_id(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:game_landlord_protocol.packetl2c_notice_SystemTalk)
+}
+
+::google::protobuf::uint8* packetl2c_notice_SystemTalk::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:game_landlord_protocol.packetl2c_notice_SystemTalk)
+  // optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_l2c_notice_SystemTalk];
+  if (has_packet_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->packet_id(), target);
+  }
+
+  // optional int32 talk_Id = 2;
+  if (has_talk_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->talk_id(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:game_landlord_protocol.packetl2c_notice_SystemTalk)
+  return target;
+}
+
+int packetl2c_notice_SystemTalk::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional .game_landlord_protocol.e_server_msg_type packet_id = 1 [default = e_mst_l2c_notice_SystemTalk];
+    if (has_packet_id()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->packet_id());
+    }
+
+    // optional int32 talk_Id = 2;
+    if (has_talk_id()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->talk_id());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void packetl2c_notice_SystemTalk::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const packetl2c_notice_SystemTalk* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const packetl2c_notice_SystemTalk*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void packetl2c_notice_SystemTalk::MergeFrom(const packetl2c_notice_SystemTalk& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_packet_id()) {
+      set_packet_id(from.packet_id());
+    }
+    if (from.has_talk_id()) {
+      set_talk_id(from.talk_id());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void packetl2c_notice_SystemTalk::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void packetl2c_notice_SystemTalk::CopyFrom(const packetl2c_notice_SystemTalk& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool packetl2c_notice_SystemTalk::IsInitialized() const {
+
+  return true;
+}
+
+void packetl2c_notice_SystemTalk::Swap(packetl2c_notice_SystemTalk* other) {
+  if (other != this) {
+    std::swap(packet_id_, other->packet_id_);
+    std::swap(talk_id_, other->talk_id_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata packetl2c_notice_SystemTalk::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = packetl2c_notice_SystemTalk_descriptor_;
+  metadata.reflection = packetl2c_notice_SystemTalk_reflection_;
   return metadata;
 }
 

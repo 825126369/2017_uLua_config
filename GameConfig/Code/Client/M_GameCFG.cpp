@@ -57,8 +57,6 @@ void M_GameCFG::Load()
 		data.mAnimationName = element->Attribute("AnimationName");
 		data.mPictureName = element->Attribute("PictureName");
 		data.mIsShow = element->BoolAttribute("IsShow");
-		data.mEnterGold = element->IntAttribute("EnterGold");
-		data.mEnterVIP = element->IntAttribute("EnterVIP");
 		if (mMapData.find(data.mID) != mMapData.end())std::cout <<"data refind:" << data.mID << std::endl;
 		CCASSERT(mMapData.find(data.mID) == mMapData.end(), "data.mID is exists");
 		mMapData.insert(std::make_pair(data.mID, data));
@@ -91,8 +89,6 @@ void M_GameCFG::LoadLua()
 		LuaCfgHelper::readString(L, "AnimationName", data.mAnimationName);
 		LuaCfgHelper::readString(L, "PictureName", data.mPictureName);
 		LuaCfgHelper::readBool(L, "IsShow", data.mIsShow);
-		LuaCfgHelper::readInt(L, "EnterGold", data.mEnterGold);
-		LuaCfgHelper::readInt(L, "EnterVIP", data.mEnterVIP);
 		if (mMapData.find(data.mID) != mMapData.end())std::cout <<"data refind:" << data.mID << std::endl;
 		CCASSERT(mMapData.find(data.mID) == mMapData.end(), "data.mID is exists");
 		mMapData.insert(std::make_pair(data.mID, data));

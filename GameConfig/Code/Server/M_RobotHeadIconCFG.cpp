@@ -6,17 +6,17 @@
 #include <boost/smart_ptr.hpp>
 #include <boost/algorithm/string.hpp>
 #include "tinyxml2.h"
-#include "M_GameCFG.h"
-std::auto_ptr<M_GameCFG> M_GameCFG::msSingleton(nullptr);
+#include "M_RobotHeadIconCFG.h"
+std::auto_ptr<M_RobotHeadIconCFG> M_RobotHeadIconCFG::msSingleton(nullptr);
 
-int M_GameCFG::GetCount()
+int M_RobotHeadIconCFG::GetCount()
 {
 	return (int)mMapData.size();
 }
 
-const M_GameCFGData* M_GameCFG::GetData(int ID)
+const M_RobotHeadIconCFGData* M_RobotHeadIconCFG::GetData(int Index)
 {
-	auto it = mMapData.find(ID);
+	auto it = mMapData.find(Index);
 	if (it != mMapData.end())
 	{
 		return &it->second;
@@ -24,18 +24,18 @@ const M_GameCFGData* M_GameCFG::GetData(int ID)
 	return NULL;
 }
 
-boost::unordered_map<int, M_GameCFGData>& M_GameCFG::GetMapData()
+boost::unordered_map<int, M_RobotHeadIconCFGData>& M_RobotHeadIconCFG::GetMapData()
 {
 	return mMapData;
 }
 
-void M_GameCFG::Reload()
+void M_RobotHeadIconCFG::Reload()
 {
 	mMapData.clear();
 	Load();
 }
 
-void M_GameCFG::Reload(const std::string& path)
+void M_RobotHeadIconCFG::Reload(const std::string& path)
 {
 	std::ifstream readStream(path, std::ios::binary);
 	if (!readStream.is_open())
@@ -66,23 +66,16 @@ void M_GameCFG::Reload(const std::string& path)
 	auto element = root->FirstChildElement("Data");
 	while (element != NULL)
 	{
-		M_GameCFGData data;
-		data.mID = element->IntAttribute("ID");
-		data.mGameName = element->Attribute("GameName");
-		data.mGamePrefix = element->Attribute("GamePrefix");
-		data.mUpdateUrl = element->Attribute("UpdateUrl");
-		data.mIsOpen = element->BoolAttribute("IsOpen");
-		data.mGameSize = element->Attribute("GameSize");
-		data.mZipVersion = element->Attribute("ZipVersion");
-		data.mAnimationName = element->Attribute("AnimationName");
-		data.mPictureName = element->Attribute("PictureName");
-		data.mIsShow = element->BoolAttribute("IsShow");
-		mMapData[data.mID] = data;
+		M_RobotHeadIconCFGData data;
+		data.mIndex = element->IntAttribute("Index");
+		data.mboyIcon_MinIndex = element->IntAttribute("boyIcon_MinIndex");
+		data.mgirlIcon = element->IntAttribute("girlIcon");
+		mMapData[data.mIndex] = data;
 		element = element->NextSiblingElement();
 	}
 }
 
-void M_GameCFG::Load(const std::string& path)
+void M_RobotHeadIconCFG::Load(const std::string& path)
 {
 	std::ifstream readStream(path, std::ios::binary);
 	if (!readStream.is_open())
@@ -113,34 +106,27 @@ void M_GameCFG::Load(const std::string& path)
 	auto element = root->FirstChildElement("Data");
 	while (element != NULL)
 	{
-		M_GameCFGData data;
-		data.mID = element->IntAttribute("ID");
-		data.mGameName = element->Attribute("GameName");
-		data.mGamePrefix = element->Attribute("GamePrefix");
-		data.mUpdateUrl = element->Attribute("UpdateUrl");
-		data.mIsOpen = element->BoolAttribute("IsOpen");
-		data.mGameSize = element->Attribute("GameSize");
-		data.mZipVersion = element->Attribute("ZipVersion");
-		data.mAnimationName = element->Attribute("AnimationName");
-		data.mPictureName = element->Attribute("PictureName");
-		data.mIsShow = element->BoolAttribute("IsShow");
-		if (mMapData.find(data.mID) != mMapData.end())std::cout <<"data refind:" << data.mID << std::endl;
-		assert(mMapData.find(data.mID) == mMapData.end());
-		mMapData.insert(std::make_pair(data.mID, data));
+		M_RobotHeadIconCFGData data;
+		data.mIndex = element->IntAttribute("Index");
+		data.mboyIcon_MinIndex = element->IntAttribute("boyIcon_MinIndex");
+		data.mgirlIcon = element->IntAttribute("girlIcon");
+		if (mMapData.find(data.mIndex) != mMapData.end())std::cout <<"data refind:" << data.mIndex << std::endl;
+		assert(mMapData.find(data.mIndex) == mMapData.end());
+		mMapData.insert(std::make_pair(data.mIndex, data));
 		element = element->NextSiblingElement();
 	}
 }
 
-void M_GameCFG::Load()
+void M_RobotHeadIconCFG::Load()
 {
-	Load("../Config/M_GameCFG.xml");
+	Load("../Config/M_RobotHeadIconCFG.xml");
 }
 
-M_GameCFG* M_GameCFG::GetSingleton()
+M_RobotHeadIconCFG* M_RobotHeadIconCFG::GetSingleton()
 {
 	if (msSingleton.get() == nullptr)
 	{
-		msSingleton.reset(new M_GameCFG());
+		msSingleton.reset(new M_RobotHeadIconCFG());
 	}
 	return msSingleton.get();
 }

@@ -2,6 +2,41 @@ package game_landlord_protocol;
 import "game_landlord_def.proto"; 
 import "msg_type_def.proto";
 
+//请求，取消托管
+message packetc2l_Hang 
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2l_Hang];
+	optional bool orHang=2;//false：不托管，true:托管
+}
+
+//请求，取消托管 返回
+message packetl2c_Hang_result 
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_l2c_Hang];
+	optional e_server_error_code result = 2 [default= e_error_code_success];
+	optional bool orHang=3;
+}
+
+//请求 换桌
+message packetc2l_ChangeTable 
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2l_changetable];
+}
+
+//请求换桌 返回
+message packetl2c_ChangeTable_result 
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_l2c_changetable];
+	optional e_server_error_code result = 2 [default= e_error_code_success];
+}
+
+//请求,说个系统聊天
+message packetc2l_SystemTalk 
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2l_SystemTalk];
+	optional int32 talk_Id=2;//说了哪句话
+}
+
 //进入战场
 message packetc2l_enter_room 
 {
@@ -79,37 +114,6 @@ message packetl2c_check_state_result {
 	optional bool is_intable = 2;//是否在游戏中
 }
 
-message card_Info
-{
-	optional int32 deskId=1;
-	repeated int32 cards=2;
-}
-
-message card_Info_1
-{
-	optional int32 deskId=1;
-	optional int32 cards_count=2;
-}
-
-message desk_award_Info
-{
-	optional int32 deskId=1;
-	optional int32 win_count=2;
-}
-
-//玩家信息
-message player_info 
-{
-	optional int32 player_id = 1;				//玩家ID
-	optional string player_nickname = 2;		//玩家昵称
-	optional int32 player_head_frame = 3;		//头像
-	optional string player_head_custom = 4;		//玩家头像
-	optional int64 player_gold = 5;				//玩家金币
-	optional int32 player_sex = 6;				// 玩家性别	
-	optional int32 player_vip_lv = 7;			// Vip等级
-	optional int32 deskId=8;					//凳子ID
-}
-
 //请求 抢地主
 message packetc2l_rob_landlord 
 {
@@ -173,6 +177,13 @@ message packetl2c_notice_winlose
 	optional e_server_msg_type packet_id = 1 [default = e_mst_l2c_notice_winlose];
  	repeated desk_award_Info m_desk_awards=2;
 	repeated card_Info remain_cards=3;// 其他玩家剩余的牌的信息	 	
+}
+
+//通知说个系统聊天
+message packetl2c_notice_SystemTalk 
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_l2c_notice_SystemTalk];
+	optional int32 talk_Id=2;//说了哪句话
 }
 
 
