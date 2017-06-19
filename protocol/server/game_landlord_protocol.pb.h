@@ -1300,6 +1300,20 @@ class packetl2c_get_room_scene_info_result : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 score() const;
   inline void set_score(::google::protobuf::int32 value);
 
+  // optional bool orHang = 16;
+  inline bool has_orhang() const;
+  inline void clear_orhang();
+  static const int kOrHangFieldNumber = 16;
+  inline bool orhang() const;
+  inline void set_orhang(bool value);
+
+  // optional bool waitTime = 17;
+  inline bool has_waittime() const;
+  inline void clear_waittime();
+  static const int kWaitTimeFieldNumber = 17;
+  inline bool waittime() const;
+  inline void set_waittime(bool value);
+
   // @@protoc_insertion_point(class_scope:game_landlord_protocol.packetl2c_get_room_scene_info_result)
  private:
   inline void set_has_packet_id();
@@ -1324,6 +1338,10 @@ class packetl2c_get_room_scene_info_result : public ::google::protobuf::Message 
   inline void clear_has_current_who_playhanding();
   inline void set_has_score();
   inline void clear_has_score();
+  inline void set_has_orhang();
+  inline void clear_has_orhang();
+  inline void set_has_waittime();
+  inline void clear_has_waittime();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -1344,6 +1362,8 @@ class packetl2c_get_room_scene_info_result : public ::google::protobuf::Message 
   ::google::protobuf::int32 current_who_roblandlording_;
   ::google::protobuf::int32 current_who_playhanding_;
   ::google::protobuf::int32 score_;
+  bool orhang_;
+  bool waittime_;
   friend void  protobuf_AddDesc_game_5flandlord_5fprotocol_2eproto();
   friend void protobuf_AssignDesc_game_5flandlord_5fprotocol_2eproto();
   friend void protobuf_ShutdownFile_game_5flandlord_5fprotocol_2eproto();
@@ -3455,6 +3475,54 @@ inline void packetl2c_get_room_scene_info_result::set_score(::google::protobuf::
   set_has_score();
   score_ = value;
   // @@protoc_insertion_point(field_set:game_landlord_protocol.packetl2c_get_room_scene_info_result.score)
+}
+
+// optional bool orHang = 16;
+inline bool packetl2c_get_room_scene_info_result::has_orhang() const {
+  return (_has_bits_[0] & 0x00008000u) != 0;
+}
+inline void packetl2c_get_room_scene_info_result::set_has_orhang() {
+  _has_bits_[0] |= 0x00008000u;
+}
+inline void packetl2c_get_room_scene_info_result::clear_has_orhang() {
+  _has_bits_[0] &= ~0x00008000u;
+}
+inline void packetl2c_get_room_scene_info_result::clear_orhang() {
+  orhang_ = false;
+  clear_has_orhang();
+}
+inline bool packetl2c_get_room_scene_info_result::orhang() const {
+  // @@protoc_insertion_point(field_get:game_landlord_protocol.packetl2c_get_room_scene_info_result.orHang)
+  return orhang_;
+}
+inline void packetl2c_get_room_scene_info_result::set_orhang(bool value) {
+  set_has_orhang();
+  orhang_ = value;
+  // @@protoc_insertion_point(field_set:game_landlord_protocol.packetl2c_get_room_scene_info_result.orHang)
+}
+
+// optional bool waitTime = 17;
+inline bool packetl2c_get_room_scene_info_result::has_waittime() const {
+  return (_has_bits_[0] & 0x00010000u) != 0;
+}
+inline void packetl2c_get_room_scene_info_result::set_has_waittime() {
+  _has_bits_[0] |= 0x00010000u;
+}
+inline void packetl2c_get_room_scene_info_result::clear_has_waittime() {
+  _has_bits_[0] &= ~0x00010000u;
+}
+inline void packetl2c_get_room_scene_info_result::clear_waittime() {
+  waittime_ = false;
+  clear_has_waittime();
+}
+inline bool packetl2c_get_room_scene_info_result::waittime() const {
+  // @@protoc_insertion_point(field_get:game_landlord_protocol.packetl2c_get_room_scene_info_result.waitTime)
+  return waittime_;
+}
+inline void packetl2c_get_room_scene_info_result::set_waittime(bool value) {
+  set_has_waittime();
+  waittime_ = value;
+  // @@protoc_insertion_point(field_set:game_landlord_protocol.packetl2c_get_room_scene_info_result.waitTime)
 }
 
 // -------------------------------------------------------------------

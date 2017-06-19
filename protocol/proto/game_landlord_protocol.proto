@@ -100,7 +100,9 @@ message packetl2c_get_room_scene_info_result {
 	optional e_player_game_state playerState=12;//玩家状态
 	optional int32 current_who_robLandlording=13;//当前谁在抢地主
 	optional int32 current_who_playhanding=14;//当前谁在出牌
-	optional int32 score=15;//底分		
+	optional int32 score=15;//底分
+	optional bool orHang=16;//是否托管
+	optional bool waitTime=17;//等待时间		
 }
 
 //检测游戏状态		//进游戏之后判断是否在桌子中

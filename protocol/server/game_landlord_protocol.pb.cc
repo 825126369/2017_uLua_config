@@ -294,7 +294,7 @@ void protobuf_AssignDesc_game_5flandlord_5fprotocol_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetc2l_get_room_scene_info));
   packetl2c_get_room_scene_info_result_descriptor_ = file->message_type(12);
-  static const int packetl2c_get_room_scene_info_result_offsets_[15] = {
+  static const int packetl2c_get_room_scene_info_result_offsets_[17] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_get_room_scene_info_result, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_get_room_scene_info_result, room_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_get_room_scene_info_result, gamestate_),
@@ -310,6 +310,8 @@ void protobuf_AssignDesc_game_5flandlord_5fprotocol_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_get_room_scene_info_result, current_who_roblandlording_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_get_room_scene_info_result, current_who_playhanding_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_get_room_scene_info_result, score_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_get_room_scene_info_result, orhang_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_get_room_scene_info_result, waittime_),
   };
   packetl2c_get_room_scene_info_result_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -679,7 +681,7 @@ void protobuf_AddDesc_game_5flandlord_5fprotocol_2eproto() {
     "acketc2l_get_room_scene_info\022[\n\tpacket_i"
     "d\030\001 \001(\0162).game_landlord_protocol.e_serve"
     "r_msg_type:\035e_mst_c2l_get_room_scene_inf"
-    "o\"\353\004\n$packetl2c_get_room_scene_info_resu"
+    "o\"\215\005\n$packetl2c_get_room_scene_info_resu"
     "lt\022[\n\tpacket_id\030\001 \001(\0162).game_landlord_pr"
     "otocol.e_server_msg_type:\035e_mst_l2c_get_"
     "room_scene_info\022\017\n\007room_id\030\002 \001(\005\0227\n\tgame"
@@ -694,56 +696,57 @@ void protobuf_AddDesc_game_5flandlord_5fprotocol_2eproto() {
     "yerState\030\014 \001(\0162+.game_landlord_protocol."
     "e_player_game_state\022\"\n\032current_who_robLa"
     "ndlording\030\r \001(\005\022\037\n\027current_who_playhandi"
-    "ng\030\016 \001(\005\022\r\n\005score\030\017 \001(\005\"l\n\025packetc2l_che"
-    "ck_state\022S\n\tpacket_id\030\001 \001(\0162).game_landl"
-    "ord_protocol.e_server_msg_type:\025e_mst_c2"
-    "l_check_state\"\207\001\n\034packetl2c_check_state_"
-    "result\022S\n\tpacket_id\030\001 \001(\0162).game_landlor"
-    "d_protocol.e_server_msg_type:\025e_mst_l2c_"
-    "check_state\022\022\n\nis_intable\030\002 \001(\010\"~\n\026packe"
-    "tc2l_rob_landlord\022T\n\tpacket_id\030\001 \001(\0162).g"
-    "ame_landlord_protocol.e_server_msg_type:"
-    "\026e_mst_c2l_rob_landlord\022\016\n\006or_Rob\030\002 \001(\005\""
-    "\230\001\n\022packetc2l_playhand\022P\n\tpacket_id\030\001 \001("
-    "\0162).game_landlord_protocol.e_server_msg_"
-    "type:\022e_mst_c2l_playhand\0220\n\005cards\030\002 \001(\0132"
-    "!.game_landlord_protocol.card_Info\"\211\002\n\032p"
-    "acketl2c_notice_startgame\022X\n\tpacket_id\030\001"
-    " \001(\0162).game_landlord_protocol.e_server_m"
-    "sg_type:\032e_mst_l2c_notice_startgame\022\r\n\005c"
-    "ards\030\002 \003(\005\022\020\n\010opencard\030\003 \001(\005\022\017\n\007cards_1\030"
-    "\004 \003(\005\0227\n\nplayerList\030\005 \003(\0132#.game_landlor"
-    "d_protocol.player_info\022\023\n\013landlord_Id\030\006 "
-    "\001(\005\022\021\n\tmin_score\030\007 \001(\005\"\214\001\n\035packetl2c_not"
-    "ice_who_playhand\022[\n\tpacket_id\030\001 \001(\0162).ga"
-    "me_landlord_protocol.e_server_msg_type:\035"
-    "e_mst_l2c_notice_who_playhand\022\016\n\006deskId\030"
-    "\002 \001(\005\"\371\001\n\031packetl2c_notice_playhand\022W\n\tp"
+    "ng\030\016 \001(\005\022\r\n\005score\030\017 \001(\005\022\016\n\006orHang\030\020 \001(\010\022"
+    "\020\n\010waitTime\030\021 \001(\010\"l\n\025packetc2l_check_sta"
+    "te\022S\n\tpacket_id\030\001 \001(\0162).game_landlord_pr"
+    "otocol.e_server_msg_type:\025e_mst_c2l_chec"
+    "k_state\"\207\001\n\034packetl2c_check_state_result"
+    "\022S\n\tpacket_id\030\001 \001(\0162).game_landlord_prot"
+    "ocol.e_server_msg_type:\025e_mst_l2c_check_"
+    "state\022\022\n\nis_intable\030\002 \001(\010\"~\n\026packetc2l_r"
+    "ob_landlord\022T\n\tpacket_id\030\001 \001(\0162).game_la"
+    "ndlord_protocol.e_server_msg_type:\026e_mst"
+    "_c2l_rob_landlord\022\016\n\006or_Rob\030\002 \001(\005\"\230\001\n\022pa"
+    "cketc2l_playhand\022P\n\tpacket_id\030\001 \001(\0162).ga"
+    "me_landlord_protocol.e_server_msg_type:\022"
+    "e_mst_c2l_playhand\0220\n\005cards\030\002 \001(\0132!.game"
+    "_landlord_protocol.card_Info\"\211\002\n\032packetl"
+    "2c_notice_startgame\022X\n\tpacket_id\030\001 \001(\0162)"
+    ".game_landlord_protocol.e_server_msg_typ"
+    "e:\032e_mst_l2c_notice_startgame\022\r\n\005cards\030\002"
+    " \003(\005\022\020\n\010opencard\030\003 \001(\005\022\017\n\007cards_1\030\004 \003(\005\022"
+    "7\n\nplayerList\030\005 \003(\0132#.game_landlord_prot"
+    "ocol.player_info\022\023\n\013landlord_Id\030\006 \001(\005\022\021\n"
+    "\tmin_score\030\007 \001(\005\"\214\001\n\035packetl2c_notice_wh"
+    "o_playhand\022[\n\tpacket_id\030\001 \001(\0162).game_lan"
+    "dlord_protocol.e_server_msg_type:\035e_mst_"
+    "l2c_notice_who_playhand\022\016\n\006deskId\030\002 \001(\005\""
+    "\371\001\n\031packetl2c_notice_playhand\022W\n\tpacket_"
+    "id\030\001 \001(\0162).game_landlord_protocol.e_serv"
+    "er_msg_type:\031e_mst_l2c_notice_playhand\022Q"
+    "\n\006result\030\002 \001(\0162+.game_landlord_protocol."
+    "e_server_error_code:\024e_error_code_succes"
+    "s\0220\n\005cards\030\003 \001(\0132!.game_landlord_protoco"
+    "l.card_Info\"\214\001\n\035packetl2c_notice_rob_lan"
+    "dlord\022[\n\tpacket_id\030\001 \001(\0162).game_landlord"
+    "_protocol.e_server_msg_type:\035e_mst_l2c_n"
+    "otice_rob_landlord\022\016\n\006deskId\030\002 \001(\005\"\375\001\n$p"
+    "acketl2c_notice_rob_landlord_result\022b\n\tp"
     "acket_id\030\001 \001(\0162).game_landlord_protocol."
-    "e_server_msg_type:\031e_mst_l2c_notice_play"
-    "hand\022Q\n\006result\030\002 \001(\0162+.game_landlord_pro"
-    "tocol.e_server_error_code:\024e_error_code_"
-    "success\0220\n\005cards\030\003 \001(\0132!.game_landlord_p"
-    "rotocol.card_Info\"\214\001\n\035packetl2c_notice_r"
-    "ob_landlord\022[\n\tpacket_id\030\001 \001(\0162).game_la"
-    "ndlord_protocol.e_server_msg_type:\035e_mst"
-    "_l2c_notice_rob_landlord\022\016\n\006deskId\030\002 \001(\005"
-    "\"\375\001\n$packetl2c_notice_rob_landlord_resul"
-    "t\022b\n\tpacket_id\030\001 \001(\0162).game_landlord_pro"
-    "tocol.e_server_msg_type:$e_mst_l2c_notic"
-    "e_rob_landlord_result\022Q\n\006result\030\002 \001(\0162+."
-    "game_landlord_protocol.e_server_error_co"
-    "de:\024e_error_code_success\022\016\n\006deskId\030\003 \001(\005"
-    "\022\016\n\006or_Rob\030\004 \001(\005\"\353\001\n\030packetl2c_notice_wi"
-    "nlose\022V\n\tpacket_id\030\001 \001(\0162).game_landlord"
-    "_protocol.e_server_msg_type:\030e_mst_l2c_n"
-    "otice_winlose\022>\n\rm_desk_awards\030\002 \003(\0132\'.g"
-    "ame_landlord_protocol.desk_award_Info\0227\n"
-    "\014remain_cards\030\003 \003(\0132!.game_landlord_prot"
-    "ocol.card_Info\"\211\001\n\033packetl2c_notice_Syst"
-    "emTalk\022Y\n\tpacket_id\030\001 \001(\0162).game_landlor"
-    "d_protocol.e_server_msg_type:\033e_mst_l2c_"
-    "notice_SystemTalk\022\017\n\007talk_Id\030\002 \001(\005", 4554);
+    "e_server_msg_type:$e_mst_l2c_notice_rob_"
+    "landlord_result\022Q\n\006result\030\002 \001(\0162+.game_l"
+    "andlord_protocol.e_server_error_code:\024e_"
+    "error_code_success\022\016\n\006deskId\030\003 \001(\005\022\016\n\006or"
+    "_Rob\030\004 \001(\005\"\353\001\n\030packetl2c_notice_winlose\022"
+    "V\n\tpacket_id\030\001 \001(\0162).game_landlord_proto"
+    "col.e_server_msg_type:\030e_mst_l2c_notice_"
+    "winlose\022>\n\rm_desk_awards\030\002 \003(\0132\'.game_la"
+    "ndlord_protocol.desk_award_Info\0227\n\014remai"
+    "n_cards\030\003 \003(\0132!.game_landlord_protocol.c"
+    "ard_Info\"\211\001\n\033packetl2c_notice_SystemTalk"
+    "\022Y\n\tpacket_id\030\001 \001(\0162).game_landlord_prot"
+    "ocol.e_server_msg_type:\033e_mst_l2c_notice"
+    "_SystemTalk\022\017\n\007talk_Id\030\002 \001(\005", 4588);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "game_landlord_protocol.proto", &protobuf_RegisterTypes);
   packetc2l_Hang::default_instance_ = new packetc2l_Hang();
@@ -4029,6 +4032,8 @@ const int packetl2c_get_room_scene_info_result::kPlayerStateFieldNumber;
 const int packetl2c_get_room_scene_info_result::kCurrentWhoRobLandlordingFieldNumber;
 const int packetl2c_get_room_scene_info_result::kCurrentWhoPlayhandingFieldNumber;
 const int packetl2c_get_room_scene_info_result::kScoreFieldNumber;
+const int packetl2c_get_room_scene_info_result::kOrHangFieldNumber;
+const int packetl2c_get_room_scene_info_result::kWaitTimeFieldNumber;
 #endif  // !_MSC_VER
 
 packetl2c_get_room_scene_info_result::packetl2c_get_room_scene_info_result()
@@ -4061,6 +4066,8 @@ void packetl2c_get_room_scene_info_result::SharedCtor() {
   current_who_roblandlording_ = 0;
   current_who_playhanding_ = 0;
   score_ = 0;
+  orhang_ = false;
+  waittime_ = false;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -4113,13 +4120,14 @@ void packetl2c_get_room_scene_info_result::Clear() {
     room_id_ = 0;
     landlord_id_ = 0;
   }
-  if (_has_bits_[8 / 32] & 32000) {
-    ZR_(playerstate_, score_);
+  if (_has_bits_[8 / 32] & 64768) {
+    ZR_(playerstate_, orhang_);
     if (has_lastplayhand()) {
       if (lastplayhand_ != NULL) lastplayhand_->::game_landlord_protocol::card_Info::Clear();
     }
     cdtime_ = 0;
   }
+  waittime_ = false;
 
 #undef OFFSET_OF_FIELD_
 #undef ZR_
@@ -4138,7 +4146,7 @@ bool packetl2c_get_room_scene_info_result::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:game_landlord_protocol.packetl2c_get_room_scene_info_result)
   for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(16383);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
@@ -4381,6 +4389,36 @@ bool packetl2c_get_room_scene_info_result::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(128)) goto parse_orHang;
+        break;
+      }
+
+      // optional bool orHang = 16;
+      case 16: {
+        if (tag == 128) {
+         parse_orHang:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &orhang_)));
+          set_has_orhang();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(136)) goto parse_waitTime;
+        break;
+      }
+
+      // optional bool waitTime = 17;
+      case 17: {
+        if (tag == 136) {
+         parse_waitTime:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &waittime_)));
+          set_has_waittime();
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -4493,6 +4531,16 @@ void packetl2c_get_room_scene_info_result::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(15, this->score(), output);
   }
 
+  // optional bool orHang = 16;
+  if (has_orhang()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(16, this->orhang(), output);
+  }
+
+  // optional bool waitTime = 17;
+  if (has_waittime()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(17, this->waittime(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -4589,6 +4637,16 @@ void packetl2c_get_room_scene_info_result::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(15, this->score(), target);
   }
 
+  // optional bool orHang = 16;
+  if (has_orhang()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(16, this->orhang(), target);
+  }
+
+  // optional bool waitTime = 17;
+  if (has_waittime()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(17, this->waittime(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -4675,6 +4733,18 @@ int packetl2c_get_room_scene_info_result::ByteSize() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
           this->score());
+    }
+
+    // optional bool orHang = 16;
+    if (has_orhang()) {
+      total_size += 2 + 1;
+    }
+
+  }
+  if (_has_bits_[16 / 32] & (0xffu << (16 % 32))) {
+    // optional bool waitTime = 17;
+    if (has_waittime()) {
+      total_size += 2 + 1;
     }
 
   }
@@ -4779,6 +4849,14 @@ void packetl2c_get_room_scene_info_result::MergeFrom(const packetl2c_get_room_sc
     if (from.has_score()) {
       set_score(from.score());
     }
+    if (from.has_orhang()) {
+      set_orhang(from.orhang());
+    }
+  }
+  if (from._has_bits_[16 / 32] & (0xffu << (16 % 32))) {
+    if (from.has_waittime()) {
+      set_waittime(from.waittime());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -4817,6 +4895,8 @@ void packetl2c_get_room_scene_info_result::Swap(packetl2c_get_room_scene_info_re
     std::swap(current_who_roblandlording_, other->current_who_roblandlording_);
     std::swap(current_who_playhanding_, other->current_who_playhanding_);
     std::swap(score_, other->score_);
+    std::swap(orhang_, other->orhang_);
+    std::swap(waittime_, other->waittime_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
