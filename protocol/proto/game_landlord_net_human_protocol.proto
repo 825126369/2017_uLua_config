@@ -1,11 +1,42 @@
 package game_landlord_net_human_protocol;
 import "game_landlord_net_human_def.proto"; 
 
+//请求 创建房间
+message packetc2l_create_room 
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2l_create_room];
+	optional string roomName = 2;
+	optional string password = 3;
+}
+
+//请求 创建房间 返回
+message packetl2c_create_room_result 
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_l2c_create_room];
+	optional e_server_error_code result = 2 [default= e_error_code_success];
+	optional int32 roomId=3; //房间号
+}
+
+//请求 设置房间规则
+message packetc2l_set_room_rule 
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_c2l_set_room_rule];
+	optional string roomName = 2;
+	optional string password = 3;
+}
+
+//请求 设置房间规则 返回
+message packetl2c_set_room_rule_result 
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_l2c_set_room_rule];
+	optional e_server_error_code result = 2 [default= e_error_code_success];
+}
+
 //请求，取消托管
 message packetc2l_Hang 
 {
 	optional e_server_msg_type packet_id = 1 [default = e_mst_c2l_Hang];
-	optional bool orHang=2;//false：不托管，true:托管
+	optional bool orHang = 2;//false：不托管，true:托管
 }
 
 //请求，取消托管 返回

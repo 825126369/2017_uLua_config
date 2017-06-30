@@ -34,6 +34,10 @@ void  protobuf_AddDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto();
 void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto();
 void protobuf_ShutdownFile_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto();
 
+class packetc2l_create_room;
+class packetl2c_create_room_result;
+class packetc2l_set_room_rule;
+class packetl2c_set_room_rule_result;
 class packetc2l_Hang;
 class packetl2c_Hang_result;
 class packetc2l_add_robot;
@@ -75,6 +79,412 @@ class packetl2c_notice_room_change_info;
 class packetl2c_notice_invite_room_list;
 
 // ===================================================================
+
+class packetc2l_create_room : public ::google::protobuf::Message {
+ public:
+  packetc2l_create_room();
+  virtual ~packetc2l_create_room();
+
+  packetc2l_create_room(const packetc2l_create_room& from);
+
+  inline packetc2l_create_room& operator=(const packetc2l_create_room& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const packetc2l_create_room& default_instance();
+
+  void Swap(packetc2l_create_room* other);
+
+  // implements Message ----------------------------------------------
+
+  packetc2l_create_room* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const packetc2l_create_room& from);
+  void MergeFrom(const packetc2l_create_room& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional .game_landlord_net_human_protocol.e_server_msg_type packet_id = 1 [default = e_mst_c2l_create_room];
+  inline bool has_packet_id() const;
+  inline void clear_packet_id();
+  static const int kPacketIdFieldNumber = 1;
+  inline ::game_landlord_net_human_protocol::e_server_msg_type packet_id() const;
+  inline void set_packet_id(::game_landlord_net_human_protocol::e_server_msg_type value);
+
+  // optional string roomName = 2;
+  inline bool has_roomname() const;
+  inline void clear_roomname();
+  static const int kRoomNameFieldNumber = 2;
+  inline const ::std::string& roomname() const;
+  inline void set_roomname(const ::std::string& value);
+  inline void set_roomname(const char* value);
+  inline void set_roomname(const char* value, size_t size);
+  inline ::std::string* mutable_roomname();
+  inline ::std::string* release_roomname();
+  inline void set_allocated_roomname(::std::string* roomname);
+
+  // optional string password = 3;
+  inline bool has_password() const;
+  inline void clear_password();
+  static const int kPasswordFieldNumber = 3;
+  inline const ::std::string& password() const;
+  inline void set_password(const ::std::string& value);
+  inline void set_password(const char* value);
+  inline void set_password(const char* value, size_t size);
+  inline ::std::string* mutable_password();
+  inline ::std::string* release_password();
+  inline void set_allocated_password(::std::string* password);
+
+  // @@protoc_insertion_point(class_scope:game_landlord_net_human_protocol.packetc2l_create_room)
+ private:
+  inline void set_has_packet_id();
+  inline void clear_has_packet_id();
+  inline void set_has_roomname();
+  inline void clear_has_roomname();
+  inline void set_has_password();
+  inline void clear_has_password();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* roomname_;
+  ::std::string* password_;
+  int packet_id_;
+  friend void  protobuf_AddDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto();
+  friend void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto();
+  friend void protobuf_ShutdownFile_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto();
+
+  void InitAsDefaultInstance();
+  static packetc2l_create_room* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class packetl2c_create_room_result : public ::google::protobuf::Message {
+ public:
+  packetl2c_create_room_result();
+  virtual ~packetl2c_create_room_result();
+
+  packetl2c_create_room_result(const packetl2c_create_room_result& from);
+
+  inline packetl2c_create_room_result& operator=(const packetl2c_create_room_result& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const packetl2c_create_room_result& default_instance();
+
+  void Swap(packetl2c_create_room_result* other);
+
+  // implements Message ----------------------------------------------
+
+  packetl2c_create_room_result* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const packetl2c_create_room_result& from);
+  void MergeFrom(const packetl2c_create_room_result& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional .game_landlord_net_human_protocol.e_server_msg_type packet_id = 1 [default = e_mst_l2c_create_room];
+  inline bool has_packet_id() const;
+  inline void clear_packet_id();
+  static const int kPacketIdFieldNumber = 1;
+  inline ::game_landlord_net_human_protocol::e_server_msg_type packet_id() const;
+  inline void set_packet_id(::game_landlord_net_human_protocol::e_server_msg_type value);
+
+  // optional .game_landlord_net_human_protocol.e_server_error_code result = 2 [default = e_error_code_success];
+  inline bool has_result() const;
+  inline void clear_result();
+  static const int kResultFieldNumber = 2;
+  inline ::game_landlord_net_human_protocol::e_server_error_code result() const;
+  inline void set_result(::game_landlord_net_human_protocol::e_server_error_code value);
+
+  // optional int32 roomId = 3;
+  inline bool has_roomid() const;
+  inline void clear_roomid();
+  static const int kRoomIdFieldNumber = 3;
+  inline ::google::protobuf::int32 roomid() const;
+  inline void set_roomid(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:game_landlord_net_human_protocol.packetl2c_create_room_result)
+ private:
+  inline void set_has_packet_id();
+  inline void clear_has_packet_id();
+  inline void set_has_result();
+  inline void clear_has_result();
+  inline void set_has_roomid();
+  inline void clear_has_roomid();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  int packet_id_;
+  int result_;
+  ::google::protobuf::int32 roomid_;
+  friend void  protobuf_AddDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto();
+  friend void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto();
+  friend void protobuf_ShutdownFile_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto();
+
+  void InitAsDefaultInstance();
+  static packetl2c_create_room_result* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class packetc2l_set_room_rule : public ::google::protobuf::Message {
+ public:
+  packetc2l_set_room_rule();
+  virtual ~packetc2l_set_room_rule();
+
+  packetc2l_set_room_rule(const packetc2l_set_room_rule& from);
+
+  inline packetc2l_set_room_rule& operator=(const packetc2l_set_room_rule& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const packetc2l_set_room_rule& default_instance();
+
+  void Swap(packetc2l_set_room_rule* other);
+
+  // implements Message ----------------------------------------------
+
+  packetc2l_set_room_rule* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const packetc2l_set_room_rule& from);
+  void MergeFrom(const packetc2l_set_room_rule& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional .game_landlord_net_human_protocol.e_server_msg_type packet_id = 1 [default = e_mst_c2l_set_room_rule];
+  inline bool has_packet_id() const;
+  inline void clear_packet_id();
+  static const int kPacketIdFieldNumber = 1;
+  inline ::game_landlord_net_human_protocol::e_server_msg_type packet_id() const;
+  inline void set_packet_id(::game_landlord_net_human_protocol::e_server_msg_type value);
+
+  // optional string roomName = 2;
+  inline bool has_roomname() const;
+  inline void clear_roomname();
+  static const int kRoomNameFieldNumber = 2;
+  inline const ::std::string& roomname() const;
+  inline void set_roomname(const ::std::string& value);
+  inline void set_roomname(const char* value);
+  inline void set_roomname(const char* value, size_t size);
+  inline ::std::string* mutable_roomname();
+  inline ::std::string* release_roomname();
+  inline void set_allocated_roomname(::std::string* roomname);
+
+  // optional string password = 3;
+  inline bool has_password() const;
+  inline void clear_password();
+  static const int kPasswordFieldNumber = 3;
+  inline const ::std::string& password() const;
+  inline void set_password(const ::std::string& value);
+  inline void set_password(const char* value);
+  inline void set_password(const char* value, size_t size);
+  inline ::std::string* mutable_password();
+  inline ::std::string* release_password();
+  inline void set_allocated_password(::std::string* password);
+
+  // @@protoc_insertion_point(class_scope:game_landlord_net_human_protocol.packetc2l_set_room_rule)
+ private:
+  inline void set_has_packet_id();
+  inline void clear_has_packet_id();
+  inline void set_has_roomname();
+  inline void clear_has_roomname();
+  inline void set_has_password();
+  inline void clear_has_password();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* roomname_;
+  ::std::string* password_;
+  int packet_id_;
+  friend void  protobuf_AddDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto();
+  friend void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto();
+  friend void protobuf_ShutdownFile_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto();
+
+  void InitAsDefaultInstance();
+  static packetc2l_set_room_rule* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class packetl2c_set_room_rule_result : public ::google::protobuf::Message {
+ public:
+  packetl2c_set_room_rule_result();
+  virtual ~packetl2c_set_room_rule_result();
+
+  packetl2c_set_room_rule_result(const packetl2c_set_room_rule_result& from);
+
+  inline packetl2c_set_room_rule_result& operator=(const packetl2c_set_room_rule_result& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const packetl2c_set_room_rule_result& default_instance();
+
+  void Swap(packetl2c_set_room_rule_result* other);
+
+  // implements Message ----------------------------------------------
+
+  packetl2c_set_room_rule_result* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const packetl2c_set_room_rule_result& from);
+  void MergeFrom(const packetl2c_set_room_rule_result& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional .game_landlord_net_human_protocol.e_server_msg_type packet_id = 1 [default = e_mst_l2c_set_room_rule];
+  inline bool has_packet_id() const;
+  inline void clear_packet_id();
+  static const int kPacketIdFieldNumber = 1;
+  inline ::game_landlord_net_human_protocol::e_server_msg_type packet_id() const;
+  inline void set_packet_id(::game_landlord_net_human_protocol::e_server_msg_type value);
+
+  // optional .game_landlord_net_human_protocol.e_server_error_code result = 2 [default = e_error_code_success];
+  inline bool has_result() const;
+  inline void clear_result();
+  static const int kResultFieldNumber = 2;
+  inline ::game_landlord_net_human_protocol::e_server_error_code result() const;
+  inline void set_result(::game_landlord_net_human_protocol::e_server_error_code value);
+
+  // @@protoc_insertion_point(class_scope:game_landlord_net_human_protocol.packetl2c_set_room_rule_result)
+ private:
+  inline void set_has_packet_id();
+  inline void clear_has_packet_id();
+  inline void set_has_result();
+  inline void clear_has_result();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  int packet_id_;
+  int result_;
+  friend void  protobuf_AddDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto();
+  friend void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto();
+  friend void protobuf_ShutdownFile_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto();
+
+  void InitAsDefaultInstance();
+  static packetl2c_set_room_rule_result* default_instance_;
+};
+// -------------------------------------------------------------------
 
 class packetc2l_Hang : public ::google::protobuf::Message {
  public:
@@ -3838,6 +4248,500 @@ class packetl2c_notice_invite_room_list : public ::google::protobuf::Message {
 
 
 // ===================================================================
+
+// packetc2l_create_room
+
+// optional .game_landlord_net_human_protocol.e_server_msg_type packet_id = 1 [default = e_mst_c2l_create_room];
+inline bool packetc2l_create_room::has_packet_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void packetc2l_create_room::set_has_packet_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void packetc2l_create_room::clear_has_packet_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void packetc2l_create_room::clear_packet_id() {
+  packet_id_ = 10017;
+  clear_has_packet_id();
+}
+inline ::game_landlord_net_human_protocol::e_server_msg_type packetc2l_create_room::packet_id() const {
+  // @@protoc_insertion_point(field_get:game_landlord_net_human_protocol.packetc2l_create_room.packet_id)
+  return static_cast< ::game_landlord_net_human_protocol::e_server_msg_type >(packet_id_);
+}
+inline void packetc2l_create_room::set_packet_id(::game_landlord_net_human_protocol::e_server_msg_type value) {
+  assert(::game_landlord_net_human_protocol::e_server_msg_type_IsValid(value));
+  set_has_packet_id();
+  packet_id_ = value;
+  // @@protoc_insertion_point(field_set:game_landlord_net_human_protocol.packetc2l_create_room.packet_id)
+}
+
+// optional string roomName = 2;
+inline bool packetc2l_create_room::has_roomname() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void packetc2l_create_room::set_has_roomname() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void packetc2l_create_room::clear_has_roomname() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void packetc2l_create_room::clear_roomname() {
+  if (roomname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    roomname_->clear();
+  }
+  clear_has_roomname();
+}
+inline const ::std::string& packetc2l_create_room::roomname() const {
+  // @@protoc_insertion_point(field_get:game_landlord_net_human_protocol.packetc2l_create_room.roomName)
+  return *roomname_;
+}
+inline void packetc2l_create_room::set_roomname(const ::std::string& value) {
+  set_has_roomname();
+  if (roomname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    roomname_ = new ::std::string;
+  }
+  roomname_->assign(value);
+  // @@protoc_insertion_point(field_set:game_landlord_net_human_protocol.packetc2l_create_room.roomName)
+}
+inline void packetc2l_create_room::set_roomname(const char* value) {
+  set_has_roomname();
+  if (roomname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    roomname_ = new ::std::string;
+  }
+  roomname_->assign(value);
+  // @@protoc_insertion_point(field_set_char:game_landlord_net_human_protocol.packetc2l_create_room.roomName)
+}
+inline void packetc2l_create_room::set_roomname(const char* value, size_t size) {
+  set_has_roomname();
+  if (roomname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    roomname_ = new ::std::string;
+  }
+  roomname_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:game_landlord_net_human_protocol.packetc2l_create_room.roomName)
+}
+inline ::std::string* packetc2l_create_room::mutable_roomname() {
+  set_has_roomname();
+  if (roomname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    roomname_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:game_landlord_net_human_protocol.packetc2l_create_room.roomName)
+  return roomname_;
+}
+inline ::std::string* packetc2l_create_room::release_roomname() {
+  clear_has_roomname();
+  if (roomname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = roomname_;
+    roomname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void packetc2l_create_room::set_allocated_roomname(::std::string* roomname) {
+  if (roomname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete roomname_;
+  }
+  if (roomname) {
+    set_has_roomname();
+    roomname_ = roomname;
+  } else {
+    clear_has_roomname();
+    roomname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:game_landlord_net_human_protocol.packetc2l_create_room.roomName)
+}
+
+// optional string password = 3;
+inline bool packetc2l_create_room::has_password() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void packetc2l_create_room::set_has_password() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void packetc2l_create_room::clear_has_password() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void packetc2l_create_room::clear_password() {
+  if (password_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    password_->clear();
+  }
+  clear_has_password();
+}
+inline const ::std::string& packetc2l_create_room::password() const {
+  // @@protoc_insertion_point(field_get:game_landlord_net_human_protocol.packetc2l_create_room.password)
+  return *password_;
+}
+inline void packetc2l_create_room::set_password(const ::std::string& value) {
+  set_has_password();
+  if (password_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    password_ = new ::std::string;
+  }
+  password_->assign(value);
+  // @@protoc_insertion_point(field_set:game_landlord_net_human_protocol.packetc2l_create_room.password)
+}
+inline void packetc2l_create_room::set_password(const char* value) {
+  set_has_password();
+  if (password_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    password_ = new ::std::string;
+  }
+  password_->assign(value);
+  // @@protoc_insertion_point(field_set_char:game_landlord_net_human_protocol.packetc2l_create_room.password)
+}
+inline void packetc2l_create_room::set_password(const char* value, size_t size) {
+  set_has_password();
+  if (password_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    password_ = new ::std::string;
+  }
+  password_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:game_landlord_net_human_protocol.packetc2l_create_room.password)
+}
+inline ::std::string* packetc2l_create_room::mutable_password() {
+  set_has_password();
+  if (password_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    password_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:game_landlord_net_human_protocol.packetc2l_create_room.password)
+  return password_;
+}
+inline ::std::string* packetc2l_create_room::release_password() {
+  clear_has_password();
+  if (password_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = password_;
+    password_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void packetc2l_create_room::set_allocated_password(::std::string* password) {
+  if (password_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete password_;
+  }
+  if (password) {
+    set_has_password();
+    password_ = password;
+  } else {
+    clear_has_password();
+    password_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:game_landlord_net_human_protocol.packetc2l_create_room.password)
+}
+
+// -------------------------------------------------------------------
+
+// packetl2c_create_room_result
+
+// optional .game_landlord_net_human_protocol.e_server_msg_type packet_id = 1 [default = e_mst_l2c_create_room];
+inline bool packetl2c_create_room_result::has_packet_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void packetl2c_create_room_result::set_has_packet_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void packetl2c_create_room_result::clear_has_packet_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void packetl2c_create_room_result::clear_packet_id() {
+  packet_id_ = 15013;
+  clear_has_packet_id();
+}
+inline ::game_landlord_net_human_protocol::e_server_msg_type packetl2c_create_room_result::packet_id() const {
+  // @@protoc_insertion_point(field_get:game_landlord_net_human_protocol.packetl2c_create_room_result.packet_id)
+  return static_cast< ::game_landlord_net_human_protocol::e_server_msg_type >(packet_id_);
+}
+inline void packetl2c_create_room_result::set_packet_id(::game_landlord_net_human_protocol::e_server_msg_type value) {
+  assert(::game_landlord_net_human_protocol::e_server_msg_type_IsValid(value));
+  set_has_packet_id();
+  packet_id_ = value;
+  // @@protoc_insertion_point(field_set:game_landlord_net_human_protocol.packetl2c_create_room_result.packet_id)
+}
+
+// optional .game_landlord_net_human_protocol.e_server_error_code result = 2 [default = e_error_code_success];
+inline bool packetl2c_create_room_result::has_result() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void packetl2c_create_room_result::set_has_result() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void packetl2c_create_room_result::clear_has_result() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void packetl2c_create_room_result::clear_result() {
+  result_ = 1;
+  clear_has_result();
+}
+inline ::game_landlord_net_human_protocol::e_server_error_code packetl2c_create_room_result::result() const {
+  // @@protoc_insertion_point(field_get:game_landlord_net_human_protocol.packetl2c_create_room_result.result)
+  return static_cast< ::game_landlord_net_human_protocol::e_server_error_code >(result_);
+}
+inline void packetl2c_create_room_result::set_result(::game_landlord_net_human_protocol::e_server_error_code value) {
+  assert(::game_landlord_net_human_protocol::e_server_error_code_IsValid(value));
+  set_has_result();
+  result_ = value;
+  // @@protoc_insertion_point(field_set:game_landlord_net_human_protocol.packetl2c_create_room_result.result)
+}
+
+// optional int32 roomId = 3;
+inline bool packetl2c_create_room_result::has_roomid() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void packetl2c_create_room_result::set_has_roomid() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void packetl2c_create_room_result::clear_has_roomid() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void packetl2c_create_room_result::clear_roomid() {
+  roomid_ = 0;
+  clear_has_roomid();
+}
+inline ::google::protobuf::int32 packetl2c_create_room_result::roomid() const {
+  // @@protoc_insertion_point(field_get:game_landlord_net_human_protocol.packetl2c_create_room_result.roomId)
+  return roomid_;
+}
+inline void packetl2c_create_room_result::set_roomid(::google::protobuf::int32 value) {
+  set_has_roomid();
+  roomid_ = value;
+  // @@protoc_insertion_point(field_set:game_landlord_net_human_protocol.packetl2c_create_room_result.roomId)
+}
+
+// -------------------------------------------------------------------
+
+// packetc2l_set_room_rule
+
+// optional .game_landlord_net_human_protocol.e_server_msg_type packet_id = 1 [default = e_mst_c2l_set_room_rule];
+inline bool packetc2l_set_room_rule::has_packet_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void packetc2l_set_room_rule::set_has_packet_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void packetc2l_set_room_rule::clear_has_packet_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void packetc2l_set_room_rule::clear_packet_id() {
+  packet_id_ = 10018;
+  clear_has_packet_id();
+}
+inline ::game_landlord_net_human_protocol::e_server_msg_type packetc2l_set_room_rule::packet_id() const {
+  // @@protoc_insertion_point(field_get:game_landlord_net_human_protocol.packetc2l_set_room_rule.packet_id)
+  return static_cast< ::game_landlord_net_human_protocol::e_server_msg_type >(packet_id_);
+}
+inline void packetc2l_set_room_rule::set_packet_id(::game_landlord_net_human_protocol::e_server_msg_type value) {
+  assert(::game_landlord_net_human_protocol::e_server_msg_type_IsValid(value));
+  set_has_packet_id();
+  packet_id_ = value;
+  // @@protoc_insertion_point(field_set:game_landlord_net_human_protocol.packetc2l_set_room_rule.packet_id)
+}
+
+// optional string roomName = 2;
+inline bool packetc2l_set_room_rule::has_roomname() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void packetc2l_set_room_rule::set_has_roomname() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void packetc2l_set_room_rule::clear_has_roomname() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void packetc2l_set_room_rule::clear_roomname() {
+  if (roomname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    roomname_->clear();
+  }
+  clear_has_roomname();
+}
+inline const ::std::string& packetc2l_set_room_rule::roomname() const {
+  // @@protoc_insertion_point(field_get:game_landlord_net_human_protocol.packetc2l_set_room_rule.roomName)
+  return *roomname_;
+}
+inline void packetc2l_set_room_rule::set_roomname(const ::std::string& value) {
+  set_has_roomname();
+  if (roomname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    roomname_ = new ::std::string;
+  }
+  roomname_->assign(value);
+  // @@protoc_insertion_point(field_set:game_landlord_net_human_protocol.packetc2l_set_room_rule.roomName)
+}
+inline void packetc2l_set_room_rule::set_roomname(const char* value) {
+  set_has_roomname();
+  if (roomname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    roomname_ = new ::std::string;
+  }
+  roomname_->assign(value);
+  // @@protoc_insertion_point(field_set_char:game_landlord_net_human_protocol.packetc2l_set_room_rule.roomName)
+}
+inline void packetc2l_set_room_rule::set_roomname(const char* value, size_t size) {
+  set_has_roomname();
+  if (roomname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    roomname_ = new ::std::string;
+  }
+  roomname_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:game_landlord_net_human_protocol.packetc2l_set_room_rule.roomName)
+}
+inline ::std::string* packetc2l_set_room_rule::mutable_roomname() {
+  set_has_roomname();
+  if (roomname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    roomname_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:game_landlord_net_human_protocol.packetc2l_set_room_rule.roomName)
+  return roomname_;
+}
+inline ::std::string* packetc2l_set_room_rule::release_roomname() {
+  clear_has_roomname();
+  if (roomname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = roomname_;
+    roomname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void packetc2l_set_room_rule::set_allocated_roomname(::std::string* roomname) {
+  if (roomname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete roomname_;
+  }
+  if (roomname) {
+    set_has_roomname();
+    roomname_ = roomname;
+  } else {
+    clear_has_roomname();
+    roomname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:game_landlord_net_human_protocol.packetc2l_set_room_rule.roomName)
+}
+
+// optional string password = 3;
+inline bool packetc2l_set_room_rule::has_password() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void packetc2l_set_room_rule::set_has_password() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void packetc2l_set_room_rule::clear_has_password() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void packetc2l_set_room_rule::clear_password() {
+  if (password_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    password_->clear();
+  }
+  clear_has_password();
+}
+inline const ::std::string& packetc2l_set_room_rule::password() const {
+  // @@protoc_insertion_point(field_get:game_landlord_net_human_protocol.packetc2l_set_room_rule.password)
+  return *password_;
+}
+inline void packetc2l_set_room_rule::set_password(const ::std::string& value) {
+  set_has_password();
+  if (password_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    password_ = new ::std::string;
+  }
+  password_->assign(value);
+  // @@protoc_insertion_point(field_set:game_landlord_net_human_protocol.packetc2l_set_room_rule.password)
+}
+inline void packetc2l_set_room_rule::set_password(const char* value) {
+  set_has_password();
+  if (password_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    password_ = new ::std::string;
+  }
+  password_->assign(value);
+  // @@protoc_insertion_point(field_set_char:game_landlord_net_human_protocol.packetc2l_set_room_rule.password)
+}
+inline void packetc2l_set_room_rule::set_password(const char* value, size_t size) {
+  set_has_password();
+  if (password_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    password_ = new ::std::string;
+  }
+  password_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:game_landlord_net_human_protocol.packetc2l_set_room_rule.password)
+}
+inline ::std::string* packetc2l_set_room_rule::mutable_password() {
+  set_has_password();
+  if (password_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    password_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:game_landlord_net_human_protocol.packetc2l_set_room_rule.password)
+  return password_;
+}
+inline ::std::string* packetc2l_set_room_rule::release_password() {
+  clear_has_password();
+  if (password_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = password_;
+    password_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void packetc2l_set_room_rule::set_allocated_password(::std::string* password) {
+  if (password_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete password_;
+  }
+  if (password) {
+    set_has_password();
+    password_ = password;
+  } else {
+    clear_has_password();
+    password_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:game_landlord_net_human_protocol.packetc2l_set_room_rule.password)
+}
+
+// -------------------------------------------------------------------
+
+// packetl2c_set_room_rule_result
+
+// optional .game_landlord_net_human_protocol.e_server_msg_type packet_id = 1 [default = e_mst_l2c_set_room_rule];
+inline bool packetl2c_set_room_rule_result::has_packet_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void packetl2c_set_room_rule_result::set_has_packet_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void packetl2c_set_room_rule_result::clear_has_packet_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void packetl2c_set_room_rule_result::clear_packet_id() {
+  packet_id_ = 15014;
+  clear_has_packet_id();
+}
+inline ::game_landlord_net_human_protocol::e_server_msg_type packetl2c_set_room_rule_result::packet_id() const {
+  // @@protoc_insertion_point(field_get:game_landlord_net_human_protocol.packetl2c_set_room_rule_result.packet_id)
+  return static_cast< ::game_landlord_net_human_protocol::e_server_msg_type >(packet_id_);
+}
+inline void packetl2c_set_room_rule_result::set_packet_id(::game_landlord_net_human_protocol::e_server_msg_type value) {
+  assert(::game_landlord_net_human_protocol::e_server_msg_type_IsValid(value));
+  set_has_packet_id();
+  packet_id_ = value;
+  // @@protoc_insertion_point(field_set:game_landlord_net_human_protocol.packetl2c_set_room_rule_result.packet_id)
+}
+
+// optional .game_landlord_net_human_protocol.e_server_error_code result = 2 [default = e_error_code_success];
+inline bool packetl2c_set_room_rule_result::has_result() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void packetl2c_set_room_rule_result::set_has_result() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void packetl2c_set_room_rule_result::clear_has_result() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void packetl2c_set_room_rule_result::clear_result() {
+  result_ = 1;
+  clear_has_result();
+}
+inline ::game_landlord_net_human_protocol::e_server_error_code packetl2c_set_room_rule_result::result() const {
+  // @@protoc_insertion_point(field_get:game_landlord_net_human_protocol.packetl2c_set_room_rule_result.result)
+  return static_cast< ::game_landlord_net_human_protocol::e_server_error_code >(result_);
+}
+inline void packetl2c_set_room_rule_result::set_result(::game_landlord_net_human_protocol::e_server_error_code value) {
+  assert(::game_landlord_net_human_protocol::e_server_error_code_IsValid(value));
+  set_has_result();
+  result_ = value;
+  // @@protoc_insertion_point(field_set:game_landlord_net_human_protocol.packetl2c_set_room_rule_result.result)
+}
+
+// -------------------------------------------------------------------
 
 // packetc2l_Hang
 

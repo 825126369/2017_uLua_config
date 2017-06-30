@@ -20,6 +20,8 @@ enum e_server_msg_type {
 	e_mst_c2l_join_player_list=10014;
 	e_mst_c2l_join_room=10015;
 	e_mst_c2l_or_agree_join_room=10016;	
+	e_mst_c2l_create_room=10017;
+    e_mst_c2l_set_room_rule=10018;	
 	
 	//------------SC-------------------
 	e_mst_start_l2c = 15000;
@@ -37,6 +39,8 @@ enum e_server_msg_type {
 	e_mst_l2c_join_player_list_result=15010;
 	e_mst_l2c_join_room_result=15011;
 	e_mst_l2c_or_agree_join_room_result=15012;
+	e_mst_l2c_create_room=15013;
+ 	e_mst_l2c_set_room_rule=15014;
 
 	e_mst_l2c_notice_startgame=15101;//通知开始游戏
 	e_mst_l2c_notice_playhand=15102;//通知其他人出牌信息
@@ -120,8 +124,10 @@ message player_info
 message room_info 
 {
 	optional int32 room_id = 1;				//房间ID
-	optional int32 player_count=2; 			//房间人数
-	optional int32 room_state=3;			//1：准备，2：开始游戏				
+	optional string roomName= 2;			//房间名
+	optional int32 player_count=3; 			//房间人数
+	optional int32 room_state=4;			//1：准备，2：开始游戏
+	optional bool orNeedPassword=5;			//是否需要密码				
 }
 
 //邀请信息
