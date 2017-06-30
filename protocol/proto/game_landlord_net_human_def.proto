@@ -1,4 +1,4 @@
-package game_landlord_protocol; 
+package game_landlord_net_human_protocol; 
 
 enum e_server_msg_type {
 	//------------CS------------------
@@ -12,7 +12,15 @@ enum e_server_msg_type {
 	e_mst_c2l_start_match=10007;//开始匹配队伍
 	e_mst_c2l_Hang=10008;//请求托管
 	e_mst_c2l_SystemTalk=10009;//说个玩笑话
-	e_mst_c2l_changetable=10010;//换桌
+	e_mst_c2l_roomlist=10010;//获取房间列表信息
+
+	e_mst_c2l_add_robot=10011;
+	e_mst_c2l_kich_player=10012;
+	e_mst_c2l_or_prepare=10013;
+	e_mst_c2l_join_player_list=10014;
+	e_mst_c2l_join_room=10015;
+	e_mst_c2l_or_agree_join_room=10016;	
+	
 	//------------SC-------------------
 	e_mst_start_l2c = 15000;
 
@@ -22,7 +30,13 @@ enum e_server_msg_type {
 	e_mst_l2c_leave_room=15004;
 	e_mst_l2c_start_match_result=15005;
 	e_mst_l2c_Hang=15006;
-	e_mst_l2c_changetable=15007;	
+	e_mst_l2c_roomlist=15007;
+
+	e_mst_l2c_add_robot=15008;
+	e_mst_l2c_kich_player=15009;
+	e_mst_l2c_join_player_list_result=15010;
+	e_mst_l2c_join_room_result=15011;
+	e_mst_l2c_or_agree_join_room_result=15012;
 
 	e_mst_l2c_notice_startgame=15101;//通知开始游戏
 	e_mst_l2c_notice_playhand=15102;//通知其他人出牌信息
@@ -30,7 +44,12 @@ enum e_server_msg_type {
 	e_mst_l2c_notice_winlose=15104;//通知输赢
 	e_mst_l2c_notice_rob_landlord_result=15105;//其他人抢地主的结果
 	e_mst_l2c_notice_who_playhand=15106;//通知谁出牌
-	e_mst_l2c_notice_SystemTalk=15107;//通知玩家说话	
+	e_mst_l2c_notice_SystemTalk=15107;//通知玩家说话
+
+	e_mst_l2c_notice_room_enter_leave_info=15108;//房间内玩家进出变化
+	e_mst_l2c_notice_room_prepare_info=15109;//房间内玩家准备信息情况
+	e_mst_l2c_notice_room_change_info=15110;//房间外 房间信息改变情况
+	e_mst_l2c_notice_invite_room_list=15111;//邀请房间列表
 	e_mst_clend_index = 20000;
 }
 
@@ -91,7 +110,23 @@ message player_info
 	optional int32 player_head_frame = 3;		//头像
 	optional string player_head_custom = 4;		//玩家头像
 	optional int64 player_gold = 5;				//玩家金币
-	optional int32 player_sex = 6;				// 玩家性别	
-	optional int32 player_vip_lv = 7;			// Vip等级
+	optional int32 player_sex = 6;				//玩家性别	
+	optional int32 player_vip_lv = 7;			//Vip等级
 	optional int32 deskId=8;					//凳子ID
+	optional bool orPrepare=9;					//是否准备
+}
+
+//房间信息
+message room_info 
+{
+	optional int32 room_id = 1;				//房间ID
+	optional int32 player_count=2; 			//房间人数
+	optional int32 room_state=3;			//1：准备，2：开始游戏				
+}
+
+//邀请信息
+message invitation_info 
+{
+	optional player_info senderInfo = 1;	//发送邀请的玩家信息
+	optional int32 roomId = 2; 			//房间Id
 }

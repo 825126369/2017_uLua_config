@@ -1,0 +1,97 @@
+package game_landlord_net_humanmachine_protocol; 
+
+enum e_server_msg_type {
+	//------------CS------------------
+    e_mst_start_c2l = 10000;
+	e_mst_c2l_enter_room=10001;//进入房间	
+	e_mst_c2l_get_room_scene_info=10002;//请求场景信息
+	e_mst_c2l_check_state=10003;//检查游戏状态
+	e_mst_c2l_leave_room=10004;//离开战场
+	e_mst_c2l_rob_landlord=10005;//抢地主
+	e_mst_c2l_playhand=10006;//出牌
+	e_mst_c2l_start_match=10007;//开始匹配队伍
+	e_mst_c2l_Hang=10008;//请求托管
+	e_mst_c2l_SystemTalk=10009;//说个玩笑话
+	e_mst_c2l_changetable=10010;//换桌
+	//------------SC-------------------
+	e_mst_start_l2c = 15000;
+
+	e_mst_l2c_enter_room=15001;
+	e_mst_l2c_get_room_scene_info=15002;
+	e_mst_l2c_check_state=15003;
+	e_mst_l2c_leave_room=15004;
+	e_mst_l2c_start_match_result=15005;
+	e_mst_l2c_Hang=15006;
+	e_mst_l2c_changetable=15007;	
+
+	e_mst_l2c_notice_startgame=15101;//通知开始游戏
+	e_mst_l2c_notice_playhand=15102;//通知其他人出牌信息
+	e_mst_l2c_notice_rob_landlord=15103;//通知抢地主啦
+	e_mst_l2c_notice_winlose=15104;//通知输赢
+	e_mst_l2c_notice_rob_landlord_result=15105;//其他人抢地主的结果
+	e_mst_l2c_notice_who_playhand=15106;//通知谁出牌
+	e_mst_l2c_notice_SystemTalk=15107;//通知玩家说话	
+	e_mst_clend_index = 20000;
+}
+
+enum e_server_error_code
+{
+	e_error_code_success=1;
+	e_error_code_failed=2;
+	e_error_code_not_enough_money=3;
+}
+
+enum e_game_state
+{
+	e_game_state_none=0;//桌子空闲阶段	
+	e_game_state_matching=1;//匹配阶段
+	e_game_state_startgame=2;//开始游戏
+	e_game_state_sendcarding=3;//发牌过程
+	e_game_state_robLandlore=4;//抢地主阶段
+	e_game_state_playhand=5;//出牌	
+	e_game_state_award=6;//游戏结束
+}
+
+enum e_player_game_state
+{
+	e_player_game_state_none=0;
+	e_player_game_state_matching=1;
+	e_player_game_state_sendcarding=2;
+	e_player_game_state_robLandlord=3;
+	e_player_game_state_other_robLandlord=4;	
+	e_player_game_state_playhanding=5;
+	e_player_game_state_other_playhanding=6;
+	e_player_game_state_awarding=7;
+}
+
+
+message card_Info
+{
+	optional int32 deskId=1;
+	repeated int32 cards=2;
+}
+
+message card_Info_1
+{
+	optional int32 deskId=1;
+	optional int32 cards_count=2;
+}
+
+message desk_award_Info
+{
+	optional int32 deskId=1;
+	optional int32 win_count=2;
+}
+
+//玩家信息
+message player_info 
+{
+	optional int32 player_id = 1;				//玩家ID
+	optional string player_nickname = 2;		//玩家昵称
+	optional int32 player_head_frame = 3;		//头像
+	optional string player_head_custom = 4;		//玩家头像
+	optional int64 player_gold = 5;				//玩家金币
+	optional int32 player_sex = 6;				// 玩家性别	
+	optional int32 player_vip_lv = 7;			// Vip等级
+	optional int32 deskId=8;					//凳子ID
+}

@@ -1,6 +1,5 @@
-package game_landlord_protocol;
-import "game_landlord_def.proto"; 
-import "msg_type_def.proto";
+package game_landlord_rank_protocol;
+import "game_landlord_rank_def.proto"; 
 
 //请求，取消托管
 message packetc2l_Hang 
