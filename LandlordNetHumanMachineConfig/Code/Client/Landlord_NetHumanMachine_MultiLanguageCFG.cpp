@@ -3,15 +3,15 @@
 #include "LuaCfgHelper.h"
 #include <iostream>
 #include <boost/algorithm/string.hpp>
-#include "M_GameCFG.h"
-std::auto_ptr<M_GameCFG> M_GameCFG::msSingleton(nullptr);
+#include "Landlord_NetHumanMachine_MultiLanguageCFG.h"
+std::auto_ptr<Landlord_NetHumanMachine_MultiLanguageCFG> Landlord_NetHumanMachine_MultiLanguageCFG::msSingleton(nullptr);
 
-int M_GameCFG::GetCount()
+int Landlord_NetHumanMachine_MultiLanguageCFG::GetCount()
 {
 	return (int)mMapData.size();
 }
 
-const M_GameCFGData* M_GameCFG::GetData(int ID)
+const Landlord_NetHumanMachine_MultiLanguageCFGData* Landlord_NetHumanMachine_MultiLanguageCFG::GetData(std::string ID)
 {
 	auto it = mMapData.find(ID);
 	if (it != mMapData.end())
@@ -21,15 +21,15 @@ const M_GameCFGData* M_GameCFG::GetData(int ID)
 	return NULL;
 }
 
-const std::map<int, M_GameCFGData>& M_GameCFG::GetMapData()
+const std::map<std::string, Landlord_NetHumanMachine_MultiLanguageCFGData>& Landlord_NetHumanMachine_MultiLanguageCFG::GetMapData()
 {
 	return mMapData;
 }
 
-void M_GameCFG::Load()
+void Landlord_NetHumanMachine_MultiLanguageCFG::Load()
 {
 	tinyxml2::XMLDocument xmlDoc;
-	std::string content = FileUtils::getInstance()->getStringFromFile("Config/M_GameCFG.xml");
+	std::string content = FileUtils::getInstance()->getStringFromFile("Config/Landlord_NetHumanMachine_MultiLanguageCFG.xml");
 	auto result = xmlDoc.Parse(content.c_str(), content.length());
 	if (result != tinyxml2::XML_SUCCESS)
 	{
@@ -46,23 +46,22 @@ void M_GameCFG::Load()
 	auto element = root->FirstChildElement("Data");
 	while (element != NULL)
 	{
-		M_GameCFGData data;
-		data.mID = element->IntAttribute("ID");
-		data.mGameName = element->Attribute("GameName");
-		data.mIsOpen = element->BoolAttribute("IsOpen");
+		Landlord_NetHumanMachine_MultiLanguageCFGData data;
+		data.mID = element->Attribute("ID");
+		data.mName = element->Attribute("Name");
 		if (mMapData.find(data.mID) != mMapData.end())std::cout <<"data refind:" << data.mID << std::endl;
 		CCASSERT(mMapData.find(data.mID) == mMapData.end(), "data.mID is exists");
 		mMapData.insert(std::make_pair(data.mID, data));
 		element = element->NextSiblingElement();
 	}
-	CCLOG("M_GameCFG Loaded. Load Data:%u", mMapData.size());
+	CCLOG("Landlord_NetHumanMachine_MultiLanguageCFG Loaded. Load Data:%u", mMapData.size());
 }
 
-void M_GameCFG::LoadLua()
+void Landlord_NetHumanMachine_MultiLanguageCFG::LoadLua()
 {
-	LuaEngine::getInstance()->executeScriptFile("config/M_GameCFG");
+	LuaEngine::getInstance()->executeScriptFile("Config/Landlord_NetHumanMachine_MultiLanguageCFG");
 	lua_State* L = LuaEngine::getInstance()->getLuaStack()->getLuaState();
-	lua_getglobal(L, "M_GameCFG");
+	lua_getglobal(L, "Landlord_NetHumanMachine_MultiLanguageCFG");
 	CCASSERT(lua_istable(L, -1) == 1, "is not table");
 	lua_pushstring(L, "datas");
 	lua_gettable(L, -2);
@@ -71,35 +70,29 @@ void M_GameCFG::LoadLua()
 	while(lua_next(L, 2))
 	{
 		CCASSERT(lua_istable(L, -1) == 1, "is not table");
-		M_GameCFGData data;
-		LuaCfgHelper::readInt(L, "ID", data.mID);
-		LuaCfgHelper::readString(L, "GameName", data.mGameName);
-		LuaCfgHelper::readBool(L, "IsOpen", data.mIsOpen);
+		Landlord_NetHumanMachine_MultiLanguageCFGData data;
+		LuaCfgHelper::readString(L, "ID", data.mID);
+		LuaCfgHelper::readString(L, "Name", data.mName);
 		if (mMapData.find(data.mID) != mMapData.end())std::cout <<"data refind:" << data.mID << std::endl;
 		CCASSERT(mMapData.find(data.mID) == mMapData.end(), "data.mID is exists");
 		mMapData.insert(std::make_pair(data.mID, data));
 		lua_pop(L, 1);
 	}
 	lua_settop(L, 0);
-	CCLOG("M_GameCFG Loaded. Load Data:%u", mMapData.size());
+	CCLOG("Landlord_NetHumanMachine_MultiLanguageCFG Loaded. Load Data:%u", mMapData.size());
 }
 
-void M_GameCFG::Reload()
+void Landlord_NetHumanMachine_MultiLanguageCFG::Reload()
 {
 	mMapData.clear();
 	Load();
 }
 
-M_GameCFG* M_GameCFG::GetSingleton()
+Landlord_NetHumanMachine_MultiLanguageCFG* Landlord_NetHumanMachine_MultiLanguageCFG::GetSingleton()
 {
 	if (msSingleton.get() == nullptr)
 	{
-		msSingleton.reset(new M_GameCFG());
+		msSingleton.reset(new Landlord_NetHumanMachine_MultiLanguageCFG());
 	}
 	return msSingleton.get();
-}
-
-void M_GameCFG::Release()
-{
-	msSingleton.reset(nullptr);
 }

@@ -1,13 +1,13 @@
-Landlord_MultiLanguageCFG = {}
+Landlord_NetHumanMachine_MultiLanguageCFG = {}
 
-function Landlord_MultiLanguageCFG:getData(key)
+function Landlord_NetHumanMachine_MultiLanguageCFG:getData(key)
 	if self.datas == nil then
 		return nil
 	end
 	return self.datas[key]
 end
 
-function Landlord_MultiLanguageCFG:init()
+function Landlord_NetHumanMachine_MultiLanguageCFG:init()
 	self.datas = {}
 	self.datas["GoldNotEnough"] = {ID = "GoldNotEnough", Name = "金币不足"}
 	self.datas["BetFull"] = {ID = "BetFull", Name = "押注已满"}
@@ -84,4 +84,4 @@ function Landlord_MultiLanguageCFG:init()
 	self.datas["IsExitCurrentRoom"] = {ID = "IsExitCurrentRoom", Name = "确定要退出当前房间？"}
 end
 
-Landlord_MultiLanguageCFG:init()
+Landlord_NetHumanMachine_MultiLanguageCFG:init()

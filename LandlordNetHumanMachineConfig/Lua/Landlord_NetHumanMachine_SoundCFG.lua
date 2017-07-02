@@ -1,13 +1,13 @@
-Landlord_SoundCFG = {}
+Landlord_NetHumanMachine_SoundCFG = {}
 
-function Landlord_SoundCFG:getData(key)
+function Landlord_NetHumanMachine_SoundCFG:getData(key)
 	if self.datas == nil then
 		return nil
 	end
 	return self.datas[key]
 end
 
-function Landlord_SoundCFG:init()
+function Landlord_NetHumanMachine_SoundCFG:init()
 	self.datas = {}
 	self.datas[1] = {SoundID = 1, SoundName = "百家乐背景音乐", SoundPath = "Sound/music-bg.mp3", SoundTime = 64}
 	self.datas[2] = {SoundID = 2, SoundName = "倒计时音效", SoundPath = "Sound/count_down.mp3", SoundTime = 1}
@@ -36,4 +36,4 @@ function Landlord_SoundCFG:init()
 	self.datas[25] = {SoundID = 25, SoundName = "游戏结束", SoundPath = "Sound/GAME_END.mp3", SoundTime = 1}
 end
 
-Landlord_SoundCFG:init()
+Landlord_NetHumanMachine_SoundCFG:init()

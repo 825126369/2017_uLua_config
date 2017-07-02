@@ -6,22 +6,8 @@ struct M_GameCFGData
 	int mID;
 	//游戏名字
 	std::string mGameName;
-	//游戏路径
-	std::string mGamePrefix;
-	//更新地址
-	std::string mUpdateUrl;
 	//是否开放
 	bool mIsOpen;
-	//游戏大小
-	std::string mGameSize;
-	//zip版本
-	std::string mZipVersion;
-	//动画名称
-	std::string mAnimationName;
-	//图片名称
-	std::string mPictureName;
-	//是否显示
-	bool mIsShow;
 };
 
 class M_GameCFG

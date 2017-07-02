@@ -69,14 +69,7 @@ void M_GameCFG::Reload(const std::string& path)
 		M_GameCFGData data;
 		data.mID = element->IntAttribute("ID");
 		data.mGameName = element->Attribute("GameName");
-		data.mGamePrefix = element->Attribute("GamePrefix");
-		data.mUpdateUrl = element->Attribute("UpdateUrl");
 		data.mIsOpen = element->BoolAttribute("IsOpen");
-		data.mGameSize = element->Attribute("GameSize");
-		data.mZipVersion = element->Attribute("ZipVersion");
-		data.mAnimationName = element->Attribute("AnimationName");
-		data.mPictureName = element->Attribute("PictureName");
-		data.mIsShow = element->BoolAttribute("IsShow");
 		mMapData[data.mID] = data;
 		element = element->NextSiblingElement();
 	}
@@ -116,14 +109,7 @@ void M_GameCFG::Load(const std::string& path)
 		M_GameCFGData data;
 		data.mID = element->IntAttribute("ID");
 		data.mGameName = element->Attribute("GameName");
-		data.mGamePrefix = element->Attribute("GamePrefix");
-		data.mUpdateUrl = element->Attribute("UpdateUrl");
 		data.mIsOpen = element->BoolAttribute("IsOpen");
-		data.mGameSize = element->Attribute("GameSize");
-		data.mZipVersion = element->Attribute("ZipVersion");
-		data.mAnimationName = element->Attribute("AnimationName");
-		data.mPictureName = element->Attribute("PictureName");
-		data.mIsShow = element->BoolAttribute("IsShow");
 		if (mMapData.find(data.mID) != mMapData.end())std::cout <<"data refind:" << data.mID << std::endl;
 		assert(mMapData.find(data.mID) == mMapData.end());
 		mMapData.insert(std::make_pair(data.mID, data));
