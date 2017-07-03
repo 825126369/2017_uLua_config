@@ -21,7 +21,8 @@ enum e_server_msg_type {
 	e_mst_c2l_join_room=10015;
 	e_mst_c2l_or_agree_join_room=10016;	
 	e_mst_c2l_create_room=10017;
-    e_mst_c2l_set_room_rule=10018;	
+    e_mst_c2l_set_room_rule=10018;
+	e_mst_c2l_change_desk=10019;//请求换凳子	
 	
 	//------------SC-------------------
 	e_mst_start_l2c = 15000;
@@ -33,7 +34,6 @@ enum e_server_msg_type {
 	e_mst_l2c_start_match_result=15005;
 	e_mst_l2c_Hang=15006;
 	e_mst_l2c_roomlist=15007;
-
 	e_mst_l2c_add_robot=15008;
 	e_mst_l2c_kich_player=15009;
 	e_mst_l2c_join_player_list_result=15010;
@@ -41,6 +41,7 @@ enum e_server_msg_type {
 	e_mst_l2c_or_agree_join_room_result=15012;
 	e_mst_l2c_create_room=15013;
  	e_mst_l2c_set_room_rule=15014;
+	e_mst_l2c_change_desk=15015;
 
 	e_mst_l2c_notice_startgame=15101;//通知开始游戏
 	e_mst_l2c_notice_playhand=15102;//通知其他人出牌信息
@@ -127,7 +128,8 @@ message room_info
 	optional string roomName= 2;			//房间名
 	optional int32 player_count=3; 			//房间人数
 	optional int32 room_state=4;			//1：准备，2：开始游戏
-	optional bool orNeedPassword=5;			//是否需要密码				
+	optional bool orNeedPassword=5;			//是否需要密码	
+	optional bool orShuffle=6; //是否洗牌			
 }
 
 //邀请信息

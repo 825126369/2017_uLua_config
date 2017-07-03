@@ -124,12 +124,13 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fdef_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(player_info));
   room_info_descriptor_ = file->message_type(4);
-  static const int room_info_offsets_[5] = {
+  static const int room_info_offsets_[6] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(room_info, room_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(room_info, roomname_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(room_info, player_count_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(room_info, room_state_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(room_info, orneedpassword_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(room_info, orshuffle_),
   };
   room_info_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -222,64 +223,66 @@ void protobuf_AddDesc_game_5flandlord_5fnet_5fhuman_5fdef_2eproto() {
     "\031\n\021player_head_frame\030\003 \001(\005\022\032\n\022player_hea"
     "d_custom\030\004 \001(\t\022\023\n\013player_gold\030\005 \001(\003\022\022\n\np"
     "layer_sex\030\006 \001(\005\022\025\n\rplayer_vip_lv\030\007 \001(\005\022\016"
-    "\n\006deskId\030\010 \001(\005\022\021\n\torPrepare\030\t \001(\010\"p\n\troo"
-    "m_info\022\017\n\007room_id\030\001 \001(\005\022\020\n\010roomName\030\002 \001("
-    "\t\022\024\n\014player_count\030\003 \001(\005\022\022\n\nroom_state\030\004 "
-    "\001(\005\022\026\n\016orNeedPassword\030\005 \001(\010\"d\n\017invitatio"
-    "n_info\022A\n\nsenderInfo\030\001 \001(\0132-.game_landlo"
-    "rd_net_human_protocol.player_info\022\016\n\006roo"
-    "mId\030\002 \001(\005*\227\013\n\021e_server_msg_type\022\024\n\017e_mst"
-    "_start_c2l\020\220N\022\031\n\024e_mst_c2l_enter_room\020\221N"
-    "\022\"\n\035e_mst_c2l_get_room_scene_info\020\222N\022\032\n\025"
-    "e_mst_c2l_check_state\020\223N\022\031\n\024e_mst_c2l_le"
-    "ave_room\020\224N\022\033\n\026e_mst_c2l_rob_landlord\020\225N"
-    "\022\027\n\022e_mst_c2l_playhand\020\226N\022\032\n\025e_mst_c2l_s"
-    "tart_match\020\227N\022\023\n\016e_mst_c2l_Hang\020\230N\022\031\n\024e_"
-    "mst_c2l_SystemTalk\020\231N\022\027\n\022e_mst_c2l_rooml"
-    "ist\020\232N\022\030\n\023e_mst_c2l_add_robot\020\233N\022\032\n\025e_ms"
-    "t_c2l_kich_player\020\234N\022\031\n\024e_mst_c2l_or_pre"
-    "pare\020\235N\022\037\n\032e_mst_c2l_join_player_list\020\236N"
-    "\022\030\n\023e_mst_c2l_join_room\020\237N\022!\n\034e_mst_c2l_"
-    "or_agree_join_room\020\240N\022\032\n\025e_mst_c2l_creat"
-    "e_room\020\241N\022\034\n\027e_mst_c2l_set_room_rule\020\242N\022"
-    "\024\n\017e_mst_start_l2c\020\230u\022\031\n\024e_mst_l2c_enter"
-    "_room\020\231u\022\"\n\035e_mst_l2c_get_room_scene_inf"
-    "o\020\232u\022\032\n\025e_mst_l2c_check_state\020\233u\022\031\n\024e_ms"
-    "t_l2c_leave_room\020\234u\022!\n\034e_mst_l2c_start_m"
-    "atch_result\020\235u\022\023\n\016e_mst_l2c_Hang\020\236u\022\027\n\022e"
-    "_mst_l2c_roomlist\020\237u\022\030\n\023e_mst_l2c_add_ro"
-    "bot\020\240u\022\032\n\025e_mst_l2c_kich_player\020\241u\022&\n!e_"
-    "mst_l2c_join_player_list_result\020\242u\022\037\n\032e_"
-    "mst_l2c_join_room_result\020\243u\022(\n#e_mst_l2c"
-    "_or_agree_join_room_result\020\244u\022\032\n\025e_mst_l"
-    "2c_create_room\020\245u\022\034\n\027e_mst_l2c_set_room_"
-    "rule\020\246u\022\037\n\032e_mst_l2c_notice_startgame\020\375u"
-    "\022\036\n\031e_mst_l2c_notice_playhand\020\376u\022\"\n\035e_ms"
-    "t_l2c_notice_rob_landlord\020\377u\022\035\n\030e_mst_l2"
-    "c_notice_winlose\020\200v\022)\n$e_mst_l2c_notice_"
-    "rob_landlord_result\020\201v\022\"\n\035e_mst_l2c_noti"
-    "ce_who_playhand\020\202v\022 \n\033e_mst_l2c_notice_S"
-    "ystemTalk\020\203v\022+\n&e_mst_l2c_notice_room_en"
-    "ter_leave_info\020\204v\022\'\n\"e_mst_l2c_notice_ro"
-    "om_prepare_info\020\205v\022&\n!e_mst_l2c_notice_r"
-    "oom_change_info\020\206v\022&\n!e_mst_l2c_notice_i"
-    "nvite_room_list\020\207v\022\027\n\021e_mst_clend_index\020"
-    "\240\234\001*k\n\023e_server_error_code\022\030\n\024e_error_co"
-    "de_success\020\001\022\027\n\023e_error_code_failed\020\002\022!\n"
-    "\035e_error_code_not_enough_money\020\003*\313\001\n\014e_g"
-    "ame_state\022\025\n\021e_game_state_none\020\000\022\031\n\025e_ga"
-    "me_state_matching\020\001\022\032\n\026e_game_state_star"
-    "tgame\020\002\022\034\n\030e_game_state_sendcarding\020\003\022\034\n"
-    "\030e_game_state_robLandlore\020\004\022\031\n\025e_game_st"
-    "ate_playhand\020\005\022\026\n\022e_game_state_award\020\006*\274"
-    "\002\n\023e_player_game_state\022\034\n\030e_player_game_"
-    "state_none\020\000\022 \n\034e_player_game_state_matc"
-    "hing\020\001\022#\n\037e_player_game_state_sendcardin"
-    "g\020\002\022#\n\037e_player_game_state_robLandlord\020\003"
-    "\022)\n%e_player_game_state_other_robLandlor"
-    "d\020\004\022#\n\037e_player_game_state_playhanding\020\005"
-    "\022)\n%e_player_game_state_other_playhandin"
-    "g\020\006\022 \n\034e_player_game_state_awarding\020\007", 2717);
+    "\n\006deskId\030\010 \001(\005\022\021\n\torPrepare\030\t \001(\010\"\203\001\n\tro"
+    "om_info\022\017\n\007room_id\030\001 \001(\005\022\020\n\010roomName\030\002 \001"
+    "(\t\022\024\n\014player_count\030\003 \001(\005\022\022\n\nroom_state\030\004"
+    " \001(\005\022\026\n\016orNeedPassword\030\005 \001(\010\022\021\n\torShuffl"
+    "e\030\006 \001(\010\"d\n\017invitation_info\022A\n\nsenderInfo"
+    "\030\001 \001(\0132-.game_landlord_net_human_protoco"
+    "l.player_info\022\016\n\006roomId\030\002 \001(\005*\317\013\n\021e_serv"
+    "er_msg_type\022\024\n\017e_mst_start_c2l\020\220N\022\031\n\024e_m"
+    "st_c2l_enter_room\020\221N\022\"\n\035e_mst_c2l_get_ro"
+    "om_scene_info\020\222N\022\032\n\025e_mst_c2l_check_stat"
+    "e\020\223N\022\031\n\024e_mst_c2l_leave_room\020\224N\022\033\n\026e_mst"
+    "_c2l_rob_landlord\020\225N\022\027\n\022e_mst_c2l_playha"
+    "nd\020\226N\022\032\n\025e_mst_c2l_start_match\020\227N\022\023\n\016e_m"
+    "st_c2l_Hang\020\230N\022\031\n\024e_mst_c2l_SystemTalk\020\231"
+    "N\022\027\n\022e_mst_c2l_roomlist\020\232N\022\030\n\023e_mst_c2l_"
+    "add_robot\020\233N\022\032\n\025e_mst_c2l_kich_player\020\234N"
+    "\022\031\n\024e_mst_c2l_or_prepare\020\235N\022\037\n\032e_mst_c2l"
+    "_join_player_list\020\236N\022\030\n\023e_mst_c2l_join_r"
+    "oom\020\237N\022!\n\034e_mst_c2l_or_agree_join_room\020\240"
+    "N\022\032\n\025e_mst_c2l_create_room\020\241N\022\034\n\027e_mst_c"
+    "2l_set_room_rule\020\242N\022\032\n\025e_mst_c2l_change_"
+    "desk\020\243N\022\024\n\017e_mst_start_l2c\020\230u\022\031\n\024e_mst_l"
+    "2c_enter_room\020\231u\022\"\n\035e_mst_l2c_get_room_s"
+    "cene_info\020\232u\022\032\n\025e_mst_l2c_check_state\020\233u"
+    "\022\031\n\024e_mst_l2c_leave_room\020\234u\022!\n\034e_mst_l2c"
+    "_start_match_result\020\235u\022\023\n\016e_mst_l2c_Hang"
+    "\020\236u\022\027\n\022e_mst_l2c_roomlist\020\237u\022\030\n\023e_mst_l2"
+    "c_add_robot\020\240u\022\032\n\025e_mst_l2c_kich_player\020"
+    "\241u\022&\n!e_mst_l2c_join_player_list_result\020"
+    "\242u\022\037\n\032e_mst_l2c_join_room_result\020\243u\022(\n#e"
+    "_mst_l2c_or_agree_join_room_result\020\244u\022\032\n"
+    "\025e_mst_l2c_create_room\020\245u\022\034\n\027e_mst_l2c_s"
+    "et_room_rule\020\246u\022\032\n\025e_mst_l2c_change_desk"
+    "\020\247u\022\037\n\032e_mst_l2c_notice_startgame\020\375u\022\036\n\031"
+    "e_mst_l2c_notice_playhand\020\376u\022\"\n\035e_mst_l2"
+    "c_notice_rob_landlord\020\377u\022\035\n\030e_mst_l2c_no"
+    "tice_winlose\020\200v\022)\n$e_mst_l2c_notice_rob_"
+    "landlord_result\020\201v\022\"\n\035e_mst_l2c_notice_w"
+    "ho_playhand\020\202v\022 \n\033e_mst_l2c_notice_Syste"
+    "mTalk\020\203v\022+\n&e_mst_l2c_notice_room_enter_"
+    "leave_info\020\204v\022\'\n\"e_mst_l2c_notice_room_p"
+    "repare_info\020\205v\022&\n!e_mst_l2c_notice_room_"
+    "change_info\020\206v\022&\n!e_mst_l2c_notice_invit"
+    "e_room_list\020\207v\022\027\n\021e_mst_clend_index\020\240\234\001*"
+    "k\n\023e_server_error_code\022\030\n\024e_error_code_s"
+    "uccess\020\001\022\027\n\023e_error_code_failed\020\002\022!\n\035e_e"
+    "rror_code_not_enough_money\020\003*\313\001\n\014e_game_"
+    "state\022\025\n\021e_game_state_none\020\000\022\031\n\025e_game_s"
+    "tate_matching\020\001\022\032\n\026e_game_state_startgam"
+    "e\020\002\022\034\n\030e_game_state_sendcarding\020\003\022\034\n\030e_g"
+    "ame_state_robLandlore\020\004\022\031\n\025e_game_state_"
+    "playhand\020\005\022\026\n\022e_game_state_award\020\006*\274\002\n\023e"
+    "_player_game_state\022\034\n\030e_player_game_stat"
+    "e_none\020\000\022 \n\034e_player_game_state_matching"
+    "\020\001\022#\n\037e_player_game_state_sendcarding\020\002\022"
+    "#\n\037e_player_game_state_robLandlord\020\003\022)\n%"
+    "e_player_game_state_other_robLandlord\020\004\022"
+    "#\n\037e_player_game_state_playhanding\020\005\022)\n%"
+    "e_player_game_state_other_playhanding\020\006\022"
+    " \n\034e_player_game_state_awarding\020\007", 2793);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "game_landlord_net_human_def.proto", &protobuf_RegisterTypes);
   card_Info::default_instance_ = new card_Info();
@@ -328,6 +331,7 @@ bool e_server_msg_type_IsValid(int value) {
     case 10016:
     case 10017:
     case 10018:
+    case 10019:
     case 15000:
     case 15001:
     case 15002:
@@ -343,6 +347,7 @@ bool e_server_msg_type_IsValid(int value) {
     case 15012:
     case 15013:
     case 15014:
+    case 15015:
     case 15101:
     case 15102:
     case 15103:
@@ -1828,6 +1833,7 @@ const int room_info::kRoomNameFieldNumber;
 const int room_info::kPlayerCountFieldNumber;
 const int room_info::kRoomStateFieldNumber;
 const int room_info::kOrNeedPasswordFieldNumber;
+const int room_info::kOrShuffleFieldNumber;
 #endif  // !_MSC_VER
 
 room_info::room_info()
@@ -1854,6 +1860,7 @@ void room_info::SharedCtor() {
   player_count_ = 0;
   room_state_ = 0;
   orneedpassword_ = false;
+  orshuffle_ = false;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -1902,8 +1909,8 @@ void room_info::Clear() {
     ::memset(&first, 0, n);                                \
   } while (0)
 
-  if (_has_bits_[0 / 32] & 31) {
-    ZR_(room_id_, orneedpassword_);
+  if (_has_bits_[0 / 32] & 63) {
+    ZR_(room_id_, orshuffle_);
     if (has_roomname()) {
       if (roomname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         roomname_->clear();
@@ -2000,6 +2007,21 @@ bool room_info::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(48)) goto parse_orShuffle;
+        break;
+      }
+
+      // optional bool orShuffle = 6;
+      case 6: {
+        if (tag == 48) {
+         parse_orShuffle:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &orshuffle_)));
+          set_has_orshuffle();
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -2059,6 +2081,11 @@ void room_info::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(5, this->orneedpassword(), output);
   }
 
+  // optional bool orShuffle = 6;
+  if (has_orshuffle()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(6, this->orshuffle(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -2098,6 +2125,11 @@ void room_info::SerializeWithCachedSizes(
   // optional bool orNeedPassword = 5;
   if (has_orneedpassword()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(5, this->orneedpassword(), target);
+  }
+
+  // optional bool orShuffle = 6;
+  if (has_orshuffle()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(6, this->orshuffle(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -2145,6 +2177,11 @@ int room_info::ByteSize() const {
       total_size += 1 + 1;
     }
 
+    // optional bool orShuffle = 6;
+    if (has_orshuffle()) {
+      total_size += 1 + 1;
+    }
+
   }
   if (!unknown_fields().empty()) {
     total_size +=
@@ -2187,6 +2224,9 @@ void room_info::MergeFrom(const room_info& from) {
     if (from.has_orneedpassword()) {
       set_orneedpassword(from.orneedpassword());
     }
+    if (from.has_orshuffle()) {
+      set_orshuffle(from.orshuffle());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -2215,6 +2255,7 @@ void room_info::Swap(room_info* other) {
     std::swap(player_count_, other->player_count_);
     std::swap(room_state_, other->room_state_);
     std::swap(orneedpassword_, other->orneedpassword_);
+    std::swap(orshuffle_, other->orshuffle_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);

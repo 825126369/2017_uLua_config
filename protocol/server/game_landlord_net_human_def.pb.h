@@ -61,6 +61,7 @@ enum e_server_msg_type {
   e_mst_c2l_or_agree_join_room = 10016,
   e_mst_c2l_create_room = 10017,
   e_mst_c2l_set_room_rule = 10018,
+  e_mst_c2l_change_desk = 10019,
   e_mst_start_l2c = 15000,
   e_mst_l2c_enter_room = 15001,
   e_mst_l2c_get_room_scene_info = 15002,
@@ -76,6 +77,7 @@ enum e_server_msg_type {
   e_mst_l2c_or_agree_join_room_result = 15012,
   e_mst_l2c_create_room = 15013,
   e_mst_l2c_set_room_rule = 15014,
+  e_mst_l2c_change_desk = 15015,
   e_mst_l2c_notice_startgame = 15101,
   e_mst_l2c_notice_playhand = 15102,
   e_mst_l2c_notice_rob_landlord = 15103,
@@ -707,6 +709,13 @@ class room_info : public ::google::protobuf::Message {
   inline bool orneedpassword() const;
   inline void set_orneedpassword(bool value);
 
+  // optional bool orShuffle = 6;
+  inline bool has_orshuffle() const;
+  inline void clear_orshuffle();
+  static const int kOrShuffleFieldNumber = 6;
+  inline bool orshuffle() const;
+  inline void set_orshuffle(bool value);
+
   // @@protoc_insertion_point(class_scope:game_landlord_net_human_protocol.room_info)
  private:
   inline void set_has_room_id();
@@ -719,6 +728,8 @@ class room_info : public ::google::protobuf::Message {
   inline void clear_has_room_state();
   inline void set_has_orneedpassword();
   inline void clear_has_orneedpassword();
+  inline void set_has_orshuffle();
+  inline void clear_has_orshuffle();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -729,6 +740,7 @@ class room_info : public ::google::protobuf::Message {
   ::google::protobuf::int32 player_count_;
   ::google::protobuf::int32 room_state_;
   bool orneedpassword_;
+  bool orshuffle_;
   friend void  protobuf_AddDesc_game_5flandlord_5fnet_5fhuman_5fdef_2eproto();
   friend void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fdef_2eproto();
   friend void protobuf_ShutdownFile_game_5flandlord_5fnet_5fhuman_5fdef_2eproto();
@@ -1490,6 +1502,30 @@ inline void room_info::set_orneedpassword(bool value) {
   set_has_orneedpassword();
   orneedpassword_ = value;
   // @@protoc_insertion_point(field_set:game_landlord_net_human_protocol.room_info.orNeedPassword)
+}
+
+// optional bool orShuffle = 6;
+inline bool room_info::has_orshuffle() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void room_info::set_has_orshuffle() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void room_info::clear_has_orshuffle() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void room_info::clear_orshuffle() {
+  orshuffle_ = false;
+  clear_has_orshuffle();
+}
+inline bool room_info::orshuffle() const {
+  // @@protoc_insertion_point(field_get:game_landlord_net_human_protocol.room_info.orShuffle)
+  return orshuffle_;
+}
+inline void room_info::set_orshuffle(bool value) {
+  set_has_orshuffle();
+  orshuffle_ = value;
+  // @@protoc_insertion_point(field_set:game_landlord_net_human_protocol.room_info.orShuffle)
 }
 
 // -------------------------------------------------------------------
