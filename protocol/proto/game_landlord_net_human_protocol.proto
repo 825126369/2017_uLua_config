@@ -346,6 +346,13 @@ message packetl2c_notice_invite_room_list
 	repeated invitation_info inviteList=2;//邀请列表	
 }
 
+//通知 谁成为房主 
+message packetl2c_notice_who_is_roomcreator 
+{
+	optional e_server_msg_type packet_id = 1 [default = e_mst_l2c_notice_who_is_roomcreator];
+	optional int32 room_creator=2;//邀请列表	
+}
+
 
 
 

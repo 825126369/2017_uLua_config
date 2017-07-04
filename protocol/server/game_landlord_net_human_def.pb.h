@@ -89,6 +89,7 @@ enum e_server_msg_type {
   e_mst_l2c_notice_room_prepare_info = 15109,
   e_mst_l2c_notice_room_change_info = 15110,
   e_mst_l2c_notice_invite_room_list = 15111,
+  e_mst_l2c_notice_who_is_roomcreator = 15112,
   e_mst_clend_index = 20000
 };
 bool e_server_msg_type_IsValid(int value);
@@ -716,6 +717,25 @@ class room_info : public ::google::protobuf::Message {
   inline bool orshuffle() const;
   inline void set_orshuffle(bool value);
 
+  // optional string password = 7;
+  inline bool has_password() const;
+  inline void clear_password();
+  static const int kPasswordFieldNumber = 7;
+  inline const ::std::string& password() const;
+  inline void set_password(const ::std::string& value);
+  inline void set_password(const char* value);
+  inline void set_password(const char* value, size_t size);
+  inline ::std::string* mutable_password();
+  inline ::std::string* release_password();
+  inline void set_allocated_password(::std::string* password);
+
+  // optional int32 room_creator = 8;
+  inline bool has_room_creator() const;
+  inline void clear_room_creator();
+  static const int kRoomCreatorFieldNumber = 8;
+  inline ::google::protobuf::int32 room_creator() const;
+  inline void set_room_creator(::google::protobuf::int32 value);
+
   // @@protoc_insertion_point(class_scope:game_landlord_net_human_protocol.room_info)
  private:
   inline void set_has_room_id();
@@ -730,6 +750,10 @@ class room_info : public ::google::protobuf::Message {
   inline void clear_has_orneedpassword();
   inline void set_has_orshuffle();
   inline void clear_has_orshuffle();
+  inline void set_has_password();
+  inline void clear_has_password();
+  inline void set_has_room_creator();
+  inline void clear_has_room_creator();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -741,6 +765,8 @@ class room_info : public ::google::protobuf::Message {
   ::google::protobuf::int32 room_state_;
   bool orneedpassword_;
   bool orshuffle_;
+  ::std::string* password_;
+  ::google::protobuf::int32 room_creator_;
   friend void  protobuf_AddDesc_game_5flandlord_5fnet_5fhuman_5fdef_2eproto();
   friend void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fdef_2eproto();
   friend void protobuf_ShutdownFile_game_5flandlord_5fnet_5fhuman_5fdef_2eproto();
@@ -1526,6 +1552,106 @@ inline void room_info::set_orshuffle(bool value) {
   set_has_orshuffle();
   orshuffle_ = value;
   // @@protoc_insertion_point(field_set:game_landlord_net_human_protocol.room_info.orShuffle)
+}
+
+// optional string password = 7;
+inline bool room_info::has_password() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+inline void room_info::set_has_password() {
+  _has_bits_[0] |= 0x00000040u;
+}
+inline void room_info::clear_has_password() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+inline void room_info::clear_password() {
+  if (password_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    password_->clear();
+  }
+  clear_has_password();
+}
+inline const ::std::string& room_info::password() const {
+  // @@protoc_insertion_point(field_get:game_landlord_net_human_protocol.room_info.password)
+  return *password_;
+}
+inline void room_info::set_password(const ::std::string& value) {
+  set_has_password();
+  if (password_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    password_ = new ::std::string;
+  }
+  password_->assign(value);
+  // @@protoc_insertion_point(field_set:game_landlord_net_human_protocol.room_info.password)
+}
+inline void room_info::set_password(const char* value) {
+  set_has_password();
+  if (password_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    password_ = new ::std::string;
+  }
+  password_->assign(value);
+  // @@protoc_insertion_point(field_set_char:game_landlord_net_human_protocol.room_info.password)
+}
+inline void room_info::set_password(const char* value, size_t size) {
+  set_has_password();
+  if (password_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    password_ = new ::std::string;
+  }
+  password_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:game_landlord_net_human_protocol.room_info.password)
+}
+inline ::std::string* room_info::mutable_password() {
+  set_has_password();
+  if (password_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    password_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:game_landlord_net_human_protocol.room_info.password)
+  return password_;
+}
+inline ::std::string* room_info::release_password() {
+  clear_has_password();
+  if (password_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = password_;
+    password_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void room_info::set_allocated_password(::std::string* password) {
+  if (password_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete password_;
+  }
+  if (password) {
+    set_has_password();
+    password_ = password;
+  } else {
+    clear_has_password();
+    password_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:game_landlord_net_human_protocol.room_info.password)
+}
+
+// optional int32 room_creator = 8;
+inline bool room_info::has_room_creator() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+inline void room_info::set_has_room_creator() {
+  _has_bits_[0] |= 0x00000080u;
+}
+inline void room_info::clear_has_room_creator() {
+  _has_bits_[0] &= ~0x00000080u;
+}
+inline void room_info::clear_room_creator() {
+  room_creator_ = 0;
+  clear_has_room_creator();
+}
+inline ::google::protobuf::int32 room_info::room_creator() const {
+  // @@protoc_insertion_point(field_get:game_landlord_net_human_protocol.room_info.room_creator)
+  return room_creator_;
+}
+inline void room_info::set_room_creator(::google::protobuf::int32 value) {
+  set_has_room_creator();
+  room_creator_ = value;
+  // @@protoc_insertion_point(field_set:game_landlord_net_human_protocol.room_info.room_creator)
 }
 
 // -------------------------------------------------------------------

@@ -155,6 +155,9 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* packetl2c_notice_invite_room_list_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   packetl2c_notice_invite_room_list_reflection_ = NULL;
+const ::google::protobuf::Descriptor* packetl2c_notice_who_is_roomcreator_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  packetl2c_notice_who_is_roomcreator_reflection_ = NULL;
 
 }  // namespace
 
@@ -919,6 +922,22 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_notice_invite_room_list));
+  packetl2c_notice_who_is_roomcreator_descriptor_ = file->message_type(45);
+  static const int packetl2c_notice_who_is_roomcreator_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_who_is_roomcreator, packet_id_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_who_is_roomcreator, room_creator_),
+  };
+  packetl2c_notice_who_is_roomcreator_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      packetl2c_notice_who_is_roomcreator_descriptor_,
+      packetl2c_notice_who_is_roomcreator::default_instance_,
+      packetl2c_notice_who_is_roomcreator_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_who_is_roomcreator, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_who_is_roomcreator, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(packetl2c_notice_who_is_roomcreator));
 }
 
 namespace {
@@ -1021,6 +1040,8 @@ void protobuf_RegisterTypes(const ::std::string&) {
     packetl2c_notice_room_change_info_descriptor_, &packetl2c_notice_room_change_info::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     packetl2c_notice_invite_room_list_descriptor_, &packetl2c_notice_invite_room_list::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    packetl2c_notice_who_is_roomcreator_descriptor_, &packetl2c_notice_who_is_roomcreator::default_instance());
 }
 
 }  // namespace
@@ -1116,6 +1137,8 @@ void protobuf_ShutdownFile_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
   delete packetl2c_notice_room_change_info_reflection_;
   delete packetl2c_notice_invite_room_list::default_instance_;
   delete packetl2c_notice_invite_room_list_reflection_;
+  delete packetl2c_notice_who_is_roomcreator::default_instance_;
+  delete packetl2c_notice_who_is_roomcreator_reflection_;
 }
 
 void protobuf_AddDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
@@ -1359,7 +1382,11 @@ void protobuf_AddDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
     "_server_msg_type:!e_mst_l2c_notice_invit"
     "e_room_list\022E\n\ninviteList\030\002 \003(\01321.game_l"
     "andlord_net_human_protocol.invitation_in"
-    "fo", 9322);
+    "fo\"\250\001\n#packetl2c_notice_who_is_roomcreat"
+    "or\022k\n\tpacket_id\030\001 \001(\01623.game_landlord_ne"
+    "t_human_protocol.e_server_msg_type:#e_ms"
+    "t_l2c_notice_who_is_roomcreator\022\024\n\014room_"
+    "creator\030\002 \001(\005", 9493);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "game_landlord_net_human_protocol.proto", &protobuf_RegisterTypes);
   packetc2l_create_room::default_instance_ = new packetc2l_create_room();
@@ -1407,6 +1434,7 @@ void protobuf_AddDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
   packetl2c_notice_room_prepare_info::default_instance_ = new packetl2c_notice_room_prepare_info();
   packetl2c_notice_room_change_info::default_instance_ = new packetl2c_notice_room_change_info();
   packetl2c_notice_invite_room_list::default_instance_ = new packetl2c_notice_invite_room_list();
+  packetl2c_notice_who_is_roomcreator::default_instance_ = new packetl2c_notice_who_is_roomcreator();
   packetc2l_create_room::default_instance_->InitAsDefaultInstance();
   packetl2c_create_room_result::default_instance_->InitAsDefaultInstance();
   packetc2l_set_room_rule::default_instance_->InitAsDefaultInstance();
@@ -1452,6 +1480,7 @@ void protobuf_AddDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
   packetl2c_notice_room_prepare_info::default_instance_->InitAsDefaultInstance();
   packetl2c_notice_room_change_info::default_instance_->InitAsDefaultInstance();
   packetl2c_notice_invite_room_list::default_instance_->InitAsDefaultInstance();
+  packetl2c_notice_who_is_roomcreator::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto);
 }
 
@@ -15172,6 +15201,275 @@ void packetl2c_notice_invite_room_list::Swap(packetl2c_notice_invite_room_list* 
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = packetl2c_notice_invite_room_list_descriptor_;
   metadata.reflection = packetl2c_notice_invite_room_list_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int packetl2c_notice_who_is_roomcreator::kPacketIdFieldNumber;
+const int packetl2c_notice_who_is_roomcreator::kRoomCreatorFieldNumber;
+#endif  // !_MSC_VER
+
+packetl2c_notice_who_is_roomcreator::packetl2c_notice_who_is_roomcreator()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:game_landlord_net_human_protocol.packetl2c_notice_who_is_roomcreator)
+}
+
+void packetl2c_notice_who_is_roomcreator::InitAsDefaultInstance() {
+}
+
+packetl2c_notice_who_is_roomcreator::packetl2c_notice_who_is_roomcreator(const packetl2c_notice_who_is_roomcreator& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:game_landlord_net_human_protocol.packetl2c_notice_who_is_roomcreator)
+}
+
+void packetl2c_notice_who_is_roomcreator::SharedCtor() {
+  _cached_size_ = 0;
+  packet_id_ = 15112;
+  room_creator_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+packetl2c_notice_who_is_roomcreator::~packetl2c_notice_who_is_roomcreator() {
+  // @@protoc_insertion_point(destructor:game_landlord_net_human_protocol.packetl2c_notice_who_is_roomcreator)
+  SharedDtor();
+}
+
+void packetl2c_notice_who_is_roomcreator::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void packetl2c_notice_who_is_roomcreator::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* packetl2c_notice_who_is_roomcreator::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return packetl2c_notice_who_is_roomcreator_descriptor_;
+}
+
+const packetl2c_notice_who_is_roomcreator& packetl2c_notice_who_is_roomcreator::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto();
+  return *default_instance_;
+}
+
+packetl2c_notice_who_is_roomcreator* packetl2c_notice_who_is_roomcreator::default_instance_ = NULL;
+
+packetl2c_notice_who_is_roomcreator* packetl2c_notice_who_is_roomcreator::New() const {
+  return new packetl2c_notice_who_is_roomcreator;
+}
+
+void packetl2c_notice_who_is_roomcreator::Clear() {
+  if (_has_bits_[0 / 32] & 3) {
+    packet_id_ = 15112;
+    room_creator_ = 0;
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool packetl2c_notice_who_is_roomcreator::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:game_landlord_net_human_protocol.packetl2c_notice_who_is_roomcreator)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional .game_landlord_net_human_protocol.e_server_msg_type packet_id = 1 [default = e_mst_l2c_notice_who_is_roomcreator];
+      case 1: {
+        if (tag == 8) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::game_landlord_net_human_protocol::e_server_msg_type_IsValid(value)) {
+            set_packet_id(static_cast< ::game_landlord_net_human_protocol::e_server_msg_type >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(1, value);
+          }
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_room_creator;
+        break;
+      }
+
+      // optional int32 room_creator = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_room_creator:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &room_creator_)));
+          set_has_room_creator();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:game_landlord_net_human_protocol.packetl2c_notice_who_is_roomcreator)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:game_landlord_net_human_protocol.packetl2c_notice_who_is_roomcreator)
+  return false;
+#undef DO_
+}
+
+void packetl2c_notice_who_is_roomcreator::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:game_landlord_net_human_protocol.packetl2c_notice_who_is_roomcreator)
+  // optional .game_landlord_net_human_protocol.e_server_msg_type packet_id = 1 [default = e_mst_l2c_notice_who_is_roomcreator];
+  if (has_packet_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->packet_id(), output);
+  }
+
+  // optional int32 room_creator = 2;
+  if (has_room_creator()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->room_creator(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:game_landlord_net_human_protocol.packetl2c_notice_who_is_roomcreator)
+}
+
+::google::protobuf::uint8* packetl2c_notice_who_is_roomcreator::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:game_landlord_net_human_protocol.packetl2c_notice_who_is_roomcreator)
+  // optional .game_landlord_net_human_protocol.e_server_msg_type packet_id = 1 [default = e_mst_l2c_notice_who_is_roomcreator];
+  if (has_packet_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->packet_id(), target);
+  }
+
+  // optional int32 room_creator = 2;
+  if (has_room_creator()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->room_creator(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:game_landlord_net_human_protocol.packetl2c_notice_who_is_roomcreator)
+  return target;
+}
+
+int packetl2c_notice_who_is_roomcreator::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional .game_landlord_net_human_protocol.e_server_msg_type packet_id = 1 [default = e_mst_l2c_notice_who_is_roomcreator];
+    if (has_packet_id()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->packet_id());
+    }
+
+    // optional int32 room_creator = 2;
+    if (has_room_creator()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->room_creator());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void packetl2c_notice_who_is_roomcreator::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const packetl2c_notice_who_is_roomcreator* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const packetl2c_notice_who_is_roomcreator*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void packetl2c_notice_who_is_roomcreator::MergeFrom(const packetl2c_notice_who_is_roomcreator& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_packet_id()) {
+      set_packet_id(from.packet_id());
+    }
+    if (from.has_room_creator()) {
+      set_room_creator(from.room_creator());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void packetl2c_notice_who_is_roomcreator::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void packetl2c_notice_who_is_roomcreator::CopyFrom(const packetl2c_notice_who_is_roomcreator& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool packetl2c_notice_who_is_roomcreator::IsInitialized() const {
+
+  return true;
+}
+
+void packetl2c_notice_who_is_roomcreator::Swap(packetl2c_notice_who_is_roomcreator* other) {
+  if (other != this) {
+    std::swap(packet_id_, other->packet_id_);
+    std::swap(room_creator_, other->room_creator_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata packetl2c_notice_who_is_roomcreator::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = packetl2c_notice_who_is_roomcreator_descriptor_;
+  metadata.reflection = packetl2c_notice_who_is_roomcreator_reflection_;
   return metadata;
 }
 

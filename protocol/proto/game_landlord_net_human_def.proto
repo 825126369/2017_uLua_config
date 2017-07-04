@@ -55,6 +55,7 @@ enum e_server_msg_type {
 	e_mst_l2c_notice_room_prepare_info=15109;//房间内玩家准备信息情况
 	e_mst_l2c_notice_room_change_info=15110;//房间外 房间信息改变情况
 	e_mst_l2c_notice_invite_room_list=15111;//邀请房间列表
+ 	e_mst_l2c_notice_who_is_roomcreator=15112;//通知房主改变
 	e_mst_clend_index = 20000;
 }
 
@@ -129,7 +130,9 @@ message room_info
 	optional int32 player_count=3; 			//房间人数
 	optional int32 room_state=4;			//1：准备，2：开始游戏
 	optional bool orNeedPassword=5;			//是否需要密码	
-	optional bool orShuffle=6; //是否洗牌			
+	optional bool orShuffle=6; //是否洗牌
+	optional string password=7;			
+	optional int32 room_creator=8;
 }
 
 //邀请信息
