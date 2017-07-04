@@ -160,7 +160,7 @@ message packetl2c_roomlist_result
 	repeated room_info roomInfoList=2;
 }
 
-//进入房间
+//进入房间(room_id==0，则自动匹配)
 message packetc2l_enter_room 
 {
 	optional e_server_msg_type packet_id = 1 [default = e_mst_c2l_enter_room];
@@ -171,22 +171,6 @@ message packetc2l_enter_room
 message packetl2c_enter_room_result 
 {
 	optional e_server_msg_type packet_id = 1 [default = e_mst_l2c_enter_room];
-	optional e_server_error_code result = 2 [default= e_error_code_success];
-	repeated player_info otherPlayerInfos = 3;//其他玩家信息
-	optional room_info roomInfo=4;
-	optional int32 deskId=5;
-}
-
-//自动匹配房间
-message packetc2l_start_match 
-{
-	optional e_server_msg_type packet_id = 1 [default = e_mst_c2l_start_match];
-}
-
-//返回 自动匹配房间
-message packetl2c_start_match_result 
-{
-	optional e_server_msg_type packet_id = 1 [default = e_mst_l2c_start_match_result];
 	optional e_server_error_code result = 2 [default= e_error_code_success];
 	repeated player_info otherPlayerInfos = 3;//其他玩家信息
 	optional room_info roomInfo=4;
