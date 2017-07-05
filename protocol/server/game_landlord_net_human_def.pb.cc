@@ -232,7 +232,7 @@ void protobuf_AddDesc_game_5flandlord_5fnet_5fhuman_5fdef_2eproto() {
     "e\030\006 \001(\010\022\020\n\010password\030\007 \001(\t\022\024\n\014room_creato"
     "r\030\010 \001(\005\"d\n\017invitation_info\022A\n\nsenderInfo"
     "\030\001 \001(\0132-.game_landlord_net_human_protoco"
-    "l.player_info\022\016\n\006roomId\030\002 \001(\005*\272\013\n\021e_serv"
+    "l.player_info\022\016\n\006roomId\030\002 \001(\005*\376\n\n\021e_serv"
     "er_msg_type\022\024\n\017e_mst_start_c2l\020\220N\022\031\n\024e_m"
     "st_c2l_enter_room\020\221N\022\"\n\035e_mst_c2l_get_ro"
     "om_scene_info\020\222N\022\032\n\025e_mst_c2l_check_stat"
@@ -245,47 +245,45 @@ void protobuf_AddDesc_game_5flandlord_5fnet_5fhuman_5fdef_2eproto() {
     "\037\n\032e_mst_c2l_join_player_list\020\236N\022\030\n\023e_ms"
     "t_c2l_join_room\020\237N\022!\n\034e_mst_c2l_or_agree"
     "_join_room\020\240N\022\032\n\025e_mst_c2l_create_room\020\241"
-    "N\022\034\n\027e_mst_c2l_set_room_rule\020\242N\022\032\n\025e_mst"
-    "_c2l_change_desk\020\243N\022\024\n\017e_mst_start_l2c\020\230"
-    "u\022\031\n\024e_mst_l2c_enter_room\020\231u\022\"\n\035e_mst_l2"
-    "c_get_room_scene_info\020\232u\022\032\n\025e_mst_l2c_ch"
-    "eck_state\020\233u\022\031\n\024e_mst_l2c_leave_room\020\234u\022"
-    "\023\n\016e_mst_l2c_Hang\020\236u\022\027\n\022e_mst_l2c_roomli"
-    "st\020\237u\022\030\n\023e_mst_l2c_add_robot\020\240u\022\032\n\025e_mst"
-    "_l2c_kich_player\020\241u\022&\n!e_mst_l2c_join_pl"
-    "ayer_list_result\020\242u\022\037\n\032e_mst_l2c_join_ro"
-    "om_result\020\243u\022(\n#e_mst_l2c_or_agree_join_"
-    "room_result\020\244u\022\032\n\025e_mst_l2c_create_room\020"
-    "\245u\022\034\n\027e_mst_l2c_set_room_rule\020\246u\022\032\n\025e_ms"
-    "t_l2c_change_desk\020\247u\022\037\n\032e_mst_l2c_notice"
-    "_startgame\020\375u\022\036\n\031e_mst_l2c_notice_playha"
-    "nd\020\376u\022\"\n\035e_mst_l2c_notice_rob_landlord\020\377"
-    "u\022\035\n\030e_mst_l2c_notice_winlose\020\200v\022)\n$e_ms"
-    "t_l2c_notice_rob_landlord_result\020\201v\022\"\n\035e"
-    "_mst_l2c_notice_who_playhand\020\202v\022 \n\033e_mst"
-    "_l2c_notice_SystemTalk\020\203v\022+\n&e_mst_l2c_n"
-    "otice_room_enter_leave_info\020\204v\022\'\n\"e_mst_"
-    "l2c_notice_room_prepare_info\020\205v\022&\n!e_mst"
-    "_l2c_notice_room_change_info\020\206v\022&\n!e_mst"
-    "_l2c_notice_invite_room_list\020\207v\022(\n#e_mst"
-    "_l2c_notice_who_is_roomcreator\020\210v\022\027\n\021e_m"
-    "st_clend_index\020\240\234\001*k\n\023e_server_error_cod"
-    "e\022\030\n\024e_error_code_success\020\001\022\027\n\023e_error_c"
-    "ode_failed\020\002\022!\n\035e_error_code_not_enough_"
-    "money\020\003*\313\001\n\014e_game_state\022\025\n\021e_game_state"
-    "_none\020\000\022\031\n\025e_game_state_matching\020\001\022\032\n\026e_"
-    "game_state_startgame\020\002\022\034\n\030e_game_state_s"
-    "endcarding\020\003\022\034\n\030e_game_state_robLandlore"
-    "\020\004\022\031\n\025e_game_state_playhand\020\005\022\026\n\022e_game_"
-    "state_award\020\006*\274\002\n\023e_player_game_state\022\034\n"
-    "\030e_player_game_state_none\020\000\022 \n\034e_player_"
-    "game_state_matching\020\001\022#\n\037e_player_game_s"
-    "tate_sendcarding\020\002\022#\n\037e_player_game_stat"
-    "e_robLandlord\020\003\022)\n%e_player_game_state_o"
-    "ther_robLandlord\020\004\022#\n\037e_player_game_stat"
-    "e_playhanding\020\005\022)\n%e_player_game_state_o"
-    "ther_playhanding\020\006\022 \n\034e_player_game_stat"
-    "e_awarding\020\007", 2812);
+    "N\022\032\n\025e_mst_c2l_change_desk\020\243N\022\024\n\017e_mst_s"
+    "tart_l2c\020\230u\022\031\n\024e_mst_l2c_enter_room\020\231u\022\""
+    "\n\035e_mst_l2c_get_room_scene_info\020\232u\022\032\n\025e_"
+    "mst_l2c_check_state\020\233u\022\031\n\024e_mst_l2c_leav"
+    "e_room\020\234u\022\023\n\016e_mst_l2c_Hang\020\236u\022\027\n\022e_mst_"
+    "l2c_roomlist\020\237u\022\030\n\023e_mst_l2c_add_robot\020\240"
+    "u\022\032\n\025e_mst_l2c_kich_player\020\241u\022&\n!e_mst_l"
+    "2c_join_player_list_result\020\242u\022\037\n\032e_mst_l"
+    "2c_join_room_result\020\243u\022(\n#e_mst_l2c_or_a"
+    "gree_join_room_result\020\244u\022\032\n\025e_mst_l2c_cr"
+    "eate_room\020\245u\022\032\n\025e_mst_l2c_change_desk\020\247u"
+    "\022\037\n\032e_mst_l2c_notice_startgame\020\375u\022\036\n\031e_m"
+    "st_l2c_notice_playhand\020\376u\022\"\n\035e_mst_l2c_n"
+    "otice_rob_landlord\020\377u\022\035\n\030e_mst_l2c_notic"
+    "e_winlose\020\200v\022)\n$e_mst_l2c_notice_rob_lan"
+    "dlord_result\020\201v\022\"\n\035e_mst_l2c_notice_who_"
+    "playhand\020\202v\022 \n\033e_mst_l2c_notice_SystemTa"
+    "lk\020\203v\022+\n&e_mst_l2c_notice_room_enter_lea"
+    "ve_info\020\204v\022\'\n\"e_mst_l2c_notice_room_prep"
+    "are_info\020\205v\022&\n!e_mst_l2c_notice_room_cha"
+    "nge_info\020\206v\022&\n!e_mst_l2c_notice_invite_r"
+    "oom_list\020\207v\022(\n#e_mst_l2c_notice_who_is_r"
+    "oomcreator\020\210v\022\027\n\021e_mst_clend_index\020\240\234\001*k"
+    "\n\023e_server_error_code\022\030\n\024e_error_code_su"
+    "ccess\020\001\022\027\n\023e_error_code_failed\020\002\022!\n\035e_er"
+    "ror_code_not_enough_money\020\003*\313\001\n\014e_game_s"
+    "tate\022\025\n\021e_game_state_none\020\000\022\031\n\025e_game_st"
+    "ate_matching\020\001\022\032\n\026e_game_state_startgame"
+    "\020\002\022\034\n\030e_game_state_sendcarding\020\003\022\034\n\030e_ga"
+    "me_state_robLandlore\020\004\022\031\n\025e_game_state_p"
+    "layhand\020\005\022\026\n\022e_game_state_award\020\006*\274\002\n\023e_"
+    "player_game_state\022\034\n\030e_player_game_state"
+    "_none\020\000\022 \n\034e_player_game_state_matching\020"
+    "\001\022#\n\037e_player_game_state_sendcarding\020\002\022#"
+    "\n\037e_player_game_state_robLandlord\020\003\022)\n%e"
+    "_player_game_state_other_robLandlord\020\004\022#"
+    "\n\037e_player_game_state_playhanding\020\005\022)\n%e"
+    "_player_game_state_other_playhanding\020\006\022 "
+    "\n\034e_player_game_state_awarding\020\007", 2752);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "game_landlord_net_human_def.proto", &protobuf_RegisterTypes);
   card_Info::default_instance_ = new card_Info();
@@ -332,7 +330,6 @@ bool e_server_msg_type_IsValid(int value) {
     case 10015:
     case 10016:
     case 10017:
-    case 10018:
     case 10019:
     case 15000:
     case 15001:
@@ -347,7 +344,6 @@ bool e_server_msg_type_IsValid(int value) {
     case 15011:
     case 15012:
     case 15013:
-    case 15014:
     case 15015:
     case 15101:
     case 15102:

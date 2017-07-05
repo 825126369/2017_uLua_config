@@ -26,12 +26,6 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* packetl2c_create_room_result_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   packetl2c_create_room_result_reflection_ = NULL;
-const ::google::protobuf::Descriptor* packetc2l_set_room_rule_descriptor_ = NULL;
-const ::google::protobuf::internal::GeneratedMessageReflection*
-  packetc2l_set_room_rule_reflection_ = NULL;
-const ::google::protobuf::Descriptor* packetl2c_set_room_rule_result_descriptor_ = NULL;
-const ::google::protobuf::internal::GeneratedMessageReflection*
-  packetl2c_set_room_rule_result_reflection_ = NULL;
 const ::google::protobuf::Descriptor* packetc2l_Hang_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   packetc2l_Hang_reflection_ = NULL;
@@ -163,10 +157,12 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       "game_landlord_net_human_protocol.proto");
   GOOGLE_CHECK(file != NULL);
   packetc2l_create_room_descriptor_ = file->message_type(0);
-  static const int packetc2l_create_room_offsets_[3] = {
+  static const int packetc2l_create_room_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_create_room, packet_id_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_create_room, action_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_create_room, roomname_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_create_room, password_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_create_room, orshuffle_),
   };
   packetc2l_create_room_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -180,11 +176,10 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetc2l_create_room));
   packetl2c_create_room_result_descriptor_ = file->message_type(1);
-  static const int packetl2c_create_room_result_offsets_[4] = {
+  static const int packetl2c_create_room_result_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_create_room_result, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_create_room_result, result_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_create_room_result, roomid_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_create_room_result, deskid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_create_room_result, action_),
   };
   packetl2c_create_room_result_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -197,41 +192,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_create_room_result));
-  packetc2l_set_room_rule_descriptor_ = file->message_type(2);
-  static const int packetc2l_set_room_rule_offsets_[4] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_set_room_rule, packet_id_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_set_room_rule, roomname_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_set_room_rule, password_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_set_room_rule, orshuffle_),
-  };
-  packetc2l_set_room_rule_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
-      packetc2l_set_room_rule_descriptor_,
-      packetc2l_set_room_rule::default_instance_,
-      packetc2l_set_room_rule_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_set_room_rule, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_set_room_rule, _unknown_fields_),
-      -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(packetc2l_set_room_rule));
-  packetl2c_set_room_rule_result_descriptor_ = file->message_type(3);
-  static const int packetl2c_set_room_rule_result_offsets_[2] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_set_room_rule_result, packet_id_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_set_room_rule_result, result_),
-  };
-  packetl2c_set_room_rule_result_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
-      packetl2c_set_room_rule_result_descriptor_,
-      packetl2c_set_room_rule_result::default_instance_,
-      packetl2c_set_room_rule_result_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_set_room_rule_result, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_set_room_rule_result, _unknown_fields_),
-      -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(packetl2c_set_room_rule_result));
-  packetc2l_Hang_descriptor_ = file->message_type(4);
+  packetc2l_Hang_descriptor_ = file->message_type(2);
   static const int packetc2l_Hang_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_Hang, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_Hang, orhang_),
@@ -247,7 +208,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetc2l_Hang));
-  packetl2c_Hang_result_descriptor_ = file->message_type(5);
+  packetl2c_Hang_result_descriptor_ = file->message_type(3);
   static const int packetl2c_Hang_result_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_Hang_result, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_Hang_result, result_),
@@ -264,7 +225,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_Hang_result));
-  packetc2l_add_robot_descriptor_ = file->message_type(6);
+  packetc2l_add_robot_descriptor_ = file->message_type(4);
   static const int packetc2l_add_robot_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_add_robot, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_add_robot, room_deskid_),
@@ -280,7 +241,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetc2l_add_robot));
-  packetl2c_add_robot_result_descriptor_ = file->message_type(7);
+  packetl2c_add_robot_result_descriptor_ = file->message_type(5);
   static const int packetl2c_add_robot_result_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_add_robot_result, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_add_robot_result, result_),
@@ -296,7 +257,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_add_robot_result));
-  packetc2l_change_desk_descriptor_ = file->message_type(8);
+  packetc2l_change_desk_descriptor_ = file->message_type(6);
   static const int packetc2l_change_desk_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_change_desk, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_change_desk, room_deskid_),
@@ -312,7 +273,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetc2l_change_desk));
-  packetl2c_change_desk_result_descriptor_ = file->message_type(9);
+  packetl2c_change_desk_result_descriptor_ = file->message_type(7);
   static const int packetl2c_change_desk_result_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_change_desk_result, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_change_desk_result, result_),
@@ -328,7 +289,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_change_desk_result));
-  packetc2l_join_player_list_descriptor_ = file->message_type(10);
+  packetc2l_join_player_list_descriptor_ = file->message_type(8);
   static const int packetc2l_join_player_list_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_join_player_list, packet_id_),
   };
@@ -343,7 +304,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetc2l_join_player_list));
-  packetl2c_join_player_list_result_descriptor_ = file->message_type(11);
+  packetl2c_join_player_list_result_descriptor_ = file->message_type(9);
   static const int packetl2c_join_player_list_result_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_join_player_list_result, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_join_player_list_result, playerlist_),
@@ -359,7 +320,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_join_player_list_result));
-  packetc2l_join_room_descriptor_ = file->message_type(12);
+  packetc2l_join_room_descriptor_ = file->message_type(10);
   static const int packetc2l_join_room_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_join_room, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_join_room, playerid_),
@@ -375,7 +336,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetc2l_join_room));
-  packetl2c_join_room_result_descriptor_ = file->message_type(13);
+  packetl2c_join_room_result_descriptor_ = file->message_type(11);
   static const int packetl2c_join_room_result_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_join_room_result, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_join_room_result, result_),
@@ -391,7 +352,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_join_room_result));
-  packetc2l_or_agree_join_room_descriptor_ = file->message_type(14);
+  packetc2l_or_agree_join_room_descriptor_ = file->message_type(12);
   static const int packetc2l_or_agree_join_room_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_or_agree_join_room, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_or_agree_join_room, oragree_),
@@ -408,7 +369,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetc2l_or_agree_join_room));
-  packetl2c_or_agree_join_room_result_descriptor_ = file->message_type(15);
+  packetl2c_or_agree_join_room_result_descriptor_ = file->message_type(13);
   static const int packetl2c_or_agree_join_room_result_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_or_agree_join_room_result, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_or_agree_join_room_result, result_),
@@ -424,7 +385,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_or_agree_join_room_result));
-  packetc2l_kich_player_descriptor_ = file->message_type(16);
+  packetc2l_kich_player_descriptor_ = file->message_type(14);
   static const int packetc2l_kich_player_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_kich_player, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_kich_player, room_deskid_),
@@ -440,7 +401,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetc2l_kich_player));
-  packetl2c_kich_player_result_descriptor_ = file->message_type(17);
+  packetl2c_kich_player_result_descriptor_ = file->message_type(15);
   static const int packetl2c_kich_player_result_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_kich_player_result, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_kich_player_result, result_),
@@ -456,7 +417,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_kich_player_result));
-  packetc2l_or_prepare_descriptor_ = file->message_type(18);
+  packetc2l_or_prepare_descriptor_ = file->message_type(16);
   static const int packetc2l_or_prepare_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_or_prepare, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_or_prepare, orprepare_),
@@ -472,7 +433,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetc2l_or_prepare));
-  packetc2l_SystemTalk_descriptor_ = file->message_type(19);
+  packetc2l_SystemTalk_descriptor_ = file->message_type(17);
   static const int packetc2l_SystemTalk_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_SystemTalk, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_SystemTalk, talk_id_),
@@ -488,7 +449,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetc2l_SystemTalk));
-  packetc2l_roomlist_descriptor_ = file->message_type(20);
+  packetc2l_roomlist_descriptor_ = file->message_type(18);
   static const int packetc2l_roomlist_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_roomlist, packet_id_),
   };
@@ -503,7 +464,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetc2l_roomlist));
-  packetl2c_roomlist_result_descriptor_ = file->message_type(21);
+  packetl2c_roomlist_result_descriptor_ = file->message_type(19);
   static const int packetl2c_roomlist_result_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_roomlist_result, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_roomlist_result, roominfolist_),
@@ -519,10 +480,11 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_roomlist_result));
-  packetc2l_enter_room_descriptor_ = file->message_type(22);
-  static const int packetc2l_enter_room_offsets_[2] = {
+  packetc2l_enter_room_descriptor_ = file->message_type(20);
+  static const int packetc2l_enter_room_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_enter_room, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_enter_room, room_id_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_enter_room, password_),
   };
   packetc2l_enter_room_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -535,7 +497,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetc2l_enter_room));
-  packetl2c_enter_room_result_descriptor_ = file->message_type(23);
+  packetl2c_enter_room_result_descriptor_ = file->message_type(21);
   static const int packetl2c_enter_room_result_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_enter_room_result, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_enter_room_result, result_),
@@ -554,7 +516,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_enter_room_result));
-  packetc2l_leave_room_descriptor_ = file->message_type(24);
+  packetc2l_leave_room_descriptor_ = file->message_type(22);
   static const int packetc2l_leave_room_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_leave_room, packet_id_),
   };
@@ -569,7 +531,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetc2l_leave_room));
-  packetl2c_leave_room_result_descriptor_ = file->message_type(25);
+  packetl2c_leave_room_result_descriptor_ = file->message_type(23);
   static const int packetl2c_leave_room_result_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_leave_room_result, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_leave_room_result, result_),
@@ -585,7 +547,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_leave_room_result));
-  packetc2l_get_room_scene_info_descriptor_ = file->message_type(26);
+  packetc2l_get_room_scene_info_descriptor_ = file->message_type(24);
   static const int packetc2l_get_room_scene_info_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_get_room_scene_info, packet_id_),
   };
@@ -600,7 +562,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetc2l_get_room_scene_info));
-  packetl2c_get_room_scene_info_result_descriptor_ = file->message_type(27);
+  packetl2c_get_room_scene_info_result_descriptor_ = file->message_type(25);
   static const int packetl2c_get_room_scene_info_result_offsets_[16] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_get_room_scene_info_result, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_get_room_scene_info_result, room_id_),
@@ -630,7 +592,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_get_room_scene_info_result));
-  packetc2l_check_state_descriptor_ = file->message_type(28);
+  packetc2l_check_state_descriptor_ = file->message_type(26);
   static const int packetc2l_check_state_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_check_state, packet_id_),
   };
@@ -645,7 +607,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetc2l_check_state));
-  packetl2c_check_state_result_descriptor_ = file->message_type(29);
+  packetl2c_check_state_result_descriptor_ = file->message_type(27);
   static const int packetl2c_check_state_result_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_check_state_result, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_check_state_result, is_intable_),
@@ -661,7 +623,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_check_state_result));
-  packetc2l_rob_landlord_descriptor_ = file->message_type(30);
+  packetc2l_rob_landlord_descriptor_ = file->message_type(28);
   static const int packetc2l_rob_landlord_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_rob_landlord, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_rob_landlord, or_rob_),
@@ -677,7 +639,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetc2l_rob_landlord));
-  packetc2l_playhand_descriptor_ = file->message_type(31);
+  packetc2l_playhand_descriptor_ = file->message_type(29);
   static const int packetc2l_playhand_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_playhand, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetc2l_playhand, cards_),
@@ -693,7 +655,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetc2l_playhand));
-  packetl2c_notice_startgame_descriptor_ = file->message_type(32);
+  packetl2c_notice_startgame_descriptor_ = file->message_type(30);
   static const int packetl2c_notice_startgame_offsets_[7] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_startgame, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_startgame, cards_),
@@ -714,7 +676,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_notice_startgame));
-  packetl2c_notice_who_playhand_descriptor_ = file->message_type(33);
+  packetl2c_notice_who_playhand_descriptor_ = file->message_type(31);
   static const int packetl2c_notice_who_playhand_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_who_playhand, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_who_playhand, deskid_),
@@ -730,7 +692,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_notice_who_playhand));
-  packetl2c_notice_playhand_descriptor_ = file->message_type(34);
+  packetl2c_notice_playhand_descriptor_ = file->message_type(32);
   static const int packetl2c_notice_playhand_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_playhand, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_playhand, result_),
@@ -747,7 +709,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_notice_playhand));
-  packetl2c_notice_rob_landlord_descriptor_ = file->message_type(35);
+  packetl2c_notice_rob_landlord_descriptor_ = file->message_type(33);
   static const int packetl2c_notice_rob_landlord_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_rob_landlord, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_rob_landlord, deskid_),
@@ -763,7 +725,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_notice_rob_landlord));
-  packetl2c_notice_rob_landlord_result_descriptor_ = file->message_type(36);
+  packetl2c_notice_rob_landlord_result_descriptor_ = file->message_type(34);
   static const int packetl2c_notice_rob_landlord_result_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_rob_landlord_result, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_rob_landlord_result, result_),
@@ -781,7 +743,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_notice_rob_landlord_result));
-  packetl2c_notice_winlose_descriptor_ = file->message_type(37);
+  packetl2c_notice_winlose_descriptor_ = file->message_type(35);
   static const int packetl2c_notice_winlose_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_winlose, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_winlose, m_desk_awards_),
@@ -798,7 +760,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_notice_winlose));
-  packetl2c_notice_SystemTalk_descriptor_ = file->message_type(38);
+  packetl2c_notice_SystemTalk_descriptor_ = file->message_type(36);
   static const int packetl2c_notice_SystemTalk_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_SystemTalk, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_SystemTalk, talk_id_),
@@ -814,7 +776,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_notice_SystemTalk));
-  packetl2c_notice_room_enter_leave_info_descriptor_ = file->message_type(39);
+  packetl2c_notice_room_enter_leave_info_descriptor_ = file->message_type(37);
   static const int packetl2c_notice_room_enter_leave_info_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_room_enter_leave_info, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_room_enter_leave_info, action_),
@@ -831,7 +793,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_notice_room_enter_leave_info));
-  packetl2c_notice_room_prepare_info_descriptor_ = file->message_type(40);
+  packetl2c_notice_room_prepare_info_descriptor_ = file->message_type(38);
   static const int packetl2c_notice_room_prepare_info_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_room_prepare_info, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_room_prepare_info, result_),
@@ -849,7 +811,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_notice_room_prepare_info));
-  packetl2c_notice_room_change_info_descriptor_ = file->message_type(41);
+  packetl2c_notice_room_change_info_descriptor_ = file->message_type(39);
   static const int packetl2c_notice_room_change_info_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_room_change_info, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_room_change_info, action_),
@@ -866,7 +828,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_notice_room_change_info));
-  packetl2c_notice_invite_room_list_descriptor_ = file->message_type(42);
+  packetl2c_notice_invite_room_list_descriptor_ = file->message_type(40);
   static const int packetl2c_notice_invite_room_list_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_invite_room_list, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_invite_room_list, invitelist_),
@@ -882,7 +844,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(packetl2c_notice_invite_room_list));
-  packetl2c_notice_who_is_roomcreator_descriptor_ = file->message_type(43);
+  packetl2c_notice_who_is_roomcreator_descriptor_ = file->message_type(41);
   static const int packetl2c_notice_who_is_roomcreator_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_who_is_roomcreator, packet_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_who_is_roomcreator, room_creator_),
@@ -914,10 +876,6 @@ void protobuf_RegisterTypes(const ::std::string&) {
     packetc2l_create_room_descriptor_, &packetc2l_create_room::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     packetl2c_create_room_result_descriptor_, &packetl2c_create_room_result::default_instance());
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    packetc2l_set_room_rule_descriptor_, &packetc2l_set_room_rule::default_instance());
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    packetl2c_set_room_rule_result_descriptor_, &packetl2c_set_room_rule_result::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     packetc2l_Hang_descriptor_, &packetc2l_Hang::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
@@ -1007,10 +965,6 @@ void protobuf_ShutdownFile_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
   delete packetc2l_create_room_reflection_;
   delete packetl2c_create_room_result::default_instance_;
   delete packetl2c_create_room_result_reflection_;
-  delete packetc2l_set_room_rule::default_instance_;
-  delete packetc2l_set_room_rule_reflection_;
-  delete packetl2c_set_room_rule_result::default_instance_;
-  delete packetl2c_set_room_rule_result_reflection_;
   delete packetc2l_Hang::default_instance_;
   delete packetc2l_Hang_reflection_;
   delete packetl2c_Hang_result::default_instance_;
@@ -1103,235 +1057,224 @@ void protobuf_AddDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n&game_landlord_net_human_protocol.proto"
     "\022 game_landlord_net_human_protocol\032!game"
-    "_landlord_net_human_def.proto\"\232\001\n\025packet"
+    "_landlord_net_human_def.proto\"\275\001\n\025packet"
     "c2l_create_room\022]\n\tpacket_id\030\001 \001(\01623.gam"
     "e_landlord_net_human_protocol.e_server_m"
-    "sg_type:\025e_mst_c2l_create_room\022\020\n\010roomNa"
-    "me\030\002 \001(\t\022\020\n\010password\030\003 \001(\t\"\372\001\n\034packetl2c"
-    "_create_room_result\022]\n\tpacket_id\030\001 \001(\01623"
-    ".game_landlord_net_human_protocol.e_serv"
-    "er_msg_type:\025e_mst_l2c_create_room\022[\n\006re"
-    "sult\030\002 \001(\01625.game_landlord_net_human_pro"
-    "tocol.e_server_error_code:\024e_error_code_"
-    "success\022\016\n\006roomId\030\003 \001(\005\022\016\n\006deskId\030\004 \001(\005\""
-    "\261\001\n\027packetc2l_set_room_rule\022_\n\tpacket_id"
-    "\030\001 \001(\01623.game_landlord_net_human_protoco"
-    "l.e_server_msg_type:\027e_mst_c2l_set_room_"
-    "rule\022\020\n\010roomName\030\002 \001(\t\022\020\n\010password\030\003 \001(\t"
-    "\022\021\n\torShuffle\030\004 \001(\010\"\336\001\n\036packetl2c_set_ro"
-    "om_rule_result\022_\n\tpacket_id\030\001 \001(\01623.game"
+    "sg_type:\025e_mst_c2l_create_room\022\016\n\006action"
+    "\030\002 \001(\005\022\020\n\010roomName\030\003 \001(\t\022\020\n\010password\030\004 \001"
+    "(\t\022\021\n\torshuffle\030\005 \001(\010\"\352\001\n\034packetl2c_crea"
+    "te_room_result\022]\n\tpacket_id\030\001 \001(\01623.game"
     "_landlord_net_human_protocol.e_server_ms"
-    "g_type:\027e_mst_l2c_set_room_rule\022[\n\006resul"
-    "t\030\002 \001(\01625.game_landlord_net_human_protoc"
-    "ol.e_server_error_code:\024e_error_code_suc"
-    "cess\"x\n\016packetc2l_Hang\022V\n\tpacket_id\030\001 \001("
-    "\01623.game_landlord_net_human_protocol.e_s"
-    "erver_msg_type:\016e_mst_c2l_Hang\022\016\n\006orHang"
-    "\030\002 \001(\010\"\334\001\n\025packetl2c_Hang_result\022V\n\tpack"
-    "et_id\030\001 \001(\01623.game_landlord_net_human_pr"
-    "otocol.e_server_msg_type:\016e_mst_l2c_Hang"
-    "\022[\n\006result\030\002 \001(\01625.game_landlord_net_hum"
-    "an_protocol.e_server_error_code:\024e_error"
-    "_code_success\022\016\n\006orHang\030\003 \001(\010\"\207\001\n\023packet"
-    "c2l_add_robot\022[\n\tpacket_id\030\001 \001(\01623.game_"
-    "landlord_net_human_protocol.e_server_msg"
-    "_type:\023e_mst_c2l_add_robot\022\023\n\013room_deskI"
-    "d\030\002 \001(\005\"\326\001\n\032packetl2c_add_robot_result\022["
-    "\n\tpacket_id\030\001 \001(\01623.game_landlord_net_hu"
-    "man_protocol.e_server_msg_type:\023e_mst_l2"
-    "c_add_robot\022[\n\006result\030\002 \001(\01625.game_landl"
-    "ord_net_human_protocol.e_server_error_co"
-    "de:\024e_error_code_success\"\213\001\n\025packetc2l_c"
-    "hange_desk\022]\n\tpacket_id\030\001 \001(\01623.game_lan"
-    "dlord_net_human_protocol.e_server_msg_ty"
-    "pe:\025e_mst_c2l_change_desk\022\023\n\013room_deskId"
-    "\030\002 \001(\005\"\332\001\n\034packetl2c_change_desk_result\022"
-    "]\n\tpacket_id\030\001 \001(\01623.game_landlord_net_h"
-    "uman_protocol.e_server_msg_type:\025e_mst_l"
-    "2c_change_desk\022[\n\006result\030\002 \001(\01625.game_la"
+    "g_type:\025e_mst_l2c_create_room\022[\n\006result\030"
+    "\002 \001(\01625.game_landlord_net_human_protocol"
+    ".e_server_error_code:\024e_error_code_succe"
+    "ss\022\016\n\006action\030\003 \001(\005\"x\n\016packetc2l_Hang\022V\n\t"
+    "packet_id\030\001 \001(\01623.game_landlord_net_huma"
+    "n_protocol.e_server_msg_type:\016e_mst_c2l_"
+    "Hang\022\016\n\006orHang\030\002 \001(\010\"\334\001\n\025packetl2c_Hang_"
+    "result\022V\n\tpacket_id\030\001 \001(\01623.game_landlor"
+    "d_net_human_protocol.e_server_msg_type:\016"
+    "e_mst_l2c_Hang\022[\n\006result\030\002 \001(\01625.game_la"
     "ndlord_net_human_protocol.e_server_error"
-    "_code:\024e_error_code_success\"\200\001\n\032packetc2"
-    "l_join_player_list\022b\n\tpacket_id\030\001 \001(\01623."
-    "game_landlord_net_human_protocol.e_serve"
-    "r_msg_type:\032e_mst_c2l_join_player_list\"\321"
-    "\001\n!packetl2c_join_player_list_result\022i\n\t"
+    "_code:\024e_error_code_success\022\016\n\006orHang\030\003 "
+    "\001(\010\"\207\001\n\023packetc2l_add_robot\022[\n\tpacket_id"
+    "\030\001 \001(\01623.game_landlord_net_human_protoco"
+    "l.e_server_msg_type:\023e_mst_c2l_add_robot"
+    "\022\023\n\013room_deskId\030\002 \001(\005\"\326\001\n\032packetl2c_add_"
+    "robot_result\022[\n\tpacket_id\030\001 \001(\01623.game_l"
+    "andlord_net_human_protocol.e_server_msg_"
+    "type:\023e_mst_l2c_add_robot\022[\n\006result\030\002 \001("
+    "\01625.game_landlord_net_human_protocol.e_s"
+    "erver_error_code:\024e_error_code_success\"\213"
+    "\001\n\025packetc2l_change_desk\022]\n\tpacket_id\030\001 "
+    "\001(\01623.game_landlord_net_human_protocol.e"
+    "_server_msg_type:\025e_mst_c2l_change_desk\022"
+    "\023\n\013room_deskId\030\002 \001(\005\"\332\001\n\034packetl2c_chang"
+    "e_desk_result\022]\n\tpacket_id\030\001 \001(\01623.game_"
+    "landlord_net_human_protocol.e_server_msg"
+    "_type:\025e_mst_l2c_change_desk\022[\n\006result\030\002"
+    " \001(\01625.game_landlord_net_human_protocol."
+    "e_server_error_code:\024e_error_code_succes"
+    "s\"\200\001\n\032packetc2l_join_player_list\022b\n\tpack"
+    "et_id\030\001 \001(\01623.game_landlord_net_human_pr"
+    "otocol.e_server_msg_type:\032e_mst_c2l_join"
+    "_player_list\"\321\001\n!packetl2c_join_player_l"
+    "ist_result\022i\n\tpacket_id\030\001 \001(\01623.game_lan"
+    "dlord_net_human_protocol.e_server_msg_ty"
+    "pe:!e_mst_l2c_join_player_list_result\022A\n"
+    "\nplayerlist\030\002 \003(\0132-.game_landlord_net_hu"
+    "man_protocol.player_info\"\204\001\n\023packetc2l_j"
+    "oin_room\022[\n\tpacket_id\030\001 \001(\01623.game_landl"
+    "ord_net_human_protocol.e_server_msg_type"
+    ":\023e_mst_c2l_join_room\022\020\n\010playerId\030\002 \001(\005\""
+    "\335\001\n\032packetl2c_join_room_result\022b\n\tpacket"
+    "_id\030\001 \001(\01623.game_landlord_net_human_prot"
+    "ocol.e_server_msg_type:\032e_mst_l2c_join_r"
+    "oom_result\022[\n\006result\030\002 \001(\01625.game_landlo"
+    "rd_net_human_protocol.e_server_error_cod"
+    "e:\024e_error_code_success\"\245\001\n\034packetc2l_or"
+    "_agree_join_room\022d\n\tpacket_id\030\001 \001(\01623.ga"
+    "me_landlord_net_human_protocol.e_server_"
+    "msg_type:\034e_mst_c2l_or_agree_join_room\022\017"
+    "\n\007orAgree\030\002 \001(\010\022\016\n\006joinId\030\003 \001(\005\"\357\001\n#pack"
+    "etl2c_or_agree_join_room_result\022k\n\tpacke"
+    "t_id\030\001 \001(\01623.game_landlord_net_human_pro"
+    "tocol.e_server_msg_type:#e_mst_l2c_or_ag"
+    "ree_join_room_result\022[\n\006result\030\002 \001(\01625.g"
+    "ame_landlord_net_human_protocol.e_server"
+    "_error_code:\024e_error_code_success\"\213\001\n\025pa"
+    "cketc2l_kich_player\022]\n\tpacket_id\030\001 \001(\01623"
+    ".game_landlord_net_human_protocol.e_serv"
+    "er_msg_type:\025e_mst_c2l_kich_player\022\023\n\013ro"
+    "om_deskId\030\002 \001(\005\"\332\001\n\034packetl2c_kich_playe"
+    "r_result\022]\n\tpacket_id\030\001 \001(\01623.game_landl"
+    "ord_net_human_protocol.e_server_msg_type"
+    ":\025e_mst_l2c_kich_player\022[\n\006result\030\002 \001(\0162"
+    "5.game_landlord_net_human_protocol.e_ser"
+    "ver_error_code:\024e_error_code_success\"\207\001\n"
+    "\024packetc2l_or_prepare\022\\\n\tpacket_id\030\001 \001(\016"
+    "23.game_landlord_net_human_protocol.e_se"
+    "rver_msg_type:\024e_mst_c2l_or_prepare\022\021\n\to"
+    "rPrepare\030\002 \001(\010\"\205\001\n\024packetc2l_SystemTalk\022"
+    "\\\n\tpacket_id\030\001 \001(\01623.game_landlord_net_h"
+    "uman_protocol.e_server_msg_type:\024e_mst_c"
+    "2l_SystemTalk\022\017\n\007talk_Id\030\002 \001(\005\"p\n\022packet"
+    "c2l_roomlist\022Z\n\tpacket_id\030\001 \001(\01623.game_l"
+    "andlord_net_human_protocol.e_server_msg_"
+    "type:\022e_mst_c2l_roomlist\"\272\001\n\031packetl2c_r"
+    "oomlist_result\022Z\n\tpacket_id\030\001 \001(\01623.game"
+    "_landlord_net_human_protocol.e_server_ms"
+    "g_type:\022e_mst_l2c_roomlist\022A\n\014roomInfoLi"
+    "st\030\002 \003(\0132+.game_landlord_net_human_proto"
+    "col.room_info\"\227\001\n\024packetc2l_enter_room\022\\"
+    "\n\tpacket_id\030\001 \001(\01623.game_landlord_net_hu"
+    "man_protocol.e_server_msg_type:\024e_mst_c2"
+    "l_enter_room\022\017\n\007room_id\030\002 \001(\005\022\020\n\010passwor"
+    "d\030\003 \001(\t\"\360\002\n\033packetl2c_enter_room_result\022"
+    "\\\n\tpacket_id\030\001 \001(\01623.game_landlord_net_h"
+    "uman_protocol.e_server_msg_type:\024e_mst_l"
+    "2c_enter_room\022[\n\006result\030\002 \001(\01625.game_lan"
+    "dlord_net_human_protocol.e_server_error_"
+    "code:\024e_error_code_success\022G\n\020otherPlaye"
+    "rInfos\030\003 \003(\0132-.game_landlord_net_human_p"
+    "rotocol.player_info\022=\n\010roomInfo\030\004 \001(\0132+."
+    "game_landlord_net_human_protocol.room_in"
+    "fo\022\016\n\006deskId\030\005 \001(\005\"t\n\024packetc2l_leave_ro"
+    "om\022\\\n\tpacket_id\030\001 \001(\01623.game_landlord_ne"
+    "t_human_protocol.e_server_msg_type:\024e_ms"
+    "t_c2l_leave_room\"\330\001\n\033packetl2c_leave_roo"
+    "m_result\022\\\n\tpacket_id\030\001 \001(\01623.game_landl"
+    "ord_net_human_protocol.e_server_msg_type"
+    ":\024e_mst_l2c_leave_room\022[\n\006result\030\002 \001(\01625"
+    ".game_landlord_net_human_protocol.e_serv"
+    "er_error_code:\024e_error_code_success\"\206\001\n\035"
+    "packetc2l_get_room_scene_info\022e\n\tpacket_"
+    "id\030\001 \001(\01623.game_landlord_net_human_proto"
+    "col.e_server_msg_type:\035e_mst_c2l_get_roo"
+    "m_scene_info\"\267\005\n$packetl2c_get_room_scen"
+    "e_info_result\022e\n\tpacket_id\030\001 \001(\01623.game_"
+    "landlord_net_human_protocol.e_server_msg"
+    "_type:\035e_mst_l2c_get_room_scene_info\022\017\n\007"
+    "room_id\030\002 \001(\005\022A\n\tgameState\030\003 \001(\0162..game_"
+    "landlord_net_human_protocol.e_game_state"
+    "\022\r\n\005cards\030\004 \003(\005\022\020\n\010opencard\030\005 \001(\005\022G\n\020oth"
+    "er_cards_info\030\006 \003(\0132-.game_landlord_net_"
+    "human_protocol.card_Info_1\022A\n\nplayerList"
+    "\030\007 \003(\0132-.game_landlord_net_human_protoco"
+    "l.player_info\022\023\n\013landlord_Id\030\010 \001(\005\022A\n\014la"
+    "stPlayHand\030\t \001(\0132+.game_landlord_net_hum"
+    "an_protocol.card_Info\022\017\n\007cards_1\030\n \003(\005\022\016"
+    "\n\006cdTime\030\013 \001(\005\022J\n\013playerState\030\014 \001(\01625.ga"
+    "me_landlord_net_human_protocol.e_player_"
+    "game_state\022\"\n\032current_who_robLandlording"
+    "\030\r \001(\005\022\037\n\027current_who_playhanding\030\016 \001(\005\022"
+    "\r\n\005score\030\017 \001(\005\022\016\n\006orHang\030\020 \001(\010\"v\n\025packet"
+    "c2l_check_state\022]\n\tpacket_id\030\001 \001(\01623.gam"
+    "e_landlord_net_human_protocol.e_server_m"
+    "sg_type:\025e_mst_c2l_check_state\"\221\001\n\034packe"
+    "tl2c_check_state_result\022]\n\tpacket_id\030\001 \001"
+    "(\01623.game_landlord_net_human_protocol.e_"
+    "server_msg_type:\025e_mst_l2c_check_state\022\022"
+    "\n\nis_intable\030\002 \001(\010\"\210\001\n\026packetc2l_rob_lan"
+    "dlord\022^\n\tpacket_id\030\001 \001(\01623.game_landlord"
+    "_net_human_protocol.e_server_msg_type:\026e"
+    "_mst_c2l_rob_landlord\022\016\n\006or_Rob\030\002 \001(\005\"\254\001"
+    "\n\022packetc2l_playhand\022Z\n\tpacket_id\030\001 \001(\0162"
+    "3.game_landlord_net_human_protocol.e_ser"
+    "ver_msg_type:\022e_mst_c2l_playhand\022:\n\005card"
+    "s\030\002 \001(\0132+.game_landlord_net_human_protoc"
+    "ol.card_Info\"\235\002\n\032packetl2c_notice_startg"
+    "ame\022b\n\tpacket_id\030\001 \001(\01623.game_landlord_n"
+    "et_human_protocol.e_server_msg_type:\032e_m"
+    "st_l2c_notice_startgame\022\r\n\005cards\030\002 \003(\005\022\020"
+    "\n\010opencard\030\003 \001(\005\022\017\n\007cards_1\030\004 \003(\005\022A\n\npla"
+    "yerList\030\005 \003(\0132-.game_landlord_net_human_"
+    "protocol.player_info\022\023\n\013landlord_Id\030\006 \001("
+    "\005\022\021\n\tmin_score\030\007 \001(\005\"\226\001\n\035packetl2c_notic"
+    "e_who_playhand\022e\n\tpacket_id\030\001 \001(\01623.game"
+    "_landlord_net_human_protocol.e_server_ms"
+    "g_type:\035e_mst_l2c_notice_who_playhand\022\016\n"
+    "\006deskId\030\002 \001(\005\"\227\002\n\031packetl2c_notice_playh"
+    "and\022a\n\tpacket_id\030\001 \001(\01623.game_landlord_n"
+    "et_human_protocol.e_server_msg_type:\031e_m"
+    "st_l2c_notice_playhand\022[\n\006result\030\002 \001(\01625"
+    ".game_landlord_net_human_protocol.e_serv"
+    "er_error_code:\024e_error_code_success\022:\n\005c"
+    "ards\030\003 \001(\0132+.game_landlord_net_human_pro"
+    "tocol.card_Info\"\226\001\n\035packetl2c_notice_rob"
+    "_landlord\022e\n\tpacket_id\030\001 \001(\01623.game_land"
+    "lord_net_human_protocol.e_server_msg_typ"
+    "e:\035e_mst_l2c_notice_rob_landlord\022\016\n\006desk"
+    "Id\030\002 \001(\005\"\221\002\n$packetl2c_notice_rob_landlo"
+    "rd_result\022l\n\tpacket_id\030\001 \001(\01623.game_land"
+    "lord_net_human_protocol.e_server_msg_typ"
+    "e:$e_mst_l2c_notice_rob_landlord_result\022"
+    "[\n\006result\030\002 \001(\01625.game_landlord_net_huma"
+    "n_protocol.e_server_error_code:\024e_error_"
+    "code_success\022\016\n\006deskId\030\003 \001(\005\022\016\n\006or_Rob\030\004"
+    " \001(\005\"\211\002\n\030packetl2c_notice_winlose\022`\n\tpac"
+    "ket_id\030\001 \001(\01623.game_landlord_net_human_p"
+    "rotocol.e_server_msg_type:\030e_mst_l2c_not"
+    "ice_winlose\022H\n\rm_desk_awards\030\002 \003(\01321.gam"
+    "e_landlord_net_human_protocol.desk_award"
+    "_Info\022A\n\014remain_cards\030\003 \003(\0132+.game_landl"
+    "ord_net_human_protocol.card_Info\"\223\001\n\033pac"
+    "ketl2c_notice_SystemTalk\022c\n\tpacket_id\030\001 "
+    "\001(\01623.game_landlord_net_human_protocol.e"
+    "_server_msg_type:\033e_mst_l2c_notice_Syste"
+    "mTalk\022\017\n\007talk_Id\030\002 \001(\005\"\353\001\n&packetl2c_not"
+    "ice_room_enter_leave_info\022n\n\tpacket_id\030\001"
+    " \001(\01623.game_landlord_net_human_protocol."
+    "e_server_msg_type:&e_mst_l2c_notice_room"
+    "_enter_leave_info\022\016\n\006action\030\002 \001(\005\022A\n\npla"
+    "yerInfo\030\003 \001(\0132-.game_landlord_net_human_"
+    "protocol.player_info\"\217\002\n\"packetl2c_notic"
+    "e_room_prepare_info\022j\n\tpacket_id\030\001 \001(\01623"
+    ".game_landlord_net_human_protocol.e_serv"
+    "er_msg_type:\"e_mst_l2c_notice_room_prepa"
+    "re_info\022[\n\006result\030\002 \001(\01625.game_landlord_"
+    "net_human_protocol.e_server_error_code:\024"
+    "e_error_code_success\022\016\n\006action\030\003 \001(\005\022\020\n\010"
+    "playerId\030\004 \001(\005\"\335\001\n!packetl2c_notice_room"
+    "_change_info\022i\n\tpacket_id\030\001 \001(\01623.game_l"
+    "andlord_net_human_protocol.e_server_msg_"
+    "type:!e_mst_l2c_notice_room_change_info\022"
+    "\016\n\006action\030\002 \001(\005\022=\n\010roomInfo\030\003 \001(\0132+.game"
+    "_landlord_net_human_protocol.room_info\"\325"
+    "\001\n!packetl2c_notice_invite_room_list\022i\n\t"
     "packet_id\030\001 \001(\01623.game_landlord_net_huma"
     "n_protocol.e_server_msg_type:!e_mst_l2c_"
-    "join_player_list_result\022A\n\nplayerlist\030\002 "
-    "\003(\0132-.game_landlord_net_human_protocol.p"
-    "layer_info\"\204\001\n\023packetc2l_join_room\022[\n\tpa"
-    "cket_id\030\001 \001(\01623.game_landlord_net_human_"
-    "protocol.e_server_msg_type:\023e_mst_c2l_jo"
-    "in_room\022\020\n\010playerId\030\002 \001(\005\"\335\001\n\032packetl2c_"
-    "join_room_result\022b\n\tpacket_id\030\001 \001(\01623.ga"
-    "me_landlord_net_human_protocol.e_server_"
-    "msg_type:\032e_mst_l2c_join_room_result\022[\n\006"
-    "result\030\002 \001(\01625.game_landlord_net_human_p"
-    "rotocol.e_server_error_code:\024e_error_cod"
-    "e_success\"\245\001\n\034packetc2l_or_agree_join_ro"
-    "om\022d\n\tpacket_id\030\001 \001(\01623.game_landlord_ne"
-    "t_human_protocol.e_server_msg_type:\034e_ms"
-    "t_c2l_or_agree_join_room\022\017\n\007orAgree\030\002 \001("
-    "\010\022\016\n\006joinId\030\003 \001(\005\"\357\001\n#packetl2c_or_agree"
-    "_join_room_result\022k\n\tpacket_id\030\001 \001(\01623.g"
-    "ame_landlord_net_human_protocol.e_server"
-    "_msg_type:#e_mst_l2c_or_agree_join_room_"
-    "result\022[\n\006result\030\002 \001(\01625.game_landlord_n"
-    "et_human_protocol.e_server_error_code:\024e"
-    "_error_code_success\"\213\001\n\025packetc2l_kich_p"
-    "layer\022]\n\tpacket_id\030\001 \001(\01623.game_landlord"
-    "_net_human_protocol.e_server_msg_type:\025e"
-    "_mst_c2l_kich_player\022\023\n\013room_deskId\030\002 \001("
-    "\005\"\332\001\n\034packetl2c_kich_player_result\022]\n\tpa"
-    "cket_id\030\001 \001(\01623.game_landlord_net_human_"
-    "protocol.e_server_msg_type:\025e_mst_l2c_ki"
-    "ch_player\022[\n\006result\030\002 \001(\01625.game_landlor"
-    "d_net_human_protocol.e_server_error_code"
-    ":\024e_error_code_success\"\207\001\n\024packetc2l_or_"
-    "prepare\022\\\n\tpacket_id\030\001 \001(\01623.game_landlo"
-    "rd_net_human_protocol.e_server_msg_type:"
-    "\024e_mst_c2l_or_prepare\022\021\n\torPrepare\030\002 \001(\010"
-    "\"\205\001\n\024packetc2l_SystemTalk\022\\\n\tpacket_id\030\001"
-    " \001(\01623.game_landlord_net_human_protocol."
-    "e_server_msg_type:\024e_mst_c2l_SystemTalk\022"
-    "\017\n\007talk_Id\030\002 \001(\005\"p\n\022packetc2l_roomlist\022Z"
-    "\n\tpacket_id\030\001 \001(\01623.game_landlord_net_hu"
-    "man_protocol.e_server_msg_type:\022e_mst_c2"
-    "l_roomlist\"\272\001\n\031packetl2c_roomlist_result"
-    "\022Z\n\tpacket_id\030\001 \001(\01623.game_landlord_net_"
-    "human_protocol.e_server_msg_type:\022e_mst_"
-    "l2c_roomlist\022A\n\014roomInfoList\030\002 \003(\0132+.gam"
-    "e_landlord_net_human_protocol.room_info\""
-    "\205\001\n\024packetc2l_enter_room\022\\\n\tpacket_id\030\001 "
-    "\001(\01623.game_landlord_net_human_protocol.e"
-    "_server_msg_type:\024e_mst_c2l_enter_room\022\017"
-    "\n\007room_id\030\002 \001(\005\"\360\002\n\033packetl2c_enter_room"
-    "_result\022\\\n\tpacket_id\030\001 \001(\01623.game_landlo"
-    "rd_net_human_protocol.e_server_msg_type:"
-    "\024e_mst_l2c_enter_room\022[\n\006result\030\002 \001(\01625."
-    "game_landlord_net_human_protocol.e_serve"
-    "r_error_code:\024e_error_code_success\022G\n\020ot"
-    "herPlayerInfos\030\003 \003(\0132-.game_landlord_net"
-    "_human_protocol.player_info\022=\n\010roomInfo\030"
-    "\004 \001(\0132+.game_landlord_net_human_protocol"
-    ".room_info\022\016\n\006deskId\030\005 \001(\005\"t\n\024packetc2l_"
-    "leave_room\022\\\n\tpacket_id\030\001 \001(\01623.game_lan"
-    "dlord_net_human_protocol.e_server_msg_ty"
-    "pe:\024e_mst_c2l_leave_room\"\330\001\n\033packetl2c_l"
-    "eave_room_result\022\\\n\tpacket_id\030\001 \001(\01623.ga"
-    "me_landlord_net_human_protocol.e_server_"
-    "msg_type:\024e_mst_l2c_leave_room\022[\n\006result"
-    "\030\002 \001(\01625.game_landlord_net_human_protoco"
-    "l.e_server_error_code:\024e_error_code_succ"
-    "ess\"\206\001\n\035packetc2l_get_room_scene_info\022e\n"
-    "\tpacket_id\030\001 \001(\01623.game_landlord_net_hum"
-    "an_protocol.e_server_msg_type:\035e_mst_c2l"
-    "_get_room_scene_info\"\267\005\n$packetl2c_get_r"
-    "oom_scene_info_result\022e\n\tpacket_id\030\001 \001(\016"
-    "23.game_landlord_net_human_protocol.e_se"
-    "rver_msg_type:\035e_mst_l2c_get_room_scene_"
-    "info\022\017\n\007room_id\030\002 \001(\005\022A\n\tgameState\030\003 \001(\016"
-    "2..game_landlord_net_human_protocol.e_ga"
-    "me_state\022\r\n\005cards\030\004 \003(\005\022\020\n\010opencard\030\005 \001("
-    "\005\022G\n\020other_cards_info\030\006 \003(\0132-.game_landl"
-    "ord_net_human_protocol.card_Info_1\022A\n\npl"
-    "ayerList\030\007 \003(\0132-.game_landlord_net_human"
-    "_protocol.player_info\022\023\n\013landlord_Id\030\010 \001"
-    "(\005\022A\n\014lastPlayHand\030\t \001(\0132+.game_landlord"
-    "_net_human_protocol.card_Info\022\017\n\007cards_1"
-    "\030\n \003(\005\022\016\n\006cdTime\030\013 \001(\005\022J\n\013playerState\030\014 "
-    "\001(\01625.game_landlord_net_human_protocol.e"
-    "_player_game_state\022\"\n\032current_who_robLan"
-    "dlording\030\r \001(\005\022\037\n\027current_who_playhandin"
-    "g\030\016 \001(\005\022\r\n\005score\030\017 \001(\005\022\016\n\006orHang\030\020 \001(\010\"v"
-    "\n\025packetc2l_check_state\022]\n\tpacket_id\030\001 \001"
-    "(\01623.game_landlord_net_human_protocol.e_"
-    "server_msg_type:\025e_mst_c2l_check_state\"\221"
-    "\001\n\034packetl2c_check_state_result\022]\n\tpacke"
-    "t_id\030\001 \001(\01623.game_landlord_net_human_pro"
-    "tocol.e_server_msg_type:\025e_mst_l2c_check"
-    "_state\022\022\n\nis_intable\030\002 \001(\010\"\210\001\n\026packetc2l"
-    "_rob_landlord\022^\n\tpacket_id\030\001 \001(\01623.game_"
-    "landlord_net_human_protocol.e_server_msg"
-    "_type:\026e_mst_c2l_rob_landlord\022\016\n\006or_Rob\030"
-    "\002 \001(\005\"\254\001\n\022packetc2l_playhand\022Z\n\tpacket_i"
-    "d\030\001 \001(\01623.game_landlord_net_human_protoc"
-    "ol.e_server_msg_type:\022e_mst_c2l_playhand"
-    "\022:\n\005cards\030\002 \001(\0132+.game_landlord_net_huma"
-    "n_protocol.card_Info\"\235\002\n\032packetl2c_notic"
-    "e_startgame\022b\n\tpacket_id\030\001 \001(\01623.game_la"
-    "ndlord_net_human_protocol.e_server_msg_t"
-    "ype:\032e_mst_l2c_notice_startgame\022\r\n\005cards"
-    "\030\002 \003(\005\022\020\n\010opencard\030\003 \001(\005\022\017\n\007cards_1\030\004 \003("
-    "\005\022A\n\nplayerList\030\005 \003(\0132-.game_landlord_ne"
-    "t_human_protocol.player_info\022\023\n\013landlord"
-    "_Id\030\006 \001(\005\022\021\n\tmin_score\030\007 \001(\005\"\226\001\n\035packetl"
-    "2c_notice_who_playhand\022e\n\tpacket_id\030\001 \001("
-    "\01623.game_landlord_net_human_protocol.e_s"
-    "erver_msg_type:\035e_mst_l2c_notice_who_pla"
-    "yhand\022\016\n\006deskId\030\002 \001(\005\"\227\002\n\031packetl2c_noti"
-    "ce_playhand\022a\n\tpacket_id\030\001 \001(\01623.game_la"
-    "ndlord_net_human_protocol.e_server_msg_t"
-    "ype:\031e_mst_l2c_notice_playhand\022[\n\006result"
-    "\030\002 \001(\01625.game_landlord_net_human_protoco"
-    "l.e_server_error_code:\024e_error_code_succ"
-    "ess\022:\n\005cards\030\003 \001(\0132+.game_landlord_net_h"
-    "uman_protocol.card_Info\"\226\001\n\035packetl2c_no"
-    "tice_rob_landlord\022e\n\tpacket_id\030\001 \001(\01623.g"
-    "ame_landlord_net_human_protocol.e_server"
-    "_msg_type:\035e_mst_l2c_notice_rob_landlord"
-    "\022\016\n\006deskId\030\002 \001(\005\"\221\002\n$packetl2c_notice_ro"
-    "b_landlord_result\022l\n\tpacket_id\030\001 \001(\01623.g"
-    "ame_landlord_net_human_protocol.e_server"
-    "_msg_type:$e_mst_l2c_notice_rob_landlord"
-    "_result\022[\n\006result\030\002 \001(\01625.game_landlord_"
-    "net_human_protocol.e_server_error_code:\024"
-    "e_error_code_success\022\016\n\006deskId\030\003 \001(\005\022\016\n\006"
-    "or_Rob\030\004 \001(\005\"\211\002\n\030packetl2c_notice_winlos"
-    "e\022`\n\tpacket_id\030\001 \001(\01623.game_landlord_net"
-    "_human_protocol.e_server_msg_type:\030e_mst"
-    "_l2c_notice_winlose\022H\n\rm_desk_awards\030\002 \003"
-    "(\01321.game_landlord_net_human_protocol.de"
-    "sk_award_Info\022A\n\014remain_cards\030\003 \003(\0132+.ga"
-    "me_landlord_net_human_protocol.card_Info"
-    "\"\223\001\n\033packetl2c_notice_SystemTalk\022c\n\tpack"
-    "et_id\030\001 \001(\01623.game_landlord_net_human_pr"
-    "otocol.e_server_msg_type:\033e_mst_l2c_noti"
-    "ce_SystemTalk\022\017\n\007talk_Id\030\002 \001(\005\"\353\001\n&packe"
-    "tl2c_notice_room_enter_leave_info\022n\n\tpac"
-    "ket_id\030\001 \001(\01623.game_landlord_net_human_p"
-    "rotocol.e_server_msg_type:&e_mst_l2c_not"
-    "ice_room_enter_leave_info\022\016\n\006action\030\002 \001("
-    "\005\022A\n\nplayerInfo\030\003 \001(\0132-.game_landlord_ne"
-    "t_human_protocol.player_info\"\217\002\n\"packetl"
-    "2c_notice_room_prepare_info\022j\n\tpacket_id"
-    "\030\001 \001(\01623.game_landlord_net_human_protoco"
-    "l.e_server_msg_type:\"e_mst_l2c_notice_ro"
-    "om_prepare_info\022[\n\006result\030\002 \001(\01625.game_l"
-    "andlord_net_human_protocol.e_server_erro"
-    "r_code:\024e_error_code_success\022\016\n\006action\030\003"
-    " \001(\005\022\020\n\010playerId\030\004 \001(\005\"\335\001\n!packetl2c_not"
-    "ice_room_change_info\022i\n\tpacket_id\030\001 \001(\0162"
-    "3.game_landlord_net_human_protocol.e_ser"
-    "ver_msg_type:!e_mst_l2c_notice_room_chan"
-    "ge_info\022\016\n\006action\030\002 \001(\005\022=\n\010roomInfo\030\003 \001("
-    "\0132+.game_landlord_net_human_protocol.roo"
-    "m_info\"\325\001\n!packetl2c_notice_invite_room_"
-    "list\022i\n\tpacket_id\030\001 \001(\01623.game_landlord_"
-    "net_human_protocol.e_server_msg_type:!e_"
-    "mst_l2c_notice_invite_room_list\022E\n\ninvit"
-    "eList\030\002 \003(\01321.game_landlord_net_human_pr"
-    "otocol.invitation_info\"\250\001\n#packetl2c_not"
-    "ice_who_is_roomcreator\022k\n\tpacket_id\030\001 \001("
-    "\01623.game_landlord_net_human_protocol.e_s"
-    "erver_msg_type:#e_mst_l2c_notice_who_is_"
-    "roomcreator\022\024\n\014room_creator\030\002 \001(\005", 8993);
+    "notice_invite_room_list\022E\n\ninviteList\030\002 "
+    "\003(\01321.game_landlord_net_human_protocol.i"
+    "nvitation_info\"\250\001\n#packetl2c_notice_who_"
+    "is_roomcreator\022k\n\tpacket_id\030\001 \001(\01623.game"
+    "_landlord_net_human_protocol.e_server_ms"
+    "g_type:#e_mst_l2c_notice_who_is_roomcrea"
+    "tor\022\024\n\014room_creator\030\002 \001(\005", 8625);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "game_landlord_net_human_protocol.proto", &protobuf_RegisterTypes);
   packetc2l_create_room::default_instance_ = new packetc2l_create_room();
   packetl2c_create_room_result::default_instance_ = new packetl2c_create_room_result();
-  packetc2l_set_room_rule::default_instance_ = new packetc2l_set_room_rule();
-  packetl2c_set_room_rule_result::default_instance_ = new packetl2c_set_room_rule_result();
   packetc2l_Hang::default_instance_ = new packetc2l_Hang();
   packetl2c_Hang_result::default_instance_ = new packetl2c_Hang_result();
   packetc2l_add_robot::default_instance_ = new packetc2l_add_robot();
@@ -1374,8 +1317,6 @@ void protobuf_AddDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
   packetl2c_notice_who_is_roomcreator::default_instance_ = new packetl2c_notice_who_is_roomcreator();
   packetc2l_create_room::default_instance_->InitAsDefaultInstance();
   packetl2c_create_room_result::default_instance_->InitAsDefaultInstance();
-  packetc2l_set_room_rule::default_instance_->InitAsDefaultInstance();
-  packetl2c_set_room_rule_result::default_instance_->InitAsDefaultInstance();
   packetc2l_Hang::default_instance_->InitAsDefaultInstance();
   packetl2c_Hang_result::default_instance_->InitAsDefaultInstance();
   packetc2l_add_robot::default_instance_->InitAsDefaultInstance();
@@ -1430,8 +1371,10 @@ struct StaticDescriptorInitializer_game_5flandlord_5fnet_5fhuman_5fprotocol_2epr
 
 #ifndef _MSC_VER
 const int packetc2l_create_room::kPacketIdFieldNumber;
+const int packetc2l_create_room::kActionFieldNumber;
 const int packetc2l_create_room::kRoomNameFieldNumber;
 const int packetc2l_create_room::kPasswordFieldNumber;
+const int packetc2l_create_room::kOrshuffleFieldNumber;
 #endif  // !_MSC_VER
 
 packetc2l_create_room::packetc2l_create_room()
@@ -1454,8 +1397,10 @@ void packetc2l_create_room::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   packet_id_ = 10017;
+  action_ = 0;
   roomname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   password_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  orshuffle_ = false;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -1497,8 +1442,9 @@ packetc2l_create_room* packetc2l_create_room::New() const {
 }
 
 void packetc2l_create_room::Clear() {
-  if (_has_bits_[0 / 32] & 7) {
+  if (_has_bits_[0 / 32] & 31) {
     packet_id_ = 10017;
+    action_ = 0;
     if (has_roomname()) {
       if (roomname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         roomname_->clear();
@@ -1509,6 +1455,7 @@ void packetc2l_create_room::Clear() {
         password_->clear();
       }
     }
+    orshuffle_ = false;
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
@@ -1539,13 +1486,28 @@ bool packetc2l_create_room::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(18)) goto parse_roomName;
+        if (input->ExpectTag(16)) goto parse_action;
         break;
       }
 
-      // optional string roomName = 2;
+      // optional int32 action = 2;
       case 2: {
-        if (tag == 18) {
+        if (tag == 16) {
+         parse_action:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &action_)));
+          set_has_action();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(26)) goto parse_roomName;
+        break;
+      }
+
+      // optional string roomName = 3;
+      case 3: {
+        if (tag == 26) {
          parse_roomName:
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_roomname()));
@@ -1556,13 +1518,13 @@ bool packetc2l_create_room::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(26)) goto parse_password;
+        if (input->ExpectTag(34)) goto parse_password;
         break;
       }
 
-      // optional string password = 3;
-      case 3: {
-        if (tag == 26) {
+      // optional string password = 4;
+      case 4: {
+        if (tag == 34) {
          parse_password:
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_password()));
@@ -1570,6 +1532,21 @@ bool packetc2l_create_room::MergePartialFromCodedStream(
             this->password().data(), this->password().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
             "password");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(40)) goto parse_orshuffle;
+        break;
+      }
+
+      // optional bool orshuffle = 5;
+      case 5: {
+        if (tag == 40) {
+         parse_orshuffle:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &orshuffle_)));
+          set_has_orshuffle();
         } else {
           goto handle_unusual;
         }
@@ -1608,24 +1585,34 @@ void packetc2l_create_room::SerializeWithCachedSizes(
       1, this->packet_id(), output);
   }
 
-  // optional string roomName = 2;
+  // optional int32 action = 2;
+  if (has_action()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->action(), output);
+  }
+
+  // optional string roomName = 3;
   if (has_roomname()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->roomname().data(), this->roomname().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
       "roomname");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->roomname(), output);
+      3, this->roomname(), output);
   }
 
-  // optional string password = 3;
+  // optional string password = 4;
   if (has_password()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->password().data(), this->password().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
       "password");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      3, this->password(), output);
+      4, this->password(), output);
+  }
+
+  // optional bool orshuffle = 5;
+  if (has_orshuffle()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(5, this->orshuffle(), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -1644,7 +1631,12 @@ void packetc2l_create_room::SerializeWithCachedSizes(
       1, this->packet_id(), target);
   }
 
-  // optional string roomName = 2;
+  // optional int32 action = 2;
+  if (has_action()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->action(), target);
+  }
+
+  // optional string roomName = 3;
   if (has_roomname()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->roomname().data(), this->roomname().length(),
@@ -1652,10 +1644,10 @@ void packetc2l_create_room::SerializeWithCachedSizes(
       "roomname");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->roomname(), target);
+        3, this->roomname(), target);
   }
 
-  // optional string password = 3;
+  // optional string password = 4;
   if (has_password()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->password().data(), this->password().length(),
@@ -1663,7 +1655,12 @@ void packetc2l_create_room::SerializeWithCachedSizes(
       "password");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        3, this->password(), target);
+        4, this->password(), target);
+  }
+
+  // optional bool orshuffle = 5;
+  if (has_orshuffle()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(5, this->orshuffle(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -1684,18 +1681,30 @@ int packetc2l_create_room::ByteSize() const {
         ::google::protobuf::internal::WireFormatLite::EnumSize(this->packet_id());
     }
 
-    // optional string roomName = 2;
+    // optional int32 action = 2;
+    if (has_action()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->action());
+    }
+
+    // optional string roomName = 3;
     if (has_roomname()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
           this->roomname());
     }
 
-    // optional string password = 3;
+    // optional string password = 4;
     if (has_password()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
           this->password());
+    }
+
+    // optional bool orshuffle = 5;
+    if (has_orshuffle()) {
+      total_size += 1 + 1;
     }
 
   }
@@ -1728,11 +1737,17 @@ void packetc2l_create_room::MergeFrom(const packetc2l_create_room& from) {
     if (from.has_packet_id()) {
       set_packet_id(from.packet_id());
     }
+    if (from.has_action()) {
+      set_action(from.action());
+    }
     if (from.has_roomname()) {
       set_roomname(from.roomname());
     }
     if (from.has_password()) {
       set_password(from.password());
+    }
+    if (from.has_orshuffle()) {
+      set_orshuffle(from.orshuffle());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -1758,8 +1773,10 @@ bool packetc2l_create_room::IsInitialized() const {
 void packetc2l_create_room::Swap(packetc2l_create_room* other) {
   if (other != this) {
     std::swap(packet_id_, other->packet_id_);
+    std::swap(action_, other->action_);
     std::swap(roomname_, other->roomname_);
     std::swap(password_, other->password_);
+    std::swap(orshuffle_, other->orshuffle_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -1780,8 +1797,7 @@ void packetc2l_create_room::Swap(packetc2l_create_room* other) {
 #ifndef _MSC_VER
 const int packetl2c_create_room_result::kPacketIdFieldNumber;
 const int packetl2c_create_room_result::kResultFieldNumber;
-const int packetl2c_create_room_result::kRoomIdFieldNumber;
-const int packetl2c_create_room_result::kDeskIdFieldNumber;
+const int packetl2c_create_room_result::kActionFieldNumber;
 #endif  // !_MSC_VER
 
 packetl2c_create_room_result::packetl2c_create_room_result()
@@ -1804,8 +1820,7 @@ void packetl2c_create_room_result::SharedCtor() {
   _cached_size_ = 0;
   packet_id_ = 15013;
   result_ = 1;
-  roomid_ = 0;
-  deskid_ = 0;
+  action_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -1841,25 +1856,11 @@ packetl2c_create_room_result* packetl2c_create_room_result::New() const {
 }
 
 void packetl2c_create_room_result::Clear() {
-#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
-  &reinterpret_cast<packetl2c_create_room_result*>(16)->f) - \
-   reinterpret_cast<char*>(16))
-
-#define ZR_(first, last) do {                              \
-    size_t f = OFFSET_OF_FIELD_(first);                    \
-    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
-    ::memset(&first, 0, n);                                \
-  } while (0)
-
-  if (_has_bits_[0 / 32] & 15) {
-    ZR_(roomid_, deskid_);
+  if (_has_bits_[0 / 32] & 7) {
     packet_id_ = 15013;
     result_ = 1;
+    action_ = 0;
   }
-
-#undef OFFSET_OF_FIELD_
-#undef ZR_
-
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -1909,33 +1910,18 @@ bool packetl2c_create_room_result::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(24)) goto parse_roomId;
+        if (input->ExpectTag(24)) goto parse_action;
         break;
       }
 
-      // optional int32 roomId = 3;
+      // optional int32 action = 3;
       case 3: {
         if (tag == 24) {
-         parse_roomId:
+         parse_action:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &roomid_)));
-          set_has_roomid();
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(32)) goto parse_deskId;
-        break;
-      }
-
-      // optional int32 deskId = 4;
-      case 4: {
-        if (tag == 32) {
-         parse_deskId:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &deskid_)));
-          set_has_deskid();
+                 input, &action_)));
+          set_has_action();
         } else {
           goto handle_unusual;
         }
@@ -1980,14 +1966,9 @@ void packetl2c_create_room_result::SerializeWithCachedSizes(
       2, this->result(), output);
   }
 
-  // optional int32 roomId = 3;
-  if (has_roomid()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->roomid(), output);
-  }
-
-  // optional int32 deskId = 4;
-  if (has_deskid()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->deskid(), output);
+  // optional int32 action = 3;
+  if (has_action()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->action(), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -2012,14 +1993,9 @@ void packetl2c_create_room_result::SerializeWithCachedSizes(
       2, this->result(), target);
   }
 
-  // optional int32 roomId = 3;
-  if (has_roomid()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->roomid(), target);
-  }
-
-  // optional int32 deskId = 4;
-  if (has_deskid()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->deskid(), target);
+  // optional int32 action = 3;
+  if (has_action()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->action(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -2046,18 +2022,11 @@ int packetl2c_create_room_result::ByteSize() const {
         ::google::protobuf::internal::WireFormatLite::EnumSize(this->result());
     }
 
-    // optional int32 roomId = 3;
-    if (has_roomid()) {
+    // optional int32 action = 3;
+    if (has_action()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->roomid());
-    }
-
-    // optional int32 deskId = 4;
-    if (has_deskid()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->deskid());
+          this->action());
     }
 
   }
@@ -2093,11 +2062,8 @@ void packetl2c_create_room_result::MergeFrom(const packetl2c_create_room_result&
     if (from.has_result()) {
       set_result(from.result());
     }
-    if (from.has_roomid()) {
-      set_roomid(from.roomid());
-    }
-    if (from.has_deskid()) {
-      set_deskid(from.deskid());
+    if (from.has_action()) {
+      set_action(from.action());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -2124,8 +2090,7 @@ void packetl2c_create_room_result::Swap(packetl2c_create_room_result* other) {
   if (other != this) {
     std::swap(packet_id_, other->packet_id_);
     std::swap(result_, other->result_);
-    std::swap(roomid_, other->roomid_);
-    std::swap(deskid_, other->deskid_);
+    std::swap(action_, other->action_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -2137,667 +2102,6 @@ void packetl2c_create_room_result::Swap(packetl2c_create_room_result* other) {
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = packetl2c_create_room_result_descriptor_;
   metadata.reflection = packetl2c_create_room_result_reflection_;
-  return metadata;
-}
-
-
-// ===================================================================
-
-#ifndef _MSC_VER
-const int packetc2l_set_room_rule::kPacketIdFieldNumber;
-const int packetc2l_set_room_rule::kRoomNameFieldNumber;
-const int packetc2l_set_room_rule::kPasswordFieldNumber;
-const int packetc2l_set_room_rule::kOrShuffleFieldNumber;
-#endif  // !_MSC_VER
-
-packetc2l_set_room_rule::packetc2l_set_room_rule()
-  : ::google::protobuf::Message() {
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:game_landlord_net_human_protocol.packetc2l_set_room_rule)
-}
-
-void packetc2l_set_room_rule::InitAsDefaultInstance() {
-}
-
-packetc2l_set_room_rule::packetc2l_set_room_rule(const packetc2l_set_room_rule& from)
-  : ::google::protobuf::Message() {
-  SharedCtor();
-  MergeFrom(from);
-  // @@protoc_insertion_point(copy_constructor:game_landlord_net_human_protocol.packetc2l_set_room_rule)
-}
-
-void packetc2l_set_room_rule::SharedCtor() {
-  ::google::protobuf::internal::GetEmptyString();
-  _cached_size_ = 0;
-  packet_id_ = 10018;
-  roomname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  password_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  orshuffle_ = false;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-}
-
-packetc2l_set_room_rule::~packetc2l_set_room_rule() {
-  // @@protoc_insertion_point(destructor:game_landlord_net_human_protocol.packetc2l_set_room_rule)
-  SharedDtor();
-}
-
-void packetc2l_set_room_rule::SharedDtor() {
-  if (roomname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete roomname_;
-  }
-  if (password_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete password_;
-  }
-  if (this != default_instance_) {
-  }
-}
-
-void packetc2l_set_room_rule::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-}
-const ::google::protobuf::Descriptor* packetc2l_set_room_rule::descriptor() {
-  protobuf_AssignDescriptorsOnce();
-  return packetc2l_set_room_rule_descriptor_;
-}
-
-const packetc2l_set_room_rule& packetc2l_set_room_rule::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto();
-  return *default_instance_;
-}
-
-packetc2l_set_room_rule* packetc2l_set_room_rule::default_instance_ = NULL;
-
-packetc2l_set_room_rule* packetc2l_set_room_rule::New() const {
-  return new packetc2l_set_room_rule;
-}
-
-void packetc2l_set_room_rule::Clear() {
-  if (_has_bits_[0 / 32] & 15) {
-    packet_id_ = 10018;
-    if (has_roomname()) {
-      if (roomname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-        roomname_->clear();
-      }
-    }
-    if (has_password()) {
-      if (password_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-        password_->clear();
-      }
-    }
-    orshuffle_ = false;
-  }
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
-}
-
-bool packetc2l_set_room_rule::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:game_landlord_net_human_protocol.packetc2l_set_room_rule)
-  for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .game_landlord_net_human_protocol.e_server_msg_type packet_id = 1 [default = e_mst_c2l_set_room_rule];
-      case 1: {
-        if (tag == 8) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          if (::game_landlord_net_human_protocol::e_server_msg_type_IsValid(value)) {
-            set_packet_id(static_cast< ::game_landlord_net_human_protocol::e_server_msg_type >(value));
-          } else {
-            mutable_unknown_fields()->AddVarint(1, value);
-          }
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(18)) goto parse_roomName;
-        break;
-      }
-
-      // optional string roomName = 2;
-      case 2: {
-        if (tag == 18) {
-         parse_roomName:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_roomname()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->roomname().data(), this->roomname().length(),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "roomname");
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(26)) goto parse_password;
-        break;
-      }
-
-      // optional string password = 3;
-      case 3: {
-        if (tag == 26) {
-         parse_password:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_password()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->password().data(), this->password().length(),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "password");
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(32)) goto parse_orShuffle;
-        break;
-      }
-
-      // optional bool orShuffle = 4;
-      case 4: {
-        if (tag == 32) {
-         parse_orShuffle:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
-                 input, &orshuffle_)));
-          set_has_orshuffle();
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectAtEnd()) goto success;
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:game_landlord_net_human_protocol.packetc2l_set_room_rule)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:game_landlord_net_human_protocol.packetc2l_set_room_rule)
-  return false;
-#undef DO_
-}
-
-void packetc2l_set_room_rule::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:game_landlord_net_human_protocol.packetc2l_set_room_rule)
-  // optional .game_landlord_net_human_protocol.e_server_msg_type packet_id = 1 [default = e_mst_c2l_set_room_rule];
-  if (has_packet_id()) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->packet_id(), output);
-  }
-
-  // optional string roomName = 2;
-  if (has_roomname()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->roomname().data(), this->roomname().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "roomname");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->roomname(), output);
-  }
-
-  // optional string password = 3;
-  if (has_password()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->password().data(), this->password().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "password");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      3, this->password(), output);
-  }
-
-  // optional bool orShuffle = 4;
-  if (has_orshuffle()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(4, this->orshuffle(), output);
-  }
-
-  if (!unknown_fields().empty()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:game_landlord_net_human_protocol.packetc2l_set_room_rule)
-}
-
-::google::protobuf::uint8* packetc2l_set_room_rule::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:game_landlord_net_human_protocol.packetc2l_set_room_rule)
-  // optional .game_landlord_net_human_protocol.e_server_msg_type packet_id = 1 [default = e_mst_c2l_set_room_rule];
-  if (has_packet_id()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->packet_id(), target);
-  }
-
-  // optional string roomName = 2;
-  if (has_roomname()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->roomname().data(), this->roomname().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "roomname");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->roomname(), target);
-  }
-
-  // optional string password = 3;
-  if (has_password()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->password().data(), this->password().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "password");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        3, this->password(), target);
-  }
-
-  // optional bool orShuffle = 4;
-  if (has_orshuffle()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(4, this->orshuffle(), target);
-  }
-
-  if (!unknown_fields().empty()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        unknown_fields(), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:game_landlord_net_human_protocol.packetc2l_set_room_rule)
-  return target;
-}
-
-int packetc2l_set_room_rule::ByteSize() const {
-  int total_size = 0;
-
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional .game_landlord_net_human_protocol.e_server_msg_type packet_id = 1 [default = e_mst_c2l_set_room_rule];
-    if (has_packet_id()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::EnumSize(this->packet_id());
-    }
-
-    // optional string roomName = 2;
-    if (has_roomname()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->roomname());
-    }
-
-    // optional string password = 3;
-    if (has_password()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->password());
-    }
-
-    // optional bool orShuffle = 4;
-    if (has_orshuffle()) {
-      total_size += 1 + 1;
-    }
-
-  }
-  if (!unknown_fields().empty()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        unknown_fields());
-  }
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-  return total_size;
-}
-
-void packetc2l_set_room_rule::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const packetc2l_set_room_rule* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const packetc2l_set_room_rule*>(
-      &from);
-  if (source == NULL) {
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-    MergeFrom(*source);
-  }
-}
-
-void packetc2l_set_room_rule::MergeFrom(const packetc2l_set_room_rule& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    if (from.has_packet_id()) {
-      set_packet_id(from.packet_id());
-    }
-    if (from.has_roomname()) {
-      set_roomname(from.roomname());
-    }
-    if (from.has_password()) {
-      set_password(from.password());
-    }
-    if (from.has_orshuffle()) {
-      set_orshuffle(from.orshuffle());
-    }
-  }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-}
-
-void packetc2l_set_room_rule::CopyFrom(const ::google::protobuf::Message& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void packetc2l_set_room_rule::CopyFrom(const packetc2l_set_room_rule& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool packetc2l_set_room_rule::IsInitialized() const {
-
-  return true;
-}
-
-void packetc2l_set_room_rule::Swap(packetc2l_set_room_rule* other) {
-  if (other != this) {
-    std::swap(packet_id_, other->packet_id_);
-    std::swap(roomname_, other->roomname_);
-    std::swap(password_, other->password_);
-    std::swap(orshuffle_, other->orshuffle_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
-}
-
-::google::protobuf::Metadata packetc2l_set_room_rule::GetMetadata() const {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::Metadata metadata;
-  metadata.descriptor = packetc2l_set_room_rule_descriptor_;
-  metadata.reflection = packetc2l_set_room_rule_reflection_;
-  return metadata;
-}
-
-
-// ===================================================================
-
-#ifndef _MSC_VER
-const int packetl2c_set_room_rule_result::kPacketIdFieldNumber;
-const int packetl2c_set_room_rule_result::kResultFieldNumber;
-#endif  // !_MSC_VER
-
-packetl2c_set_room_rule_result::packetl2c_set_room_rule_result()
-  : ::google::protobuf::Message() {
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:game_landlord_net_human_protocol.packetl2c_set_room_rule_result)
-}
-
-void packetl2c_set_room_rule_result::InitAsDefaultInstance() {
-}
-
-packetl2c_set_room_rule_result::packetl2c_set_room_rule_result(const packetl2c_set_room_rule_result& from)
-  : ::google::protobuf::Message() {
-  SharedCtor();
-  MergeFrom(from);
-  // @@protoc_insertion_point(copy_constructor:game_landlord_net_human_protocol.packetl2c_set_room_rule_result)
-}
-
-void packetl2c_set_room_rule_result::SharedCtor() {
-  _cached_size_ = 0;
-  packet_id_ = 15014;
-  result_ = 1;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-}
-
-packetl2c_set_room_rule_result::~packetl2c_set_room_rule_result() {
-  // @@protoc_insertion_point(destructor:game_landlord_net_human_protocol.packetl2c_set_room_rule_result)
-  SharedDtor();
-}
-
-void packetl2c_set_room_rule_result::SharedDtor() {
-  if (this != default_instance_) {
-  }
-}
-
-void packetl2c_set_room_rule_result::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-}
-const ::google::protobuf::Descriptor* packetl2c_set_room_rule_result::descriptor() {
-  protobuf_AssignDescriptorsOnce();
-  return packetl2c_set_room_rule_result_descriptor_;
-}
-
-const packetl2c_set_room_rule_result& packetl2c_set_room_rule_result::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto();
-  return *default_instance_;
-}
-
-packetl2c_set_room_rule_result* packetl2c_set_room_rule_result::default_instance_ = NULL;
-
-packetl2c_set_room_rule_result* packetl2c_set_room_rule_result::New() const {
-  return new packetl2c_set_room_rule_result;
-}
-
-void packetl2c_set_room_rule_result::Clear() {
-  if (_has_bits_[0 / 32] & 3) {
-    packet_id_ = 15014;
-    result_ = 1;
-  }
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
-}
-
-bool packetl2c_set_room_rule_result::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:game_landlord_net_human_protocol.packetl2c_set_room_rule_result)
-  for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .game_landlord_net_human_protocol.e_server_msg_type packet_id = 1 [default = e_mst_l2c_set_room_rule];
-      case 1: {
-        if (tag == 8) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          if (::game_landlord_net_human_protocol::e_server_msg_type_IsValid(value)) {
-            set_packet_id(static_cast< ::game_landlord_net_human_protocol::e_server_msg_type >(value));
-          } else {
-            mutable_unknown_fields()->AddVarint(1, value);
-          }
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(16)) goto parse_result;
-        break;
-      }
-
-      // optional .game_landlord_net_human_protocol.e_server_error_code result = 2 [default = e_error_code_success];
-      case 2: {
-        if (tag == 16) {
-         parse_result:
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          if (::game_landlord_net_human_protocol::e_server_error_code_IsValid(value)) {
-            set_result(static_cast< ::game_landlord_net_human_protocol::e_server_error_code >(value));
-          } else {
-            mutable_unknown_fields()->AddVarint(2, value);
-          }
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectAtEnd()) goto success;
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:game_landlord_net_human_protocol.packetl2c_set_room_rule_result)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:game_landlord_net_human_protocol.packetl2c_set_room_rule_result)
-  return false;
-#undef DO_
-}
-
-void packetl2c_set_room_rule_result::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:game_landlord_net_human_protocol.packetl2c_set_room_rule_result)
-  // optional .game_landlord_net_human_protocol.e_server_msg_type packet_id = 1 [default = e_mst_l2c_set_room_rule];
-  if (has_packet_id()) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->packet_id(), output);
-  }
-
-  // optional .game_landlord_net_human_protocol.e_server_error_code result = 2 [default = e_error_code_success];
-  if (has_result()) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      2, this->result(), output);
-  }
-
-  if (!unknown_fields().empty()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:game_landlord_net_human_protocol.packetl2c_set_room_rule_result)
-}
-
-::google::protobuf::uint8* packetl2c_set_room_rule_result::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:game_landlord_net_human_protocol.packetl2c_set_room_rule_result)
-  // optional .game_landlord_net_human_protocol.e_server_msg_type packet_id = 1 [default = e_mst_l2c_set_room_rule];
-  if (has_packet_id()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->packet_id(), target);
-  }
-
-  // optional .game_landlord_net_human_protocol.e_server_error_code result = 2 [default = e_error_code_success];
-  if (has_result()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      2, this->result(), target);
-  }
-
-  if (!unknown_fields().empty()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        unknown_fields(), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:game_landlord_net_human_protocol.packetl2c_set_room_rule_result)
-  return target;
-}
-
-int packetl2c_set_room_rule_result::ByteSize() const {
-  int total_size = 0;
-
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional .game_landlord_net_human_protocol.e_server_msg_type packet_id = 1 [default = e_mst_l2c_set_room_rule];
-    if (has_packet_id()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::EnumSize(this->packet_id());
-    }
-
-    // optional .game_landlord_net_human_protocol.e_server_error_code result = 2 [default = e_error_code_success];
-    if (has_result()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::EnumSize(this->result());
-    }
-
-  }
-  if (!unknown_fields().empty()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        unknown_fields());
-  }
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-  return total_size;
-}
-
-void packetl2c_set_room_rule_result::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const packetl2c_set_room_rule_result* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const packetl2c_set_room_rule_result*>(
-      &from);
-  if (source == NULL) {
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-    MergeFrom(*source);
-  }
-}
-
-void packetl2c_set_room_rule_result::MergeFrom(const packetl2c_set_room_rule_result& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    if (from.has_packet_id()) {
-      set_packet_id(from.packet_id());
-    }
-    if (from.has_result()) {
-      set_result(from.result());
-    }
-  }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-}
-
-void packetl2c_set_room_rule_result::CopyFrom(const ::google::protobuf::Message& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void packetl2c_set_room_rule_result::CopyFrom(const packetl2c_set_room_rule_result& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool packetl2c_set_room_rule_result::IsInitialized() const {
-
-  return true;
-}
-
-void packetl2c_set_room_rule_result::Swap(packetl2c_set_room_rule_result* other) {
-  if (other != this) {
-    std::swap(packet_id_, other->packet_id_);
-    std::swap(result_, other->result_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
-}
-
-::google::protobuf::Metadata packetl2c_set_room_rule_result::GetMetadata() const {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::Metadata metadata;
-  metadata.descriptor = packetl2c_set_room_rule_result_descriptor_;
-  metadata.reflection = packetl2c_set_room_rule_result_reflection_;
   return metadata;
 }
 
@@ -7682,6 +6986,7 @@ void packetl2c_roomlist_result::Swap(packetl2c_roomlist_result* other) {
 #ifndef _MSC_VER
 const int packetc2l_enter_room::kPacketIdFieldNumber;
 const int packetc2l_enter_room::kRoomIdFieldNumber;
+const int packetc2l_enter_room::kPasswordFieldNumber;
 #endif  // !_MSC_VER
 
 packetc2l_enter_room::packetc2l_enter_room()
@@ -7701,9 +7006,11 @@ packetc2l_enter_room::packetc2l_enter_room(const packetc2l_enter_room& from)
 }
 
 void packetc2l_enter_room::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   packet_id_ = 10001;
   room_id_ = 0;
+  password_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -7713,6 +7020,9 @@ packetc2l_enter_room::~packetc2l_enter_room() {
 }
 
 void packetc2l_enter_room::SharedDtor() {
+  if (password_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete password_;
+  }
   if (this != default_instance_) {
   }
 }
@@ -7739,9 +7049,14 @@ packetc2l_enter_room* packetc2l_enter_room::New() const {
 }
 
 void packetc2l_enter_room::Clear() {
-  if (_has_bits_[0 / 32] & 3) {
+  if (_has_bits_[0 / 32] & 7) {
     packet_id_ = 10001;
     room_id_ = 0;
+    if (has_password()) {
+      if (password_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        password_->clear();
+      }
+    }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
@@ -7787,6 +7102,23 @@ bool packetc2l_enter_room::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(26)) goto parse_password;
+        break;
+      }
+
+      // optional string password = 3;
+      case 3: {
+        if (tag == 26) {
+         parse_password:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_password()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->password().data(), this->password().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "password");
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -7827,6 +7159,16 @@ void packetc2l_enter_room::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->room_id(), output);
   }
 
+  // optional string password = 3;
+  if (has_password()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->password().data(), this->password().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "password");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->password(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -7846,6 +7188,17 @@ void packetc2l_enter_room::SerializeWithCachedSizes(
   // optional int32 room_id = 2;
   if (has_room_id()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->room_id(), target);
+  }
+
+  // optional string password = 3;
+  if (has_password()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->password().data(), this->password().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "password");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->password(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -7871,6 +7224,13 @@ int packetc2l_enter_room::ByteSize() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
           this->room_id());
+    }
+
+    // optional string password = 3;
+    if (has_password()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->password());
     }
 
   }
@@ -7906,6 +7266,9 @@ void packetc2l_enter_room::MergeFrom(const packetc2l_enter_room& from) {
     if (from.has_room_id()) {
       set_room_id(from.room_id());
     }
+    if (from.has_password()) {
+      set_password(from.password());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -7931,6 +7294,7 @@ void packetc2l_enter_room::Swap(packetc2l_enter_room* other) {
   if (other != this) {
     std::swap(packet_id_, other->packet_id_);
     std::swap(room_id_, other->room_id_);
+    std::swap(password_, other->password_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
