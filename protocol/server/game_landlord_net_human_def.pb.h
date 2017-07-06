@@ -841,19 +841,44 @@ class invitation_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 roomid() const;
   inline void set_roomid(::google::protobuf::int32 value);
 
+  // optional string roomName = 3;
+  inline bool has_roomname() const;
+  inline void clear_roomname();
+  static const int kRoomNameFieldNumber = 3;
+  inline const ::std::string& roomname() const;
+  inline void set_roomname(const ::std::string& value);
+  inline void set_roomname(const char* value);
+  inline void set_roomname(const char* value, size_t size);
+  inline ::std::string* mutable_roomname();
+  inline ::std::string* release_roomname();
+  inline void set_allocated_roomname(::std::string* roomname);
+
+  // optional int32 count = 4;
+  inline bool has_count() const;
+  inline void clear_count();
+  static const int kCountFieldNumber = 4;
+  inline ::google::protobuf::int32 count() const;
+  inline void set_count(::google::protobuf::int32 value);
+
   // @@protoc_insertion_point(class_scope:game_landlord_net_human_protocol.invitation_info)
  private:
   inline void set_has_senderinfo();
   inline void clear_has_senderinfo();
   inline void set_has_roomid();
   inline void clear_has_roomid();
+  inline void set_has_roomname();
+  inline void clear_has_roomname();
+  inline void set_has_count();
+  inline void clear_has_count();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
   ::game_landlord_net_human_protocol::player_info* senderinfo_;
+  ::std::string* roomname_;
   ::google::protobuf::int32 roomid_;
+  ::google::protobuf::int32 count_;
   friend void  protobuf_AddDesc_game_5flandlord_5fnet_5fhuman_5fdef_2eproto();
   friend void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fdef_2eproto();
   friend void protobuf_ShutdownFile_game_5flandlord_5fnet_5fhuman_5fdef_2eproto();
@@ -1717,6 +1742,106 @@ inline void invitation_info::set_roomid(::google::protobuf::int32 value) {
   set_has_roomid();
   roomid_ = value;
   // @@protoc_insertion_point(field_set:game_landlord_net_human_protocol.invitation_info.roomId)
+}
+
+// optional string roomName = 3;
+inline bool invitation_info::has_roomname() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void invitation_info::set_has_roomname() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void invitation_info::clear_has_roomname() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void invitation_info::clear_roomname() {
+  if (roomname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    roomname_->clear();
+  }
+  clear_has_roomname();
+}
+inline const ::std::string& invitation_info::roomname() const {
+  // @@protoc_insertion_point(field_get:game_landlord_net_human_protocol.invitation_info.roomName)
+  return *roomname_;
+}
+inline void invitation_info::set_roomname(const ::std::string& value) {
+  set_has_roomname();
+  if (roomname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    roomname_ = new ::std::string;
+  }
+  roomname_->assign(value);
+  // @@protoc_insertion_point(field_set:game_landlord_net_human_protocol.invitation_info.roomName)
+}
+inline void invitation_info::set_roomname(const char* value) {
+  set_has_roomname();
+  if (roomname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    roomname_ = new ::std::string;
+  }
+  roomname_->assign(value);
+  // @@protoc_insertion_point(field_set_char:game_landlord_net_human_protocol.invitation_info.roomName)
+}
+inline void invitation_info::set_roomname(const char* value, size_t size) {
+  set_has_roomname();
+  if (roomname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    roomname_ = new ::std::string;
+  }
+  roomname_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:game_landlord_net_human_protocol.invitation_info.roomName)
+}
+inline ::std::string* invitation_info::mutable_roomname() {
+  set_has_roomname();
+  if (roomname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    roomname_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:game_landlord_net_human_protocol.invitation_info.roomName)
+  return roomname_;
+}
+inline ::std::string* invitation_info::release_roomname() {
+  clear_has_roomname();
+  if (roomname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = roomname_;
+    roomname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void invitation_info::set_allocated_roomname(::std::string* roomname) {
+  if (roomname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete roomname_;
+  }
+  if (roomname) {
+    set_has_roomname();
+    roomname_ = roomname;
+  } else {
+    clear_has_roomname();
+    roomname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:game_landlord_net_human_protocol.invitation_info.roomName)
+}
+
+// optional int32 count = 4;
+inline bool invitation_info::has_count() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void invitation_info::set_has_count() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void invitation_info::clear_has_count() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void invitation_info::clear_count() {
+  count_ = 0;
+  clear_has_count();
+}
+inline ::google::protobuf::int32 invitation_info::count() const {
+  // @@protoc_insertion_point(field_get:game_landlord_net_human_protocol.invitation_info.count)
+  return count_;
+}
+inline void invitation_info::set_count(::google::protobuf::int32 value) {
+  set_has_count();
+  count_ = value;
+  // @@protoc_insertion_point(field_set:game_landlord_net_human_protocol.invitation_info.count)
 }
 
 

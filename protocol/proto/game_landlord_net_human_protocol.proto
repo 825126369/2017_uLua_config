@@ -313,7 +313,7 @@ message packetl2c_notice_room_change_info
 message packetl2c_notice_invite_room_list 
 {
 	optional e_server_msg_type packet_id = 1 [default = e_mst_l2c_notice_invite_room_list];
-	repeated invitation_info inviteList=2;//邀请列表	
+	optional invitation_info inviteInfo=2;//邀请列表	
 }
 
 //通知 谁成为房主 

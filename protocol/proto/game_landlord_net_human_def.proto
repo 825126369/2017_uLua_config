@@ -136,4 +136,6 @@ message invitation_info
 {
 	optional player_info senderInfo = 1;	//发送邀请的玩家信息
 	optional int32 roomId = 2; 			//房间Id
+	optional string roomName=3;
+	optional int32 count=4;
 }

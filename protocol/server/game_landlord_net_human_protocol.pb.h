@@ -4082,28 +4082,27 @@ class packetl2c_notice_invite_room_list : public ::google::protobuf::Message {
   inline ::game_landlord_net_human_protocol::e_server_msg_type packet_id() const;
   inline void set_packet_id(::game_landlord_net_human_protocol::e_server_msg_type value);
 
-  // repeated .game_landlord_net_human_protocol.invitation_info inviteList = 2;
-  inline int invitelist_size() const;
-  inline void clear_invitelist();
-  static const int kInviteListFieldNumber = 2;
-  inline const ::game_landlord_net_human_protocol::invitation_info& invitelist(int index) const;
-  inline ::game_landlord_net_human_protocol::invitation_info* mutable_invitelist(int index);
-  inline ::game_landlord_net_human_protocol::invitation_info* add_invitelist();
-  inline const ::google::protobuf::RepeatedPtrField< ::game_landlord_net_human_protocol::invitation_info >&
-      invitelist() const;
-  inline ::google::protobuf::RepeatedPtrField< ::game_landlord_net_human_protocol::invitation_info >*
-      mutable_invitelist();
+  // optional .game_landlord_net_human_protocol.invitation_info inviteInfo = 2;
+  inline bool has_inviteinfo() const;
+  inline void clear_inviteinfo();
+  static const int kInviteInfoFieldNumber = 2;
+  inline const ::game_landlord_net_human_protocol::invitation_info& inviteinfo() const;
+  inline ::game_landlord_net_human_protocol::invitation_info* mutable_inviteinfo();
+  inline ::game_landlord_net_human_protocol::invitation_info* release_inviteinfo();
+  inline void set_allocated_inviteinfo(::game_landlord_net_human_protocol::invitation_info* inviteinfo);
 
   // @@protoc_insertion_point(class_scope:game_landlord_net_human_protocol.packetl2c_notice_invite_room_list)
  private:
   inline void set_has_packet_id();
   inline void clear_has_packet_id();
+  inline void set_has_inviteinfo();
+  inline void clear_has_inviteinfo();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
-  ::google::protobuf::RepeatedPtrField< ::game_landlord_net_human_protocol::invitation_info > invitelist_;
+  ::game_landlord_net_human_protocol::invitation_info* inviteinfo_;
   int packet_id_;
   friend void  protobuf_AddDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto();
   friend void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto();
@@ -7465,34 +7464,45 @@ inline void packetl2c_notice_invite_room_list::set_packet_id(::game_landlord_net
   // @@protoc_insertion_point(field_set:game_landlord_net_human_protocol.packetl2c_notice_invite_room_list.packet_id)
 }
 
-// repeated .game_landlord_net_human_protocol.invitation_info inviteList = 2;
-inline int packetl2c_notice_invite_room_list::invitelist_size() const {
-  return invitelist_.size();
+// optional .game_landlord_net_human_protocol.invitation_info inviteInfo = 2;
+inline bool packetl2c_notice_invite_room_list::has_inviteinfo() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void packetl2c_notice_invite_room_list::clear_invitelist() {
-  invitelist_.Clear();
+inline void packetl2c_notice_invite_room_list::set_has_inviteinfo() {
+  _has_bits_[0] |= 0x00000002u;
 }
-inline const ::game_landlord_net_human_protocol::invitation_info& packetl2c_notice_invite_room_list::invitelist(int index) const {
-  // @@protoc_insertion_point(field_get:game_landlord_net_human_protocol.packetl2c_notice_invite_room_list.inviteList)
-  return invitelist_.Get(index);
+inline void packetl2c_notice_invite_room_list::clear_has_inviteinfo() {
+  _has_bits_[0] &= ~0x00000002u;
 }
-inline ::game_landlord_net_human_protocol::invitation_info* packetl2c_notice_invite_room_list::mutable_invitelist(int index) {
-  // @@protoc_insertion_point(field_mutable:game_landlord_net_human_protocol.packetl2c_notice_invite_room_list.inviteList)
-  return invitelist_.Mutable(index);
+inline void packetl2c_notice_invite_room_list::clear_inviteinfo() {
+  if (inviteinfo_ != NULL) inviteinfo_->::game_landlord_net_human_protocol::invitation_info::Clear();
+  clear_has_inviteinfo();
 }
-inline ::game_landlord_net_human_protocol::invitation_info* packetl2c_notice_invite_room_list::add_invitelist() {
-  // @@protoc_insertion_point(field_add:game_landlord_net_human_protocol.packetl2c_notice_invite_room_list.inviteList)
-  return invitelist_.Add();
+inline const ::game_landlord_net_human_protocol::invitation_info& packetl2c_notice_invite_room_list::inviteinfo() const {
+  // @@protoc_insertion_point(field_get:game_landlord_net_human_protocol.packetl2c_notice_invite_room_list.inviteInfo)
+  return inviteinfo_ != NULL ? *inviteinfo_ : *default_instance_->inviteinfo_;
 }
-inline const ::google::protobuf::RepeatedPtrField< ::game_landlord_net_human_protocol::invitation_info >&
-packetl2c_notice_invite_room_list::invitelist() const {
-  // @@protoc_insertion_point(field_list:game_landlord_net_human_protocol.packetl2c_notice_invite_room_list.inviteList)
-  return invitelist_;
+inline ::game_landlord_net_human_protocol::invitation_info* packetl2c_notice_invite_room_list::mutable_inviteinfo() {
+  set_has_inviteinfo();
+  if (inviteinfo_ == NULL) inviteinfo_ = new ::game_landlord_net_human_protocol::invitation_info;
+  // @@protoc_insertion_point(field_mutable:game_landlord_net_human_protocol.packetl2c_notice_invite_room_list.inviteInfo)
+  return inviteinfo_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::game_landlord_net_human_protocol::invitation_info >*
-packetl2c_notice_invite_room_list::mutable_invitelist() {
-  // @@protoc_insertion_point(field_mutable_list:game_landlord_net_human_protocol.packetl2c_notice_invite_room_list.inviteList)
-  return &invitelist_;
+inline ::game_landlord_net_human_protocol::invitation_info* packetl2c_notice_invite_room_list::release_inviteinfo() {
+  clear_has_inviteinfo();
+  ::game_landlord_net_human_protocol::invitation_info* temp = inviteinfo_;
+  inviteinfo_ = NULL;
+  return temp;
+}
+inline void packetl2c_notice_invite_room_list::set_allocated_inviteinfo(::game_landlord_net_human_protocol::invitation_info* inviteinfo) {
+  delete inviteinfo_;
+  inviteinfo_ = inviteinfo;
+  if (inviteinfo) {
+    set_has_inviteinfo();
+  } else {
+    clear_has_inviteinfo();
+  }
+  // @@protoc_insertion_point(field_set_allocated:game_landlord_net_human_protocol.packetl2c_notice_invite_room_list.inviteInfo)
 }
 
 // -------------------------------------------------------------------

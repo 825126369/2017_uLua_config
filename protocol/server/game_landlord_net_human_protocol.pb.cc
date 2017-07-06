@@ -831,7 +831,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
   packetl2c_notice_invite_room_list_descriptor_ = file->message_type(40);
   static const int packetl2c_notice_invite_room_list_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_invite_room_list, packet_id_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_invite_room_list, invitelist_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_notice_invite_room_list, inviteinfo_),
   };
   packetl2c_notice_invite_room_list_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -1264,8 +1264,8 @@ void protobuf_AddDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
     "\001\n!packetl2c_notice_invite_room_list\022i\n\t"
     "packet_id\030\001 \001(\01623.game_landlord_net_huma"
     "n_protocol.e_server_msg_type:!e_mst_l2c_"
-    "notice_invite_room_list\022E\n\ninviteList\030\002 "
-    "\003(\01321.game_landlord_net_human_protocol.i"
+    "notice_invite_room_list\022E\n\ninviteInfo\030\002 "
+    "\001(\01321.game_landlord_net_human_protocol.i"
     "nvitation_info\"\250\001\n#packetl2c_notice_who_"
     "is_roomcreator\022k\n\tpacket_id\030\001 \001(\01623.game"
     "_landlord_net_human_protocol.e_server_ms"
@@ -13616,7 +13616,7 @@ void packetl2c_notice_room_change_info::Swap(packetl2c_notice_room_change_info* 
 
 #ifndef _MSC_VER
 const int packetl2c_notice_invite_room_list::kPacketIdFieldNumber;
-const int packetl2c_notice_invite_room_list::kInviteListFieldNumber;
+const int packetl2c_notice_invite_room_list::kInviteInfoFieldNumber;
 #endif  // !_MSC_VER
 
 packetl2c_notice_invite_room_list::packetl2c_notice_invite_room_list()
@@ -13626,6 +13626,7 @@ packetl2c_notice_invite_room_list::packetl2c_notice_invite_room_list()
 }
 
 void packetl2c_notice_invite_room_list::InitAsDefaultInstance() {
+  inviteinfo_ = const_cast< ::game_landlord_net_human_protocol::invitation_info*>(&::game_landlord_net_human_protocol::invitation_info::default_instance());
 }
 
 packetl2c_notice_invite_room_list::packetl2c_notice_invite_room_list(const packetl2c_notice_invite_room_list& from)
@@ -13638,6 +13639,7 @@ packetl2c_notice_invite_room_list::packetl2c_notice_invite_room_list(const packe
 void packetl2c_notice_invite_room_list::SharedCtor() {
   _cached_size_ = 0;
   packet_id_ = 15111;
+  inviteinfo_ = NULL;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -13648,6 +13650,7 @@ packetl2c_notice_invite_room_list::~packetl2c_notice_invite_room_list() {
 
 void packetl2c_notice_invite_room_list::SharedDtor() {
   if (this != default_instance_) {
+    delete inviteinfo_;
   }
 }
 
@@ -13673,8 +13676,12 @@ packetl2c_notice_invite_room_list* packetl2c_notice_invite_room_list::New() cons
 }
 
 void packetl2c_notice_invite_room_list::Clear() {
-  packet_id_ = 15111;
-  invitelist_.Clear();
+  if (_has_bits_[0 / 32] & 3) {
+    packet_id_ = 15111;
+    if (has_inviteinfo()) {
+      if (inviteinfo_ != NULL) inviteinfo_->::game_landlord_net_human_protocol::invitation_info::Clear();
+    }
+  }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -13704,20 +13711,19 @@ bool packetl2c_notice_invite_room_list::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(18)) goto parse_inviteList;
+        if (input->ExpectTag(18)) goto parse_inviteInfo;
         break;
       }
 
-      // repeated .game_landlord_net_human_protocol.invitation_info inviteList = 2;
+      // optional .game_landlord_net_human_protocol.invitation_info inviteInfo = 2;
       case 2: {
         if (tag == 18) {
-         parse_inviteList:
+         parse_inviteInfo:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-                input, add_invitelist()));
+               input, mutable_inviteinfo()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(18)) goto parse_inviteList;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -13753,10 +13759,10 @@ void packetl2c_notice_invite_room_list::SerializeWithCachedSizes(
       1, this->packet_id(), output);
   }
 
-  // repeated .game_landlord_net_human_protocol.invitation_info inviteList = 2;
-  for (int i = 0; i < this->invitelist_size(); i++) {
+  // optional .game_landlord_net_human_protocol.invitation_info inviteInfo = 2;
+  if (has_inviteinfo()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->invitelist(i), output);
+      2, this->inviteinfo(), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -13775,11 +13781,11 @@ void packetl2c_notice_invite_room_list::SerializeWithCachedSizes(
       1, this->packet_id(), target);
   }
 
-  // repeated .game_landlord_net_human_protocol.invitation_info inviteList = 2;
-  for (int i = 0; i < this->invitelist_size(); i++) {
+  // optional .game_landlord_net_human_protocol.invitation_info inviteInfo = 2;
+  if (has_inviteinfo()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        2, this->invitelist(i), target);
+        2, this->inviteinfo(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -13800,15 +13806,14 @@ int packetl2c_notice_invite_room_list::ByteSize() const {
         ::google::protobuf::internal::WireFormatLite::EnumSize(this->packet_id());
     }
 
-  }
-  // repeated .game_landlord_net_human_protocol.invitation_info inviteList = 2;
-  total_size += 1 * this->invitelist_size();
-  for (int i = 0; i < this->invitelist_size(); i++) {
-    total_size +=
-      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        this->invitelist(i));
-  }
+    // optional .game_landlord_net_human_protocol.invitation_info inviteInfo = 2;
+    if (has_inviteinfo()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->inviteinfo());
+    }
 
+  }
   if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
@@ -13834,10 +13839,12 @@ void packetl2c_notice_invite_room_list::MergeFrom(const ::google::protobuf::Mess
 
 void packetl2c_notice_invite_room_list::MergeFrom(const packetl2c_notice_invite_room_list& from) {
   GOOGLE_CHECK_NE(&from, this);
-  invitelist_.MergeFrom(from.invitelist_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_packet_id()) {
       set_packet_id(from.packet_id());
+    }
+    if (from.has_inviteinfo()) {
+      mutable_inviteinfo()->::game_landlord_net_human_protocol::invitation_info::MergeFrom(from.inviteinfo());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -13863,7 +13870,7 @@ bool packetl2c_notice_invite_room_list::IsInitialized() const {
 void packetl2c_notice_invite_room_list::Swap(packetl2c_notice_invite_room_list* other) {
   if (other != this) {
     std::swap(packet_id_, other->packet_id_);
-    invitelist_.Swap(&other->invitelist_);
+    std::swap(inviteinfo_, other->inviteinfo_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
