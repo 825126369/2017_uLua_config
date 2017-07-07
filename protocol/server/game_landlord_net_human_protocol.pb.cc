@@ -565,7 +565,7 @@ void protobuf_AssignDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
   packetl2c_get_room_scene_info_result_descriptor_ = file->message_type(25);
   static const int packetl2c_get_room_scene_info_result_offsets_[16] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_get_room_scene_info_result, packet_id_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_get_room_scene_info_result, room_id_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_get_room_scene_info_result, m_roominfo_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_get_room_scene_info_result, gamestate_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_get_room_scene_info_result, cards_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(packetl2c_get_room_scene_info_result, opencard_),
@@ -1171,106 +1171,107 @@ void protobuf_AddDesc_game_5flandlord_5fnet_5fhuman_5fprotocol_2eproto() {
     "packetc2l_get_room_scene_info\022e\n\tpacket_"
     "id\030\001 \001(\01623.game_landlord_net_human_proto"
     "col.e_server_msg_type:\035e_mst_c2l_get_roo"
-    "m_scene_info\"\267\005\n$packetl2c_get_room_scen"
+    "m_scene_info\"\347\005\n$packetl2c_get_room_scen"
     "e_info_result\022e\n\tpacket_id\030\001 \001(\01623.game_"
     "landlord_net_human_protocol.e_server_msg"
-    "_type:\035e_mst_l2c_get_room_scene_info\022\017\n\007"
-    "room_id\030\002 \001(\005\022A\n\tgameState\030\003 \001(\0162..game_"
-    "landlord_net_human_protocol.e_game_state"
-    "\022\r\n\005cards\030\004 \003(\005\022\020\n\010opencard\030\005 \001(\005\022G\n\020oth"
-    "er_cards_info\030\006 \003(\0132-.game_landlord_net_"
-    "human_protocol.card_Info_1\022A\n\nplayerList"
-    "\030\007 \003(\0132-.game_landlord_net_human_protoco"
-    "l.player_info\022\023\n\013landlord_Id\030\010 \001(\005\022A\n\014la"
-    "stPlayHand\030\t \001(\0132+.game_landlord_net_hum"
-    "an_protocol.card_Info\022\017\n\007cards_1\030\n \003(\005\022\016"
-    "\n\006cdTime\030\013 \001(\005\022J\n\013playerState\030\014 \001(\01625.ga"
-    "me_landlord_net_human_protocol.e_player_"
-    "game_state\022\"\n\032current_who_robLandlording"
-    "\030\r \001(\005\022\037\n\027current_who_playhanding\030\016 \001(\005\022"
-    "\r\n\005score\030\017 \001(\005\022\016\n\006orHang\030\020 \001(\010\"v\n\025packet"
-    "c2l_check_state\022]\n\tpacket_id\030\001 \001(\01623.gam"
-    "e_landlord_net_human_protocol.e_server_m"
-    "sg_type:\025e_mst_c2l_check_state\"\221\001\n\034packe"
-    "tl2c_check_state_result\022]\n\tpacket_id\030\001 \001"
+    "_type:\035e_mst_l2c_get_room_scene_info\022\?\n\n"
+    "m_roomInfo\030\002 \001(\0132+.game_landlord_net_hum"
+    "an_protocol.room_info\022A\n\tgameState\030\003 \001(\016"
+    "2..game_landlord_net_human_protocol.e_ga"
+    "me_state\022\r\n\005cards\030\004 \003(\005\022\020\n\010opencard\030\005 \001("
+    "\005\022G\n\020other_cards_info\030\006 \003(\0132-.game_landl"
+    "ord_net_human_protocol.card_Info_1\022A\n\npl"
+    "ayerList\030\007 \003(\0132-.game_landlord_net_human"
+    "_protocol.player_info\022\023\n\013landlord_Id\030\010 \001"
+    "(\005\022A\n\014lastPlayHand\030\t \001(\0132+.game_landlord"
+    "_net_human_protocol.card_Info\022\017\n\007cards_1"
+    "\030\n \003(\005\022\016\n\006cdTime\030\013 \001(\005\022J\n\013playerState\030\014 "
+    "\001(\01625.game_landlord_net_human_protocol.e"
+    "_player_game_state\022\"\n\032current_who_robLan"
+    "dlording\030\r \001(\005\022\037\n\027current_who_playhandin"
+    "g\030\016 \001(\005\022\r\n\005score\030\017 \001(\005\022\016\n\006orHang\030\020 \001(\010\"v"
+    "\n\025packetc2l_check_state\022]\n\tpacket_id\030\001 \001"
     "(\01623.game_landlord_net_human_protocol.e_"
-    "server_msg_type:\025e_mst_l2c_check_state\022\022"
-    "\n\nis_intable\030\002 \001(\010\"\210\001\n\026packetc2l_rob_lan"
-    "dlord\022^\n\tpacket_id\030\001 \001(\01623.game_landlord"
-    "_net_human_protocol.e_server_msg_type:\026e"
-    "_mst_c2l_rob_landlord\022\016\n\006or_Rob\030\002 \001(\005\"\254\001"
-    "\n\022packetc2l_playhand\022Z\n\tpacket_id\030\001 \001(\0162"
-    "3.game_landlord_net_human_protocol.e_ser"
-    "ver_msg_type:\022e_mst_c2l_playhand\022:\n\005card"
-    "s\030\002 \001(\0132+.game_landlord_net_human_protoc"
-    "ol.card_Info\"\235\002\n\032packetl2c_notice_startg"
-    "ame\022b\n\tpacket_id\030\001 \001(\01623.game_landlord_n"
-    "et_human_protocol.e_server_msg_type:\032e_m"
-    "st_l2c_notice_startgame\022\r\n\005cards\030\002 \003(\005\022\020"
-    "\n\010opencard\030\003 \001(\005\022\017\n\007cards_1\030\004 \003(\005\022A\n\npla"
-    "yerList\030\005 \003(\0132-.game_landlord_net_human_"
-    "protocol.player_info\022\023\n\013landlord_Id\030\006 \001("
-    "\005\022\021\n\tmin_score\030\007 \001(\005\"\226\001\n\035packetl2c_notic"
-    "e_who_playhand\022e\n\tpacket_id\030\001 \001(\01623.game"
-    "_landlord_net_human_protocol.e_server_ms"
-    "g_type:\035e_mst_l2c_notice_who_playhand\022\016\n"
-    "\006deskId\030\002 \001(\005\"\227\002\n\031packetl2c_notice_playh"
-    "and\022a\n\tpacket_id\030\001 \001(\01623.game_landlord_n"
-    "et_human_protocol.e_server_msg_type:\031e_m"
-    "st_l2c_notice_playhand\022[\n\006result\030\002 \001(\01625"
-    ".game_landlord_net_human_protocol.e_serv"
-    "er_error_code:\024e_error_code_success\022:\n\005c"
-    "ards\030\003 \001(\0132+.game_landlord_net_human_pro"
-    "tocol.card_Info\"\226\001\n\035packetl2c_notice_rob"
-    "_landlord\022e\n\tpacket_id\030\001 \001(\01623.game_land"
-    "lord_net_human_protocol.e_server_msg_typ"
-    "e:\035e_mst_l2c_notice_rob_landlord\022\016\n\006desk"
-    "Id\030\002 \001(\005\"\221\002\n$packetl2c_notice_rob_landlo"
-    "rd_result\022l\n\tpacket_id\030\001 \001(\01623.game_land"
-    "lord_net_human_protocol.e_server_msg_typ"
-    "e:$e_mst_l2c_notice_rob_landlord_result\022"
-    "[\n\006result\030\002 \001(\01625.game_landlord_net_huma"
-    "n_protocol.e_server_error_code:\024e_error_"
-    "code_success\022\016\n\006deskId\030\003 \001(\005\022\016\n\006or_Rob\030\004"
-    " \001(\005\"\211\002\n\030packetl2c_notice_winlose\022`\n\tpac"
-    "ket_id\030\001 \001(\01623.game_landlord_net_human_p"
-    "rotocol.e_server_msg_type:\030e_mst_l2c_not"
-    "ice_winlose\022H\n\rm_desk_awards\030\002 \003(\01321.gam"
-    "e_landlord_net_human_protocol.desk_award"
-    "_Info\022A\n\014remain_cards\030\003 \003(\0132+.game_landl"
-    "ord_net_human_protocol.card_Info\"\223\001\n\033pac"
-    "ketl2c_notice_SystemTalk\022c\n\tpacket_id\030\001 "
-    "\001(\01623.game_landlord_net_human_protocol.e"
-    "_server_msg_type:\033e_mst_l2c_notice_Syste"
-    "mTalk\022\017\n\007talk_Id\030\002 \001(\005\"\353\001\n&packetl2c_not"
-    "ice_room_enter_leave_info\022n\n\tpacket_id\030\001"
-    " \001(\01623.game_landlord_net_human_protocol."
-    "e_server_msg_type:&e_mst_l2c_notice_room"
-    "_enter_leave_info\022\016\n\006action\030\002 \001(\005\022A\n\npla"
-    "yerInfo\030\003 \001(\0132-.game_landlord_net_human_"
-    "protocol.player_info\"\217\002\n\"packetl2c_notic"
-    "e_room_prepare_info\022j\n\tpacket_id\030\001 \001(\01623"
-    ".game_landlord_net_human_protocol.e_serv"
-    "er_msg_type:\"e_mst_l2c_notice_room_prepa"
-    "re_info\022[\n\006result\030\002 \001(\01625.game_landlord_"
+    "server_msg_type:\025e_mst_c2l_check_state\"\221"
+    "\001\n\034packetl2c_check_state_result\022]\n\tpacke"
+    "t_id\030\001 \001(\01623.game_landlord_net_human_pro"
+    "tocol.e_server_msg_type:\025e_mst_l2c_check"
+    "_state\022\022\n\nis_intable\030\002 \001(\010\"\210\001\n\026packetc2l"
+    "_rob_landlord\022^\n\tpacket_id\030\001 \001(\01623.game_"
+    "landlord_net_human_protocol.e_server_msg"
+    "_type:\026e_mst_c2l_rob_landlord\022\016\n\006or_Rob\030"
+    "\002 \001(\005\"\254\001\n\022packetc2l_playhand\022Z\n\tpacket_i"
+    "d\030\001 \001(\01623.game_landlord_net_human_protoc"
+    "ol.e_server_msg_type:\022e_mst_c2l_playhand"
+    "\022:\n\005cards\030\002 \001(\0132+.game_landlord_net_huma"
+    "n_protocol.card_Info\"\235\002\n\032packetl2c_notic"
+    "e_startgame\022b\n\tpacket_id\030\001 \001(\01623.game_la"
+    "ndlord_net_human_protocol.e_server_msg_t"
+    "ype:\032e_mst_l2c_notice_startgame\022\r\n\005cards"
+    "\030\002 \003(\005\022\020\n\010opencard\030\003 \001(\005\022\017\n\007cards_1\030\004 \003("
+    "\005\022A\n\nplayerList\030\005 \003(\0132-.game_landlord_ne"
+    "t_human_protocol.player_info\022\023\n\013landlord"
+    "_Id\030\006 \001(\005\022\021\n\tmin_score\030\007 \001(\005\"\226\001\n\035packetl"
+    "2c_notice_who_playhand\022e\n\tpacket_id\030\001 \001("
+    "\01623.game_landlord_net_human_protocol.e_s"
+    "erver_msg_type:\035e_mst_l2c_notice_who_pla"
+    "yhand\022\016\n\006deskId\030\002 \001(\005\"\227\002\n\031packetl2c_noti"
+    "ce_playhand\022a\n\tpacket_id\030\001 \001(\01623.game_la"
+    "ndlord_net_human_protocol.e_server_msg_t"
+    "ype:\031e_mst_l2c_notice_playhand\022[\n\006result"
+    "\030\002 \001(\01625.game_landlord_net_human_protoco"
+    "l.e_server_error_code:\024e_error_code_succ"
+    "ess\022:\n\005cards\030\003 \001(\0132+.game_landlord_net_h"
+    "uman_protocol.card_Info\"\226\001\n\035packetl2c_no"
+    "tice_rob_landlord\022e\n\tpacket_id\030\001 \001(\01623.g"
+    "ame_landlord_net_human_protocol.e_server"
+    "_msg_type:\035e_mst_l2c_notice_rob_landlord"
+    "\022\016\n\006deskId\030\002 \001(\005\"\221\002\n$packetl2c_notice_ro"
+    "b_landlord_result\022l\n\tpacket_id\030\001 \001(\01623.g"
+    "ame_landlord_net_human_protocol.e_server"
+    "_msg_type:$e_mst_l2c_notice_rob_landlord"
+    "_result\022[\n\006result\030\002 \001(\01625.game_landlord_"
     "net_human_protocol.e_server_error_code:\024"
-    "e_error_code_success\022\016\n\006action\030\003 \001(\005\022\020\n\010"
-    "playerId\030\004 \001(\005\"\335\001\n!packetl2c_notice_room"
-    "_change_info\022i\n\tpacket_id\030\001 \001(\01623.game_l"
-    "andlord_net_human_protocol.e_server_msg_"
-    "type:!e_mst_l2c_notice_room_change_info\022"
-    "\016\n\006action\030\002 \001(\005\022=\n\010roomInfo\030\003 \001(\0132+.game"
-    "_landlord_net_human_protocol.room_info\"\325"
-    "\001\n!packetl2c_notice_invite_room_list\022i\n\t"
-    "packet_id\030\001 \001(\01623.game_landlord_net_huma"
-    "n_protocol.e_server_msg_type:!e_mst_l2c_"
-    "notice_invite_room_list\022E\n\ninviteInfo\030\002 "
-    "\001(\01321.game_landlord_net_human_protocol.i"
-    "nvitation_info\"\250\001\n#packetl2c_notice_who_"
-    "is_roomcreator\022k\n\tpacket_id\030\001 \001(\01623.game"
-    "_landlord_net_human_protocol.e_server_ms"
-    "g_type:#e_mst_l2c_notice_who_is_roomcrea"
-    "tor\022\024\n\014room_creator\030\002 \001(\005", 8625);
+    "e_error_code_success\022\016\n\006deskId\030\003 \001(\005\022\016\n\006"
+    "or_Rob\030\004 \001(\005\"\211\002\n\030packetl2c_notice_winlos"
+    "e\022`\n\tpacket_id\030\001 \001(\01623.game_landlord_net"
+    "_human_protocol.e_server_msg_type:\030e_mst"
+    "_l2c_notice_winlose\022H\n\rm_desk_awards\030\002 \003"
+    "(\01321.game_landlord_net_human_protocol.de"
+    "sk_award_Info\022A\n\014remain_cards\030\003 \003(\0132+.ga"
+    "me_landlord_net_human_protocol.card_Info"
+    "\"\223\001\n\033packetl2c_notice_SystemTalk\022c\n\tpack"
+    "et_id\030\001 \001(\01623.game_landlord_net_human_pr"
+    "otocol.e_server_msg_type:\033e_mst_l2c_noti"
+    "ce_SystemTalk\022\017\n\007talk_Id\030\002 \001(\005\"\353\001\n&packe"
+    "tl2c_notice_room_enter_leave_info\022n\n\tpac"
+    "ket_id\030\001 \001(\01623.game_landlord_net_human_p"
+    "rotocol.e_server_msg_type:&e_mst_l2c_not"
+    "ice_room_enter_leave_info\022\016\n\006action\030\002 \001("
+    "\005\022A\n\nplayerInfo\030\003 \001(\0132-.game_landlord_ne"
+    "t_human_protocol.player_info\"\217\002\n\"packetl"
+    "2c_notice_room_prepare_info\022j\n\tpacket_id"
+    "\030\001 \001(\01623.game_landlord_net_human_protoco"
+    "l.e_server_msg_type:\"e_mst_l2c_notice_ro"
+    "om_prepare_info\022[\n\006result\030\002 \001(\01625.game_l"
+    "andlord_net_human_protocol.e_server_erro"
+    "r_code:\024e_error_code_success\022\016\n\006action\030\003"
+    " \001(\005\022\020\n\010playerId\030\004 \001(\005\"\335\001\n!packetl2c_not"
+    "ice_room_change_info\022i\n\tpacket_id\030\001 \001(\0162"
+    "3.game_landlord_net_human_protocol.e_ser"
+    "ver_msg_type:!e_mst_l2c_notice_room_chan"
+    "ge_info\022\016\n\006action\030\002 \001(\005\022=\n\010roomInfo\030\003 \001("
+    "\0132+.game_landlord_net_human_protocol.roo"
+    "m_info\"\325\001\n!packetl2c_notice_invite_room_"
+    "list\022i\n\tpacket_id\030\001 \001(\01623.game_landlord_"
+    "net_human_protocol.e_server_msg_type:!e_"
+    "mst_l2c_notice_invite_room_list\022E\n\ninvit"
+    "eInfo\030\002 \001(\01321.game_landlord_net_human_pr"
+    "otocol.invitation_info\"\250\001\n#packetl2c_not"
+    "ice_who_is_roomcreator\022k\n\tpacket_id\030\001 \001("
+    "\01623.game_landlord_net_human_protocol.e_s"
+    "erver_msg_type:#e_mst_l2c_notice_who_is_"
+    "roomcreator\022\024\n\014room_creator\030\002 \001(\005", 8673);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "game_landlord_net_human_protocol.proto", &protobuf_RegisterTypes);
   packetc2l_create_room::default_instance_ = new packetc2l_create_room();
@@ -8442,7 +8443,7 @@ void packetc2l_get_room_scene_info::Swap(packetc2l_get_room_scene_info* other) {
 
 #ifndef _MSC_VER
 const int packetl2c_get_room_scene_info_result::kPacketIdFieldNumber;
-const int packetl2c_get_room_scene_info_result::kRoomIdFieldNumber;
+const int packetl2c_get_room_scene_info_result::kMRoomInfoFieldNumber;
 const int packetl2c_get_room_scene_info_result::kGameStateFieldNumber;
 const int packetl2c_get_room_scene_info_result::kCardsFieldNumber;
 const int packetl2c_get_room_scene_info_result::kOpencardFieldNumber;
@@ -8466,6 +8467,7 @@ packetl2c_get_room_scene_info_result::packetl2c_get_room_scene_info_result()
 }
 
 void packetl2c_get_room_scene_info_result::InitAsDefaultInstance() {
+  m_roominfo_ = const_cast< ::game_landlord_net_human_protocol::room_info*>(&::game_landlord_net_human_protocol::room_info::default_instance());
   lastplayhand_ = const_cast< ::game_landlord_net_human_protocol::card_Info*>(&::game_landlord_net_human_protocol::card_Info::default_instance());
 }
 
@@ -8479,7 +8481,7 @@ packetl2c_get_room_scene_info_result::packetl2c_get_room_scene_info_result(const
 void packetl2c_get_room_scene_info_result::SharedCtor() {
   _cached_size_ = 0;
   packet_id_ = 15002;
-  room_id_ = 0;
+  m_roominfo_ = NULL;
   gamestate_ = 0;
   opencard_ = 0;
   landlord_id_ = 0;
@@ -8500,6 +8502,7 @@ packetl2c_get_room_scene_info_result::~packetl2c_get_room_scene_info_result() {
 
 void packetl2c_get_room_scene_info_result::SharedDtor() {
   if (this != default_instance_) {
+    delete m_roominfo_;
     delete lastplayhand_;
   }
 }
@@ -8537,17 +8540,18 @@ void packetl2c_get_room_scene_info_result::Clear() {
   } while (0)
 
   if (_has_bits_[0 / 32] & 151) {
-    ZR_(gamestate_, opencard_);
+    ZR_(opencard_, landlord_id_);
     packet_id_ = 15002;
-    room_id_ = 0;
-    landlord_id_ = 0;
+    if (has_m_roominfo()) {
+      if (m_roominfo_ != NULL) m_roominfo_->::game_landlord_net_human_protocol::room_info::Clear();
+    }
+    gamestate_ = 0;
   }
   if (_has_bits_[8 / 32] & 64768) {
-    ZR_(playerstate_, orhang_);
+    ZR_(cdtime_, orhang_);
     if (has_lastplayhand()) {
       if (lastplayhand_ != NULL) lastplayhand_->::game_landlord_net_human_protocol::card_Info::Clear();
     }
-    cdtime_ = 0;
   }
 
 #undef OFFSET_OF_FIELD_
@@ -8586,18 +8590,16 @@ bool packetl2c_get_room_scene_info_result::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(16)) goto parse_room_id;
+        if (input->ExpectTag(18)) goto parse_m_roomInfo;
         break;
       }
 
-      // optional int32 room_id = 2;
+      // optional .game_landlord_net_human_protocol.room_info m_roomInfo = 2;
       case 2: {
-        if (tag == 16) {
-         parse_room_id:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &room_id_)));
-          set_has_room_id();
+        if (tag == 18) {
+         parse_m_roomInfo:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_m_roominfo()));
         } else {
           goto handle_unusual;
         }
@@ -8860,9 +8862,10 @@ void packetl2c_get_room_scene_info_result::SerializeWithCachedSizes(
       1, this->packet_id(), output);
   }
 
-  // optional int32 room_id = 2;
-  if (has_room_id()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->room_id(), output);
+  // optional .game_landlord_net_human_protocol.room_info m_roomInfo = 2;
+  if (has_m_roominfo()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, this->m_roominfo(), output);
   }
 
   // optional .game_landlord_net_human_protocol.e_game_state gameState = 3;
@@ -8958,9 +8961,11 @@ void packetl2c_get_room_scene_info_result::SerializeWithCachedSizes(
       1, this->packet_id(), target);
   }
 
-  // optional int32 room_id = 2;
-  if (has_room_id()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->room_id(), target);
+  // optional .game_landlord_net_human_protocol.room_info m_roomInfo = 2;
+  if (has_m_roominfo()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        2, this->m_roominfo(), target);
   }
 
   // optional .game_landlord_net_human_protocol.e_game_state gameState = 3;
@@ -9061,11 +9066,11 @@ int packetl2c_get_room_scene_info_result::ByteSize() const {
         ::google::protobuf::internal::WireFormatLite::EnumSize(this->packet_id());
     }
 
-    // optional int32 room_id = 2;
-    if (has_room_id()) {
+    // optional .game_landlord_net_human_protocol.room_info m_roomInfo = 2;
+    if (has_m_roominfo()) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->room_id());
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->m_roominfo());
     }
 
     // optional .game_landlord_net_human_protocol.e_game_state gameState = 3;
@@ -9206,8 +9211,8 @@ void packetl2c_get_room_scene_info_result::MergeFrom(const packetl2c_get_room_sc
     if (from.has_packet_id()) {
       set_packet_id(from.packet_id());
     }
-    if (from.has_room_id()) {
-      set_room_id(from.room_id());
+    if (from.has_m_roominfo()) {
+      mutable_m_roominfo()->::game_landlord_net_human_protocol::room_info::MergeFrom(from.m_roominfo());
     }
     if (from.has_gamestate()) {
       set_gamestate(from.gamestate());
@@ -9265,7 +9270,7 @@ bool packetl2c_get_room_scene_info_result::IsInitialized() const {
 void packetl2c_get_room_scene_info_result::Swap(packetl2c_get_room_scene_info_result* other) {
   if (other != this) {
     std::swap(packet_id_, other->packet_id_);
-    std::swap(room_id_, other->room_id_);
+    std::swap(m_roominfo_, other->m_roominfo_);
     std::swap(gamestate_, other->gamestate_);
     cards_.Swap(&other->cards_);
     std::swap(opencard_, other->opencard_);
